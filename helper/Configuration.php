@@ -3,13 +3,13 @@ include_once("helper/MysqlDatabase.php");
 include_once("helper/Render.php");
 include_once("helper/UrlHelper.php");
 
-include_once("model/TourModel.php");
-include_once("model/SongModel.php");
+//MODELOS
+include_once("model/LoginModel.php");
 
-include_once("controller/SongController.php");
-include_once("controller/TourController.php");
-include_once("controller/LaBandaController.php");
-include_once("controller/QuieroSerParteController.php");
+
+//CONTROLADORES
+include_once("controller/LoginController.php");
+
 
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
@@ -40,7 +40,7 @@ class Configuration{
     }
 
     public function getRender(){
-        return new Render('view/partial');
+        return new Render('public/view/partial');
     }
 
     public function getTourController(){
@@ -65,7 +65,7 @@ class Configuration{
         return new Router($this);
     }
 
-    public function getUrlHelper(){
+    public function getUrlHelper(){//interpreta la ruta
         return new UrlHelper();
     }
 }
