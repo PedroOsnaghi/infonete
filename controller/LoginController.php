@@ -15,8 +15,9 @@ class LoginController
     //cuando se ejecuta excecute muestra la vista de Login
     //se ejecuta cuando no especificamos un metodo por la url
     //infonete.com/login
-    public function excecute()
+    public function execute()
     {
+     
         echo $this->render->render("public/view/login.mustache");
     }
 
@@ -28,7 +29,7 @@ class LoginController
         if (sizeof($result) > 0) {
             echo $this->render->render("public/view/home.mustache");
         } else {
-            $data["error"] = "usuario y/o contraseña incorrecta";
+            $data['error'] = "Nombre de usuario y/o contraseña incorrecta";
             echo $this->render->render("public/view/login.mustache", $data);
         }
     }

@@ -110,7 +110,7 @@ class Mustache_Test_HelperCollectionTest extends PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                'not helper',
+                'not helpers',
                 array(),
                 'InvalidArgumentException',
             ),
