@@ -5,11 +5,13 @@ include_once("helper/UrlHelper.php");
 
 //MODELOS
 include_once("model/LoginModel.php");
-
+include_once("model/RegisterModel.php");
+include_once("model/UsuarioModel.php");
+include_once("model/LectorModel.php");
 
 //CONTROLADORES
 include_once("controller/LoginController.php");
-
+include_once("controller/RegisterController.php");
 
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
@@ -26,6 +28,17 @@ class Configuration
     {
         $loginModel = $this->getLoginModel();
         return new LoginController($loginModel, $this->getRender());
+    }
+
+    public function getRegisterController()
+    {
+        $registerModel = $this->getRegisterModel();
+        return new RegisterController($registerModel, $this->getRender());
+    }
+
+    private function getRegisterModel()
+    {
+        return new RegisterModel($this->getDatabase());
     }
 
     private function getConfig()
@@ -58,4 +71,6 @@ class Configuration
             $config["dbname"]
         );
     }
+
+
 }
