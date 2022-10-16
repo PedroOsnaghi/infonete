@@ -5,7 +5,7 @@ session_start();
 $configuration = new Configuration();
 
 $urlHelper = $configuration->getUrlHelper();
-$module = $urlHelper->getModuleFromRequestOr("laBanda");
+$module = $urlHelper->getModuleFromRequestOr("login");
 $action = $urlHelper->getActionFromRequestOr("execute");
 
 
