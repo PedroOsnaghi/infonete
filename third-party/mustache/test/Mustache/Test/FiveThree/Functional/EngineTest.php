@@ -22,7 +22,7 @@ class Mustache_Test_FiveThree_Functional_EngineTest extends PHPUnit_Framework_Te
     {
         $mustache = new Mustache_Engine(array(
             'pragmas' => $pragmas,
-            'helper' => $helpers,
+            'helpers' => $helpers,
         ));
 
         $this->assertEquals($expect, $mustache->render($tpl, $data));

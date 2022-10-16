@@ -29,7 +29,7 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
             'partials'              => array(
                 'foo' => '{{ foo }}',
             ),
-            'helper' => array(
+            'helpers' => array(
                 'foo' => array($this, 'getFoo'),
                 'bar' => 'BAR',
             ),
@@ -213,7 +213,7 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
     {
         $foo = array($this, 'getFoo');
         $bar = 'BAR';
-        $mustache = new Mustache_Engine(array('helper' => array(
+        $mustache = new Mustache_Engine(array('helpers' => array(
             'foo' => $foo,
             'bar' => $bar,
         )));
