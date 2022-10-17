@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-<IfModule mod_rewrite>
-=======
 <IfModule mod_security.c>
  SecFilterEngine Off
  SecFilterScanPOST Off
@@ -14,7 +9,6 @@ Options -Indexes
     deny from all
 </FilesMatch>
 <IfModule mod_rewrite.c>
->>>>>>> Pedro
     RewriteEngine On
     RewriteBase /infonete/
     RewriteRule ^(public)($|/) - [L,NC]
