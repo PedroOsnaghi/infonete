@@ -11,12 +11,14 @@ class RegisterController{
         $this->render = $render;
     }
 
-    public function execute(){
+    public function execute()
+    {
         echo $this->render->render("public/view/registro.mustache");
     }
 
     //el formulario llama a esta funcion
-    public function validarRegistro(){
+    public function validarRegistro()
+    {
 
         $nombreUsuario = $_POST['usuario'] ?? false; //si esta seteado pone lo que recibe por post y si no false
         $pass = $_POST['pass'] ?? false; //TODO enviar mensaje de error, falta validar
