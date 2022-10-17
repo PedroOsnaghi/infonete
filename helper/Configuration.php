@@ -58,4 +58,5 @@ class Configuration
             $config["dbname"]
         );
     }
+
 }
