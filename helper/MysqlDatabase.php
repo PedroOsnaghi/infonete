@@ -19,14 +19,24 @@ class MysqlDatabase
         $this->connection = $conn;
     }
 
+    //solo consulta y retorna un array asociativo con los resultados
     public function query($sql)
     {
         $result = mysqli_query($this->connection, $sql);
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
+    //actualizar, eliminar y retorna la cantidad de registros afectados (valor entero o 0)
     public function execute($sql)
     {
-        mysqli_query($this->connection, $sql);
+        $this->connection->query($sql);
+        return $this->connection->affected_rows;
+    }
+
+    //inserta y te devuelve el id que inserta
+    public function insert($sql){
+
+        $this->connection->query($sql);
+        return $this->connection->insert_id;
     }
 }

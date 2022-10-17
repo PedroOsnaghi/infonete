@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Infonete-registrarse</title>
+</head>
+<body>
+    <h1>Registro</h1>
+    <form action="index.php?module=Register&action=validarRegistro" method="POST">
+        <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+        <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
+        <input type="text" name="dni" placeholder="Ingrese su dni" required>
+        <input type="text" name="ubicacion" placeholder="Ingrese su ubicacion" required>
+        <input type="email" name="email" placeholder="Ingrese su email" required>
+        <input type="text" name="usuario" placeholder="Ingrese nombre de usuario" required>
+        <input type="password" name="pass" placeholder="Ingrese contraseña" required>
+        <input type="submit" value="Registrarse">
+    </form>
+    {{#success}}
+        <h2>{{success}}</h2>
+    {{/success}}
+
+    {{#error}}
+        <h2>{{error}}</h2>
+    {{/error}}
+
+    <a href="index.php?module=Login&action=execute">Ir a Login</a>
+</body>
+</html>
