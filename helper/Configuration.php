@@ -7,7 +7,6 @@ include_once("helper/UrlHelper.php");
 include_once("model/LoginModel.php");
 include_once("model/RegisterModel.php");
 include_once("model/UsuarioModel.php");
-include_once("model/LectorModel.php");
 
 //CONTROLADORES
 include_once("controller/LoginController.php");
