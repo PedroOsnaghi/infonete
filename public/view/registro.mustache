@@ -9,10 +9,9 @@
 </head>
 <body>
     <h1>Registro</h1>
-    <form action="index.php?module=Register&action=validarRegistro" method="POST">
-        <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+    <form action="register/validar" method="POST">
+        <input type="text" name="nombre" placeholder="Ingrese su nombre" >
         <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
-        <input type="text" name="dni" placeholder="Ingrese su dni" required>
         <input type="text" name="ubicacion" placeholder="Ingrese su ubicacion" required>
         <input type="email" name="email" placeholder="Ingrese su email" required>
         <input type="text" name="usuario" placeholder="Ingrese nombre de usuario" required>
@@ -27,6 +26,6 @@
         <h2>{{error}}</h2>
     {{/error}}
 
-    <a href="/">Ir a Login</a>
+    <a href="login">Ir a Login</a>
 </body>
 </html>
