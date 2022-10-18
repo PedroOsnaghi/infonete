@@ -29,7 +29,7 @@ class RegisterController{
         $email = $_POST['email'] ?? false;
 
         $this->registerModel->registrarLector($nombreUsuario, $pass, $nombre, $apellido, $dni, $ubicacion, $email) ?
-            $data["success"] = "registro realizado con exito" :
+            $data["success"] = "registro realizado con éxito" :
             $data["error"] = "ocurrió un error al registrarse";
 
         echo $this->render->render("public/view/registro.mustache", $data);

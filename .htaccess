@@ -1,11 +1,19 @@
+<IfModule mod_security.c>
+ SecFilterEngine Off
+ SecFilterScanPOST Off
+</IfModule>
 
+Options -Indexes
 
-<IfModule mod_rewrite>
+<FilesMatch ".*\.(log|ini|htaccess)$">
+    deny from all
+</FilesMatch>
+<IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /
+    RewriteBase /infonete/
+    RewriteRule ^(public)($|/) - [L,NC]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-
     RewriteRule ^(.*)/(.*)/(.*)$ index.php?module=$1&action=$2&$3 [L,QSA]
     RewriteRule ^(.*)/(.*)$ index.php?module=$1&action=$2 [L,QSA]
     RewriteRule ^(.*)$ index.php?module=$1&action=execute [L,QSA]
