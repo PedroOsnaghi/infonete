@@ -21,8 +21,10 @@ class UsuarioModel {
     private $email;
     private $activo;
     private $estado;
+    private $rol;
 
     private $database;
+
 
     //Getters & Setters
     public function getNombre()
@@ -85,6 +87,16 @@ class UsuarioModel {
         $this->email = $email;
     }
 
+    public function getRol()
+    {
+        return $this->rol;
+    }
+
+    public function setRol($rol)
+    {
+        $this->rol = $rol;
+    }
+
     public function getActivo()
     {
         return $this->activo;
@@ -112,8 +124,15 @@ class UsuarioModel {
         $this->database = $database;
     }
 
-    protected function registrar($nombreUsuario, $pass, $rol){
-        return $this->database->insert("INSERT INTO usuario(nombreUsuario, pass, rol) 
-                                        VALUES('$nombreUsuario','$pass',$rol)");
+    protected function registrar(){
+        return $this->database->execute("INSERT INTO usuario (nombre, apellido, ubicacion, nombreUsuario, email, pass, rol, estado, activo)
+                                        VALUES('$this->nombre',
+                                               '$this->Apellido',
+                                                $this->ubicacion, 
+                                               '$this->email', 
+                                               '$this->pass', 
+                                                $this->>rol, 
+                                                $this->estado, 
+                                                $this->activo");
     }
 }

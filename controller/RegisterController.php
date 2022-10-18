@@ -18,7 +18,6 @@ class RegisterController{
         echo $this->render->render("public/view/registro.mustache");
     }
 
-    //el formulario llama a esta funcion
     public function validarRegistro()
     {
         $usuario = $this->usuarioValidado();
@@ -32,23 +31,28 @@ class RegisterController{
 
     private function usuarioValidado()
     {
-        $nombreUsuario = $_POST['usuario'] ?? false; //si esta seteado pone lo que recibe por post y si no false
-        $pass = $_POST['pass'] ?? false; //TODO enviar mensaje de error, falta validar
-        $nombre = $_POST['nombre'] ?? false;
-        $apellido = $_POST['apellido'] ?? false;
-        $dni = $_POST['dni'] ?? false;
-        $ubicacion = $_POST['ubicacion'] ?? false;
-        $email = $_POST['email'] ?? false;
+        $this->usuarioModel->setNombre($this->notEmpty("Nombre", $_POST['nombre']));
+        $this->usuarioModel->setApellido($this->notEmpty("Apellido", $_POST['apellido']));
+        $this->usuarioModel->setUbicacion($this->notEmpty("Ubicacíon", $_POST['ubicacion']));
+        $this->usuarioModel->setNombreUsuario($this->notEmpty("Nombre de usuario", $_POST['usuario']));
+        $this->usuarioModel->setPass($this->notEmpty("Password", $_POST['pass']));
+        $this->usuarioModel->setEmail($this->notEmpty("Email", $_POST['email']));
+        $this->usuarioModel->setRol(UsuarioModel::ROL_LECTOR);
+        $this->usuarioModel->setEstado(UsuarioModel::STATE_UNVERIFIED);
+        $this->usuarioModel->setActivo(1);
+
+        return $this->usuarioModel();
     }
 
-    private function notEmpty($string)
+    private function notEmpty($key, $value)
     {
-
+        !empty($value) ? $value : $this->sendError("El campo $key no puede ser vacío");
     }
 
     private function sendError($err_msg)
     {
-        
+        $data["error"] = $err_msg;
+        echo $this->render->render("public/view/registro.mustache", $data);
     }
 
 

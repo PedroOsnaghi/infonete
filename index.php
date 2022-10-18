@@ -1,5 +1,5 @@
 <?php
-include_once("helper/Configuration.php");
+include_once("config/Configuration.php");
 
 session_start();
 $configuration = new Configuration();

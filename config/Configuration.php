@@ -32,13 +32,20 @@ class Configuration
     public function getRegisterController()
     {
         $registerModel = $this->getRegisterModel();
-        return new RegisterController($registerModel, $this->getRender());
+        $usuarioModel = $this->getUsuarioModel();
+        return new RegisterController($registerModel, $usuarioModel, $this->getRender());
     }
 
     private function getRegisterModel()
     {
         return new RegisterModel($this->getDatabase());
     }
+
+    private function getUsuarioModel()
+    {
+        return new UsuarioModel($this->getDatabase());
+    }
+
 
     private function getConfig()
     {

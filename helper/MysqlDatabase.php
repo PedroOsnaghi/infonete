@@ -26,17 +26,12 @@ class MysqlDatabase
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    //actualizar, eliminar y retorna la cantidad de registros afectados (valor entero o 0)
+    //insertar, actualizar, eliminar y retorna la cantidad de registros afectados (valor entero o 0)
     public function execute($sql)
     {
         $this->connection->query($sql);
         return $this->connection->affected_rows;
     }
 
-    //inserta y te devuelve el id que inserta
-    public function insert($sql){
 
-        $this->connection->query($sql);
-        return $this->connection->insert_id;
-    }
 }
