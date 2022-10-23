@@ -6,18 +6,41 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Infonete-registrarse</title>
+
+    <!-- boostrap -->
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/global.css">
+
+
 </head>
 <body>
-    <h1>Registro</h1>
+    <div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <h4>Datos de cuenta</h4>
+    <hr>
     <form action="register/validar" method="POST">
-        <input type="text" name="nombre" placeholder="Ingrese su nombre" >
-        <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
-        <input type="text" name="ubicacion" placeholder="Ingrese su ubicacion" required>
-        <input type="email" name="email" placeholder="Ingrese su email" required>
-        <input type="text" name="usuario" placeholder="Ingrese nombre de usuario" required>
-        <input type="password" name="pass" placeholder="Ingrese contraseña" required>
+        <input class="form-control" type="text" name="nombre" placeholder="Nombre" >
+        <input class="form-control" type="text" name="apellido" placeholder="Apellido">
+        <input class="form-control" type="email" name="email" placeholder="email" >
+        <input class="form-control" type="password" name="pass" placeholder="Contraseña" >
+        <input class="form-control" type="password" name="" placeholder="Repita contraseña" >
+
+        <div>
+            <h3>Datos de Localizacion</h3>
+            <input id="pac-input" class="pac-controls" type="text" name="query" placeholder="ejemplo: Asuncion 1660 Buenos Aires Argentina" >
+            
+        </div>
         <input type="submit" value="Registrarse">
+
     </form>
+
+    <div id="map"></div>
     {{#success}}
         <h2>{{success}}</h2>
     {{/success}}
@@ -27,5 +50,13 @@
     {{/error}}
 
     <a href="login">Ir a Login</a>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="text/javascript" src="public/js/google.maps.js"></script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeluO_jCvIS_iT6Y3Thw8A6YJW5gyzh0M&callback=initAutocomplete&libraries=places&v=weekly"
+            defer>
+
+    </script>
+
 </body>
 </html>
