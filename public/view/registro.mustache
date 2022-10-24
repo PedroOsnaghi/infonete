@@ -8,39 +8,86 @@
     <title>Infonete-registrarse</title>
 
     <!-- boostrap -->
-    <link rel="stylesheet" href="public/css/bootstrap.css">
-    <link rel="stylesheet" href="public/css/global.css">
-
+    <link rel="stylesheet" href="/infonete/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/infonete/public/css/all.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/maps.css">
 
 </head>
-<body>
-    <div>
-        <div>
+<body class="bg-dark">
+    <main class="container">
+        <div class="container-register login-box rounded p-2 px-sm-5 mx-auto mt-4">
+            <div class="row align-items-center mb-2">
+                <div class="col-3">
+                    <a class="btn btn-secondary" ><i class="fa-solid fa-arrow-left me-2"></i>volver</a>
+                </div>
+
+                <h4 class="col-6">Registro de Usuario</h4>
+            </div>
+
+            <h5 class="mb-0">Datos de cuenta</h5>
+            <hr class="mt-0">
+            <form class="" action="register/validar" method="POST" >
+            <div class="row text-center">
+                <div class="col-sm-4 col-12 justify-content-center">
+                    <img class="profile w-100 d-block mx-auto mb-2" src="/infonete/public/images/profiles/default.png" alt="">
+                    <div class="file btn btn-success mb-2">
+                       <p><i class="fa-solid fa-camera me-2"></i>Cambiar</p>
+                        <input type="file" class="form-control">
+                    </div>
+
+                </div>
+                <div class="col-sm-8 col-12">
+                    <input class="form-control mb-2" type="text" name="nombre" placeholder="Nombre" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <input class="form-control mb-2" type="text" name="apellido" placeholder="Apellido" required>
+                    <input class="form-control mb-2" type="email" name="email" id="email" placeholder="email" required>
+                    <input class="form-control mb-2" type="password" name="pass" placeholder="Contraseña" required>
+                    <input class="form-control mb-2" type="password" name="" placeholder="Repita contraseña" required>
+
+                </div>
+            </div>
+                <h5 class="mb-0">Datos de Localización</h5>
+                <hr class="mt-0">
+
+                <div>
+
+                    <input id="pac-input" class="form-control mb-3" type="text" name="direccion" placeholder="Domicilio" required>
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text" id="basic-addon1">Lat:</span>
+                                <input type="text" class="form-control" name="lat" id="lat" placeholder="Geo-latitud" readonly/>
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text" id="basic-addon1">Lng:</span>
+                                <input type="text" class="form-control" name="lng" id="lng" placeholder="Geo-longitud" readonly/>
+                            </div>
+
+
+                        </div>
+                        <div class="col-8 mb-3" id="map">
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="text-center mb-3">
+                    <input class="btn btn-primary" type="submit" value="Registrarse">
+                </div>
+
+
+            </form>
+
 
         </div>
-        <div>
+    </main>
 
-        </div>
-    </div>
-    <h4>Datos de cuenta</h4>
-    <hr>
-    <form action="register/validar" method="POST">
-        <input class="form-control" type="text" name="nombre" placeholder="Nombre" >
-        <input class="form-control" type="text" name="apellido" placeholder="Apellido">
-        <input class="form-control" type="email" name="email" placeholder="email" >
-        <input class="form-control" type="password" name="pass" placeholder="Contraseña" >
-        <input class="form-control" type="password" name="" placeholder="Repita contraseña" >
-
-        <div>
-            <h3>Datos de Localizacion</h3>
-            <input id="pac-input" class="pac-controls" type="text" name="query" placeholder="ejemplo: Asuncion 1660 Buenos Aires Argentina" >
-            
-        </div>
-        <input type="submit" value="Registrarse">
-
-    </form>
-
-    <div id="map"></div>
     {{#success}}
         <h2>{{success}}</h2>
     {{/success}}
@@ -49,14 +96,18 @@
         <h2>{{error}}</h2>
     {{/error}}
 
-    <a href="login">Ir a Login</a>
+
+    <script src="/infonete/public/js/jquery-1.11.3.min.js"></script>
+    <script src="/infonete/public/js/register.js"></script>
+    <script src="/infonete/public/js/bootstrap.bundle.js"></script>
+    <script src="/infonete/public/js/bootstrap.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script type="text/javascript" src="public/js/google.maps.js"></script>
+
     <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeluO_jCvIS_iT6Y3Thw8A6YJW5gyzh0M&callback=initAutocomplete&libraries=places&v=weekly"
             defer>
 
     </script>
-
+    <script type="text/javascript" src="public/js/google.maps.js"></script>
 </body>
 </html>
