@@ -3,6 +3,8 @@
 :root{
 
     --light-gray: #6e6e6e;
+    --blue-primary: #007EC3;
+    --blue-primary-hover: #004f7e;
 }
 
 
@@ -11,4 +13,16 @@
 
 .text-gray{
     color: var(--light-gray);
+}
+
+
+
+.btn-primary{
+    background-color: var(--blue-primary)!important;
+    border-color: var(--blue-primary)!important;
+}
+
+.btn-primary:hover{
+    background-color: var(--blue-primary-hover)!important;
+    border-color: var(--blue-primary-hover)!important;
 }

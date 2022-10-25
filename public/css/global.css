@@ -1,5 +1,9 @@
 @import url("color.css");
 
+.brand-logo{
+    max-width: 200px;
+}
+
 .container-login{
     max-width: 600px;
 
@@ -78,4 +82,10 @@ input[type="file"]{
     border-color: #198754;
 
 }
-
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(13, 110, 253, 0.25);
+}
