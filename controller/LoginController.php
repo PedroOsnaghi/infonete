@@ -5,16 +5,15 @@ class LoginController
 
     private $render;//render llama a la vista
     private $loginModel;
+    private $session;
 
-    public function __construct($loginModel, $render)
+    public function __construct($loginModel, $session, $render)
     {
         $this->loginModel = $loginModel;
+        $this->session = $session;
         $this->render = $render;
     }
 
-    //cuando se ejecuta excecute muestra la vista de Login
-    //se ejecuta cuando no especificamos un metodo por la url
-    //infonete.com/login
     public function execute()
     {
         echo $this->render->render("public/view/login.mustache");
@@ -23,19 +22,46 @@ class LoginController
     public function validar()
     {
         //validar info
-        $nombreUsuario = $_POST['usuario'] ?? false; //si esta seteado pone lo que recibe por post y si no false
-        $pass = $_POST['pass'] ?? false; //TODO enviar mensaje de error, falta validar
+        $email = $_POST['email'];
+        $pass = $_POST['pass'] ;
 
-        //llamar a auth de Login Model
-        $result = $this->loginModel->auth($nombreUsuario, $pass);
+        $usuarioAuth = $this->loginModel->auth($email, hasher::encrypt($pass));
 
-        // $result es un arreglo con la cantidad de elementos encontrados
-        if (sizeof($result) > 0) {
-            echo $this->render->render("public/view/home.mustache");
-        } else {
-            $data['error'] = "Nombre de usuario y/o contraseña incorrecta";
+        // $usuarioAuth es un objeto usuario o null
+        if ($usuarioAuth != null){
+            $this->validateActivation($usuarioAuth);
+        }else{
+            $this->errorAccess();
+        }
+
+
+
+    }
+
+    private function validateActivation($user)
+    {
+        if($user->getEstado() == UsuarioModel::STATE_UNVERIFIED){
+            $data['error'] = "La cuenta aún no fue verificada. se envio un correo a " . $user->getEmail() ." con el link de verificación";
             echo $this->render->render("public/view/login.mustache", $data);
         }
+        //si esta verificada
+        $this->iniciarSession($user);
+        $this->goToHome();
+    }
+
+    private function errorAccess(){
+        $data['error'] = "Correo y/o contraseña incorrecta";
+        echo $this->render->render("public/view/login.mustache", $data);
+    }
+
+    private function iniciarSession($user){
+        //guardamos los datos del usuario en la session para poder
+        //accederlos a lo largo de la aplicacion
+        $this->session->setAuthUser($user);
+    }
+
+    private function goToHome(){
+        echo $this->render->render("public/view/home.mustache");
     }
 
 }

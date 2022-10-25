@@ -14,16 +14,20 @@ class UsuarioModel {
 
     //Propiedades
     private $nombre;
-    private $apellido; 
-    private $ubicacion;
+    private $apellido;
     private $pass;
-    private $nombreUsuario;
     private $email;
+    private $avatar;
+    private $domicilio;
+    private $latitud;
+    private $longitud;
     private $activo;
     private $estado;
+    private $hash;
     private $rol;
 
     private $database;
+
 
 
     //Getters & Setters
@@ -47,16 +51,6 @@ class UsuarioModel {
         $this->apellido = $apellido;
     }
 
-    public function getUbicacion()
-    {
-        return $this->ubicacion;
-    }
-
-    public function setUbicacion($ubicacion)
-    {
-        $this->ubicacion = $ubicacion;
-    }
-
     public function getPass()
     {
         return $this->pass;
@@ -67,15 +61,6 @@ class UsuarioModel {
         $this->pass = $pass;
     }
 
-    public function getNombreUsuario()
-    {
-        return $this->nombreUsuario;
-    }
-
-    public function setNombreUsuario($nombreUsuario)
-    {
-        $this->nombreUsuario = $nombreUsuario;
-    }
 
     public function getEmail()
     {
@@ -85,6 +70,46 @@ class UsuarioModel {
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    public function getLongitud()
+    {
+        return $this->longitud;
+    }
+
+    public function setLongitud($longitud)
+    {
+        $this->longitud = $longitud;
+    }
+
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+    }
+
+    public function getDomicilio()
+    {
+        return $this->domicilio;
+    }
+
+    public function setDomicilio($domicilio)
+    {
+        $this->domicilio = $domicilio;
+    }
+
+    public function getLatitud()
+    {
+        return $this->latitud;
+    }
+
+    public function setLatitud($latitud)
+    {
+        $this->latitud = $latitud;
     }
 
     public function getRol()
@@ -117,6 +142,17 @@ class UsuarioModel {
         $this->estado = $estado;
     }
 
+    public function getHash()
+    {
+        return $this->hash;
+    }
+
+    public function setHash($hash)
+    {
+        $this->hash = $hash;
+    }
+
+
 
 
     public function __construct($database)
@@ -124,15 +160,28 @@ class UsuarioModel {
         $this->database = $database;
     }
 
-    protected function registrar(){
-        return $this->database->execute("INSERT INTO usuario (nombre, apellido, ubicacion, nombreUsuario, email, pass, rol, estado, activo)
+    public function registrar(){
+
+        return $this->database->execute("INSERT INTO usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo)
                                         VALUES('$this->nombre',
-                                               '$this->Apellido',
-                                                $this->ubicacion, 
+                                               '$this->apellido',
                                                '$this->email', 
                                                '$this->pass', 
-                                                $this->>rol, 
+                                               '$this->domicilio',
+                                               '$this->latitud',
+                                               '$this->longitud',
+                                               '$this->avatar',
+                                               '$this->hash',
+                                                $this->rol, 
                                                 $this->estado, 
-                                                $this->activo");
+                                                $this->activo)");
+    }
+
+    public function activate($email, $hash){
+        return $this->database->execute("UPDATE usuario SET estado =" . self::STATE_VERIFIED . " WHERE email ='" . $email . "' AND vhash = '" . $hash ."'" );
+    }
+
+    public function existeEmail($email){
+        return $this->database->query("SELECT COUNT(email) 'email' FROM usuario WHERE email='". $email ."' GROUP BY email");
     }
 }

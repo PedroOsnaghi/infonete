@@ -1,7 +1,21 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//HELPERS
 include_once("helper/MysqlDatabase.php");
 include_once("helper/Render.php");
 include_once("helper/UrlHelper.php");
+include_once("helper/hasher.php");
+include_once("helper/Client.php");
+include_once("helper/GeoPosition.php");
+include_once("helper/Mailer.php");
+include_once("helper/File.php");
+include_once("helper/Session.php");
+
+
 
 //MODELOS
 include_once("model/LoginModel.php");
@@ -11,7 +25,12 @@ include_once("model/UsuarioModel.php");
 //CONTROLADORES
 include_once("controller/LoginController.php");
 include_once("controller/RegisterController.php");
+include_once("controller/UsuarioController.php");
 
+//vendor
+require ('third-party/PHPMailer-master/src/Exception.php');
+require ('third-party/PHPMailer-master/src/PHPMailer.php');
+require ('third-party/PHPMailer-master/src/SMTP.php');
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
 
@@ -20,20 +39,27 @@ class Configuration
     public function getLoginModel()
     {
         $database = $this->getDatabase();
-        return new LoginModel($database);
+        return new LoginModel($database, $this->getUsuarioModel());
     }
 
     public function getLoginController()
     {
         $loginModel = $this->getLoginModel();
-        return new LoginController($loginModel, $this->getRender());
+        return new LoginController($loginModel, $this->getSession(), $this->getRender());
     }
 
     public function getRegisterController()
     {
         $registerModel = $this->getRegisterModel();
         $usuarioModel = $this->getUsuarioModel();
-        return new RegisterController($registerModel, $usuarioModel, $this->getRender());
+        $mailer = $this->getMailer();
+        $file = $this->getFile();
+        return new RegisterController($registerModel, $usuarioModel, $mailer, $file, $this->getRender());
+    }
+
+    public function getUsuarioController()
+    {
+        return new UsuarioController($this->getUsuarioModel(), $this->getRender());
     }
 
     private function getRegisterModel()
@@ -76,6 +102,41 @@ class Configuration
             $config["password"],
             $config["dbname"]
         );
+    }
+
+    //TODO agregar apiKey al archivo config
+    private function getGeoposition()
+    {
+        $config = $this->getConfig();
+
+        return new GeoPosition($this->getClient(), $config["google_maps_api_key"]);
+    }
+
+    private function getClient()
+    {
+        return new Client();
+    }
+
+    private function getMailer()
+    {
+        $config = $this->getConfig();
+        return new Mailer(new PHPMailer(true),
+            $config['email_user'],
+            $config['email_pass'],
+            $config['smtp_host'],
+            $config['smtp_port']);
+    }
+
+    private function getFile()
+    {
+        $config = $this->getConfig();
+        return new File($config['upload_root_dir']);
+    }
+
+    private function getSession()
+    {
+
+        return new Session();
     }
 
 

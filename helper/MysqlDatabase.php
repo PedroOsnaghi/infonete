@@ -22,8 +22,7 @@ class MysqlDatabase
     //solo consulta y retorna un array asociativo con los resultados
     public function query($sql)
     {
-        $result = mysqli_query($this->connection, $sql);
-        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $this->connection->query($sql)->fetch_assoc();
     }
 
     //insertar, actualizar, eliminar y retorna la cantidad de registros afectados (valor entero o 0)
