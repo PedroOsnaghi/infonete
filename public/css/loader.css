@@ -1,0 +1,50 @@
+/*LOADER*/
+#loader{
+    position: absolute;
+    top: calc(50% - 75px);
+    left:calc(50% - 150px);
+    display: block;
+    text-align: center;
+    padding: 0px!important;
+}
+.loader-content{
+    height: 150px;
+    width: 300px;
+    margin: 0px auto;
+}
+
+.loader{
+    width: 40%;
+    max-width: 300px;
+
+    display: block;
+    margin: 0px auto;
+    padding-bottom: 10px;
+
+
+}
+
+.animate{
+    -webkit-animation: loaderAnimate 4s ease-in;
+    animation: loaderAnimate 4s ease-in;
+}
+
+
+
+@keyframes loaderAnimate{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

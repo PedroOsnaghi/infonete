@@ -29,10 +29,29 @@
         e.stopPropagation();
 
         if (document.querySelectorAll(".invalid-feedback").length == 0){
-            
-            this.submit()
+            cargarLoader().then(res => {
+                enviarFromulario();
+            });
+
         }
     });
+
+    function cargarLoader(){
+
+        return new Promise((resolve, reject) =>{
+            let loader = document.getElementById("loader");
+            let registro = document.getElementById("register");
+            registro.classList.add("hidden");
+            loader.classList.remove("hidden");
+
+            return resolve(true);
+        });
+    }
+
+    function enviarFromulario(){
+
+        form.submit();
+    }
 
 
 
