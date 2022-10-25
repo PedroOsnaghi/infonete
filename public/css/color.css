@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+:root{
+
+    --light-gray: #6e6e6e;
+}
+
+
+
+/**color de fuentes**/
+
+.text-gray{
+    color: var(--light-gray);
+}

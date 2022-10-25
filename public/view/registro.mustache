@@ -19,7 +19,7 @@
         <div class="container-register login-box rounded p-2 px-sm-5 mx-auto mt-4">
             <div class="row align-items-center mb-2">
                 <div class="col-3">
-                    <a class="btn btn-secondary" ><i class="fa-solid fa-arrow-left me-2"></i>volver</a>
+                    <a class="btn btn-secondary" href="/infonete/login" ><i class="fa-solid fa-arrow-left me-2"></i>volver</a>
                 </div>
 
                 <h4 class="col-6">Registro de Usuario</h4>
@@ -27,13 +27,13 @@
 
             <h5 class="mb-0">Datos de cuenta</h5>
             <hr class="mt-0">
-            <form class="" action="register/validar" method="POST" >
+            <form id="form" action="register/validar" method="POST" enctype="multipart/form-data">
             <div class="row text-center">
                 <div class="col-sm-4 col-12 justify-content-center">
-                    <img class="profile w-100 d-block mx-auto mb-2" src="/infonete/public/images/profiles/default.png" alt="">
+                    <img class="profile large d-block mx-auto mb-2" id="preview" src="/infonete/public/uploads/profiles/default.png" alt="">
                     <div class="file btn btn-success mb-2">
                        <p><i class="fa-solid fa-camera me-2"></i>Cambiar</p>
-                        <input type="file" class="form-control">
+                        <input type="file" accept="image/png,image/jpeg" id="file" name="file" class="form-control">
                     </div>
 
                 </div>
@@ -45,25 +45,40 @@
                     <div id="mail-validate-msg" class="text-start valid-feedback">
 
                     </div>
-                    <input class="form-control my-2" type="password" name="pass" placeholder="Contraseña" required>
-                    <input class="form-control mb-2" type="password" name="" placeholder="Repita contraseña" required>
+
+                    <div class="input-group my-2">
+                        <input class="form-control" type="password" name="pass" id="pass" placeholder="Contraseña" required>
+                        <button class="input-group-text text-gray view" type="button" for="pass"  pass-view><i class="fa-solid fa-eye"></i></button>
+                    </div>
+
+                    <div class="input-group my-2 mb-0">
+                        <input  class="form-control" type="password" id="pass-rpt"  placeholder="Repita contraseña" required>
+                        <button class="input-group-text text-gray view" type="button" for="pass-rpt" pass-view><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div id="pass-validate-msg" class="text-start valid-feedback">
+
+                    </div>
+
+
 
                 </div>
             </div>
-                <h5 class="mb-0">Datos de Localización</h5>
+                <h5 class="mb-0 mt-3">Datos de Localización</h5>
                 <hr class="mt-0">
 
                 <div>
 
-                    <input id="pac-input" class="form-control mb-3" type="text" name="direccion" placeholder="Domicilio" required>
+                    <input id="pac-input" class="form-control mb-0" type="text" name="direccion" placeholder="Domicilio" required>
+                    <div id="dir-validate-msg" class="text-start valid-feedback">
 
+                    </div>
                     <div class="col-12">
                         <div class="row">
-                            <div class="input-group mb-3 col">
+                            <div class="input-group my-3 col">
                                 <span class="input-group-text" id="basic-addon1">Lat:</span>
                                 <input type="text" class="form-control" name="lat" id="lat" placeholder="Geo-latitud" readonly/>
                             </div>
-                            <div class="input-group mb-3 col">
+                            <div class="input-group my-3 col">
                                 <span class="input-group-text" id="basic-addon1">Lng:</span>
                                 <input type="text" class="form-control" name="lng" id="lng" placeholder="Geo-longitud" readonly/>
                             </div>
@@ -99,7 +114,8 @@
 
 
     <script src="/infonete/public/js/jquery-1.11.3.min.js"></script>
-    <script src="/infonete/public/js/register.js"></script>
+    <script src="/infonete/public/js/preview.js"></script>
+
     <script src="/infonete/public/js/bootstrap.bundle.js"></script>
     <script src="/infonete/public/js/bootstrap.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -110,5 +126,6 @@
 
     </script>
     <script type="text/javascript" src="public/js/google.maps.js"></script>
+    <script src="/infonete/public/js/register.js"></script>
 </body>
 </html>

@@ -15,11 +15,11 @@
                 <h2>Inicia sesión</h2>
                 <form action="infonete/login/validar" method="POST">
                     <div class="form-floating my-3">
-                      <input type="text" class="form-control" name="usuario" id="floatingInput" placeholder="Nombre de Usuario">
-                      <label  for="floatingInput">Nombre de usuario</label>
+                      <input type="text" class="form-control" name="email" id="floatingInput" placeholder="Correo electónico" required>
+                      <label  for="floatingInput">Correo electónico</label>
                     </div>
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" name="pass" id="floatingPassword" placeholder="Contraseña">
+                      <input type="password" class="form-control" name="pass" id="floatingPassword" placeholder="Contraseña" required>
                       <label for="floatingPassword">Contraseña</label>
                     </div>
                     <input class="btn btn-primary" type="submit" value="Ingresar">

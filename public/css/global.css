@@ -1,3 +1,4 @@
+@import url("color.css");
 
 .container-login{
     max-width: 600px;
@@ -33,41 +34,19 @@ img .profile{
     margin: 0px auto!important;
     overflow:hidden;
     flex-shrink:0;
-    max-width: 80px;
+
 
 }
 
-.medium{
-    width: 70px;
-    height: 70px;
-
-}
-
-img .medium{
-    width: 65px;
-    height: 65px;
-}
-
-.x-medium{
-    width: 80px;
-    min-width: 80px;
-    height: 80px!important;
-}
-
-
-.x-medium > img{
-    width: 75px;
-    height: 75px;
-}
 
 .large > img{
-    width: 195px;
-    height: 195px;
+    width: 145px;
+    height: 145px;
 }
 
 .large{
-    width: 200px;
-    height: 200px;
+    width: 150px!important;
+    height: 150px!important;
 }
 
 .file{
@@ -85,23 +64,18 @@ img .medium{
 
 input[type="file"]{
     position: absolute;
+    top:0px;
+    left: 0px;
     opacity: 0;
 }
 
 .invalid{
     border-color: #dc3545;
-    padding-right: calc(1.5em + 0.75rem);
-    background-image: url("/infonete/public/svg/invalid.svg");
-    background-repeat: no-repeat;
-    background-position: right calc(0.375em + 0.1875rem) center;
-    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
 }
 
 .valid{
     border-color: #198754;
-    padding-right: calc(1.5em + 0.75rem);
-    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e);
-    background-repeat: no-repeat;
-    background-position: right calc(0.375em + 0.1875rem) center;
-    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
 }
+

@@ -2,6 +2,28 @@
 
 var input_lat = document.getElementById("lat");
 var input_lng = document.getElementById("lng");
+var lat = document.getElementById("lat");
+var dirmsg = document.getElementById('dir-validate-msg');
+
+
+function valid(input, msg){
+    input.classList.remove('invalid');
+    msg.classList.remove('invalid-feedback');
+    msg.classList.add('valid-feedback');
+    msg.innerHTML=' <i class="fa-solid fa-check me-2"></i></i> Se geo-posicionó correctamente.';
+    msg.style.display = 'block';
+}
+function invalid(input, msg){
+    input.classList.add('invalid');
+    msg.classList.remove('valid-feedback');
+    msg.classList.add('invalid-feedback');
+    msg.innerHTML=' <i class="fa-solid fa-circle-exclamation me-2"></i> Seleccione su direccion de la lista desplegable.';
+    msg.style.display = 'block';
+}
+
+// Creamos Search Box y lo linkeamos al input
+var input = document.getElementById("pac-input");
+
 
 function initAutocomplete() {
 
@@ -12,8 +34,6 @@ function initAutocomplete() {
         mapTypeId: 'roadmap'
     });
 
-    // Creamos Search Box y lo linkeamos al input
-    var input = document.getElementById("pac-input");
 
     var searchBox = new google.maps.places.SearchBox(input);
 
@@ -79,6 +99,7 @@ function initAutocomplete() {
             }
             input_lat.value = place.geometry.location.lat();
             input_lng.value = place.geometry.location.lng();
+            valid(input, dirmsg);
         });
 
         map.zoom = 15;
@@ -90,6 +111,19 @@ function initAutocomplete() {
 
 
     });
+
+
 }
+
+
+
+input.addEventListener("change", function (){
+
+    if(lat.value == '' && lng.value == ''){
+        invalid(this, dirmsg);
+    }else{
+        valid(this, dirmsg);
+    }
+});
 window.initAutocomplete = initAutocomplete;
 
