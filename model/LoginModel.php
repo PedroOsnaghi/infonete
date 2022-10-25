@@ -21,7 +21,7 @@ class LoginModel
         $query = $this->database->query("SELECT * FROM usuario WHERE email = '$email' AND pass = '$pass'");
 
         if ($query != null)
-        {return $this->toUser($query);}
+            return $this->toUser($query);
 
         return null;
 
