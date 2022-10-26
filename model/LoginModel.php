@@ -29,6 +29,7 @@ class LoginModel
 
     private function toUser($query)
     {
+        $this->usuarioModel->setId($query['id']);
         $this->usuarioModel->setNombre($query['nombre']);
         $this->usuarioModel->setApellido($query['apellido']);
         $this->usuarioModel->setPass($query['pass']);

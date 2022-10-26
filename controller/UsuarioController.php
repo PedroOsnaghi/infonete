@@ -23,6 +23,8 @@ class UsuarioController{
 
   }
 
+
+
   public function existeEmail(){
       $email = $_GET['email'];
 
@@ -31,6 +33,8 @@ class UsuarioController{
       header('Content-Type: application/json');
 
       echo json_encode($res,JSON_FORCE_OBJECT);
+
+
 
   }
 }

@@ -185,3 +185,5 @@ class UsuarioModel {
         return $this->database->query("SELECT COUNT(email) 'email' FROM usuario WHERE email='". $email ."' GROUP BY email");
     }
 }
+
+// []
