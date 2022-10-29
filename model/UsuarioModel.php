@@ -13,6 +13,7 @@ class UsuarioModel {
     const STATE_VERIFIED = 1;
 
     //Propiedades
+    private $id;
     private $nombre;
     private $apellido;
     private $pass;
@@ -28,9 +29,17 @@ class UsuarioModel {
 
     private $database;
 
-
-
     //Getters & Setters
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
     public function getNombre()
     {
         return $this->nombre;

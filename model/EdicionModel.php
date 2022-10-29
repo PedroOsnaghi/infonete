@@ -65,6 +65,7 @@ class EdicionModel
         $this->database = $database;
     }
 
+
     public function guardar()
     {
         return $this->database->execute("INSERT INTO edicion (numero, precio, fecha, id_producto) VALUES ($this->numero, $this->precio, '$this->fecha', $this->producto)");

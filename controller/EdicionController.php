@@ -12,6 +12,11 @@ class EdicionController
         $this->render = $render;
     }
 
+    public function execute()
+    {
+
+    }
+
     public function crear(){
         echo $this->render->render("public/view/edicion.mustache");
     }
