@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/infonete/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/infonete/public/css/global.css">
+    <title>Crear Producto</title>
+</head>
+<body>
+<h2>Crear Producto</h2>
+<!--el enctype multipart form data se pone para enviar archivos-->
+<form action="/infonete/producto/guardar" method="post" enctype="multipart/form-data">
+    <input class="form-control mb-2" type="text" name="nombre" placeholder="Nombre">
+    <select class="form-control mb-2" id="tipo" name="tipo">
+        <option value="0" disabled selected hidden>Seleccione un tipo</option>
+        <option value="1">DIARIO</option>
+        <option value="2">REVISTA</option>
+    </select>
+
+    <div class="btn btn-secondary">
+        Seleccione portada...
+        <input class="form-control mb-2" type="file" name="file" id="file">
+    </div>
+
+    {{#success}}
+        <div class="alert alert-success" role="alert">
+            {{success}}
+        </div>
+    {{/success}}
+
+    {{#error}}
+        <div class="alert alert-danger" role="alert">
+            {{error}}
+        </div>
+    {{/error}}
+
+    <button class="btn btn-primary mb-2" type="submit">Guardar</button>
+</form>
+</body>
+</html>

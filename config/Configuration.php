@@ -16,26 +16,53 @@ include_once("helper/File.php");
 include_once("helper/Session.php");
 
 
-
 //MODELOS
 include_once("model/LoginModel.php");
 include_once("model/RegisterModel.php");
 include_once("model/UsuarioModel.php");
+include_once("model/ProductoModel.php");
+include_once("model/EdicionModel.php");
 
 //CONTROLADORES
 include_once("controller/LoginController.php");
 include_once("controller/RegisterController.php");
 include_once("controller/UsuarioController.php");
+include_once("controller/ProductoController.php");
+include_once("controller/EdicionController.php");
 
 //vendor
-require ('third-party/PHPMailer-master/src/Exception.php');
-require ('third-party/PHPMailer-master/src/PHPMailer.php');
-require ('third-party/PHPMailer-master/src/SMTP.php');
+require('third-party/PHPMailer-master/src/Exception.php');
+require('third-party/PHPMailer-master/src/PHPMailer.php');
+require('third-party/PHPMailer-master/src/SMTP.php');
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
 
 class Configuration
 {
+    public function getEdicionModel()
+    {
+        $database = $this->getDatabase();
+        return new EdicionModel($database);
+    }
+
+    public function getEdicionController()
+    {
+        $edicionModel = $this->getEdicionModel();
+        return new EdicionController($edicionModel, $this->getRender());
+    }
+
+    public function getProductoModel()
+    {
+        $database = $this->getDatabase();
+        return new ProductoModel($database);
+    }
+
+    public function getProductoController()
+    {
+        $productoModel = $this->getProductoModel();
+        return new ProductoController($productoModel, $this->getFile(), $this->getRender());
+    }
+
     public function getLoginModel()
     {
         $database = $this->getDatabase();
