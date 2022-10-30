@@ -24,6 +24,7 @@ include_once("model/ProductoModel.php");
 include_once("model/EdicionModel.php");
 
 //CONTROLADORES
+include_once("controller/IndexController.php");
 include_once("controller/LoginController.php");
 include_once("controller/RegisterController.php");
 include_once("controller/UsuarioController.php");
@@ -39,6 +40,11 @@ include_once("Router.php");
 
 class Configuration
 {
+    public function getIndexController()
+    {
+        return new IndexController($this->getRender());
+    }
+
     public function getEdicionModel()
     {
         $database = $this->getDatabase();

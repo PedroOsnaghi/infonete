@@ -104,10 +104,12 @@ tipo varchar(100));
 
 create table archivo(
 id int primary key auto_increment,
+id_articulo int,
 id_tipo int,
 nombre varchar(100),
 size float,
-foreign key(id_tipo) references tipo_archivo(id));
+foreign key(id_tipo) references tipo_archivo(id),
+foreign key(id_articulo) references articulo(id));
 
 
 insert into usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo) 
