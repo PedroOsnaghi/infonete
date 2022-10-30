@@ -2,22 +2,54 @@
 
 class ArticuloController
 {
-    //CONSTANTES
-    const ART_ST_DRAFT = 1;
-    const ART_ST_A_PUBLICAR = 2;
-    const ART_ST_PUBLICADO = 3;
-    const ART_ST_BAJA = 0;
-
     //PROPIEDADES
-    private $id;
-    private $titulo;
-    private $subtitulo;
-    private $contenido;
-    private $link;
-    private $linkvideo;
-    private $create_at;
-    private $update_at;
-    private $estado;
+    private $articuloModel;
+    private $render;
 
+    public function __construct($articuloModel, $render)
+    {
+        $this->articuloModel = $articuloModel;
+        $this->render = $render;
+    }
+
+    public function execute()
+    {
+
+    }
+
+    public function crear()
+    {
+        echo $this->render->render("public/view/articulo.mustache");
+    }
+
+    public function guardar()
+    {
+        $this->setearArticulo();
+
+        ($this->articuloModel->guardar()) ?
+            $data['success'] = "El articulo se guardó correctamente" :
+            $data['error'] = "Hubo un error al guardar el articulo";
+
+        echo $this->render->render("public/view/articulo.mustache", $data);
+    }
+
+    private function setearArticulo()
+    {
+        $this->articuloModel->setTitulo($_POST['titulo']);
+        $this->articuloModel->setSubtitulo($_POST['subtitulo']);
+        $this->articuloModel->setContenido($_POST['contenido']);
+        $this->articuloModel->setLink($_POST['link']);
+        $this->articuloModel->setLinkvideo($_POST['linkvideo']);
+        $this->articuloModel->setCreateAt($this->getFechaHoraActual());
+        $this->articuloModel->setUpdateAt($this->getFechaHoraActual());
+        $this->articuloModel->setEstado(1);
+    }
+
+    private function getFechaHoraActual()
+    {
+        $datetime = new DateTime();
+        $datetime->setTimezone(new DateTimeZone('America/Argentina/Buenos_Aires'));
+        return $datetime->format("y-m-d H:i:s");
+    }
 
 }

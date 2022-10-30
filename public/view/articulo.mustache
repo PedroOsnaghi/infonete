@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/infonete/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/infonete/public/css/global.css">
+    <title>Crear articulo</title>
+</head>
+<body>
+
+<h2>Crear Articulo</h2>
+
+<form action="/infonete/articulo/guardar" method="post" enctype="multipart/form-data">
+    <input class="form-control mb-2" type="text" name="titulo" placeholder="Título">
+    <input class="form-control mb-2" type="text" name="subtitulo" placeholder="Subtitulo">
+    <input class="form-control mb-2" type="text" name="contenido" placeholder="Contenido">
+    <input class="form-control mb-2" type="text" name="link" placeholder="Link">
+    <input class="form-control mb-2" type="text" name="linkvideo" placeholder="Link del video">
+
+    {{#success}}
+        <div class="alert alert-success" role="alert">
+            {{success}}
+        </div>
+    {{/success}}
+
+    {{#error}}
+        <div class="alert alert-danger" role="alert">
+            {{error}}
+        </div>
+    {{/error}}
+
+    <button class="btn btn-primary mb-2" type="submit">Guardar</button>
+</form>
+</body>
+</html>
