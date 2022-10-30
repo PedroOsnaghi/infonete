@@ -25,7 +25,7 @@ matrix:
     - php: 7.4snapshot
 
 script:
-  - '[[ "$TRAVIS_PHP_VERSION" = 5.2* ]] && phpunit || vendor/bin/phpunit --verbose'
+  - '[[ "$TRAVIS_PHP_VERSION" = 5.2* ]] && phpunit || vendors/bin/phpunit --verbose'
 
 install:
   - '[[ "$TRAVIS_PHP_VERSION" = 5.2* ]] || composer install'

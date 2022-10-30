@@ -2,20 +2,28 @@
 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="index.mustache"><img src="assets/images/logo.svg" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="index.mustache"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo" href="index.mustache"><img src="public/images/logo/logo.png" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="index.mustache"><img src="public/images/logo/logo-single.png" alt="logo" /></a>
     </div>
     <ul class="nav">
+        <ul class="navbar-nav mx-2" >
+            <li class=" d-lg-none d-block my-1">
+                <a class="nav-link btn btn-info btn-fw mx-1"  href="#">Registrarse</a>
+            </li>
+            <li class=" d-lg-none d-block mb-2">
+                <a class="nav-link btn btn-primary btn-fw mx-1"  href="#">Iniciar sesión</a>
+            </li>
+        </ul>
         <li class="nav-item profile">
             <div class="profile-desc">
                 <div class="profile-pic">
                     <div class="count-indicator">
-                        <img class="img-xs rounded-circle " src="assets/images/faces/face15.jpg" alt="">
+                        <img class="img-xs rounded-circle " src="public/uploads/profiles/default.png" alt="">
                         <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                        <span>Gold Member</span>
+                        <h5 class="mb-0 font-weight-normal">Pedro Osnaghi</h5>
+                        <span>Usuario lector</span>
                     </div>
                 </div>
                 <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -27,7 +35,7 @@
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                            <p class="preview-subject ellipsis mb-1 text-small">Opciones de cuenta</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
@@ -38,7 +46,7 @@
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                            <p class="preview-subject ellipsis mb-1 text-small">Cambiar contraseña</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
@@ -56,7 +64,26 @@
             </div>
         </li>
         <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
+            <span class="nav-link">Mi cuenta</span>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="index.mustache">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+                <span class="menu-title">Suscripciones</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="index.mustache">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+                <span class="menu-title">Mis productos</span>
+            </a>
+        </li>
+        <li class="nav-item nav-category">
+            <span class="nav-link">Panel Administrador</span>
         </li>
         <li class="nav-item menu-items">
             <a class="nav-link" href="index.mustache">
@@ -66,7 +93,7 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-        <li class="nav-item menu-items">
+      <!--  <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
@@ -139,6 +166,6 @@
               </span>
                 <span class="menu-title">Documentation</span>
             </a>
-        </li>
+        </li> -->
     </ul>
 </nav>

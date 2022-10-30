@@ -31,7 +31,7 @@ include_once("controller/UsuarioController.php");
 include_once("controller/ProductoController.php");
 include_once("controller/EdicionController.php");
 
-//vendor
+//vendors
 require('third-party/PHPMailer-master/src/Exception.php');
 require('third-party/PHPMailer-master/src/PHPMailer.php');
 require('third-party/PHPMailer-master/src/SMTP.php');

@@ -99,6 +99,25 @@
   * Landing screens
     + Auth
     + Lock Screen
+
+/**OVERRIDE**/
+.sidebar .sidebar-brand-wrapper .sidebar-brand img {
+  width: 60% !important;
+  max-width: 100% !important;
+  height: 40px !important;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini img {
+  width: 95%!important;
+  max-width: 100%!important;
+  height: 37px!important;
+  margin: auto;
+}
+
+
+
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------*/
 /* === Import Bootstrap functions and variables === */

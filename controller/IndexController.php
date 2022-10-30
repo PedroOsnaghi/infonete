@@ -12,7 +12,7 @@ class IndexController
 
     public function execute()
     {
-        echo $this->render->render("pubic/view/index.mustache");
+        echo $this->render->render("public/view/index.mustache");
     }
 
 }
