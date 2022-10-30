@@ -22,6 +22,7 @@ include_once("model/RegisterModel.php");
 include_once("model/UsuarioModel.php");
 include_once("model/ProductoModel.php");
 include_once("model/EdicionModel.php");
+include_once("model/SeccionModel.php");
 
 //CONTROLADORES
 include_once("controller/LoginController.php");
@@ -29,6 +30,7 @@ include_once("controller/RegisterController.php");
 include_once("controller/UsuarioController.php");
 include_once("controller/ProductoController.php");
 include_once("controller/EdicionController.php");
+include_once("controller/SeccionController.php");
 
 //vendor
 require('third-party/PHPMailer-master/src/Exception.php');
@@ -39,6 +41,18 @@ include_once("Router.php");
 
 class Configuration
 {
+    public function getSeccionModel()
+    {
+        $database = $this->getDatabase();
+        return new SeccionModel($database);
+    }
+
+    public function getSeccionController()
+    {
+        $seccionModel = $this->getSeccionModel();
+        return new SeccionController($seccionModel, $this->getRender());
+    }
+
     public function getEdicionModel()
     {
         $database = $this->getDatabase();
