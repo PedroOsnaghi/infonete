@@ -1,3 +1,4 @@
+@import url("/infonete/public/css/color.css");
 /*-------------------------------------------------------------------
   ===== Table of Contents =====
 
@@ -101,24 +102,40 @@
     + Lock Screen
 
 /**OVERRIDE**/
-.sidebar .sidebar-brand-wrapper .sidebar-brand img {
-  width: 60% !important;
-  max-width: 100% !important;
-  height: 40px !important;
-  margin: auto;
-  vertical-align: middle;
+.form-control, .asColorPicker-input, .dataTables_wrapper select, .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--single .select2-search__field, .typeahead, .tt-query, .tt-hint {
+
+  font-weight: normal;
+  font-size: 0.875rem;
+  padding: 0.625rem 0.6875rem;
+  background-color: #2A3038;
+  border-radius: 2px;
+  color: #ffffff!important;
 }
 
-.navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini img {
-  width: 95%!important;
-  max-width: 100%!important;
-  height: 37px!important;
-  margin: auto;
+.form-control:focus, .asColorPicker-input:focus, .dataTables_wrapper select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=number], .select2-container--default .select2-selection--single:focus, .select2-container--default .select2-selection--single .select2-search__field:focus, .typeahead:focus, .tt-query:focus, .tt-hint:focus {
+  border: 1px solid;
+  border-color: var(--blue-primary)!important;
+  height: calc(2.25rem + 2px);
+  color: var(--light-gray)!important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: #2A3038 !important;
+  color: #ffffff!important;
 }
 
 
 
--------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------*/
 /*-------------------------------------------------------------------*/
 /* === Import Bootstrap functions and variables === */
 /*-------------------------------------------------------------------*/
@@ -7805,7 +7822,7 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  border-top: 1px solid rgba(176, 176, 176, 0.1); }
 
 small,
 .small {
@@ -16089,6 +16106,10 @@ code {
   color: #0d0d0d;
   border: 1px solid #0d0d0d; }
 
+.d-inline{
+  display: inline-block!important;
+}
+
 /* Buttons */
 .btn, .fc button, .ajax-upload-dragdrop .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-confirm, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel, .wizard > .actions a {
   font-size: 0.9375rem;
@@ -20384,22 +20405,22 @@ div.tagsinput {
       font-size: 1.5rem;
       line-height: 48px;
       margin-right: 0;
-      padding: 0rem 0rem 0rem 1.3rem;
+      padding: 0rem 0rem 0rem 10px;
       width: 100%; }
       .navbar .navbar-brand-wrapper .navbar-brand:active, .navbar .navbar-brand-wrapper .navbar-brand:focus, .navbar .navbar-brand-wrapper .navbar-brand:hover {
         color: #252b3e; }
       .navbar .navbar-brand-wrapper .navbar-brand img {
-        width: calc(244px - 120px);
+        width: calc(244px - 94px);
         max-width: 100%;
-        height: 28px;
+        height: 40px;
         margin: auto;
         vertical-align: middle; }
       .navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
         display: none; }
         .navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini img {
-          width: calc(70px - 50px);
+          width: calc(70px - 20px);
           max-width: 100%;
-          height: 28px;
+          height: 40px;
           margin: auto; }
   .navbar .navbar-menu-wrapper {
     transition: width 0.25s ease;
@@ -20667,22 +20688,22 @@ div.tagsinput {
       font-size: 1.5rem;
       line-height: 48px;
       margin-right: 0;
-      padding: 0rem 0rem 0rem 1.3rem;
+      padding: 0rem 0rem 0rem 10px;
       width: 100%; }
       .sidebar .sidebar-brand-wrapper .sidebar-brand:active, .sidebar .sidebar-brand-wrapper .sidebar-brand:focus, .sidebar .sidebar-brand-wrapper .sidebar-brand:hover {
         color: #252b3e; }
       .sidebar .sidebar-brand-wrapper .sidebar-brand img {
-        width: calc(244px - 120px);
+        width: calc(244px - 94px);
         max-width: 100%;
-        height: 28px;
+        height: 40px;
         margin: auto;
         vertical-align: middle; }
       .sidebar .sidebar-brand-wrapper .sidebar-brand.brand-logo-mini {
         display: none; }
         .sidebar .sidebar-brand-wrapper .sidebar-brand.brand-logo-mini img {
-          width: calc(70px - 50px);
+          width: calc(70px - 20px);
           max-width: 100%;
-          height: 28px;
+          height: 40px;
           margin: auto; }
   .sidebar .nav {
     overflow: hidden;
@@ -20887,15 +20908,15 @@ div.tagsinput {
         .sidebar .nav .nav-item.nav-category .nav-link {
           color: #6c7293;
           font-weight: 500;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 500;
           height: auto;
           padding-left: 0; }
       .sidebar .nav .nav-item .menu-icon {
         margin-right: 0.5rem;
-        font-size: 0.8125rem;
+        font-size: 18px;
         line-height: 1;
-        background: rgba(108, 114, 147, 0.2);
+        background: rgb(0, 63, 100);
         width: 31px;
         height: 31px;
         border-radius: 100%;
@@ -20904,7 +20925,7 @@ div.tagsinput {
         justify-content: center;
         color: #ffffff; }
         .sidebar .nav .nav-item .menu-icon i {
-          font-size: 0.875rem; }
+          font-size: 18px; }
     .sidebar .nav.sub-menu {
       margin-bottom: 0;
       margin-top: 0;
@@ -20931,15 +20952,15 @@ div.tagsinput {
       background: #0f1015;
       color: #ffffff; }
     .sidebar .nav .menu-items:nth-child(5n+1) .nav-link .menu-icon i {
-      color: #0090e7; }
+      color: #b7b7b7; }
     .sidebar .nav .menu-items:nth-child(5n+2) .nav-link .menu-icon i {
-      color: #00d25b; }
+      color: #b7b7b7; }
     .sidebar .nav .menu-items:nth-child(5n+3) .nav-link .menu-icon i {
-      color: #8f5fe8; }
+      color: #b7b7b7; }
     .sidebar .nav .menu-items:nth-child(5n+4) .nav-link .menu-icon i {
-      color: #ffab00; }
+      color: #b7b7b7; }
     .sidebar .nav .menu-items:nth-child(5n+5) .nav-link .menu-icon i {
-      color: #fc424a; }
+      color: #b7b7b7; }
 
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {

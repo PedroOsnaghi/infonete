@@ -26,6 +26,7 @@ class UsuarioModel {
     private $estado;
     private $hash;
     private $rol;
+    private $rol_name;
 
     private $database;
 
@@ -131,6 +132,16 @@ class UsuarioModel {
         $this->rol = $rol;
     }
 
+    public function getRolName()
+    {
+        return $this->rol_name;
+    }
+
+    public function setRolName($rol_name)
+    {
+        $this->rol_name = $rol_name;
+    }
+
     public function getActivo()
     {
         return $this->activo;
@@ -192,6 +203,55 @@ class UsuarioModel {
 
     public function existeEmail($email){
         return $this->database->query("SELECT COUNT(email) 'email' FROM usuario WHERE email='". $email ."' GROUP BY email");
+    }
+
+
+
+    public function toArray()
+    {
+        return ["id" => $this->id,
+                "nombre" => $this->nombre,
+                "apellido" => $this->apellido,
+                "pass" => $this->pass,
+                "email" => $this->email,
+                "domicilio" => $this->domicilio,
+                "latitud" => $this->latitud,
+                "longitud" => $this->longitud,
+                "avatar" => $this->avatar,
+                "vhash" => $this->hash,
+                "rol" => $this->rol,
+                "estado" => $this->estado,
+                "activo" => $this->activo];
+    }
+
+    public function toObject($array = [])
+    {
+        return !sizeof($array) ? null : $this->setObject($array);
+    }
+
+    private function setObject($array)
+    {
+        $this->id = $array['id'];
+        $this->nombre = $array['nombre'];
+        $this->apellido = $array['apellido'];
+        $this->pass = $array['pass'];
+        $this->email = $array['email'];
+        $this->domicilio = $array['domicilio'];
+        $this->latitud = $array['latitud'];
+        $this->longitud = $array['longitud'];
+        $this->avatar = $array['avatar'];
+        $this->hash = $array['vhash'];
+        $this->rol = $array['rol'];
+        $this->rol_name = $array['rol_name'];
+        $this->estado = $array['estado'];
+        $this->activo = $array['activo'];
+
+        return $this;
+    }
+
+    public function rolTools()
+    {
+        if($this->getRol() == 4) return file_get_contents("public/view/partial/admin.mustache");
     }
 }
 

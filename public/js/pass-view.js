@@ -13,14 +13,14 @@ passview.forEach(function (btn){
 
         //toggle
         if(this.classList.contains("view")){
-            this.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+            this.innerHTML = '<i class="mdi mdi-eye"></i>';
             this.classList.remove('view');
             this.classList.add('non-view');
             this.setAttribute('title', 'ocultar contraseña');
             i_pass.setAttribute('type', 'text');
 
         }else{
-            this.innerHTML = '<i class="fa-solid fa-eye"></i>';
+            this.innerHTML = '<i class="mdi mdi-eye-off"></i>';
             this.classList.remove('non-view');
             this.classList.add('view');
             i_pass.setAttribute('type', 'password');

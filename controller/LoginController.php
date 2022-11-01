@@ -61,7 +61,7 @@ class LoginController
     }
 
     private function goToHome(){
-        echo $this->render->render("public/view/home.mustache");
+        Redirect::doIt("/infonete");
     }
 
 }

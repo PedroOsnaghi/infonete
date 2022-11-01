@@ -2,9 +2,11 @@
 
 :root{
 
+    --x-light-gray: #b6b6b6;
     --light-gray: #6e6e6e;
     --blue-primary: #007EC3;
     --blue-primary-hover: #004f7e;
+    --primary: #0090e7;
 }
 
 
@@ -12,8 +14,14 @@
 /**color de fuentes**/
 
 .text-gray{
-    color: var(--light-gray);
+    color: var(--light-gray) !important;
 }
+
+.text-light-gray{
+    color: var(--x-light-gray) !important;
+}
+
+
 
 
 
@@ -25,4 +33,13 @@
 .btn-primary:hover{
     background-color: var(--blue-primary-hover)!important;
     border-color: var(--blue-primary-hover)!important;
+}
+
+.item-reg{
+    box-sizing: border-box;
+    background-color: var(--primary);
+    padding: 2px;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
 }

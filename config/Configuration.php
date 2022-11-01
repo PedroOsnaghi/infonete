@@ -8,6 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 include_once("helper/MysqlDatabase.php");
 include_once("helper/Render.php");
 include_once("helper/UrlHelper.php");
+include_once("helper/Redirect.php");
 include_once("helper/hasher.php");
 include_once("helper/Client.php");
 include_once("helper/GeoPosition.php");
@@ -42,7 +43,7 @@ class Configuration
 {
     public function getIndexController()
     {
-        return new IndexController($this->getRender());
+        return new IndexController($this->getSession(), $this->getRender());
     }
 
     public function getEdicionModel()
@@ -168,8 +169,8 @@ class Configuration
 
     private function getSession()
     {
-
-        return new Session();
+        $config = $this->getConfig();
+        return new Session($config['session_lifetime']);
     }
 
 

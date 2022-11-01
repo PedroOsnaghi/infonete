@@ -3,9 +3,9 @@
 class Session{
 
 
-    public function __construct()
+    public function __construct($lifetime)
     {
-
+        ini_set("session.cookie_lifetime",$lifetime);
         if(session_status() == PHP_SESSION_NONE)
             session_start();
     }
