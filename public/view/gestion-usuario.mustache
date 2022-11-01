@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gestion de Usuarios</title>
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Administración de Cuentas de usuarios</h4>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="text-pink">Avatar</th>
+                    <th class="text-pink">Apellido y Nombre</th>
+                    <th class="text-pink">Usuario</th>
+                    <th class="text-pink">Estado de cuenta</th>
+                    <th class="text-pink">Rol</th>
+                    <th class="text-pink">Acciones rápidas</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#users}}
+                    <tr>
+                        <td><img class="me-4" src="/infonete/public/uploads/profiles/{{avatar}}"></td>
+                        <td>{{apellido}} {{nombre}}</td>
+                        <td><i class="mdi mdi-account-circle text-danger d-inline"></i> {{email}}</td>
+                        <td>
+                            <label class="badge badge-success me-1">Activo</label>
+                            <label class="badge badge-success">Verificado</label>
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="drop-roles" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >  </button>
+                                <div class="dropdown-menu" aria-labelledby="drop-roles" style="">
+                                    <h6 class="dropdown-header text-primary text-center">Cambio de Roles</h6>
+                                    {{#roles}}
+                                        <a class="dropdown-item" href="#" rol-option>{{rol_name}}</a>
+                                    {{/roles}}
+
+                                </div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <a href="" class="btn btn-secondary" title="Bloquear usuario"><i class="mdi mdi-account-off d-inline"></i></a>
+                            <a href="" class="btn btn-secondary" title="Blanqueo de clave"><i class="mdi mdi-key-remove d-inline"></i></a>
+                            <a href="" class="btn btn-secondary" title="Editar"><i class="mdi mdi mdi-border-color d-inline"></i></a>
+                        </td>
+                    </tr>
+                {{/users}}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<script type='text/javascript' src="/infonete/public/js/index/users.js"></script>
+</body>
+</html>
+
+

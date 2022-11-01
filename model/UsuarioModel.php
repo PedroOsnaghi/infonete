@@ -1,6 +1,7 @@
 <?php
 
-class UsuarioModel {
+class UsuarioModel
+{
 
     //constantes de Roles de Usuario
     const ROL_LECTOR = 1;
@@ -173,14 +174,13 @@ class UsuarioModel {
     }
 
 
-
-
     public function __construct($database)
     {
         $this->database = $database;
     }
 
-    public function registrar(){
+    public function registrar()
+    {
 
         return $this->database->execute("INSERT INTO usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo)
                                         VALUES('$this->nombre',
@@ -197,32 +197,26 @@ class UsuarioModel {
                                                 $this->activo)");
     }
 
-    public function activate($email, $hash){
-        return $this->database->execute("UPDATE usuario SET estado =" . self::STATE_VERIFIED . " WHERE email ='" . $email . "' AND vhash = '" . $hash ."'" );
-    }
-
-    public function existeEmail($email){
-        return $this->database->query("SELECT COUNT(email) 'email' FROM usuario WHERE email='". $email ."' GROUP BY email");
-    }
-
-
-
-    public function toArray()
+    public function activate($email, $hash)
     {
-        return ["id" => $this->id,
-                "nombre" => $this->nombre,
-                "apellido" => $this->apellido,
-                "pass" => $this->pass,
-                "email" => $this->email,
-                "domicilio" => $this->domicilio,
-                "latitud" => $this->latitud,
-                "longitud" => $this->longitud,
-                "avatar" => $this->avatar,
-                "vhash" => $this->hash,
-                "rol" => $this->rol,
-                "estado" => $this->estado,
-                "activo" => $this->activo];
+        return $this->database->execute("UPDATE usuario SET estado =" . self::STATE_VERIFIED . " WHERE email ='" . $email . "' AND vhash = '" . $hash . "'");
     }
+
+    public function existeEmail($email)
+    {
+        return $this->database->query("SELECT COUNT(email) 'email' FROM usuario WHERE email='" . $email . "' GROUP BY email");
+    }
+
+    public function listRoles()
+    {
+        return $this->database->list("SELECT * FROM rol ORDER BY id ASC");
+    }
+
+    public function listAll()
+    {
+        return $this->database->list("SELECT * FROM usuario  ORDER BY rol, apellido DESC");
+    }
+
 
     public function toObject($array = [])
     {
@@ -231,27 +225,27 @@ class UsuarioModel {
 
     private function setObject($array)
     {
-        $this->id = $array['id'];
-        $this->nombre = $array['nombre'];
-        $this->apellido = $array['apellido'];
-        $this->pass = $array['pass'];
-        $this->email = $array['email'];
-        $this->domicilio = $array['domicilio'];
-        $this->latitud = $array['latitud'];
-        $this->longitud = $array['longitud'];
-        $this->avatar = $array['avatar'];
-        $this->hash = $array['vhash'];
-        $this->rol = $array['rol'];
-        $this->rol_name = $array['rol_name'];
-        $this->estado = $array['estado'];
-        $this->activo = $array['activo'];
+        $this->id = $array['id'] ?? null;
+        $this->nombre = $array['nombre'] ?? null;
+        $this->apellido = $array['apellido'] ?? null;
+        $this->pass = $array['pass'] ?? null;
+        $this->email = $array['email'] ?? null;
+        $this->domicilio = $array['domicilio'] ?? null;
+        $this->latitud = $array['latitud'] ?? null;
+        $this->longitud = $array['longitud'] ?? null;
+        $this->avatar = $array['avatar'] ?? null;
+        $this->hash = $array['vhash'] ?? null;
+        $this->rol = $array['rol'] ?? null;
+        $this->rol_name = $array['rol_name'] ?? null;
+        $this->estado = $array['estado'] ?? null;
+        $this->activo = $array['activo'] ?? null;
 
         return $this;
     }
 
     public function rolTools()
     {
-        if($this->getRol() == 4) return file_get_contents("public/view/partial/admin.mustache");
+        if ($this->getRol() == 4) return file_get_contents("public/view/partial/admin.mustache");
     }
 }
 

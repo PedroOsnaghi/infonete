@@ -15,8 +15,10 @@
     <link rel="stylesheet" href="public/css/index/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="public/images/logo/favicon.png" />
+      <script src="public/js/jquery-1.11.3.min.js"></script>
   </head>
   <body>
+
     <div class="container-scroller fadeIn">
       <!-- partial:partial/sidebar.mustache -->
         {{>sidebar}}
@@ -25,8 +27,8 @@
         <!-- partial:partial/main-navbar.mustache -->
           {{>main-navbar}}
         <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
+        <div  class="main-panel">
+          <div id="main-content" class="content-wrapper">
 
               <!-- Banner suscripciones -->
               <div class="row">
@@ -67,6 +69,7 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
+
     <script src="public/css/index/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
@@ -86,5 +89,8 @@
     <!-- Custom js for this page -->
     <script src="public/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+    <script src="public/js/index/request-ajax.js"></script>
+
   </body>
 </html>

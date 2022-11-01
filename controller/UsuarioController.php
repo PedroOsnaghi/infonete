@@ -20,7 +20,6 @@ class UsuarioController{
 
       echo $this->render->render("public/view/activate.mustache", $data);
 
-
   }
 
 
@@ -34,7 +33,20 @@ class UsuarioController{
 
       echo json_encode($res,JSON_FORCE_OBJECT);
 
-
-
   }
+
+  public function admin(){
+      $data = $this->getUsersList();
+      echo $this->render->render("public/view/gestion-usuario.mustache", $data);
+  }
+
+  private function getUsersList()
+  {
+      return array(
+          "users" => $this->userModel->listAll(),
+          "roles" => $this->userModel->listRoles()
+      );
+  }
+
+
 }
