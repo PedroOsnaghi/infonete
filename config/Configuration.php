@@ -24,6 +24,7 @@ include_once("model/UsuarioModel.php");
 include_once("model/ProductoModel.php");
 include_once("model/EdicionModel.php");
 include_once("model/SeccionModel.php");
+include_once("model/SuscripcionModel.php");
 
 //CONTROLADORES
 include_once("controller/IndexController.php");
@@ -33,6 +34,7 @@ include_once("controller/UsuarioController.php");
 include_once("controller/ProductoController.php");
 include_once("controller/EdicionController.php");
 include_once("controller/SeccionController.php");
+include_once("controller/SuscripcionController.php");
 
 //vendors
 require('third-party/PHPMailer-master/src/Exception.php');
@@ -59,7 +61,18 @@ class Configuration
     {
         $seccionModel = $this->getSeccionModel();
         return new SeccionController($seccionModel, $this->getRender());
+    }
 
+    public function getSuscripcionModel()
+    {
+        $database = $this->getDatabase();
+        return new SuscripcionModel($database);
+    }
+
+    public function getSuscripcionController()
+    {
+        $suscripcionModel = $this->getSuscripcionModel();
+        return new SuscripcionController($suscripcionModel, $this->getRender());
     }
 
     public function getEdicionModel()
