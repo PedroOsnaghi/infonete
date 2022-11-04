@@ -209,12 +209,32 @@ class UsuarioModel
 
     public function listRoles()
     {
-        return $this->database->list("SELECT * FROM rol ORDER BY id ASC");
+        return $this->database->list("SELECT id as id_rol, rol_name FROM rol ORDER BY id ASC");
     }
 
     public function listAll()
     {
-        return $this->database->list("SELECT * FROM usuario  ORDER BY rol, apellido DESC");
+        return $this->database->list("SELECT * FROM usuario  ORDER BY rol DESC, apellido ASC");
+    }
+
+    public function searchBy($value)
+    {
+        return $this->database->list("SELECT * FROM usuario WHERE nombre like '%$value%' OR apellido like '%$value%' ORDER BY rol DESC , apellido ASC");
+    }
+
+    public function setRolTo($id, $rol)
+    {
+        return $this->database->execute("UPDATE usuario SET rol = $rol  WHERE id = $id ");
+    }
+
+    public function bloquear($id)
+    {
+        return $this->database->execute("UPDATE usuario SET activo = 0   WHERE id = $id ");
+    }
+
+    public function desbloquear($id)
+    {
+        return $this->database->execute("UPDATE usuario SET activo = 1  WHERE id = $id ");
     }
 
 

@@ -10,7 +10,17 @@
 <body>
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Administración de Cuentas de usuarios</h4>
+        <h4 class="card-title">Administración de cuentas de usuarios</h4>
+
+        <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <ul class="navbar-nav w-100">
+                <li class="nav-item w-100">
+                    <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search" id="search-user" method="GET">
+                        <input type="text" name="value"  id="search-user-box" class="form-control" value="{{value}}" placeholder="Buscar por nombre o apellido">
+                    </form>
+                </li>
+            </ul>
+        </div>
 
         <div class="table-responsive">
             <table class="table table-hover">
@@ -20,7 +30,7 @@
                     <th class="text-pink">Apellido y Nombre</th>
                     <th class="text-pink">Usuario</th>
                     <th class="text-pink">Estado de cuenta</th>
-                    <th class="text-pink">Rol</th>
+                    <th class="text-pink size">Rol</th>
                     <th class="text-pink">Acciones rápidas</th>
                 </tr>
                 </thead>
@@ -31,17 +41,29 @@
                         <td>{{apellido}} {{nombre}}</td>
                         <td><i class="mdi mdi-account-circle text-danger d-inline"></i> {{email}}</td>
                         <td>
-                            <label class="badge badge-success me-1">Activo</label>
-                            <label class="badge badge-success">Verificado</label>
+                            {{#activo}}
+                                <label class="badge badge-success me-1" id="{{id}}">Activo</label>
+                            {{/activo}}
+                            {{^activo}}
+                                <label class="badge badge-danger me-1" id="{{id}}">Inactivo</label>
+                            {{/activo}}
+
+                            {{#estado}}
+                                <label class="badge badge-success" id="{{id}}">Verificado</label>
+                            {{/estado}}
+                            {{^estado}}
+                                <label class="badge badge-warning" id="{{id}}">Pendiente</label>
+                            {{/estado}}
+
                         </td>
 
-                        <td>
+                        <td class="size">
                             <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" id="drop-roles" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >  </button>
+                                <button class="btn dropdown-toggle btn-block" type="button" id="{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rol-sel="{{rol}}" rol-name>  </button>
                                 <div class="dropdown-menu" aria-labelledby="drop-roles" style="">
                                     <h6 class="dropdown-header text-primary text-center">Cambio de Roles</h6>
                                     {{#roles}}
-                                        <a class="dropdown-item" href="#" rol-option>{{rol_name}}</a>
+                                        <a class="dropdown-item" rol-option for="{{id}}" value="{{id_rol}}">{{rol_name}}</a>
                                     {{/roles}}
 
                                 </div>
@@ -49,9 +71,9 @@
 
                         </td>
                         <td>
-                            <a href="" class="btn btn-secondary" title="Bloquear usuario"><i class="mdi mdi-account-off d-inline"></i></a>
-                            <a href="" class="btn btn-secondary" title="Blanqueo de clave"><i class="mdi mdi-key-remove d-inline"></i></a>
-                            <a href="" class="btn btn-secondary" title="Editar"><i class="mdi mdi mdi-border-color d-inline"></i></a>
+                            <a  class="btn btn-secondary" title="Bloquear usuario" id-user="{{id}}" user-lock state="lock"><i class="mdi mdi-account-off mx-auto"  ></i></a>
+                            <a  class="btn btn-secondary" title="Blanqueo de clave" id-user="{{id}}" blank-pass><i class="mdi mdi-key-remove mx-auto" ></i></a>
+                            <a  class="btn btn-secondary" title="Editar" id-user="{{id}}" edit><i class="mdi mdi mdi-border-color mx-auto" ></i></a>
                         </td>
                     </tr>
                 {{/users}}
@@ -61,10 +83,11 @@
         </div>
     </div>
 
+
 </div>
 
 
-<script type='text/javascript' src="/infonete/public/js/index/users.js"></script>
+
 </body>
 </html>
 

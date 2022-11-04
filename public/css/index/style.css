@@ -102,6 +102,12 @@
     + Lock Screen
 
 /**OVERRIDE**/
+
+.size{
+  width: 130px!important;
+  min-width: 130px!important;
+}
+
 .form-control, .asColorPicker-input, .dataTables_wrapper select, .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--single .select2-search__field, .typeahead, .tt-query, .tt-hint {
 
   font-weight: normal;
@@ -9965,6 +9971,7 @@ input[type="button"].btn-block {
   .dropdown-item:hover, .dropdown-item:focus {
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
     background-color: var(--blue-primary-hover); }
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;

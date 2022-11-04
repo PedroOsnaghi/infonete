@@ -83,3 +83,29 @@
     width: 28px;
     height: 28px;
 }
+
+/* ROLES */
+
+.administrador{
+    color: #fff;
+    background-color: var(--blue-primary)!important;
+    border-color: var(--blue-primary)!important;
+}
+
+.lector{
+    color: #101010;
+    background-color: var(--gray)!important;
+    border-color: var(--gray)!important;
+}
+
+.editor{
+    color: #fff;
+    background-color: var(--cyan)!important;
+    border-color: var(--cyan)!important;
+}
+
+.redactor{
+    color: #fff;
+    background-color: var(--red)!important;
+    border-color: var(--red)!important;
+}

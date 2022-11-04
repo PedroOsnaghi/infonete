@@ -9,6 +9,7 @@ const admin_users = document.getElementById("admin-users"); //menu Gestion de us
 
 admin_users.addEventListener('click', function (){
     show_form_ajax("http://localhost/infonete/usuario/admin");
+
 });
 
 
@@ -22,10 +23,19 @@ function show_form_ajax(url){
         type: 'GET',
         success: function (response){
            if (response) {
+              cargarContenido(response).then(res => {
+                  view_init();
+               });
 
-               container.innerHTML = response;
 
            }
         }
     });
+}
+
+function cargarContenido(vista){
+  return new Promise((resolve, reject) =>{
+        container.innerHTML = vista;
+        return resolve(true);
+    })
 }

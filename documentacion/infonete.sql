@@ -122,7 +122,10 @@ foreign key(id_articulo) references articulo(id));
 insert into rol (rol_name) values ("Lector"),("Redactor"),("Editor"),("Administrador");
 
 insert into usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo) 
-			 values ('Facundo', 'Herrera', 'admin@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face16.jpg', '', 4, 1, 1);
+			 values ('Facundo', 'Herrera', 'admin@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face16.jpg', '', 4, 1, 1),
+					('Carolina', 'Montenegro', 'carol@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face23.jpg', '', 3, 1, 1),
+                    ('Nicolas', 'Arana', 'nico23@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face23.jpg', '', 2, 1, 1),
+                    ('Romina', 'Godoy', 'rogodoy@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face26.jpg', '', 1, 1, 1);
              
 insert into tipo_archivo(tipo) values('IMAGEN'),('VIDEO'),('AUDIO');
 
