@@ -8,6 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 include_once("helper/MysqlDatabase.php");
 include_once("helper/Render.php");
 include_once("helper/UrlHelper.php");
+include_once("helper/Redirect.php");
 include_once("helper/hasher.php");
 include_once("helper/Client.php");
 include_once("helper/GeoPosition.php");
@@ -24,13 +25,14 @@ include_once("model/ProductoModel.php");
 include_once("model/EdicionModel.php");
 
 //CONTROLADORES
+include_once("controller/IndexController.php");
 include_once("controller/LoginController.php");
 include_once("controller/RegisterController.php");
 include_once("controller/UsuarioController.php");
 include_once("controller/ProductoController.php");
 include_once("controller/EdicionController.php");
 
-//vendor
+//vendors
 require('third-party/PHPMailer-master/src/Exception.php');
 require('third-party/PHPMailer-master/src/PHPMailer.php');
 require('third-party/PHPMailer-master/src/SMTP.php');
@@ -39,6 +41,11 @@ include_once("Router.php");
 
 class Configuration
 {
+    public function getIndexController()
+    {
+        return new IndexController($this->getSession(), $this->getRender());
+    }
+
     public function getEdicionModel()
     {
         $database = $this->getDatabase();
@@ -162,8 +169,8 @@ class Configuration
 
     private function getSession()
     {
-
-        return new Session();
+        $config = $this->getConfig();
+        return new Session($config['session_lifetime']);
     }
 
 

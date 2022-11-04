@@ -1,6 +1,7 @@
 <?php
 
-class UsuarioModel {
+class UsuarioModel
+{
 
     //constantes de Roles de Usuario
     const ROL_LECTOR = 1;
@@ -26,6 +27,7 @@ class UsuarioModel {
     private $estado;
     private $hash;
     private $rol;
+    private $rol_name;
 
     private $database;
 
@@ -131,6 +133,16 @@ class UsuarioModel {
         $this->rol = $rol;
     }
 
+    public function getRolName()
+    {
+        return $this->rol_name;
+    }
+
+    public function setRolName($rol_name)
+    {
+        $this->rol_name = $rol_name;
+    }
+
     public function getActivo()
     {
         return $this->activo;
@@ -162,14 +174,13 @@ class UsuarioModel {
     }
 
 
-
-
     public function __construct($database)
     {
         $this->database = $database;
     }
 
-    public function registrar(){
+    public function registrar()
+    {
 
         return $this->database->execute("INSERT INTO usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo)
                                         VALUES('$this->nombre',
@@ -186,12 +197,75 @@ class UsuarioModel {
                                                 $this->activo)");
     }
 
-    public function activate($email, $hash){
-        return $this->database->execute("UPDATE usuario SET estado =" . self::STATE_VERIFIED . " WHERE email ='" . $email . "' AND vhash = '" . $hash ."'" );
+    public function activate($email, $hash)
+    {
+        return $this->database->execute("UPDATE usuario SET estado =" . self::STATE_VERIFIED . " WHERE email ='" . $email . "' AND vhash = '" . $hash . "'");
     }
 
-    public function existeEmail($email){
-        return $this->database->query("SELECT COUNT(email) 'email' FROM usuario WHERE email='". $email ."' GROUP BY email");
+    public function existeEmail($email)
+    {
+        return $this->database->query("SELECT COUNT(email) 'email' FROM usuario WHERE email='" . $email . "' GROUP BY email");
+    }
+
+    public function listRoles()
+    {
+        return $this->database->list("SELECT id as id_rol, rol_name FROM rol ORDER BY id ASC");
+    }
+
+    public function listAll()
+    {
+        return $this->database->list("SELECT * FROM usuario  ORDER BY rol DESC, apellido ASC");
+    }
+
+    public function searchBy($value)
+    {
+        return $this->database->list("SELECT * FROM usuario WHERE nombre like '%$value%' OR apellido like '%$value%' ORDER BY rol DESC , apellido ASC");
+    }
+
+    public function setRolTo($id, $rol)
+    {
+        return $this->database->execute("UPDATE usuario SET rol = $rol  WHERE id = $id ");
+    }
+
+    public function bloquear($id)
+    {
+        return $this->database->execute("UPDATE usuario SET activo = 0   WHERE id = $id ");
+    }
+
+    public function desbloquear($id)
+    {
+        return $this->database->execute("UPDATE usuario SET activo = 1  WHERE id = $id ");
+    }
+
+
+    public function toObject($array = [])
+    {
+        return !sizeof($array) ? null : $this->setObject($array);
+    }
+
+    private function setObject($array)
+    {
+        $this->id = $array['id'] ?? null;
+        $this->nombre = $array['nombre'] ?? null;
+        $this->apellido = $array['apellido'] ?? null;
+        $this->pass = $array['pass'] ?? null;
+        $this->email = $array['email'] ?? null;
+        $this->domicilio = $array['domicilio'] ?? null;
+        $this->latitud = $array['latitud'] ?? null;
+        $this->longitud = $array['longitud'] ?? null;
+        $this->avatar = $array['avatar'] ?? null;
+        $this->hash = $array['vhash'] ?? null;
+        $this->rol = $array['rol'] ?? null;
+        $this->rol_name = $array['rol_name'] ?? null;
+        $this->estado = $array['estado'] ?? null;
+        $this->activo = $array['activo'] ?? null;
+
+        return $this;
+    }
+
+    public function rolTools()
+    {
+        if ($this->getRol() == 4) return file_get_contents("public/view/partial/admin.mustache");
     }
 }
 

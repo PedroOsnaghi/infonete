@@ -39,4 +39,5 @@ class EdicionController
         $this->edicionModel->setProducto($_POST['producto']);
     }
 
+
 }

@@ -26,7 +26,7 @@ class File
 
             //verificamos que exista directorio
             //sino se crea
-            $directorio = $this->uploadDir . (empty($folder) ? '/' : $folder  . "/");
+            $directorio = $this->uploadDir . (empty($folder) ? '/' : "/" .  $folder  . "/");
             if(!file_exists($directorio))
                 mkdir($directorio,0777);
 

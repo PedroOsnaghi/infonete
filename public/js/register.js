@@ -12,14 +12,32 @@
     //validacion password y repetir iguales
     pass.addEventListener('change', function (){
        if (passrpt.value !== '')
-            (pass.value != passrpt.value) ? invalid(this, pass_msg, 'Las contraseñas no coinciden') :
-                valid(this, pass_msg, 'Las contraseñas coinciden');
+           if (pass.value != passrpt.value)
+           {
+               invalid(this, pass_msg, 'Las contraseñas no coinciden');
+               invalid(passrpt, pass_msg, 'Las contraseñas no coinciden');
+           }else
+           {
+               valid(this, pass_msg, 'Las contraseñas coinciden');
+               valid(passrpt, pass_msg, 'Las contraseñas coinciden');
+           }
+
+
     });
 
     passrpt.addEventListener('change', function (){
        if (pass.value !== '')
-            (pass.value != passrpt.value) ? invalid(this, pass_msg, 'Las contraseñas no coinciden') :
+            if (pass.value != passrpt.value)
+            {
+                invalid(this, pass_msg, 'Las contraseñas no coinciden');
+                invalid(pass, pass_msg, 'Las contraseñas no coinciden');
+            }else
+            {
                 valid(this, pass_msg, 'Las contraseñas coinciden');
+                valid(pass, pass_msg, 'Las contraseñas coinciden');
+            }
+
+
     });
 
 
@@ -76,6 +94,7 @@
     }
 
     function invalid(input, msg_container, msg_text){
+        input.classList.remove('invalid');
         input.classList.add('invalid');
         msg_container.classList.remove('valid-feedback');
         msg_container.classList.add('invalid-feedback');

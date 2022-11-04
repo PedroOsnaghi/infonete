@@ -25,6 +25,12 @@ class MysqlDatabase
         return $this->connection->query($sql)->fetch_assoc();
     }
 
+    public function list($sql)
+    {
+        return $this->connection->query($sql)->fetch_all(MYSQLI_ASSOC);
+    }
+
+
     //insertar, actualizar, eliminar y retorna la cantidad de registros afectados (valor entero o 0)
     public function execute($sql)
     {
@@ -32,5 +38,5 @@ class MysqlDatabase
         return $this->connection->affected_rows;
     }
 
-
 }
+
