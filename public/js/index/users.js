@@ -32,15 +32,15 @@ function view_init(){
     function bloquearDesbloquear(btn){
         var url_lock = "http://localhost/infonete/usuario/bloquear?id=" + btn.getAttribute("id-user");
         var url_unlock = "http://localhost/infonete/usuario/desbloquear?id=" + btn.getAttribute("id-user");
-        var label_state = document.getElementById(btn.getAttribute("id-user"));
+        var label_state = document.getElementById("label-" + btn.getAttribute("id-user"));
 
-        if(btn.getElementById("state") == "lock"){
+        if(btn.getAttribute("state") == "1"){
 
             getRequest(url_lock, function (response) {
                if(response){
-                   btn.setAttribute("state", "unlock");
+                   btn.setAttribute("state", "0");
                    btn.children[0].classList.remove("mdi-account-off")
-                   btn.children[0].classList.add("mdi mdi-account-check");
+                   btn.children[0].classList.add("mdi-account-check");
                    btn.setAttribute("title", "Desbloquear usuario");
                    label_state.innerHTML = "Inactivo";
                    label_state.classList.remove("badge-success");
@@ -51,8 +51,8 @@ function view_init(){
         }else {
             getRequest(url_unlock, function (response) {
                 if (response) {
-                    btn.setAttribute("state", "lock");
-                    btn.children[0].classList.remove("mdi mdi-account-check");
+                    btn.setAttribute("state", "1");
+                    btn.children[0].classList.remove("mdi-account-check");
                     btn.children[0].classList.add("mdi-account-off")
                     btn.setAttribute("title", "Bloquear usuario");
                     label_state.innerHTML = "Activo";
@@ -63,11 +63,14 @@ function view_init(){
             });
         }
 
-
-
-
     }
 
+
+    function setearEstadoRol(btn, rol){
+        btn.classList.remove("lector","editor","redactor","administrador");
+
+        btn.classList.add(rol.toLowerCase());
+    }
 
     btn_roles.forEach(function (btn){
         btn.addEventListener('rolchange' ,function (e){
@@ -87,23 +90,21 @@ function view_init(){
         });
     });
 
-    function setearEstadoRol(btn, rol){
-        btn.classList.remove("lector","editor","redactor","administrador");
 
-        btn.classList.add(rol.toLowerCase());
-    }
 
     rol_options.forEach(function (opt){
-        var id_selected = document.getElementById(opt.getAttribute("for")).getAttribute("rol-sel");
+
+        var id_selected = document.getElementById(opt.getAttribute("for").toString()).getAttribute("rol-sel");
         var rol_iterado = opt.getAttribute("value");
 
         opt.removeAttribute("selected");
 
-        if(id_selected == rol_iterado)
+
+        if(id_selected === rol_iterado)
         {
             document.getElementById(opt.getAttribute("for")).innerHTML = opt.innerHTML;
             opt.setAttribute("selected", "true");
-            setearEstadoRol(document.getElementById(opt.getAttribute("for")),opt.innerHTML)
+            setearEstadoRol(document.getElementById(opt.getAttribute("for")),opt.innerHTML);
         }
 
 

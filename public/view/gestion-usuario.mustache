@@ -42,24 +42,24 @@
                         <td><i class="mdi mdi-account-circle text-danger d-inline"></i> {{email}}</td>
                         <td>
                             {{#activo}}
-                                <label class="badge badge-success me-1" id="{{id}}">Activo</label>
+                                <label class="badge badge-success me-1" id="label-{{id}}">Activo</label>
                             {{/activo}}
                             {{^activo}}
-                                <label class="badge badge-danger me-1" id="{{id}}">Inactivo</label>
+                                <label class="badge badge-danger me-1" id="label-{{id}}">Inactivo</label>
                             {{/activo}}
 
                             {{#estado}}
-                                <label class="badge badge-success" id="{{id}}">Verificado</label>
+                                <label class="badge badge-success" id="label-{{id}}">Verificado</label>
                             {{/estado}}
                             {{^estado}}
-                                <label class="badge badge-warning" id="{{id}}">Pendiente</label>
+                                <label class="badge badge-warning" id="label-{{id}}">Pendiente</label>
                             {{/estado}}
 
                         </td>
 
                         <td class="size">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle btn-block" type="button" id="{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rol-sel="{{rol}}" rol-name>  </button>
+                                <button class="btn dropdown-toggle btn-block" type="button" id="{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rol-sel="{{rol}}" rol-name></button>
                                 <div class="dropdown-menu" aria-labelledby="drop-roles" style="">
                                     <h6 class="dropdown-header text-primary text-center">Cambio de Roles</h6>
                                     {{#roles}}
@@ -71,9 +71,17 @@
 
                         </td>
                         <td>
-                            <a  class="btn btn-secondary" title="Bloquear usuario" id-user="{{id}}" user-lock state="lock"><i class="mdi mdi-account-off mx-auto"  ></i></a>
+                            <a  class="btn btn-secondary" title="Bloquear usuario" id-user="{{id}}" user-lock state="{{activo}}">
+                                {{#activo}}
+                                    <i class="mdi mdi-account-off mx-auto"  ></i>
+                                {{/activo}}
+                                {{^activo}}
+                                    <i class="mdi mdi-account-check mx-auto"  ></i>
+                                {{/activo}}
+
+                            </a>
                             <a  class="btn btn-secondary" title="Blanqueo de clave" id-user="{{id}}" blank-pass><i class="mdi mdi-key-remove mx-auto" ></i></a>
-                            <a  class="btn btn-secondary" title="Editar" id-user="{{id}}" edit><i class="mdi mdi mdi-border-color mx-auto" ></i></a>
+
                         </td>
                     </tr>
                 {{/users}}

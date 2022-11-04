@@ -37,5 +37,5 @@ function cargarContenido(vista){
   return new Promise((resolve, reject) =>{
         container.innerHTML = vista;
         return resolve(true);
-    })
+    });
 }
