@@ -8,6 +8,7 @@ var dirmsg = document.getElementById('dir-validate-msg');
 
 function valid(input, msg){
     input.classList.remove('invalid');
+
     msg.classList.remove('invalid-feedback');
     msg.classList.add('valid-feedback');
     msg.innerHTML=' <i class="fa-solid fa-check me-2"></i></i> Se geo-posicionó correctamente.';
@@ -15,6 +16,7 @@ function valid(input, msg){
 }
 function invalid(input, msg){
     input.classList.add('invalid');
+
     msg.classList.remove('valid-feedback');
     msg.classList.add('invalid-feedback');
     msg.innerHTML=' <i class="fa-solid fa-circle-exclamation me-2"></i> Seleccione su direccion de la lista desplegable.';
@@ -99,6 +101,8 @@ function initAutocomplete() {
             }
             input_lat.value = place.geometry.location.lat();
             input_lng.value = place.geometry.location.lng();
+            input_lat.classList.add('text-dark-gray');
+            input_lng.classList.add('text-dark-gray');
             valid(input, dirmsg);
         });
 

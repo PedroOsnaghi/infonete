@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="infonete/public/css/index/vendors/css/vendor.bundle.base.css">
 
     <!-- Layout styles -->
-    <link rel="stylesheet" href="/infonete/public/css/style.css">
     <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+
     <link rel="shortcut icon" href="/infonete/public/images/favicon.png" />
 </head>
 <body class="bg-dark">
@@ -19,7 +20,7 @@
     <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="row w-100 m-0">
 
-            <div class="content-wrapper full-page-wrapper d-flex  align-items-center auth login-bg">
+            <div class="content-wrapper full-page-wrapper d-flex  align-items-center ">
 
 
 
@@ -41,16 +42,20 @@
                                 <input type="password" class="form-control" name="pass" id="floatingPassword" placeholder="Contraseña" required>
                             </div>
                             <div class="form-group d-flex align-items-center justify-content-between">
-                                <div class="form-check">
+                                <div class="form-check d-block">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input"> Recordarme </label>
+                                        <input type="checkbox" class="form-check-input p-0"> Recordarme </label>
                                 </div>
-                                <a href="#" class="forgot-pass">Recuperar contraseña</a>
+                                <div>
+                                    <a href="#" class="forgot-pass d-block">Recuperar contraseña</a>
+                                </div>
+
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-block enter-btn">Ingresar</button>
+                                <button type="submit" class="btn btn-primary btn-block enter-btn mb-2">Ingresar</button>
+                                <p class="sign-up">No tienes cuenta?<a href="/infonete/register"> Registrarse</a></p>
                             </div>
-                            <p class="sign-up">No tienes cuenta?<a href="/infonete/register"> Registrarse</a></p>
+
 
 
 

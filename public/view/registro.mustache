@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="infonete/public/css/index/vendors/css/vendor.bundle.base.css">
 
     <!-- Layout styles -->
-    <link rel="stylesheet" href="/infonete/public/css/index/style.css">
-    <link rel="stylesheet" href="/infonete/public/css/global.css">
-    <link rel="stylesheet" href="/infonete/public/css/maps.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/maps.css">
 
-    <link rel="stylesheet" href="/infonete/public/css/loader.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/loader.css">
     <link rel="shortcut icon" href="/infonete/public/images/favicon.png" />
 </head>
 <body class="bg-dark">
@@ -21,8 +21,8 @@
     <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="row w-100 m-0">
             <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
-                <div class="card col-lg-6 mx-auto">
-                    <div class="card-body px-3 pb-5 pt-3">
+                <div class="card col-lg-6 mx-auto fadeIn">
+                    <div class="card-body px-3 pb-3 pt-3">
                         <div class=" d-flex text-light-gray align-items-center justify-content-between mb-2">
                             <h3 class="card-title text-left text-light-gray m-0">Registro de Usuarios</h3>
                             <img class="brand-logo m-0" src="/infonete/public/images/logo/logo-150.png" alt="">
@@ -126,8 +126,9 @@
 
 
                             </div>
-                            <div class="text-center mb-3">
-                                <input class="btn btn-primary btn-lg" type="submit" value="Registrarse">
+                            <div class="text-center mb-2">
+                                <input class="btn btn-primary btn-lg mb-2" type="submit" value="Registrarse">
+                                <a class="d-block" href="/infonete/login">Cancelar registro</a>
                             </div>
 
 
@@ -157,9 +158,9 @@
         <h2>{{error}}</h2>
     {{/error}}
 
-    <script src="/infonete/public/js/misc.js"></script>
-    <script src="/infonete/public/js/jquery-1.11.3.min.js"></script>
-    <script src="/infonete/public/js/preview.js"></script>
+    <script src="/infonete/public/js/vendors/misc.js"></script>
+    <script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+    <script src="/infonete/public/js/app/preview.js"></script>
 
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -169,8 +170,8 @@
             defer>
 
     </script>
-    <script type="text/javascript" src="/infonete/public/js/google.maps.js"></script>
-    <script src="/infonete/public/js/pass-view.js"></script>
-    <script src="/infonete/public/js/register.js"></script>
+    <script type="text/javascript" src="/infonete/public/js/vendors/google.maps.js"></script>
+    <script src="/infonete/public/js/app/pass-view.js"></script>
+    <script src="/infonete/public/js/app/register.js"></script>
 </body>
 </html>
