@@ -1,11 +1,11 @@
 //Obtencion de elementos
-function view_init(){
+
 
     var btn_roles = document.querySelectorAll("button[rol-name]");
     var rol_options = document.querySelectorAll("a[rol-option]");
     var btn_lock = document.querySelectorAll("a[user-lock]");
     var btn_blank = document.querySelectorAll("a[blank-pass]");
-    var btn_edit = document.querySelectorAll("a[edit]");
+
 
 
 
@@ -148,4 +148,4 @@ function view_init(){
 
 
 
-}
+

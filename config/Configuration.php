@@ -72,7 +72,7 @@ class Configuration
     public function getSuscripcionController()
     {
         $suscripcionModel = $this->getSuscripcionModel();
-        return new SuscripcionController($suscripcionModel, $this->getRender());
+        return new SuscripcionController($suscripcionModel, $this->getSession(), $this->getRender());
     }
 
     public function getEdicionModel()
@@ -96,7 +96,7 @@ class Configuration
     public function getProductoController()
     {
         $productoModel = $this->getProductoModel();
-        return new ProductoController($productoModel, $this->getFile(), $this->getRender());
+        return new ProductoController($productoModel, $this->getFile(), $this->getSession(), $this->getRender());
     }
 
     public function getLoginModel()
@@ -122,7 +122,7 @@ class Configuration
 
     public function getUsuarioController()
     {
-        return new UsuarioController($this->getUsuarioModel(), $this->getRender());
+        return new UsuarioController($this->getUsuarioModel(), $this->getSession(), $this->getRender());
     }
 
     private function getRegisterModel()

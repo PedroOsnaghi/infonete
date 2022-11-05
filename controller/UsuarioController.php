@@ -2,11 +2,13 @@
 
 class UsuarioController{
 
-  private $userModel;
-  private $render;
+      private $userModel;
+      private $render;
+      private $session;
 
-  public function __construct($userModel, $render){
+    public function __construct($userModel, $session, $render){
       $this->render = $render;
+      $this->session = $session;
       $this->userModel = $userModel;
   }
 
@@ -74,7 +76,8 @@ class UsuarioController{
   {
       return array(
           "users" => $this->userModel->listAll(),
-          "roles" => $this->userModel->listRoles()
+          "roles" => $this->userModel->listRoles(),
+          "userAuth" => $this->session->getAuthUser()
       );
   }
 
@@ -83,7 +86,8 @@ class UsuarioController{
       return array(
           "users" => $this->userModel->searchBy($value),
           "roles" => $this->userModel->listRoles(),
-          "value" => $value
+          "value" => $value,
+          "userAuth" => $this->session->getAuthUser()
       );
   }
 

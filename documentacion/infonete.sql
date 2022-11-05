@@ -46,6 +46,7 @@ create table suscripcion(
 id int primary key auto_increment,
 descripcion varchar(50),
 id_tipo_suscripcion int,
+tag varchar(30),
 precio float,
 foreign key(id_tipo_suscripcion) references tipo_suscripcion(id));              
 

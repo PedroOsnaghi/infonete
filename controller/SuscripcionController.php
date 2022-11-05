@@ -4,10 +4,12 @@ class SuscripcionController
 {
     private $suscripcionModel;
     private $render;
+    private $session;
 
-    public function __construct($suscripcionModel, $render)
+    public function __construct($suscripcionModel, $session, $render)
     {
         $this->suscripcionModel = $suscripcionModel;
+        $this->session = $session;
         $this->render = $render;
     }
 
@@ -32,10 +34,27 @@ class SuscripcionController
         echo $this->render->render("public/view/suscripcion.mustache", $data);
     }
 
+    public function planes(){
+
+        $data = $this->getData();
+
+        echo $this->render->render("public/view/planes.mustache", $data);
+    }
+
     private function setSuscripcionValidada()
     {
         $this->suscripcionModel->setDescripcion($_POST['descripcion']);
         $this->suscripcionModel->setDuracion($_POST['duracion']);
         $this->suscripcionModel->setPrecio($_POST['precio']);
     }
+
+    private function getData()
+    {
+        return array(
+            "planes" => $this->suscripcionModel->listar(),
+            "userAuth" => $this->session->getAuthUser()
+        );
+    }
+
+
 }

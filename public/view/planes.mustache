@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Planes</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: Planes -->
+        <div class="card">
+            <div class="card-body">
+
+                <h1>Ahora podes informarte sin limites!</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa earum molestiae nesciunt placeat sapiente vero. Consequuntur cum magnam quasi. Commodi exercitationem fuga illum minus saepe? Distinctio molestias quisquam voluptas.</p>
+
+                <!-- seccion novedades -->
+
+                <div class="row">
+
+
+                    <div class="row w-100 text-center px-5">
+                        {{#planes}}
+                            <div class="col-xl-4 col-sm-6 grid-margin stretch-card ">
+                                <div class="card bg-light shadow bd-gradient-{{tag}}">
+                                    <div class="card-body">
+                                        <div class="row rounded bg-gradient-{{tag}} px-2 py-4 mx-auto w-100">
+                                            <h3 class="text-center mx-auto w-100 mb-0">{{id}} - Plan {{descripcion}}</h3>
+
+                                        </div>
+                                        <div class="row mx-auto">
+                                            <div class="d-flex flex-column w-100 mt-4">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="d-flex justify-content-center align-items-center plan-check bg-gradient-{{tag}}">
+                                                        <i class="mdi mdi-check"></i>
+                                                    </div>
+                                                    <p class="text-gray mb-0 ml-3 fs-1">Duración de {{duracion}} dias.</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="d-flex flex-column w-100 mt-4">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="d-flex justify-content-center align-items-center plan-check bg-gradient-{{tag}}">
+                                                        <i class="mdi mdi-check"></i>
+                                                    </div>
+                                                    <p class="text-gray mb-0 ml-3 fs-1">Producto a elección.</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="d-flex flex-column w-100 mt-4">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="d-flex justify-content-center align-items-center plan-check bg-gradient-{{tag}}">
+                                                        <i class="mdi mdi-check"></i>
+                                                    </div>
+                                                    <p class="text-gray mb-0 ml-3 fs-1">Sin renovación automatica.</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row rounded bg-dark-gray px-2 py-4 mx-auto w-100 mt-3">
+                                                <h2 class="text-center mx-auto w-100 mb-0">$ {{precio}}.-</h2>
+
+                                            </div>
+
+                                            <div class="row mx-auto w-100 mt-2">
+                                                <a class="btn btn-primary btn-block" h="/infonete/suscripcion/comprar?id={{id}}">Comprar</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        {{/planes}}
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+</div>
+
+
+        </div>
+</div>
+<!-- main-panel ends -->
+</div>
+</div>
+
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/css/index/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+
+
+
+<script type='text/javascript' src="/infonete/public/js/app/users.js"></script>
+
+
+
+</body>
+
+
+
+</body>
+</html>
+
+

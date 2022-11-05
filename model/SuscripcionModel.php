@@ -62,4 +62,9 @@ class SuscripcionModel
         return $this->database->execute("INSERT INTO suscripcion (descripcion, id_tipo_suscripcion, precio)
                                         VALUES ('$this->descripcion', $this->duracion, $this->precio)");
     }
+
+    public function listar()
+    {
+        return $this->database->list("SELECT s.*, t.duracion FROM suscripcion s JOIN tipo_suscripcion t ON s.id_tipo_suscripcion = t.id ORDER BY s.id ASC");
+    }
 }

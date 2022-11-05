@@ -1,4 +1,4 @@
-@import url("/infonete/public/css/color.css");
+@import url("/infonete/public/css/app/color.css");
 /*-------------------------------------------------------------------
   ===== Table of Contents =====
 
@@ -102,6 +102,62 @@
     + Lock Screen
 
 /**OVERRIDE**/
+
+.portada{
+  max-width: 120px!important;
+  object-fit: cover;
+  padding: 0px 0px 0px!important;
+}
+
+.tag-tipo{
+  padding: 2px 3px;
+  background-color: #d41459;
+  border-radius: 2px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+
+
+}
+
+.shadow-max{
+  border: none!important;
+  box-shadow: 6px 8px 21px -3px rgba(0,0,0,0.88);
+  -webkit-box-shadow: 6px 8px 21px -3px rgba(0,0,0,0.88);
+  -moz-box-shadow: 6px 8px 21px -3px rgba(0,0,0,0.88);
+}
+
+.card-tipo-border{
+  background-image: linear-gradient(to left, #d41459, #911a6c);
+  height: 8px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.card-max{
+  max-width: 250px!important;
+}
+
+.plan-check{
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+
+.details{
+  font-size: 12px;
+  font-style: italic;
+  color: var(--gray-light);
+  margin-bottom: 5px;
+
+}
+
+.edicion-details p{
+  margin-bottom: 2px!important;
+}
 
 .size{
   width: 130px!important;

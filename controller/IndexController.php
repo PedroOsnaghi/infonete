@@ -14,7 +14,7 @@ class IndexController
 
     public function execute()
     {
-        $user = $this->session->getAuthUser();
+        $user["userAuth"] = $this->session->getAuthUser();
 
         echo $this->render->render("public/view/index.mustache", $user);
     }
