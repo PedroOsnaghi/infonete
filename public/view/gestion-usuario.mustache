@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Inicio</title>
+</head>
+<body>
+
+    <div class="container-scroller">
+        <!-- partial:partial/sidebar.mustache -->
+        {{>sidebar}}
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partial/main-navbar.mustache -->
+            {{>main-navbar}}
+            <!-- partial -->
+
+                <!-- main panel -->
+                <div class="main-panel">
+                    <div id="main-content" class="content-wrapper">
+                            <!-- form: gestion usuarios -->
+                            <div class="card fadeIn">
+                                <div class="card-body">
+                                    <h4 class="card-title">Administración de cuentas de usuarios</h4>
+
+                                    <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+                                        <ul class="navbar-nav w-100">
+                                            <li class="nav-item w-100">
+                                                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search" id="search-user" method="GET">
+                                                    <input type="text" name="value"  id="search-user-box" class="form-control" value="{{value}}" placeholder="Buscar por nombre o apellido">
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-pink">Avatar</th>
+                                                <th class="text-pink">Apellido y Nombre</th>
+                                                <th class="text-pink">Usuario</th>
+                                                <th class="text-pink">Estado de cuenta</th>
+                                                <th class="text-pink size">Rol</th>
+                                                <th class="text-pink">Acciones rápidas</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {{#users}}
+                                                <tr>
+                                                    <td><img class="me-4" src="/infonete/public/uploads/profiles/{{avatar}}"></td>
+                                                    <td>{{apellido}} {{nombre}}</td>
+                                                    <td><i class="mdi mdi-account-circle text-danger d-inline"></i> {{email}}</td>
+                                                    <td>
+                                                        {{#activo}}
+                                                            <label class="badge badge-success me-1" id="label-{{id}}">Activo</label>
+                                                        {{/activo}}
+                                                        {{^activo}}
+                                                            <label class="badge badge-danger me-1" id="label-{{id}}">Inactivo</label>
+                                                        {{/activo}}
+
+                                                        {{#estado}}
+                                                            <label class="badge badge-success" id="label-{{id}}">Verificado</label>
+                                                        {{/estado}}
+                                                        {{^estado}}
+                                                            <label class="badge badge-warning" id="label-{{id}}">Pendiente</label>
+                                                        {{/estado}}
+
+                                                    </td>
+
+                                                    <td class="size">
+                                                        <div class="dropdown">
+                                                            <button class="btn dropdown-toggle btn-block" type="button" id="{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rol-sel="{{rol}}" rol-name></button>
+                                                            <div class="dropdown-menu" aria-labelledby="drop-roles" style="">
+                                                                <h6 class="dropdown-header text-primary text-center">Cambio de Roles</h6>
+                                                                {{#roles}}
+                                                                    <a class="dropdown-item" rol-option for="{{id}}" value="{{id_rol}}">{{rol_name}}</a>
+                                                                {{/roles}}
+
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <a  class="btn btn-secondary" title="Bloquear usuario" id-user="{{id}}" user-lock state="{{activo}}">
+                                                            {{#activo}}
+                                                                <i class="mdi mdi-account-off mx-auto"  ></i>
+                                                            {{/activo}}
+                                                            {{^activo}}
+                                                                <i class="mdi mdi-account-check mx-auto"  ></i>
+                                                            {{/activo}}
+
+                                                        </a>
+                                                        <a  class="btn btn-secondary" title="Blanqueo de clave" id-user="{{id}}" blank-pass><i class="mdi mdi-key-remove mx-auto" ></i></a>
+
+                                                    </td>
+                                                </tr>
+                                            {{/users}}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                     </div>
+                </div>
+                <!-- main-panel ends -->
+        </div>
+    </div>
+
+
+    <script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+    <script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/infonete/public/js/vendors/settings.js"></script>
+    <script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+    <script src="/infonete/public/js/vendors/misc.js"></script>
+    <script src="/infonete/public/js/vendors/off-canvas.js"></script>
+    <!--script vistas Infonete -->
+
+
+
+    <script type='text/javascript' src="/infonete/public/js/app/users.js"></script>
+
+
+
+</body>
+
+
+
+</body>
+</html>
+
+

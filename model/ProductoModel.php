@@ -69,6 +69,11 @@ class ProductoModel
         $this->database = $database;
     }
 
+    public function list()
+    {
+        return $this->database->list("SELECT p.*, t.tipo FROM producto p JOIN tipo_producto t ON p.id_tipo_producto = t.id ORDER BY t.tipo ASC, p.nombre ASC");
+    }
+
     public function guardar()
     {
         return $this->database->execute("INSERT INTO producto(id_tipo_producto, nombre, portada) 

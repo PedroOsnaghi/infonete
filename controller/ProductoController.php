@@ -6,12 +6,14 @@ class ProductoController
     private $productoModel;
     private $file;
     private $render;
+    private $session;
 
 
-    public function __construct($productoModel, $file, $render)
+    public function __construct($productoModel, $file, $session, $render)
     {
         $this->productoModel = $productoModel;
         $this->file = $file;
+        $this->session = $session;
         $this->render = $render;
     }
 
@@ -23,6 +25,12 @@ class ProductoController
     public function agregar()
     {
         echo $this->render->render("public/view/producto.mustache");
+    }
+
+    public function admin()
+    {
+        $data = $this->getData();
+        echo $this->render->render("public/view/gestion-producto.mustache", $data);
     }
 
     public function guardar()
@@ -45,10 +53,20 @@ class ProductoController
 
     private function getFileName()
     {
-        return ($this->file->uploadFile("portadas")) ?
+        return ($this->file->uploadFile("portada")) ?
             $this->file->get_file_uploaded() :
             'default.png';
     }
+
+    private function getData()
+    {
+        return array(
+            "productos" => $this->productoModel->list(),
+            "userAuth" => $this->session->getAuthUser()
+        );
+    }
+
+
 
 
 }

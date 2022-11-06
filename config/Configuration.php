@@ -8,6 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 include_once("helper/MysqlDatabase.php");
 include_once("helper/Render.php");
 include_once("helper/UrlHelper.php");
+include_once("helper/Redirect.php");
 include_once("helper/hasher.php");
 include_once("helper/Client.php");
 include_once("helper/GeoPosition.php");
@@ -23,16 +24,21 @@ include_once("model/UsuarioModel.php");
 include_once("model/ProductoModel.php");
 include_once("model/EdicionModel.php");
 include_once("model/ArticuloModel.php");
+include_once("model/SeccionModel.php");
+include_once("model/SuscripcionModel.php");
 
 //CONTROLADORES
+include_once("controller/IndexController.php");
 include_once("controller/LoginController.php");
 include_once("controller/RegisterController.php");
 include_once("controller/UsuarioController.php");
 include_once("controller/ProductoController.php");
 include_once("controller/EdicionController.php");
 include_once("controller/ArticuloController.php");
+include_once("controller/SeccionController.php");
+include_once("controller/SuscripcionController.php");
 
-//vendor
+//vendors
 require('third-party/PHPMailer-master/src/Exception.php');
 require('third-party/PHPMailer-master/src/PHPMailer.php');
 require('third-party/PHPMailer-master/src/SMTP.php');
@@ -52,6 +58,35 @@ class Configuration
     {
         $articuloModel = $this->getArticuloModel();
         return new ArticuloController($articuloModel, $this->getRender());
+    }
+
+    public function getIndexController()
+    {
+        return new IndexController($this->getSession(), $this->getRender());
+    }
+
+    public function getSeccionModel()
+    {
+        $database = $this->getDatabase();
+        return new SeccionModel($database);
+    }
+
+    public function getSeccionController()
+    {
+        $seccionModel = $this->getSeccionModel();
+        return new SeccionController($seccionModel, $this->getRender());
+    }
+
+    public function getSuscripcionModel()
+    {
+        $database = $this->getDatabase();
+        return new SuscripcionModel($database);
+    }
+
+    public function getSuscripcionController()
+    {
+        $suscripcionModel = $this->getSuscripcionModel();
+        return new SuscripcionController($suscripcionModel, $this->getSession(), $this->getRender());
     }
 
     public function getEdicionModel()
@@ -75,7 +110,7 @@ class Configuration
     public function getProductoController()
     {
         $productoModel = $this->getProductoModel();
-        return new ProductoController($productoModel, $this->getFile(), $this->getRender());
+        return new ProductoController($productoModel, $this->getFile(), $this->getSession(), $this->getRender());
     }
 
     public function getLoginModel()
@@ -101,7 +136,7 @@ class Configuration
 
     public function getUsuarioController()
     {
-        return new UsuarioController($this->getUsuarioModel(), $this->getRender());
+        return new UsuarioController($this->getUsuarioModel(), $this->getSession(), $this->getRender());
     }
 
     private function getRegisterModel()
@@ -177,8 +212,8 @@ class Configuration
 
     private function getSession()
     {
-
-        return new Session();
+        $config = $this->getConfig();
+        return new Session($config['session_lifetime']);
     }
 
 

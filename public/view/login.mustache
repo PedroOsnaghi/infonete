@@ -1,49 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- boostrap -->
-    <link rel="stylesheet" href="/infonete/public/css/bootstrap.css">
-    <link rel="stylesheet" href="/infonete/public/css/global.css">
-    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png" type="image/x-icon">
-    <title>Infonete-Ingresar</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Iniciar sesíon</title>
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="infonete/public/css/index/vendors/css/vendor.bundle.base.css">
+
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+
+    <link rel="shortcut icon" href="/infonete/public/images/favicon.png" />
 </head>
 <body class="bg-dark">
-    <main class="container container-login text-center ">
-             <div>
-                 <img class="brand-logo mt-2" src="/infonete/public/images/logo/logo.png" alt="">
-             </div>   
-             <div class="login-box p-5 rounded  shadow-sm mt-5 fadeIn">
-                <h2>Inicia sesión</h2>
-                <form action="/infonete/login/validar" method="POST">
-                    <div class="form-floating my-3">
-                      <input type="email" class="form-control" name="email" id="floatingInput" placeholder="Correo electónico" required>
-                      <label  for="floatingInput">Correo electónico</label>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+
+            <div class="content-wrapper full-page-wrapper d-flex  align-items-center ">
+
+
+
+                <div class="card col-lg-4 mx-auto fadeIn">
+                    <div class="card-body px-5 pb-5 pt-4">
+                        <div class=" d-flex text-light-gray align-items-center justify-content-between">
+                            <h3 class="card-title text-left text-light-gray m-0">Iniciar Sesión</h3>
+                            <img class="brand-logo m-0" src="/infonete/public/images/logo/logo-150.png" alt="">
+                        </div>
+
+                        <hr>
+                        <form action="/infonete/login/validar" method="POST" >
+                            <div class="form-floating my-3">
+                                <label  for="floatingInput">Correo electónico *</label>
+                                <input type="email" class="form-control" name="email" id="floatingInput" placeholder="Correo electónico" required>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <label for="floatingPassword">Contraseña *</label>
+                                <input type="password" class="form-control" name="pass" id="floatingPassword" placeholder="Contraseña" required>
+                            </div>
+                            <div class="form-group d-flex align-items-center justify-content-between">
+                                <div class="form-check d-block">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input p-0"> Recordarme </label>
+                                </div>
+                                <div>
+                                    <a href="#" class="forgot-pass d-block">Recuperar contraseña</a>
+                                </div>
+
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-block enter-btn mb-2">Ingresar</button>
+                                <p class="sign-up">No tienes cuenta?<a href="/infonete/register"> Registrarse</a></p>
+                            </div>
+
+
+
+
+                        </form>
+                        {{#error}}
+                            <div class="alert alert-danger mt-3 py-2" id="msg-container"  role="alert">
+
+                                {{error}}
+
+                            </div>
+                        {{/error}}
+
+                        <a href="/infonete/">Volver</a>
                     </div>
-                    <div class="form-floating mb-3">
-                      <input type="password" class="form-control" name="pass" id="floatingPassword" placeholder="Contraseña" required>
-                      <label for="floatingPassword">Contraseña</label>
-                    </div>
-                    <input class="btn btn-primary" type="submit" value="Ingresar">
-                </form>
 
-                <h6 class="mt-3 d-inline-block">Aún no estás registrado?</h6>
-                <a href="/infonete/register">Registrarse</a>
-                {{#error}}
-                  <div class="alert alert-danger mt-3 py-2" id="msg-container"  role="alert">
+                </div>
 
-                        {{error}}
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- row ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
 
-                  </div>
-                 {{/error}}
-
-             </div>
-            
-    </main>
-
-
-
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
 </body>
 </html>

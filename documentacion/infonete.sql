@@ -2,6 +2,11 @@ drop database if exists infonete;
 create database infonete;
 use infonete;
 
+create table rol (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    rol_name varchar(30) not null
+);
+
 create table usuario (
 	id int primary key auto_increment,
     nombre varchar(50),
@@ -15,8 +20,11 @@ create table usuario (
     vhash varchar(100),
     rol int not null,
     estado int not null,
-    activo int not null
+    activo int not null,
+    FOREIGN KEY (rol) REFERENCES rol(id)
 );
+
+
 
 create table tipo_producto(
 id int primary key auto_increment,
@@ -38,6 +46,7 @@ create table suscripcion(
 id int primary key auto_increment,
 descripcion varchar(50),
 id_tipo_suscripcion int,
+tag varchar(30),
 precio float,
 foreign key(id_tipo_suscripcion) references tipo_suscripcion(id));              
 
@@ -104,14 +113,20 @@ tipo varchar(100));
 
 create table archivo(
 id int primary key auto_increment,
+id_articulo int,
 id_tipo int,
 nombre varchar(100),
 size float,
-foreign key(id_tipo) references tipo_archivo(id));
+foreign key(id_tipo) references tipo_archivo(id),
+foreign key(id_articulo) references articulo(id));
 
+insert into rol (rol_name) values ("Lector"),("Redactor"),("Editor"),("Administrador");
 
 insert into usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo) 
-			 values ('Camila', 'Belen', 'admin@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'default.png', '', 1, 1, 1);
+			 values ('Facundo', 'Herrera', 'admin@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face16.jpg', '', 4, 1, 1),
+					('Carolina', 'Montenegro', 'carol@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face23.jpg', '', 3, 1, 1),
+                    ('Nicolas', 'Arana', 'nico23@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face23.jpg', '', 2, 1, 1),
+                    ('Romina', 'Godoy', 'rogodoy@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face26.jpg', '', 1, 1, 1);
              
 insert into tipo_archivo(tipo) values('IMAGEN'),('VIDEO'),('AUDIO');
 

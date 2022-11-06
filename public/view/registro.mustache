@@ -1,117 +1,147 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png" type="image/x-icon">
-    <title>Infonete-registrarse</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="infonete/public/css/index/vendors/css/vendor.bundle.base.css">
 
-    <!-- boostrap -->
-    <link rel="stylesheet" href="/infonete/public/css/bootstrap.css">
-    <link rel="stylesheet" href="/infonete/public/css/all.min.css">
-    <link rel="stylesheet" href="/infonete/public/css/global.css">
-    <link rel="stylesheet" href="/infonete/public/css/maps.css">
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/maps.css">
 
-    <link rel="stylesheet" href="/infonete/public/css/loader.css">
-
+    <link rel="stylesheet" href="/infonete/public/css/app/loader.css">
+    <link rel="shortcut icon" href="/infonete/public/images/favicon.png" />
 </head>
 <body class="bg-dark">
-    <main class="container">
-        <div id="register">
-            <div class="text-center">
-                <img class="brand-logo mt-2" src="/infonete/public/images/logo/logo.png" alt="">
-            </div>
-            <div class="container-register login-box rounded p-2 px-sm-5 mx-auto mt-4 fadeIn">
-                <div class="row align-items-center mb-2">
-                    <div class="col-3">
-                        <a class="btn btn-secondary" href="/infonete/login" ><i class="fa-solid fa-arrow-left me-2"></i>volver</a>
-                    </div>
+<div id="register" class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+                <div class="card col-lg-6 mx-auto fadeIn">
+                    <div class="card-body px-3 pb-3 pt-3">
+                        <div class=" d-flex text-light-gray align-items-center justify-content-between mb-2">
+                            <h3 class="card-title text-left text-light-gray m-0">Registro de Usuarios</h3>
+                            <img class="brand-logo m-0" src="/infonete/public/images/logo/logo-150.png" alt="">
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="item-reg text-center mr-2" >
+                                <i class="mdi mdi-account"></i>
+                            </span>
+                            <div class="w-100">
+                                <h6 class="mb-1 text-primary">Datos de cuenta</h6>
+                                <hr class="m-0 text-gray">
+                            </div>
 
-                    <h4 class="col-6">Registro de Usuario</h4>
+                        </div>
+
+
+                        <form id="form" action="register/validar" method="POST" enctype="multipart/form-data" autocomplete="off">
+                            <div class="row text-center">
+                                <div class="col-sm-4 col-12 justify-content-center">
+                                    <img class="profile large d-block mx-auto mb-2" id="preview" src="/infonete/public/uploads/profiles/default.png" alt="">
+                                    <div class="file btn btn-info btn-block mb-2 ">
+                                       <p class="d-flex align-content-center justify-content-center">
+                                           <i class="mdi mdi-camera d-inline me-2"></i>Seleccionar Avatar
+                                       </p>
+                                        <input type="file" accept="image/png,image/jpeg" id="file" name="file" class="form-control">
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-8 col-12">
+                                    <input class="form-control mb-2" type="text" name="nombre" placeholder="Nombre" required>
+
+                                    <input class="form-control mb-2" type="text" name="apellido" placeholder="Apellido" required>
+                                    <input class="form-control mb-0" type="email" name="email" id="email" placeholder="email" required>
+                                    <div id="mail-validate-msg" class="text-left valid-feedback">
+
+                                    </div>
+
+                                    <div class="input-group my-2">
+                                        <input class="form-control" type="password" name="pass" id="pass" placeholder="Contraseña" required>
+                                        <div class="input-group-append">
+                                            <button class="input-group-text text-gray view" type="button" for="pass"  pass-view><i class="mdi mdi-eye"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group my-2">
+                                        <input  class="form-control" type="password" id="pass-rpt"  placeholder="Repita contraseña" required>
+                                        <div class="input-group-append">
+                                            <button class="input-group-text text-gray view" type="button" for="pass-rpt" pass-view><i class="mdi mdi-eye"></i></button>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="pass-validate-msg" class="text-left valid-feedback">
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                            <span class="item-reg text-center mr-2" >
+                                <i class="mdi mdi-map-marker"></i>
+                            </span>
+                                <div class="w-100">
+                                    <h6 class="mb-1 text-primary">Datos de Localización</h6>
+                                    <hr class="m-0 text-gray">
+                                </div>
+
+                            </div>
+
+                            <div>
+
+                                <input id="pac-input" class="form-control mb-0" type="text" name="direccion" placeholder="Domicilio" required>
+                                <div id="dir-validate-msg" class="text-left valid-feedback">
+
+                                </div>
+                                <div class="col px-0">
+                                    <div class="row">
+                                        <div class="input-group my-3 col">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Lat:</span>
+                                            </div>
+                                            <input type="text" class="form-control" name="lat" id="lat" placeholder="Geo-latitud" readonly/>
+                                        </div>
+                                        <div class="input-group my-3 col">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Lng:</span>
+                                            </div>
+                                            <input type="text" class="form-control" name="lng" id="lng" placeholder="Geo-longitud" readonly/>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="col mb-3" id="map">
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="text-center mb-2">
+                                <input class="btn btn-primary btn-lg mb-2" type="submit" value="Registrarse">
+                                <a class="d-block" href="/infonete/login">Cancelar registro</a>
+                            </div>
+
+
+                        </form>
+                    </div>
                 </div>
-
-                <h5 class="mb-0">Datos de cuenta</h5>
-                <hr class="mt-0">
-                <form id="form" action="register/validar" method="POST" enctype="multipart/form-data">
-                    <div class="row text-center">
-                        <div class="col-sm-4 col-12 justify-content-center">
-                            <img class="profile large d-block mx-auto mb-2" id="preview" src="/infonete/public/uploads/profiles/default.png" alt="">
-                            <div class="file btn btn-success mb-2">
-                                <p><i class="fa-solid fa-camera me-2"></i>Cambiar</p>
-                                <input type="file" accept="image/png,image/jpeg" id="file" name="file" class="form-control">
-                            </div>
-
-                        </div>
-                        <div class="col-sm-8 col-12">
-                            <input class="form-control mb-2" type="text" name="nombre" placeholder="Nombre" required>
-
-                            <input class="form-control mb-2" type="text" name="apellido" placeholder="Apellido" required>
-                            <input class="form-control mb-0" type="email" name="email" id="email" placeholder="email" required>
-                            <div id="mail-validate-msg" class="text-start valid-feedback">
-
-                            </div>
-
-                            <div class="input-group my-2">
-                                <input class="form-control" type="password" name="pass" id="pass" placeholder="Contraseña" required>
-                                <button class="input-group-text text-gray view" type="button" for="pass"  pass-view><i class="fa-solid fa-eye"></i></button>
-                            </div>
-
-                            <div class="input-group my-2 mb-0">
-                                <input  class="form-control" type="password" id="pass-rpt"  placeholder="Repita contraseña" required>
-                                <button class="input-group-text text-gray view" type="button" for="pass-rpt" pass-view><i class="fa-solid fa-eye"></i></button>
-                            </div>
-                            <div id="pass-validate-msg" class="text-start valid-feedback">
-
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <h5 class="mb-0 mt-3">Datos de Localización</h5>
-                    <hr class="mt-0">
-
-                    <div>
-
-                        <input id="pac-input" class="form-control mb-0" type="text" name="direccion" placeholder="Domicilio" required>
-                        <div id="dir-validate-msg" class="text-start valid-feedback">
-
-                        </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="input-group my-3 col">
-                                    <span class="input-group-text" id="basic-addon1">Lat:</span>
-                                    <input type="text" class="form-control" name="lat" id="lat" placeholder="Geo-latitud" readonly/>
-                                </div>
-                                <div class="input-group my-3 col">
-                                    <span class="input-group-text" id="basic-addon1">Lng:</span>
-                                    <input type="text" class="form-control" name="lng" id="lng" placeholder="Geo-longitud" readonly/>
-                                </div>
-
-
-                            </div>
-                            <div class="col-8 mb-3" id="map">
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                    <div class="text-center mb-3">
-                        <input class="btn btn-primary" type="submit" value="Registrarse">
-                    </div>
-
-
-                </form>
-
-
             </div>
+            <!-- content-wrapper ends -->
         </div>
-    </main>
-
+        <!-- row ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
     <!--LOADER-->
     <div id="loader" class="text-light hidden">
         <div class="loader-content">
@@ -128,12 +158,11 @@
         <h2>{{error}}</h2>
     {{/error}}
 
+    <script src="/infonete/public/js/vendors/misc.js"></script>
+    <script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+    <script src="/infonete/public/js/app/preview.js"></script>
 
-    <script src="/infonete/public/js/jquery-1.11.3.min.js"></script>
-    <script src="/infonete/public/js/preview.js"></script>
 
-    <script src="/infonete/public/js/bootstrap.bundle.js"></script>
-    <script src="/infonete/public/js/bootstrap.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <script
@@ -141,8 +170,8 @@
             defer>
 
     </script>
-    <script type="text/javascript" src="public/js/google.maps.js"></script>
-    <script src="/infonete/public/js/pass-view.js"></script>
-    <script src="/infonete/public/js/register.js"></script>
+    <script type="text/javascript" src="/infonete/public/js/vendors/google.maps.js"></script>
+    <script src="/infonete/public/js/app/pass-view.js"></script>
+    <script src="/infonete/public/js/app/register.js"></script>
 </body>
 </html>
