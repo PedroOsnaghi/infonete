@@ -265,7 +265,18 @@ class UsuarioModel
 
     public function rolTools()
     {
-        if ($this->getRol() == 4) return file_get_contents("public/view/partial/admin.mustache");
+        switch ($this->getRol()){
+            case self::ROL_ADMIN:
+                $menu = file_get_contents("public/view/partial/admin.mustache");
+                break;
+            case self::ROL_EDITOR:
+                $menu = file_get_contents("public/view/partial/editor.mustache");
+                break;
+            default:
+                $menu = null;
+        }
+
+        return $menu;
     }
 }
 

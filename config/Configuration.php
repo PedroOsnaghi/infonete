@@ -98,7 +98,7 @@ class Configuration
     public function getEdicionController()
     {
         $edicionModel = $this->getEdicionModel();
-        return new EdicionController($edicionModel, $this->getRender());
+        return new EdicionController($edicionModel, $this->getProductoModel(), $this->getSession(), $this->getFile(), $this->getRender());
     }
 
     public function getProductoModel()

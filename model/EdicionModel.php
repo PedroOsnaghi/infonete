@@ -7,9 +7,14 @@ class EdicionModel
     private $precio;
     private $fecha;
     private $producto;
+    private $titulo;
+    private $portada;
+    private $descripcion;
     private $database;
 
+
     //GETTERS Y SETTERS
+
     public function getId()
     {
         return $this->id;
@@ -60,6 +65,38 @@ class EdicionModel
         $this->producto = $producto;
     }
 
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+    }
+
+    public function getPortada()
+    {
+        return $this->portada;
+    }
+
+    public function setPortada($portada)
+    {
+        $this->portada = $portada;
+    }
+
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+    }
+
+
+
     public function __construct($database)
     {
         $this->database = $database;
@@ -68,6 +105,11 @@ class EdicionModel
 
     public function guardar()
     {
-        return $this->database->execute("INSERT INTO edicion (numero, precio, fecha, id_producto) VALUES ($this->numero, $this->precio, '$this->fecha', $this->producto)");
+        return $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', ". $this->producto . ")");
+    }
+
+    public function listBy($product)
+    {
+        return $this->database->list("SELECT * FROM edicion WHERE id_producto = $product");
     }
 }

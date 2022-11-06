@@ -103,6 +103,11 @@
 
 /**OVERRIDE**/
 
+.disabled{
+  background-color: var(--dark-gray)!important;
+  color: var(--light)!important;
+  border-color: var(--dark-gray)!important;
+}
 
 .product-image{
   width: 200px;
@@ -187,7 +192,7 @@
 .form-control:focus, .asColorPicker-input:focus, .dataTables_wrapper select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=number], .select2-container--default .select2-selection--single:focus, .select2-container--default .select2-selection--single .select2-search__field:focus, .typeahead:focus, .tt-query:focus, .tt-hint:focus {
   border: 1px solid;
   border-color: var(--blue-primary)!important;
-  height: calc(2.25rem + 2px);
+  /*height: calc(2.25rem + 2px);*/
   color: var(--light-gray)!important;
 }
 
@@ -15542,7 +15547,9 @@ button:focus {
   outline-width: 0;
   outline-color: transparent;
   box-shadow: none;
-  outline-style: none; }
+  outline-style: none;
+  resize: none;
+}
 
 textarea {
   resize: none;

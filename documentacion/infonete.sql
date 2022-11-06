@@ -64,8 +64,11 @@ foreign key(id_producto) references producto(id));
 create table edicion(
 id int primary key auto_increment,
 numero int,
+titulo varchar(100),
+descripcion varchar(255),
 precio float,
-fecha date,
+fecha date default(null),
+estado boolean,
 id_producto int,
 portada varchar(50),
 foreign key(id_producto) references producto(id));
