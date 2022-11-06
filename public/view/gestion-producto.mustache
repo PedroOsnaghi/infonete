@@ -35,11 +35,11 @@
                             <div class="navbar-menu-wrapper navbar-expand flex-grow d-flex align-items-stretch">
                                 <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
                                     <li class="nav-item w-75">
-                                        <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search d-block " id="search-user" method="GET">
-                                            <input type="text" name="value"  id="search-user-box" class="form-control" value="{{value}}" placeholder="Buscar por titulo o tipo">
+                                        <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search d-block " action="/infonete/producto/search" id="search-user" method="GET">
+                                            <input type="text" name="value"  id="search-user-box" class="form-control" value="{{value}}" placeholder="Buscar por nombre o tipo">
                                         </form>
                                     </li>
-                                    <li><a class="nav-item btn btn-primary" id="nuevo-producto"><i class="mdi mdi-playlist-plus"></i>Nuevo Producto</a></li>
+                                    <li><a class="nav-item btn btn-primary" id="nuevo-producto" href="/infonete/producto/agregar"><i class="mdi mdi-playlist-plus"></i>Nuevo Producto</a></li>
                                 </ul>
                             </div>
 
@@ -47,7 +47,7 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th class="text-pink">Portada</th>
+                                            <th class="text-pink">Imagen</th>
                                             <th class="text-pink">Titulo</th>
                                             <th class="text-pink">Tipo</th>
                                             <th class="text-pink">Estado</th>
@@ -58,7 +58,7 @@
                                     <tbody>
                                     {{#productos}}
                                         <tr>
-                                            <td><img class="portada-mini me-4" src="/infonete/public/uploads/portada/{{portada}}"></td>
+                                            <td><img class="portada-mini me-4" src="/infonete/public/uploads/product/{{imagen}}"></td>
                                             <td>{{nombre}}</td>
                                             <td>{{tipo}}</td>
                                             <td>
