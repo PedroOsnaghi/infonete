@@ -128,23 +128,6 @@
     }
 
 
-    //busqueda de usuarios
-   const searchUser = document.getElementById("search-user");
-    const searchUbox = document.getElementById("search-user-box");
-
-
-
-
-//eventos
-
-    searchUser.addEventListener('submit', function (e){
-        e.preventDefault();
-        e.stopPropagation();
-
-        show_form_ajax("http://localhost/infonete/usuario/search?value=" + searchUbox.value);
-
-    });
-
 
 
 

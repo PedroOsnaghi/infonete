@@ -34,7 +34,7 @@ create table producto(
 id int primary key auto_increment,
 id_tipo_producto int, 
 nombre varchar(50),
-portada varchar(50),
+imagen varchar(50),
 foreign key(id_tipo_producto) references tipo_producto(id));
 
 create table tipo_suscripcion(
@@ -55,7 +55,7 @@ id_usuario int,
 id_suscripcion int,
 id_producto int,
 fecha_inicio date,
-activa bool,
+activa BOOLEAN,
 primary key(id_usuario, id_suscripcion),
 foreign key(id_usuario) references usuario(id),
 foreign key(id_suscripcion) references suscripcion(id),
@@ -67,6 +67,7 @@ numero int,
 precio float,
 fecha date,
 id_producto int,
+portada varchar(50),
 foreign key(id_producto) references producto(id));
 
 create table compra_edicion(

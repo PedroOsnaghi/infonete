@@ -103,6 +103,16 @@
 
 /**OVERRIDE**/
 
+
+.product-image{
+  width: 200px;
+  height: 200px;
+}
+
+.max-with-600{
+  max-width: 600px;
+}
+
 .portada{
   max-width: 120px!important;
   object-fit: cover;

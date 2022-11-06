@@ -10,7 +10,7 @@ class ProductoModel
     private $id;
     private $tipo;
     private $nombre;
-    private $portada;
+    private $imagen;
     private $database;
 
     public function __construct($database)
@@ -49,14 +49,14 @@ class ProductoModel
         $this->nombre = $nombre;
     }
 
-    public function getPortada()
+    public function getImagen()
     {
-        return $this->portada;
+        return $this->imagen;
     }
 
-    public function setPortada($portada)
+    public function setImagen($imagen)
     {
-        $this->portada = $portada;
+        $this->imagen = $imagen;
     }
 
     public function getDatabase()
@@ -74,10 +74,20 @@ class ProductoModel
         return $this->database->list("SELECT p.*, t.tipo FROM producto p JOIN tipo_producto t ON p.id_tipo_producto = t.id ORDER BY t.tipo ASC, p.nombre ASC");
     }
 
+    public function getTipoProductList()
+    {
+        return $this->database->list("SELECT * FROM tipo_producto ORDER BY id ASC");
+    }
+
     public function guardar()
     {
-        return $this->database->execute("INSERT INTO producto(id_tipo_producto, nombre, portada) 
-                                  VALUES($this->tipo, '$this->nombre', '$this->portada')");
+        return $this->database->execute("INSERT INTO producto(id_tipo_producto, nombre, imagen) 
+                                  VALUES($this->tipo, '$this->nombre', '$this->imagen')");
+    }
+
+    public function searchList($value)
+    {
+        return $this->database->list("SELECT p.*, t.tipo FROM producto p JOIN tipo_producto t ON p.id_tipo_producto = t.id WHERE p.nombre LIKE '%$value%' OR t.tipo LIKE '%$value%' ORDER BY t.tipo ASC, p.nombre ASC");
     }
 
 }
