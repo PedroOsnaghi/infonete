@@ -122,4 +122,9 @@ class ArticuloModel
                                          VALUES ('$this->titulo', '$this->subtitulo', '$this->contenido', '$this->link', '$this->linkvideo', '$this->create_at', $this->estado, '$this->update_at')");
     }
 
+    public function listBy($idEdicion)
+    {
+        return $this->database->list("SELECT a.*, es.estado, s.nombre as 'seccion', e.id as 'id_edicion' FROM articulo a JOIN estado_articulo es JOIN articulo_edicion ae JOIN edicion e JOIN seccion s ON a.id_estado = es.id AND a.id = ae.id_articulo AND ae.id_edicion = e.id AND ae.id_seccion = s.id  WHERE e.id = $idEdicion");
+    }
+
 }

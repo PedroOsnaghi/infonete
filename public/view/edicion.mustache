@@ -36,6 +36,26 @@
                                 <a class="btn btn-secondary text-center" title="Cerrar ventana" href="/infonete/edicion/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
                             </div>
                             <hr>
+                            
+                            <div class="d-flex flex-column rounded bg-dark-gray p-2 mb-3">
+                                {{#product}}
+                                    <div><h5>Producto relacionado</h5></div>
+                                    <div class="d-flex align-items-center ">
+                                        <div>
+                                            <img class="product-image-mini" src="/infonete/public/uploads/product/{{getImagen}}" alt="">
+                                        </div>
+                                        <div class="d-flex justify-content-around w-100">
+                                            <p class="p-0 m-0"><strong class="pr-1">Id: </strong> {{getId}}</p>
+                                            <p class="p-0 m-0"><strong class="pr-1">Producto: </strong> {{getNombre}}</p>
+                                            <p class="p-0 m-0"><strong class="pr-1">Tipo: </strong> {{getNombreTipo}}</p>
+                                        </div>
+
+
+                                    </div>
+
+                                {{/product}}
+
+                            </div>
                             <form action="/infonete/edicion/guardar" method="post" enctype="multipart/form-data">
 
                                 <div class="d-flex flex-column flex-lg-row">
@@ -69,18 +89,20 @@
                                         <button class="btn btn-primary mb-2" type="submit">Guardar</button>
                                     </div>
 
-                                    {{#success}}
-                                        <div class="alert alert-success" role="alert">
-                                            {{success}}
-                                        </div>
-                                    {{/success}}
 
-                                    {{#error}}
-                                        <div class="alert alert-danger" role="alert">
-                                            {{error}}
-                                        </div>
-                                    {{/error}}
                                 </div>
+                                {{#success}}
+                                    <div class="alert alert-success" role="alert">
+                                        {{success}}
+                                    </div>
+                                {{/success}}
+
+                                {{#error}}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{error}}
+                                    </div>
+                                {{/error}}
+
                             </form>
                         </div>
                     </div>

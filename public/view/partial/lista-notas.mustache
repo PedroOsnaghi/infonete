@@ -1,0 +1,38 @@
+
+{{#noticias}}
+    <tr>
+        <td><i class="text-info mdi mdi-note-outline d-inline pr-2 fs-3"></i>{{id}}</td>
+        <td>{{seccion}}</td>
+        <td>{{titulo}}</td>
+        <td>{{create_at}}</td>
+        <td>
+            {{#update_at}}
+                {{update_at}}
+            {{/update_at}}
+            {{^update_at}}
+                no publicado
+            {{/update_at}}
+        </td>
+        <td>
+            <label class="badge badge-success me-1" >Draft</label>
+        </td>
+
+        <td>
+            <a  class="btn btn-secondary" title="Enviar a Revisión" >
+                <i class="mdi mdi-web mx-auto"  ></i>
+            </a>
+            <a  class="btn btn-secondary" title="Editar" id-user="{{id}}" href="/infonete/edicion/editar?id={{id}}" blank-pass><i class="mdi mdi-pencil mx-auto" ></i></a>
+
+        </td>
+    </tr>
+{{/noticias}}
+
+{{^noticias}}
+    <tr>
+        <td>
+            No hay Notas para mostrar.
+        </td>
+
+    </tr>
+
+{{/noticias}}

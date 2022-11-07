@@ -5,16 +5,34 @@ class ArticuloController
     //PROPIEDADES
     private $articuloModel;
     private $render;
+    private $edicionModel;
+    private $session;
 
-    public function __construct($articuloModel, $render)
+    public function __construct($articuloModel, $edicionModel, $session, $render)
     {
         $this->articuloModel = $articuloModel;
+        $this->edicionModel = $edicionModel;
+        $this->session = $session;
         $this->render = $render;
+
     }
 
     public function execute()
     {
 
+    }
+
+    public function admin(){
+
+        $data = $this->getData();
+        echo $this->render->render("public/view/gestion-noticias.mustache", $data);
+    }
+
+    public function list()
+    {
+        $idEdicion = $_GET['ide'];
+        $data["noticias"] = $this->articuloModel->listBy($idEdicion);
+        echo $this->render->render("public/view/partial/lista-notas.mustache", $data);
     }
 
     public function crear()
@@ -50,6 +68,14 @@ class ArticuloController
         $datetime = new DateTime();
         $datetime->setTimezone(new DateTimeZone('America/Argentina/Buenos_Aires'));
         return $datetime->format("y-m-d H:i:s");
+    }
+
+    private function getData()
+    {
+        return array(
+            "userAuth" => $this->session->getAuthUser(),
+            "ediciones" => $this->edicionModel->listByState(EdicionModel::ESTADO_EN_EDICION)
+        );
     }
 
 }

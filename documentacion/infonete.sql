@@ -35,6 +35,7 @@ id int primary key auto_increment,
 id_tipo_producto int, 
 nombre varchar(50),
 imagen varchar(50),
+activo BOOLEAN default(1),
 foreign key(id_tipo_producto) references tipo_producto(id));
 
 create table tipo_suscripcion(

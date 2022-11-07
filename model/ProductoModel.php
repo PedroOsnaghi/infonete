@@ -9,6 +9,7 @@ class ProductoModel
     //PROPIEDADES
     private $id;
     private $tipo;
+    private $nombre_Tipo;
     private $nombre;
     private $imagen;
     private $database;
@@ -59,6 +60,16 @@ class ProductoModel
         $this->imagen = $imagen;
     }
 
+    public function getNombreTipo()
+    {
+        return $this->nombre_Tipo;
+    }
+
+    public function setNombreTipo($nombre_Tipo)
+    {
+        $this->nombre_Tipo = $nombre_Tipo;
+    }
+
     public function getDatabase()
     {
         return $this->database;
@@ -88,6 +99,23 @@ class ProductoModel
     public function searchList($value)
     {
         return $this->database->list("SELECT p.*, t.tipo FROM producto p JOIN tipo_producto t ON p.id_tipo_producto = t.id WHERE p.nombre LIKE '%$value%' OR t.tipo LIKE '%$value%' ORDER BY t.tipo ASC, p.nombre ASC");
+    }
+
+    public function getProduct($id)
+    {
+        $query = $this->database->query("SELECT p.*, t.tipo FROM producto p JOIN tipo_producto t ON p.id_tipo_producto = t.id WHERE p.id = $id");
+        return $this->toProduct($query);
+    }
+
+    private function toProduct($array)
+    {
+        $this->id = $array['id'];
+        $this->tipo = $array['id_tipo_producto'];
+        $this->nombre_Tipo = $array['tipo'];
+        $this->nombre = $array['nombre'];
+        $this->imagen = $array['imagen'];
+
+        return $this;
     }
 
 }

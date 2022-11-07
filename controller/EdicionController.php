@@ -7,7 +7,6 @@ class EdicionController
     private $render;
     private $productModel;
     private $session;
-    private $idProducto;
     private $file;
 
     public function __construct($edicionModel, $productModel, $session, $file, $render)
@@ -25,7 +24,8 @@ class EdicionController
     }
 
     public function crear(){
-        $this->idProducto = $_GET["idp"];
+
+        $this->session->setParameter('activeProduct', $this->productModel->getProduct($_GET["idp"]));
         $data = $this->getData();
         echo $this->render->render("public/view/edicion.mustache", $data);
     }
@@ -58,13 +58,14 @@ class EdicionController
         $this->edicionModel->setNumero($_POST['numero']);
         $this->edicionModel->setTitulo($_POST['titulo']);
         $this->edicionModel->setPrecio($_POST['precio']);
-        $this->edicionModel->setProducto($this->idProducto);
+        $this->edicionModel->setProducto($this->session->getParameter('activeProduct')->getId());
         $this->edicionModel->setPortada($this->getFileName());
     }
 
     private function getDataList()
     {
         return array(
+            "productoActivo" => $this->session->getParameter('activeProduct'),
             "productos" => $this->productModel->list(),
             "userAuth" => $this->session->getAuthUser()
         );
@@ -73,6 +74,7 @@ class EdicionController
     private function getData($msg = [])
     {
         return array_merge($msg, array(
+            "product" =>  $this->session->getParameter("activeProduct"),
             "userAuth" => $this->session->getAuthUser()
         ));
     }

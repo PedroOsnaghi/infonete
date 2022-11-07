@@ -272,6 +272,9 @@ class UsuarioModel
             case self::ROL_EDITOR:
                 $menu = file_get_contents("public/view/partial/editor.mustache");
                 break;
+            case self::ROL_REDACTOR:
+                $menu = file_get_contents("public/view/partial/redactor.mustache");
+                break;
             default:
                 $menu = null;
         }

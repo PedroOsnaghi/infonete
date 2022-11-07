@@ -2,6 +2,9 @@
 
 class EdicionModel
 {
+    const ESTADO_EN_EDICION = 0;
+    const ESTADO_PUBLICADO = 1;
+
     private $id;
     private $numero;
     private $precio;
@@ -105,11 +108,16 @@ class EdicionModel
 
     public function guardar()
     {
-        return $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', ". $this->producto . ")");
+        return $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto, estado) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', ". $this->producto . "," . self::ESTADO_EN_EDICION . ")");
     }
 
     public function listBy($product)
     {
         return $this->database->list("SELECT * FROM edicion WHERE id_producto = $product");
+    }
+
+    public function listByState($estado)
+    {
+        return $this->database->list("SELECT e.*, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado");
     }
 }

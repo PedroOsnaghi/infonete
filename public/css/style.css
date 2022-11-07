@@ -114,6 +114,25 @@
   height: 200px;
 }
 
+
+.product-image-mini{
+  width: 80px;
+  height: 40px;
+}
+
+
+.table .product-image{
+  width: 35px;
+  height: 20px;
+  border-radius: 0px!important;
+}
+
+.table .portada-mini{
+  width: 30px;
+  height: 40px;
+  border-radius: 0px!important;
+}
+
 .max-with-600{
   max-width: 600px;
 }
@@ -15923,8 +15942,8 @@ code {
   height: 43px; }
 
 .img-xs {
-  width: 35px;
-  height: 35px; }
+  width: 35px!important;
+  height: 35px!important; }
 
 .img-ss {
   width: 26px;

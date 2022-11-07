@@ -22,8 +22,8 @@
     max-width: 600px;
 }
 
-/*
-.profile{
+
+.avatar{
 
     padding-left: 0;
     border-radius: 50%;
@@ -35,7 +35,7 @@
 
 }
 
-img .profile{
+img .avatar{
     position: absolute;
     top: 0;
     left: 0;
@@ -59,7 +59,6 @@ img .profile{
     height: 150px!important;
 }
 
-*/
 
 
 .file{

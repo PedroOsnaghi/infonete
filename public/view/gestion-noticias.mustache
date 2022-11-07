@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
     <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
 
-    <title>Gestion Edicion</title>
+    <title>Gestion de Noticias</title>
 </head>
 <body>
 
@@ -26,20 +26,20 @@
         <!-- main panel -->
         <div class="main-panel">
             <div id="main-content" class="content-wrapper">
-                <!-- form: gestion productos -->
+                <!-- form: gestion notas -->
 
                 <div class="card fadeIn">
                     <div class="card-body">
-                        <h4 class="card-title">Administración de ediciones</h4>
+                        <h4 class="card-title">Administración de Notas Periodisticas</h4>
 
                         <div class="navbar-menu-wrapper navbar-expand flex-grow d-flex align-items-stretch">
                             <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
                                 <li class="nav-item w-75">
-                                    <select id="select-product" class="form-control"  >
-                                        <option value="0" selected hidden disabled>Seleccione un producto</option>
-                                        {{#productos}}
-                                            <option value={{id}} >{{nombre}}</option>
-                                        {{/productos}}
+                                    <select id="select-edition" class="form-control"  >
+                                        <option value="0" selected hidden disabled>Seleccione una edición</option>
+                                        {{#ediciones}}
+                                            <option value={{id}} >{{nombre}}/ {{numero}} - {{titulo}}</option>
+                                        {{/ediciones}}
                                     </select>
                                 </li>
                             </ul>
@@ -50,11 +50,11 @@
                         <div class="navbar-menu-wrapper navbar-expand flex-grow d-flex align-items-stretch">
                             <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
                                 <li class="nav-item w-75">
-                                    <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search d-block " action="/infonete/producto/search" id="search-user" method="GET">
-                                        <input type="text" name="value"  id="search-user-box" class="form-control" value="{{value}}" placeholder="Buscar por título o número de edición">
+                                    <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search d-block " action="/infonete/articulo/search" id="search-user" method="GET">
+                                        <input type="text" name="value"  id="search-user-box" class="form-control" value="{{value}}" placeholder="Buscar por titulo">
                                     </form>
                                 </li>
-                                <li><a class="nav-item btn btn-primary disabled" id="nueva-edicion"  ><i class="mdi mdi-playlist-plus"></i>Crear Edición</a></li>
+                                <li><a class="nav-item btn btn-primary disabled" id="nueva-nota"  ><i class="mdi mdi-playlist-plus"></i>Crear una Nota</a></li>
                             </ul>
                         </div>
 
@@ -62,22 +62,23 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th class="text-pink">Portada</th>
+                                    <th class="text-pink">#id</th>
+                                    <th class="text-pink">Sección</th>
                                     <th class="text-pink">Titulo</th>
-                                    <th class="text-pink">Número</th>
-                                    <th class="text-pink">Fecha Publicación</th>
+                                    <th class="text-pink">Iniciada</th>
+                                    <th class="text-pink">Publicada</th>
                                     <th class="text-pink">Estado</th>
                                     <th class="text-pink">Acciones rápidas</th>
                                 </tr>
                                 </thead>
 
-                                <tbody id="edicion-container">
-                                    <tr>
-                                        <td>
-                                            No hay ediciones para mostrar.
-                                        </td>
+                                <tbody id="notas-container">
+                                <tr>
+                                    <td>
+                                        No hay Notas para mostrar.
+                                    </td>
 
-                                    </tr>
+                                </tr>
                                 </tbody>
 
                             </table>
@@ -106,7 +107,7 @@
 
 
 
-<script type='text/javascript' src="/infonete/public/js/app/edicion.js"></script>
+<script type='text/javascript' src="/infonete/public/js/app/noticias.js"></script>
 {{#productoActivo}}
     <script>verificar({{getId}})</script>
 {{/productoActivo}}

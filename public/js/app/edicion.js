@@ -3,10 +3,14 @@ var ed_container = document.getElementById("edicion-container");
 var select_product = document.getElementById("select-product");
 
 select_product.addEventListener("change", function (){
-    btn_nuevaed.classList.remove("disabled");
-    btn_nuevaed.href = "/infonete/edicion/crear?idp=" + this.value;
-    request("http://localhost/infonete/edicion/list?idp=" + this.value);
+  establecerSeleccion(this.value)
 });
+
+function establecerSeleccion(id){
+    btn_nuevaed.classList.remove("disabled");
+    btn_nuevaed.href = "/infonete/edicion/crear?idp=" + id;
+    request("http://localhost/infonete/edicion/list?idp=" + id);
+}
 
 function request(url){
     $.ajax({
@@ -19,3 +23,16 @@ function request(url){
         }
     });
 }
+
+function verificar(id){
+   for (var i = 0; i < select_product.children.length; i++){
+       if (select_product.children[i].value == id){
+           select_product.children[i].setAttribute("selected", true);
+           establecerSeleccion(id);
+       }
+
+   }
+}
+
+
+
