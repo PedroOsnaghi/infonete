@@ -6,6 +6,16 @@
 
 }
 
+.pac-container {
+    position: absolute!important;
+    z-index: 1100 !important;
+}
+
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
+
 /*
  * Optional: Makes the sample page fill the window.
  */

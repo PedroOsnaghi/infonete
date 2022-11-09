@@ -1,10 +1,13 @@
-"use strict";
+
 
 var input_lat = document.getElementById("lat");
 var input_lng = document.getElementById("lng");
 
-var dirmsg = document.getElementById('dir-validate-msg');
 
+
+var dirmsg = document.getElementById('dir-validate-msg');
+// Creamos Search Box y lo linkeamos al input
+var input = document.getElementById("pac-input");
 
 function valid(input, msg){
     input.classList.remove('invalid');
@@ -23,8 +26,9 @@ function invalid(input, msg){
     msg.style.display = 'block';
 }
 
-// Creamos Search Box y lo linkeamos al input
-var input = document.getElementById("pac-input");
+
+
+
 
 
 function initAutocomplete() {
@@ -39,7 +43,7 @@ function initAutocomplete() {
 
     var searchBox = new google.maps.places.SearchBox(input);
 
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
 
     // mostramos los resultados del Search Box en el mapa
     map.addListener("bounds_changed", function () {
@@ -118,6 +122,9 @@ function initAutocomplete() {
 
 
 }
+
+
+
 
 
 

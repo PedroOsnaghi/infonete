@@ -20,7 +20,8 @@
     --cyan: #57c7d4;
     --white: #ffffff;
     --gray: #6c757d;
-    --gray-dark: #12151e;
+    --gray-dark:#0f1015;
+    --x-gray-dark:#0f1015;
     --indigo: #6610f2;
     --purple: #6a008a;
     --pink: #E91E63;
@@ -148,5 +149,9 @@
 
 .bg-dark-gray{
     background-color: var(--dark-gray)!important;
+}
+
+.bg-x-dark-gray{
+    background-color: var(--x-gray-dark) !important;
 }
 
