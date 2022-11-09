@@ -50,5 +50,10 @@ class SeccionModel
                                          VALUES ('$this->nombre', '$this->descripcion')");
     }
 
+    public function list()
+    {
+        return $this->database->list("SELECT * FROM seccion ORDER BY nombre ASC");
+    }
+
 
 }

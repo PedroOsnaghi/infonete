@@ -53,6 +53,8 @@ class EdicionController
         echo $this->render->render("public/view/partial/lista-edicion.mustache", $data);
     }
 
+
+
     private function setEdicionValidada()
     {
         $this->edicionModel->setNumero($_POST['numero']);

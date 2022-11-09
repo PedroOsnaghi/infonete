@@ -41,12 +41,14 @@
                             <form action="/infonete/producto/guardar" method="post" enctype="multipart/form-data">
                                 <div class="d-flex flex-column flex-lg-row">
                                     <div class="d-flex flex-column flex-shrink-0 align-items-center px-0 px-lg-5 ">
-                                        <img class="product-image" id="preview" src="/infonete/public/uploads/product/default.jpg" alt="">
-                                        <div class="file btn btn-info btn-block mb-2 mt-3 mt-lg-0">
-                                            <p class="d-flex align-content-center justify-content-center">
-                                                <i class="mdi mdi-camera d-inline me-2"></i>Seleccionar Logo
-                                            </p>
-                                            <input type="file" accept="image/png,image/jpeg" id="file" name="file" class="form-control ">
+                                        <div class="file-image-container">
+                                            <img class="product-logo-image" id="preview" src="/infonete/public/uploads/product/default.jpg" alt="">
+                                            <div class="file btn btn-info btn-block mb-2 mt-0">
+                                                <p class="d-flex align-content-center justify-content-center">
+                                                    <i class="mdi mdi-camera d-inline me-2"></i>Seleccionar Logo
+                                                </p>
+                                                <input type="file" accept="image/png,image/jpeg" id="file" name="file" class="form-control ">
+                                            </div>
                                         </div>
 
                                     </div>
@@ -109,10 +111,6 @@
 
 
 <script type='text/javascript' src="/infonete/public/js/app/preview.js"></script>
-
-
-
-</body>
 
 
 

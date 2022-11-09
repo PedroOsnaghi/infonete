@@ -1,38 +1,219 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/infonete/public/css/bootstrap.css">
-    <link rel="stylesheet" href="/infonete/public/css/global.css">
-    <title>Crear articulo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="infonete/public/css/index/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/thumb.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/maps.css">
+
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Crear Nota</title>
 </head>
 <body>
 
-<h2>Crear Articulo</h2>
+<div class="container-scroller">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
 
-<form action="/infonete/articulo/guardar" method="post" enctype="multipart/form-data">
-    <input class="form-control mb-2" type="text" name="titulo" placeholder="Título">
-    <input class="form-control mb-2" type="text" name="subtitulo" placeholder="Subtitulo">
-    <input class="form-control mb-2" type="text" name="contenido" placeholder="Contenido">
-    <input class="form-control mb-2" type="text" name="link" placeholder="Link">
-    <input class="form-control mb-2" type="text" name="linkvideo" placeholder="Link del video">
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: Nueva Nota -->
+                <div class="card fadeIn">
+                    <div class="card-body">
+                        <div class="container max-with-600 mx-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Crear Nota</h4>
+                                <a class="btn btn-secondary text-center" title="Cerrar ventana"
+                                   href="/infonete/edicion/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
+                            </div>
+                            <hr class="bg-dark-gray">
+                            <div class="d-flex flex-column rounded bg-dark-gray p-2 mb-3">
+                                {{#edicion}}
+                                    <div class="d-flex align-items-center"><i class="mdi mdi-paperclip icon-md"></i>
+                                        <div class="d-flex flex-column w-100">
+                                            <div class="d-flex w-100 max-with-800 align-items-center">
+                                                <h5 class="display-6 mb-0 mr-3">Edición Activa:</h5>
+                                                <img class="portada-image-mini mr-2 mb-2"
+                                                     src="/infonete/public/uploads/portada/{{getPortada}}" alt="">
+                                                <p class="p-0 m-0 mr-1"># {{getId}}</p>
+                                                <p class="p-0 m-0 mr-1">/ {{getNombreProducto}} /</p>
+                                                <p class="p-0 m-0 text-primary">{{getTitulo}}</p>
+                                            </div>
+                                            <hr class="bg-light-gray w-100 m-0 p-0 d-block mb-2">
+                                        </div>
+                                    </div>
 
-    {{#success}}
-        <div class="alert alert-success" role="alert">
-            {{success}}
+
+                                {{/edicion}}
+
+                            </div>
+
+
+                            <form id="form-noticia" action="" method="post" enctype="multipart/form-data">
+                                <label for="">Sección</label>
+                                <select class="form-control mb-4" name="" id="">
+                                    <option value="0" selected disabled hidden>Seleccione la Seccion de Noticias
+                                    </option>
+                                    {{#secciones}}
+                                        <option value="{{id}}">{{nombre}}</option>
+                                    {{/secciones}}
+                                </select>
+
+                                <h5 class="display-6 mb-1 mt-3 text-primary">Principal:</h5>
+                                <hr class="bg-gray w-100 m-0 p-0 d-block mb-2">
+                                <label for="">Titulo de Nota *</label>
+                                <input class="form-control mb-2" type="text" name="titulo" placeholder="Título">
+                                <label for="">Subtitulo de Nota *</label>
+                                <input class="form-control mb-2" type="text" name="subtitulo" placeholder="Subtitulo">
+                                <label for="">contenido *</label>
+                                <textarea class="form-control mb-2" rows="10" name="contenido"
+                                          placeholder="Cuerpo de la Notícia" required></textarea>
+
+                                <h5 class="display-6 mb-1 mt-3 text-primary">Cargar imagenes relacionadas:</h5>
+                                <hr class="bg-gray w-100 m-0 p-0 d-block mb-2">
+
+                                <div class="file-container">
+                                    <div class="file btn btn-info mx-2 my-2">
+                                        <p class="d-flex align-items-center justify-content-cente mb-0">
+                                            <i class="mdi mdi-camera d-inline me-2"></i>Cargar imagenes
+                                        </p>
+                                        <input class="w-100 h-100" type="file" name="file[]"
+                                               accept="image/png,image/jpeg" id="file" multiple>
+                                    </div>
+                                    <div class="thumbnail-scroller d-flex align-items-center pl-2 pb-2"
+                                         id="img-scroller">
+                                        <p class="text-danger text-center w-100" id="text-empty">No ha seleccionado
+                                            imagenes</p>
+                                    </div>
+                                </div>
+
+
+                                <!-- POSICION DE NOTA -->
+                                <h5 class="display-6 mb-1 mt-3 text-primary">Ubicación Geografica de la Noticia:</h5>
+                                <hr class="bg-gray w-100 m-0 p-0 d-block mb-2">
+                                <div>
+
+                                    <input id="pac-input" class="form-control mb-0" type="text" name="direccion"
+                                           placeholder="Domicilio" required>
+                                    <div id="dir-validate-msg" class="text-left valid-feedback">
+
+                                    </div>
+                                    <div class="col px-0">
+                                        <div class="row">
+                                            <div class="input-group my-3 col">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Lat:</span>
+                                                </div>
+                                                <input type="text" class="form-control" name="lat" id="lat"
+                                                       placeholder="Geo-latitud" readonly/>
+                                            </div>
+                                            <div class="input-group my-3 col">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Lng:</span>
+                                                </div>
+                                                <input type="text" class="form-control" name="lng" id="lng"
+                                                       placeholder="Geo-longitud" readonly/>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col mb-3" id="map">
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- ENLACES -->
+                                <h5 class="display-6 mb-1 mt-3 text-primary">Enlaces externos:</h5>
+                                <hr class="bg-gray w-100 m-0 p-0 d-block mb-2">
+
+
+                                <div class="input-group mb-2 mt-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">http://</span>
+                                    </div>
+                                    <input type="text" class="form-control" name="link"
+                                           placeholder="url a pagina relacionada">
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <a class="btn btn-youtube" href="http://youtube.com" target="_blank">
+                                            <i class="mdi mdi-youtube"></i>
+                                        </a>
+                                    </div>
+                                    <input type="text" class="form-control" name="linkvideo"
+                                           placeholder="enlace a video YouTube">
+                                </div>
+
+                                <button class="btn btn-primary mb-2" type="submit">Guardar</button>
+
+
+
+                                {{#success}}
+                                    <div class="alert alert-success" role="alert">
+                                        {{success}}
+                                    </div>
+                                {{/success}}
+
+                                {{#error}}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{error}}
+                                    </div>
+                                {{/error}}
+
+
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
-    {{/success}}
+        <!-- main-panel ends -->
+    </div>
+</div>
 
-    {{#error}}
-        <div class="alert alert-danger" role="alert">
-            {{error}}
-        </div>
-    {{/error}}
 
-    <button class="btn btn-primary mb-2" type="submit">Guardar</button>
-</form>
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeluO_jCvIS_iT6Y3Thw8A6YJW5gyzh0M&callback=initAutocomplete&libraries=places&v=weekly"
+        defer>
+
+</script>
+<script type='text/javascript' src="/infonete/public/js/vendors/google.maps.js"></script>
+
+
+<script type='text/javascript' src="/infonete/public/js/app/file-image.js"></script>
+
+
 </body>
 </html>
+
+

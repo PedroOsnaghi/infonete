@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/infonete/public/css/app/maps.css">
 
     <link rel="stylesheet" href="/infonete/public/css/app/loader.css">
-    <link rel="shortcut icon" href="/infonete/public/images/favicon.png" />
+    <link rel="shortcut icon" href="/infonete/public/images/favicon.png"/>
 </head>
 <body class="bg-dark">
 <div id="register" class="container-scroller">
@@ -28,7 +28,7 @@
                             <img class="brand-logo m-0" src="/infonete/public/images/logo/logo-150.png" alt="">
                         </div>
                         <div class="d-flex align-items-center mb-3">
-                            <span class="item-reg text-center mr-2" >
+                            <span class="item-reg text-center mr-2">
                                 <i class="mdi mdi-account"></i>
                             </span>
                             <div class="w-100">
@@ -39,38 +39,48 @@
                         </div>
 
 
-                        <form id="form" action="register/validar" method="POST" enctype="multipart/form-data" autocomplete="off">
+                        <form id="form" action="register/validar" method="POST" enctype="multipart/form-data"
+                              autocomplete="off">
                             <div class="row text-center">
                                 <div class="col-sm-4 col-12 justify-content-center">
-                                    <img class="avatar large d-block mx-auto mb-2" id="preview" src="/infonete/public/uploads/profiles/default.png" alt="">
+                                    <img class="avatar large d-block mx-auto mb-2" id="preview"
+                                         src="/infonete/public/uploads/profiles/default.png" alt="">
                                     <div class="file btn btn-info btn-block mb-2 ">
-                                       <p class="d-flex align-content-center justify-content-center mb-0">
-                                           <i class="mdi mdi-camera d-inline me-2"></i>Seleccionar Logo
-                                       </p>
-                                        <input type="file" accept="image/png,image/jpeg" id="file" name="file" class="form-control">
+                                        <p class="d-flex align-content-center justify-content-center mb-0">
+                                            <i class="mdi mdi-camera d-inline me-2"></i>Seleccionar Logo
+                                        </p>
+                                        <input type="file" accept="image/png,image/jpeg" id="file" name="file"
+                                               class="form-control">
                                     </div>
 
                                 </div>
                                 <div class="col-sm-8 col-12">
-                                    <input class="form-control mb-2" type="text" name="nombre" placeholder="Nombre" required>
+                                    <input class="form-control mb-2" type="text" name="nombre" placeholder="Nombre"
+                                           required>
 
-                                    <input class="form-control mb-2" type="text" name="apellido" placeholder="Apellido" required>
-                                    <input class="form-control mb-0" type="email" name="email" id="email" placeholder="email" required>
+                                    <input class="form-control mb-2" type="text" name="apellido" placeholder="Apellido"
+                                           required>
+                                    <input class="form-control mb-0" type="email" name="email" id="email"
+                                           placeholder="email" required>
                                     <div id="mail-validate-msg" class="text-left valid-feedback">
 
                                     </div>
 
                                     <div class="input-group my-2">
-                                        <input class="form-control" type="password" name="pass" id="pass" placeholder="Contraseña" required>
+                                        <input class="form-control" type="password" name="pass" id="pass"
+                                               placeholder="Contraseña" required>
                                         <div class="input-group-append">
-                                            <button class="input-group-text text-gray view" type="button" for="pass"  pass-view><i class="mdi mdi-eye"></i></button>
+                                            <button class="input-group-text text-gray view" type="button" for="pass"
+                                                    pass-view><i class="mdi mdi-eye"></i></button>
                                         </div>
                                     </div>
 
                                     <div class="input-group my-2">
-                                        <input  class="form-control" type="password" id="pass-rpt"  placeholder="Repita contraseña" required>
+                                        <input class="form-control" type="password" id="pass-rpt"
+                                               placeholder="Repita contraseña" required>
                                         <div class="input-group-append">
-                                            <button class="input-group-text text-gray view" type="button" for="pass-rpt" pass-view><i class="mdi mdi-eye"></i></button>
+                                            <button class="input-group-text text-gray view" type="button" for="pass-rpt"
+                                                    pass-view><i class="mdi mdi-eye"></i></button>
                                         </div>
                                     </div>
 
@@ -80,13 +90,12 @@
                                     </div>
 
 
-
                                 </div>
                             </div>
                             <div class="d-flex align-items-center mb-3">
-                            <span class="item-reg text-center mr-2" >
-                                <i class="mdi mdi-map-marker"></i>
-                            </span>
+                                <span class="item-reg text-center mr-2">
+                                    <i class="mdi mdi-map-marker"></i>
+                                </span>
                                 <div class="w-100">
                                     <h6 class="mb-1 text-primary">Datos de Localización</h6>
                                     <hr class="m-0 text-gray">
@@ -96,7 +105,8 @@
 
                             <div>
 
-                                <input id="pac-input" class="form-control mb-0" type="text" name="direccion" placeholder="Domicilio" required>
+                                <input id="pac-input" class="form-control mb-0" type="text" name="direccion"
+                                       placeholder="Domicilio" required>
                                 <div id="dir-validate-msg" class="text-left valid-feedback">
 
                                 </div>
@@ -106,15 +116,16 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Lat:</span>
                                             </div>
-                                            <input type="text" class="form-control" name="lat" id="lat" placeholder="Geo-latitud" readonly/>
+                                            <input type="text" class="form-control" name="lat" id="lat"
+                                                   placeholder="Geo-latitud" readonly/>
                                         </div>
                                         <div class="input-group my-3 col">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Lng:</span>
                                             </div>
-                                            <input type="text" class="form-control" name="lng" id="lng" placeholder="Geo-longitud" readonly/>
+                                            <input type="text" class="form-control" name="lng" id="lng"
+                                                   placeholder="Geo-longitud" readonly/>
                                         </div>
-
 
 
                                     </div>
@@ -142,36 +153,36 @@
     </div>
     <!-- page-body-wrapper ends -->
 </div>
-    <!--LOADER-->
-    <div id="loader" class="text-light hidden">
-        <div class="loader-content">
-            <img src="/infonete/public/images/logo/logo-single.png" class="loader animate" alt="logo">
-            <h5>Espere</h5>
-        </div>
+<!--LOADER-->
+<div id="loader" class="text-light hidden">
+    <div class="loader-content">
+        <img src="/infonete/public/images/logo/logo-single.png" class="loader animate" alt="logo">
+        <h5>Espere</h5>
     </div>
+</div>
 
-    {{#success}}
-        <h2>{{success}}</h2>
-    {{/success}}
+{{#success}}
+    <h2>{{success}}</h2>
+{{/success}}
 
-    {{#error}}
-        <h2>{{error}}</h2>
-    {{/error}}
+{{#error}}
+    <h2>{{error}}</h2>
+{{/error}}
 
-    <script src="/infonete/public/js/vendors/misc.js"></script>
-    <script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
-    <script src="/infonete/public/js/app/preview.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/app/preview.js"></script>
 
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-    <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeluO_jCvIS_iT6Y3Thw8A6YJW5gyzh0M&callback=initAutocomplete&libraries=places&v=weekly"
-            defer>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeluO_jCvIS_iT6Y3Thw8A6YJW5gyzh0M&callback=initAutocomplete&libraries=places&v=weekly"
+        defer>
 
-    </script>
-    <script type="text/javascript" src="/infonete/public/js/vendors/google.maps.js"></script>
-    <script src="/infonete/public/js/app/pass-view.js"></script>
-    <script src="/infonete/public/js/app/register.js"></script>
+</script>
+<script type="text/javascript" src="/infonete/public/js/vendors/google.maps.js"></script>
+<script src="/infonete/public/js/app/pass-view.js"></script>
+<script src="/infonete/public/js/app/register.js"></script>
 </body>
 </html>

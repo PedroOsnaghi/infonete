@@ -109,15 +109,31 @@
   border-color: var(--dark-gray)!important;
 }
 
-.product-image{
+.edicion-image{
   width: 200px;
   height: 200px;
 }
 
+.product-logo-image{
+  width: 200px;
+  height: 100px;
+}
+
+.file-image-container{
+  max-width: 200px!important;
+}
+
+.portada-image-mini{
+  width: 30px;
+  height: 40px;
+  border: 1px solid gray;
+}
+
 
 .product-image-mini{
-  width: 80px;
-  height: 40px;
+  width: 50px;
+  height: 25px;
+  border: 1px solid gray;
 }
 
 
@@ -135,6 +151,10 @@
 
 .max-with-600{
   max-width: 600px;
+}
+
+.max-with-800{
+  max-width: 800px;
 }
 
 .portada{
@@ -7911,6 +7931,16 @@ h6, .h6 {
 
 .display-4 {
   font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2; }
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2; }
+
+.display-6 {
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.2; }
 

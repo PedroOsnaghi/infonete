@@ -9,6 +9,7 @@ class EdicionModel
     private $numero;
     private $precio;
     private $fecha;
+    private $estado;
     private $producto;
     private $titulo;
     private $portada;
@@ -17,6 +18,10 @@ class EdicionModel
 
 
     //GETTERS Y SETTERS
+    /**
+     * @var mixed
+     */
+    private $nombreProducto;
 
     public function getId()
     {
@@ -98,6 +103,28 @@ class EdicionModel
         $this->descripcion = $descripcion;
     }
 
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+    }
+
+    public function getNombreProducto()
+    {
+        return $this->nombreProducto;
+    }
+
+    public function setNombreProducto($nombreProducto)
+    {
+        $this->nombreProducto = $nombreProducto;
+    }
+
+
+
 
 
     public function __construct($database)
@@ -119,5 +146,26 @@ class EdicionModel
     public function listByState($estado)
     {
         return $this->database->list("SELECT e.*, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado");
+    }
+
+    public function getEdition($id)
+    {
+        $query = $this->database->query("SELECT e.*, p.nombre as 'nombre_producto' FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.id = $id");
+        return $this->toEdition($query);
+    }
+
+    private function toEdition($array)
+    {
+        $this->id = $array['id'];
+        $this->numero = $array['numero'];
+        $this->titulo = $array['titulo'];
+        $this->descripcion = $array['descripcion'];
+        $this->precio = $array['precio'];
+        $this->fecha = $array['fecha'];
+        $this->estado = $array['estado'];
+        $this->producto = $array['id_producto'];
+        $this->nombreProducto = $array['nombre_producto'];
+        $this->portada = $array['portada'];
+        return $this;
     }
 }

@@ -8,7 +8,7 @@ select_edition.addEventListener("change", function (){
 
 function establecerSeleccion(id){
     btn_nuevanota.classList.remove("disabled");
-    btn_nuevanota.href = "/infonete/edicion/crear?idp=" + id;
+    btn_nuevanota.href = "/infonete/articulo/crear?ide=" + id;
     request("http://localhost/infonete/articulo/list?ide=" + id);
 }
 

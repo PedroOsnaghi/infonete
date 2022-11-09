@@ -35,23 +35,23 @@
                                 <h4>Crear nueva edición</h4>
                                 <a class="btn btn-secondary text-center" title="Cerrar ventana" href="/infonete/edicion/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
                             </div>
-                            <hr>
+                            <hr class="bg-dark-gray">
                             
                             <div class="d-flex flex-column rounded bg-dark-gray p-2 mb-3">
                                 {{#product}}
-                                    <div><h5>Producto relacionado</h5></div>
-                                    <div class="d-flex align-items-center ">
-                                        <div>
-                                            <img class="product-image-mini" src="/infonete/public/uploads/product/{{getImagen}}" alt="">
+                                    <div class="d-flex align-items-center"><i class="mdi mdi-paperclip icon-md"></i>
+                                        <div class="d-flex flex-column w-100">
+                                            <div class="d-flex w-100 max-with-800 align-items-center">
+                                                <h5 class="display-6 mb-0 mr-3">Producto relacionado:</h5>
+                                                <img class="product-image-mini mr-2 mb-2" src="/infonete/public/uploads/product/{{getImagen}}" alt="">
+                                                <p class="p-0 m-0 mr-1"># {{getId}} </p>
+                                                <p class="p-0 m-0 mr-1">/ {{getNombreTipo}} / </p>
+                                                <p class="p-0 m-0 text-primary">{{getNombre}}</p>
+                                            </div>
+                                            <hr class="bg-light-gray w-100 m-0 p-0 d-block mb-2">
                                         </div>
-                                        <div class="d-flex justify-content-around w-100">
-                                            <p class="p-0 m-0"><strong class="pr-1">Id: </strong> {{getId}}</p>
-                                            <p class="p-0 m-0"><strong class="pr-1">Producto: </strong> {{getNombre}}</p>
-                                            <p class="p-0 m-0"><strong class="pr-1">Tipo: </strong> {{getNombreTipo}}</p>
-                                        </div>
-
-
                                     </div>
+
 
                                 {{/product}}
 
@@ -60,37 +60,53 @@
 
                                 <div class="d-flex flex-column flex-lg-row">
                                     <div class="d-flex flex-column flex-shrink-0 align-items-center px-0 px-lg-5 ">
-                                        <img class="product-image" id="preview"
-                                             src="/infonete/public/uploads/product/default.jpg" alt="">
-                                        <div class="file btn btn-info btn-block mb-2 mt-3 mt-lg-0">
-                                            <p class="d-flex align-content-center justify-content-center">
-                                                <i class="mdi mdi-camera d-inline me-2"></i>Seleccionar Portada
-                                            </p>
-                                            <input type="file" accept="image/png,image/jpeg" id="file" name="file"
-                                                   class="form-control ">
+                                        <div class="file-image-container">
+                                            <img class="edicion-image" id="preview"
+                                                 src="/infonete/public/uploads/portada/default.jpg" alt="">
+                                            <div class="file btn btn-info btn-block mb-2 mt-0">
+                                                <p class="d-flex align-content-center justify-content-center">
+                                                    <i class="mdi mdi-camera d-inline me-2"></i>Seleccionar Portada
+                                                </p>
+                                                <input type="file" accept="image/png,image/jpeg" id="file" name="file"
+                                                       class="form-control ">
+                                            </div>
                                         </div>
+
 
                                     </div>
                                     <div class="d-flex flex-column w-100">
-                                        <label>Número de edición *</label>
-                                        <input class="form-control mb-2" type="text" name="numero" placeholder="Número">
-                                        <label>Título *</label>
-                                        <input class="form-control mb-2" type="text" name="titulo" placeholder="Título">
+                                      <div class="d-flex flex-column flex-lg-row">
+                                          <div class="flex-shrink-1 mr-lg-3">
+                                              <label>Número *</label>
+                                              <input class="form-control mb-2" type="text" name="numero" placeholder="Número" required>
+                                          </div>
+                                          <div class="w-100">
+                                              <label>Título *</label>
+                                              <input class="form-control mb-2" type="text" name="titulo" placeholder="Título" required>
+                                          </div>
+                                      </div>
+
+
                                         <label>Descripción*</label>
-                                        <textarea class="form-control mb-2" rows="4" maxlength="255" name="descripcion" placeholder="Describa la edición"></textarea>
+                                        <textarea class="form-control mb-2" rows="4" maxlength="255" name="descripcion" placeholder="Describa la edición" required></textarea>
                                         <label>Precio *</label>
                                         <div class="input-group mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text bg-primary text-white">$</span>
                                             </div>
-                                            <input type="text" name="precio" class="form-control">
+                                            <input type="text" name="precio" class="form-control" required>
 
                                         </div>
-                                        <button class="btn btn-primary mb-2" type="submit">Guardar</button>
+
                                     </div>
 
 
                                 </div>
+                                <div class="d-flex justify-content-end mt-2">
+                                    <button class="btn btn-primary mb-2" type="submit">Guardar</button>
+                                </div>
+
+
                                 {{#success}}
                                     <div class="alert alert-success" role="alert">
                                         {{success}}

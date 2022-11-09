@@ -1,0 +1,43 @@
+
+.file-container{
+    width: 100%;
+    border: 1px solid var(--primary);
+    border-radius: 2px;
+}
+
+.file-container .thumbnail-scroller{
+    width: 100%;
+    overflow-x: auto ;
+    height: 130px;
+}
+
+.file-container .thumbnail-scroller .thumbnail {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 1px var(--dark-gray);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.file-container .thumbnail-scroller .thumbnail:not(:last-child) {
+    margin-right: 5px;
+}
+
+
+.file-container .thumbnail-scroller .thumbnail .close-button {
+    width: 20px;
+    height: 20px;
+    background-color: var(--danger);
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    border-radius: 100px;
+    cursor: pointer;
+    line-height: 20px;
+}

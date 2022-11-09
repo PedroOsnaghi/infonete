@@ -7,11 +7,13 @@ class ArticuloController
     private $render;
     private $edicionModel;
     private $session;
+    private $seccionModel;
 
-    public function __construct($articuloModel, $edicionModel, $session, $render)
+    public function __construct($articuloModel, $edicionModel, $seccionModel,  $session, $render)
     {
         $this->articuloModel = $articuloModel;
         $this->edicionModel = $edicionModel;
+        $this->seccionModel = $seccionModel;
         $this->session = $session;
         $this->render = $render;
 
@@ -37,7 +39,9 @@ class ArticuloController
 
     public function crear()
     {
-        echo $this->render->render("public/view/articulo.mustache");
+        $this->session->setParameter('activeEdition', $this->edicionModel->getEdition($_GET["ide"]));
+        $data = $this->getDataForm();
+        echo $this->render->render("public/view/articulo.mustache", $data);
     }
 
     public function guardar()
@@ -75,6 +79,15 @@ class ArticuloController
         return array(
             "userAuth" => $this->session->getAuthUser(),
             "ediciones" => $this->edicionModel->listByState(EdicionModel::ESTADO_EN_EDICION)
+        );
+    }
+
+    private function getDataForm()
+    {
+        return array(
+            "userAuth" => $this->session->getAuthUser(),
+            "secciones" => $this->seccionModel->list(),
+            "edicion" => $this->session->getParameter('activeEdition')
         );
     }
 

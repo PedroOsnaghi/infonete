@@ -57,7 +57,7 @@ class Configuration
     public function getArticuloController()
     {
         $articuloModel = $this->getArticuloModel();
-        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSession(), $this->getRender());
+        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSeccionModel(),  $this->getSession(), $this->getRender());
     }
 
     public function getIndexController()

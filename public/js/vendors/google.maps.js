@@ -2,7 +2,7 @@
 
 var input_lat = document.getElementById("lat");
 var input_lng = document.getElementById("lng");
-var lat = document.getElementById("lat");
+
 var dirmsg = document.getElementById('dir-validate-msg');
 
 
@@ -39,7 +39,7 @@ function initAutocomplete() {
 
     var searchBox = new google.maps.places.SearchBox(input);
 
-   // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     // mostramos los resultados del Search Box en el mapa
     map.addListener("bounds_changed", function () {
