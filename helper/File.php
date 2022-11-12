@@ -8,9 +8,12 @@ class File
 
     private $uploadDir;
     private $fileName;
+    private $logger;
 
-    public function __construct($uploadDir = "uploads"){
+    public function __construct($logger, $uploadDir = "uploads"){
         $this->uploadDir = $uploadDir;
+        $this->logger = $logger;
+        $this->logger->info("Iniciando File");
     }
 
     /**
@@ -20,15 +23,12 @@ class File
      * @param String $folder nombre de la carpeta donde se guarda el archivo
      * @return int 1:subuda correcta
      */
-    public  function uploadFile($folder = ''){
+    public  function uploadFile($folder = '')
+    {
         if(isset($_FILES) && $_FILES['file']['error'] == UPLOAD_ERR_OK){
             $this->fileName = $_FILES['file']['name'];
 
-            //verificamos que exista directorio
-            //sino se crea
-            $directorio = $this->uploadDir . (empty($folder) ? '/' : "/" .  $folder  . "/");
-            if(!file_exists($directorio))
-                mkdir($directorio,0777);
+            $directorio = $this->verificarDirectorio($folder);
 
 
             //movemos de temporal a fisico
@@ -47,8 +47,57 @@ class File
         return $response;
     }
 
+    //prototipo: function callback($dato)
+
+
+    /**
+     *
+     * @param callable $callback($data) funcion que recibe por parametro los datos del archivo guardado
+     * **/
+
+    public function uploadFiles($folder = '', callable $callback = null)
+    {
+        $directorio = $this->verificarDirectorio($folder);
+
+        $this->logger->info($directorio);
+
+        foreach ($_FILES['file']['tmp_name'] as $key => $file){
+
+            //movemos de temporal a fisico
+            $ruta = $directorio . "/" . $_FILES['file']['name'][$key];
+
+            $dataFile = (move_uploaded_file($file, $ruta )) ?
+                $this->getDataFile($key, self::UPLOAD_STATE_OK):
+                $this->getDataFile($key, self::UPLOAD_STATE_ERROR);
+
+           if($callback != null) $callback($dataFile);
+        }
+        return self::UPLOAD_STATE_OK;
+
+    }
+
     public function get_file_uploaded(){
         return $this->fileName;
     }
 
+    private function verificarDirectorio($folder)
+    {
+        $dir = $this->uploadDir . (empty($folder) ? '/' : "/" .  $folder  . "/");
+        if(!file_exists($dir)) {
+           if (mkdir($dir, 0777))
+               opendir($dir);
+           return false;
+
+        }
+
+        return $dir;
+    }
+
+    private function getDataFile($key, $stateResult)
+    {
+        return array("name" => $_FILES["file"]["name"][$key],
+                     "size" =>  $_FILES["file"]["size"][$key],
+                    "type" => $_FILES["file"]["type"][$key],
+                    "error" => $stateResult);
+    }
 }

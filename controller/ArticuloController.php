@@ -8,13 +8,17 @@ class ArticuloController
     private $edicionModel;
     private $session;
     private $seccionModel;
+    private $file;
+    private $logger;
 
-    public function __construct($articuloModel, $edicionModel, $seccionModel,  $session, $render)
+    public function __construct($articuloModel, $edicionModel, $seccionModel,  $session, $file, $logger, $render)
     {
         $this->articuloModel = $articuloModel;
         $this->edicionModel = $edicionModel;
         $this->seccionModel = $seccionModel;
         $this->session = $session;
+        $this->file = $file;
+        $this->logger = $logger;
         $this->render = $render;
 
     }
@@ -42,6 +46,8 @@ class ArticuloController
         $this->session->setParameter('activeEdition', $this->edicionModel->getEdition($_GET["ide"]));
         $data = $this->getDataForm();
         echo $this->render->render("public/view/articulo.mustache", $data);
+
+
     }
 
     public function guardar()
@@ -62,9 +68,15 @@ class ArticuloController
         $this->articuloModel->setContenido($_POST['contenido']);
         $this->articuloModel->setLink($_POST['link']);
         $this->articuloModel->setLinkvideo($_POST['linkvideo']);
+        $this->articuloModel->setUbicacion($_POST['ubicacion']);
         $this->articuloModel->setCreateAt($this->getFechaHoraActual());
         $this->articuloModel->setUpdateAt($this->getFechaHoraActual());
         $this->articuloModel->setEstado(1);
+
+
+       /* $this->file->uploadFiles("articulos/id", function ($data){
+            $this->logger->info($data["name"] . "-" . $data["type"]);
+        });*/
     }
 
     private function getFechaHoraActual()
@@ -90,5 +102,8 @@ class ArticuloController
             "edicion" => $this->session->getParameter('activeEdition')
         );
     }
+
+
+
 
 }

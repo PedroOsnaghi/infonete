@@ -1,0 +1,146 @@
+[22-11-11 08:03:04][INFO] Iniciando File
+[22-11-11 08:03:09][INFO] Iniciando File
+[22-11-11 08:03:26][INFO] Iniciando File
+[22-11-11 08:03:33][INFO] Iniciando File
+[22-11-11 08:03:50][INFO] Iniciando File
+[22-11-11 08:05:05][INFO] Iniciando File
+[22-11-11 08:05:22][INFO] Iniciando File
+[22-11-11 08:05:22][INFO] 
+[22-11-11 08:09:09][INFO] Iniciando File
+[22-11-11 08:09:28][INFO] Iniciando File
+[22-11-11 08:09:28][INFO] 
+[22-11-11 08:09:49][INFO] Iniciando File
+[22-11-11 08:10:03][INFO] Iniciando File
+[22-11-11 08:10:03][INFO] 
+[22-11-11 08:11:58][INFO] Iniciando File
+[22-11-11 08:12:02][INFO] Iniciando File
+[22-11-11 08:12:16][INFO] Iniciando File
+[22-11-11 08:12:16][INFO] 
+[22-11-11 08:13:32][INFO] Iniciando File
+[22-11-11 08:13:41][INFO] Iniciando File
+[22-11-11 08:13:55][INFO] Iniciando File
+[22-11-11 08:13:55][INFO] 
+[22-11-11 08:15:43][INFO] Iniciando File
+[22-11-11 08:17:13][INFO] Iniciando File
+[22-11-11 08:17:27][INFO] Iniciando File
+[22-11-11 08:17:27][INFO] 
+[22-11-11 08:18:17][INFO] Iniciando File
+[22-11-11 08:18:22][INFO] Iniciando File
+[22-11-11 08:18:35][INFO] Iniciando File
+[22-11-11 08:18:35][INFO] 
+[22-11-11 08:20:23][INFO] Iniciando File
+[22-11-11 08:20:36][INFO] Iniciando File
+[22-11-11 08:20:36][INFO] 
+[22-11-11 08:22:39][INFO] Iniciando File
+[22-11-11 08:23:13][INFO] Iniciando File
+[22-11-11 08:23:13][INFO] metodo uploadFiles
+[22-11-11 08:25:17][INFO] Iniciando File
+[22-11-11 08:25:17][INFO] metodo uploadFiles
+[22-11-11 08:25:26][INFO] Iniciando File
+[22-11-11 08:25:26][INFO] metodo uploadFiles
+[22-11-11 08:27:13][INFO] Iniciando File
+[22-11-11 08:27:13][INFO] metodo uploadFiles
+[22-11-11 08:28:41][INFO] Iniciando File
+[22-11-11 08:28:41][INFO] metodo uploadFiles
+[22-11-11 08:31:36][INFO] Iniciando File
+[22-11-11 08:31:36][INFO] metodo uploadFiles
+[22-11-11 08:31:36][INFO] Array
+[22-11-11 08:32:38][INFO] Iniciando File
+[22-11-11 08:32:38][INFO] metodo uploadFiles
+[22-11-11 08:32:38][INFO] Array
+[22-11-11 08:34:22][INFO] Iniciando File
+[22-11-11 08:34:22][INFO] metodo uploadFiles
+[22-11-11 08:34:22][INFO] 1
+[22-11-11 08:34:22][INFO] Array
+[22-11-11 08:40:58][INFO] Iniciando File
+[22-11-11 08:40:58][INFO] metodo uploadFiles
+[22-11-11 08:42:59][INFO] Iniciando File
+[22-11-11 08:42:59][INFO] metodo uploadFiles
+[22-11-11 08:43:19][INFO] Iniciando File
+[22-11-11 08:43:19][INFO] metodo uploadFiles
+[22-11-11 08:43:45][INFO] Iniciando File
+[22-11-11 08:43:57][INFO] Iniciando File
+[22-11-11 08:43:57][INFO] metodo uploadFiles
+[22-11-11 08:43:57][INFO] 
+[22-11-11 08:43:57][INFO] 
+[22-11-11 08:43:57][INFO] 
+[22-11-11 08:43:57][INFO] 
+[22-11-11 08:43:57][INFO] 
+[22-11-11 08:43:57][INFO] 
+[22-11-11 08:51:16][INFO] Iniciando File
+[22-11-11 08:51:22][INFO] Iniciando File
+[22-11-11 08:51:39][INFO] Iniciando File
+[22-11-11 08:51:39][INFO] metodo uploadFiles
+[22-11-11 08:51:39][INFO] 
+[22-11-11 08:51:39][INFO] 
+[22-11-11 08:51:39][INFO] 
+[22-11-11 08:51:39][INFO] 
+[22-11-11 08:51:39][INFO] 
+[22-11-11 08:51:39][INFO] 
+[22-11-11 08:53:17][INFO] Iniciando File
+[22-11-11 08:53:17][INFO] metodo uploadFiles
+[22-11-11 08:53:46][INFO] Iniciando File
+[22-11-11 08:53:46][INFO] metodo uploadFiles
+[22-11-11 08:53:46][INFO] 
+[22-11-11 08:53:46][INFO] 
+[22-11-11 08:53:46][INFO] 
+[22-11-11 08:53:46][INFO] 
+[22-11-11 08:53:46][INFO] 
+[22-11-11 08:53:46][INFO] 
+[22-11-11 09:00:11][INFO] Iniciando File
+[22-11-11 09:00:11][INFO] metodo uploadFiles
+[22-11-11 09:00:11][INFO] 
+[22-11-11 09:00:11][INFO] 
+[22-11-11 09:00:11][INFO] 
+[22-11-11 09:00:11][INFO] 
+[22-11-11 09:00:11][INFO] 
+[22-11-11 09:00:11][INFO] 
+[22-11-11 09:00:19][INFO] Iniciando File
+[22-11-11 09:00:19][INFO] metodo uploadFiles
+[22-11-11 09:00:19][INFO] 
+[22-11-11 09:00:19][INFO] 
+[22-11-11 09:00:19][INFO] 
+[22-11-11 09:00:19][INFO] 
+[22-11-11 09:00:19][INFO] 
+[22-11-11 09:00:19][INFO] 
+[22-11-11 09:00:20][INFO] Iniciando File
+[22-11-11 09:00:20][INFO] metodo uploadFiles
+[22-11-11 09:00:20][INFO] 
+[22-11-11 09:00:20][INFO] 
+[22-11-11 09:00:20][INFO] 
+[22-11-11 09:00:20][INFO] 
+[22-11-11 09:00:20][INFO] 
+[22-11-11 09:00:20][INFO] 
+[22-11-11 09:00:25][INFO] Iniciando File
+[22-11-11 09:00:25][INFO] metodo uploadFiles
+[22-11-11 09:00:25][INFO] 
+[22-11-11 09:00:25][INFO] 
+[22-11-11 09:00:25][INFO] 
+[22-11-11 09:00:25][INFO] 
+[22-11-11 09:00:25][INFO] 
+[22-11-11 09:00:25][INFO] 
+[22-11-11 09:01:12][INFO] Iniciando File
+[22-11-11 09:01:12][INFO] metodo uploadFiles
+[22-11-11 09:01:12][INFO] 
+[22-11-11 09:02:45][INFO] Iniciando File
+[22-11-11 09:02:45][INFO] metodo uploadFiles
+[22-11-11 09:02:45][INFO] 1
+[22-11-11 09:02:45][INFO] 1
+[22-11-11 09:02:45][INFO] 1
+[22-11-11 09:02:45][INFO] 1
+[22-11-11 09:02:45][INFO] 1
+[22-11-11 09:02:45][INFO] 1
+[22-11-11 09:05:24][INFO] Iniciando File
+[22-11-11 09:05:24][INFO] metodo uploadFiles
+[22-11-11 09:12:20][INFO] Iniciando File
+[22-11-11 09:12:20][INFO] metodo uploadFiles
+[22-11-11 09:12:42][INFO] Iniciando File
+[22-11-11 09:12:57][INFO] Iniciando File
+[22-11-11 09:12:57][INFO] metodo uploadFiles
+[22-11-11 09:27:59][INFO] Iniciando File
+[22-11-11 09:28:17][INFO] Iniciando File
+[22-11-11 09:28:17][INFO] metodo uploadFiles
+[22-11-11 09:28:43][INFO] Iniciando File
+[22-11-11 09:28:43][INFO] metodo uploadFiles
+[22-11-11 09:28:54][INFO] Iniciando File
+[22-11-11 09:28:54][INFO] metodo uploadFiles

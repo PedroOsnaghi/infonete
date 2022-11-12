@@ -15,7 +15,7 @@ include_once("helper/GeoPosition.php");
 include_once("helper/Mailer.php");
 include_once("helper/File.php");
 include_once("helper/Session.php");
-
+include_once("helper/Logger.php");
 
 //MODELOS
 include_once("model/LoginModel.php");
@@ -57,7 +57,7 @@ class Configuration
     public function getArticuloController()
     {
         $articuloModel = $this->getArticuloModel();
-        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSeccionModel(),  $this->getSession(), $this->getRender());
+        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSeccionModel(),  $this->getSession(), $this->getFile(), $this->getLogger(),  $this->getRender());
     }
 
     public function getIndexController()
@@ -207,13 +207,18 @@ class Configuration
     private function getFile()
     {
         $config = $this->getConfig();
-        return new File($config['upload_root_dir']);
+        return new File($this->getLogger(), $config['upload_root_dir']);
     }
 
     private function getSession()
     {
         $config = $this->getConfig();
         return new Session($config['session_lifetime']);
+    }
+
+    private function getLogger()
+    {
+        return new Logger();
     }
 
 

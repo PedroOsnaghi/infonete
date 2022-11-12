@@ -98,9 +98,10 @@ subtitulo varchar(100),
 contenido longtext,
 link varchar(100),
 link_video varchar(100),
+ubicacion varchar(50),
 create_at timestamp,
 id_estado int,
-update_at timestamp,
+update_at timestamp DEFAULT(null),
 foreign key(id_estado) references estado_articulo(id));
 
 create table articulo_edicion(

@@ -1,0 +1,61 @@
+[22-11-12 07:33:00][INFO] Iniciando File
+[22-11-12 07:34:27][INFO] Iniciando File
+[22-11-12 08:54:52][INFO] Iniciando File
+[22-11-12 08:57:17][INFO] Iniciando File
+[22-11-12 08:57:17][INFO] public/uploads/articulos/
+[22-11-12 09:00:23][INFO] Iniciando File
+[22-11-12 09:01:01][INFO] Iniciando File
+[22-11-12 09:01:01][INFO] public/uploads/articulos/
+[22-11-12 09:01:01][INFO] marie.jpg
+[22-11-12 09:01:01][INFO] gente.png
+[22-11-12 09:03:30][INFO] Iniciando File
+[22-11-12 09:03:30][INFO] public/uploads/articulos/
+[22-11-12 09:03:30][INFO] marie.jpg-image/jpeg
+[22-11-12 09:03:30][INFO] gente.png-image/png
+[22-11-12 09:12:08][INFO] Iniciando File
+[22-11-12 09:12:11][INFO] Iniciando File
+[22-11-12 09:12:20][INFO] Iniciando File
+[22-11-12 09:12:26][INFO] Iniciando File
+[22-11-12 09:21:04][INFO] Iniciando File
+[22-11-12 09:22:24][INFO] Iniciando File
+[22-11-12 09:26:46][INFO] Iniciando File
+[22-11-12 09:31:38][INFO] Iniciando File
+[22-11-12 09:33:01][INFO] Iniciando File
+[22-11-12 09:33:34][INFO] Iniciando File
+[22-11-12 09:39:06][INFO] Iniciando File
+[22-11-12 09:40:01][INFO] Iniciando File
+[22-11-12 09:40:01][INFO] 
+[22-11-12 09:47:34][INFO] Iniciando File
+[22-11-12 09:48:01][INFO] Iniciando File
+[22-11-12 09:48:01][INFO] public/uploads/articulos/id/
+[22-11-12 09:48:49][INFO] Iniciando File
+[22-11-12 09:49:06][INFO] Iniciando File
+[22-11-12 09:49:27][INFO] Iniciando File
+[22-11-12 09:59:27][INFO] Iniciando File
+[22-11-12 10:00:05][INFO] Iniciando File
+[22-11-12 10:00:05][INFO] public/uploads/articulos/id/
+[22-11-12 10:01:31][INFO] Iniciando File
+[22-11-12 10:01:43][INFO] Iniciando File
+[22-11-12 10:01:43][INFO] public/uploads/articulos/id/
+[22-11-12 10:02:32][INFO] Iniciando File
+[22-11-12 10:03:49][INFO] Iniciando File
+[22-11-12 10:04:13][INFO] Iniciando File
+[22-11-12 10:04:22][INFO] Iniciando File
+[22-11-12 10:04:22][INFO] public/uploads/articulos/id/
+[22-11-12 10:07:55][INFO] Iniciando File
+[22-11-12 10:08:05][INFO] Iniciando File
+[22-11-12 10:08:05][INFO] public/uploads/articulos/id/
+[22-11-12 10:09:31][INFO] Iniciando File
+[22-11-12 10:09:31][INFO] public/uploads/articulos/id/
+[22-11-12 10:10:17][INFO] Iniciando File
+[22-11-12 10:11:03][INFO] Iniciando File
+[22-11-12 10:11:03][INFO] public/uploads/articulos/id/
+[22-11-12 10:12:50][INFO] Iniciando File
+[22-11-12 10:12:50][INFO] public/uploads/articulos/id/
+[22-11-12 10:13:30][INFO] Iniciando File
+[22-11-12 10:16:10][INFO] Iniciando File
+[22-11-12 10:16:24][INFO] Iniciando File
+[22-11-12 10:16:54][INFO] Iniciando File
+[22-11-12 10:17:03][INFO] Iniciando File
+[22-11-12 10:19:50][INFO] Iniciando File
+[22-11-12 10:21:02][INFO] Iniciando File

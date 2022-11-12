@@ -9,6 +9,15 @@
 
     var formDataFile = new FormData();
 
+
+
+
+
+
+
+
+
+
     file.addEventListener('change', function (e) {
 
         for ( var i = 0; i < file.files.length; i++ ) {
@@ -55,7 +64,17 @@
 
     form.addEventListener("submit", function (e){
         e.preventDefault();
-        e.stopPropagation();
+
+
+        //obtener contenido de tiny
+        tinymce.activeEditor.save();
+
+        var myContent = tinymce.activeEditor.getContent();
+
+        console.log(myContent);
+
+        tinymce.get("text-content").setContent(myContent);
+
 
         var formDataMain = new FormData(e.target);
 
@@ -64,7 +83,7 @@
             formDataMain.delete("file[]");
         }
 
-        var data = Object.fromEntries(formDataMain);
+
 
         var files = [];
 
@@ -73,9 +92,19 @@
             files.push(pair[1]);
         }
 
+        console.log(files);
+
         files.forEach(function (file){
             formDataMain.append("file[]", file);
         });
+        var data = Object.fromEntries(formDataMain);
+        //console.log(JSON.stringify(data));
+
+        for (var pair of formDataMain.entries()) {
+            console.log(pair);
+
+
+        }
 
         fetch("http://localhost/infonete/articulo/guardar", {
             method: "POST",

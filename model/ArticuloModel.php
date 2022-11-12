@@ -15,6 +15,7 @@ class ArticuloModel
     private $contenido;
     private $link;
     private $linkvideo;
+    private $ubicacion;
     private $create_at;
     private $update_at;
     private $estado;
@@ -116,10 +117,22 @@ class ArticuloModel
         $this->estado = $estado;
     }
 
+    public function getUbicacion()
+    {
+        return $this->ubicacion;
+    }
+
+    public function setUbicacion($ubicacion)
+    {
+        $this->ubicacion = $ubicacion;
+    }
+
+
+
     public function guardar()
     {
-        return $this->database->execute("INSERT INTO articulo(titulo, subtitulo, contenido, link, link_video, create_at, id_estado, update_at) 
-                                         VALUES ('$this->titulo', '$this->subtitulo', '$this->contenido', '$this->link', '$this->linkvideo', '$this->create_at', $this->estado, '$this->update_at')");
+        return $this->database->execute("INSERT INTO articulo(titulo, subtitulo, contenido, link, link_video, ubicacion, create_at, id_estado) 
+                                         VALUES ('$this->titulo', '$this->subtitulo', '$this->contenido', '$this->link', '$this->linkvideo', '$this->ubicacion', '$this->create_at', $this->estado)");
     }
 
     public function listBy($idEdicion)

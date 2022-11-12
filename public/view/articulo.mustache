@@ -7,12 +7,14 @@
 
     <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="infonete/public/css/index/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
     <link rel="stylesheet" href="/infonete/public/css/app/thumb.css">
     <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
     <link rel="stylesheet" href="/infonete/public/css/app/maps.css">
 
     <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <script src="https://cdn.tiny.cloud/1/2cz3fg5z9k08c9s1umqm5vrd95zs4t9gavamel6hycaoo6lm/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     <title>Crear Nota</title>
 </head>
@@ -137,8 +139,8 @@
                                                 <input class="form-control mb-2" type="text" name="subtitulo"
                                                        placeholder="Subtitulo">
                                                 <label for="">contenido *</label>
-                                                <textarea class="form-control mb-2" rows="15" name="contenido"
-                                                          placeholder="Cuerpo de la Notícia" required></textarea>
+                                                <textarea id="text-content" class="form-control mb-2"  name="contenido"
+                                                          placeholder="Cuerpo de la Notícia" ></textarea>
 
                                             </div>
 
@@ -151,8 +153,8 @@
                                                 <div id="input-container">
 
                                                     <input id="pac-input" class="form-control mb-0" type="text"
-                                                           name="direccion"
-                                                           placeholder="Domicilio" required>
+                                                           name="ubicacion"
+                                                           placeholder="Buscar un lugar" required>
                                                     <div id="dir-validate-msg" class="text-left valid-feedback">
 
                                                     </div>
@@ -232,8 +234,15 @@
                                                             <i class="mdi mdi-youtube"></i>
                                                         </a>
                                                     </div>
-                                                    <input type="text" class="form-control" name="linkvideo"
+                                                    <input type="text" id="inYt" class="form-control" name="linkvideo"
                                                            placeholder="enlace a video YouTube">
+                                                </div>
+
+                                                <div>
+                                                    <iframe id="yt-preview" width="560" height="315" src=""
+                                                            title="YouTube video player" frameborder="0"
+                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowfullscreen></iframe>
                                                 </div>
                                             </div>
 
@@ -275,6 +284,25 @@
     </div>
 </div>
 
+<script>
+    tinymce.init({
+        selector: 'textarea#text-content',
+        menubar: 'false',
+        inline: false,
+        hidden_input: true,
+        skin: 'material-classic',
+        content_css: 'material-classic',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | align lineheight | checklist numlist bullist indent outdent ',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+        ]
+    });
+</script>
+
 
 <script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
 
@@ -291,7 +319,7 @@
 
 </script>
 <script type='text/javascript' src="/infonete/public/js/vendors/google.maps.js"></script>
-
+<script type='text/javascript' src="/infonete/public/js/app/nota.js"></script>
 <script type='text/javascript' src="/infonete/public/js/app/tabs.js"></script>
 <script type='text/javascript' src="/infonete/public/js/app/file-image.js"></script>
 
