@@ -92,7 +92,7 @@ class Configuration
     public function getEdicionModel()
     {
         $database = $this->getDatabase();
-        return new EdicionModel($database);
+        return new EdicionModel($this->getLogger(), $database);
     }
 
     public function getEdicionController()

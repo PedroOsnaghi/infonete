@@ -107,6 +107,14 @@ class ProductoModel
         return $this->toProduct($query);
     }
 
+    public function update()
+    {
+        return $this->database->execute("UPDATE producto SET id_tipo_producto = $this->tipo, 
+                                        nombre = '$this->nombre', 
+                                        imagen = '$this->imagen'
+                                        WHERE id = $this->id");
+    }
+
     private function toProduct($array)
     {
         $this->id = $array['id'];

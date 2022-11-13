@@ -1,6 +1,17 @@
+var btn_state = document.querySelectorAll("a[ed-state]");
 var btn_nuevaed = document.getElementById("nueva-edicion");
 var ed_container = document.getElementById("edicion-container");
 var select_product = document.getElementById("select-product");
+
+btn_state.forEach(function (btn){
+    btn.addEventListener("click",function (){
+
+    });
+});
+
+function publicarDespublicar(btn){
+    var url_public = "http://localhost/infonete/edicion/publicar?id=" + btn.getAttribute("id-edicion");
+}
 
 select_product.addEventListener("change", function (){
   establecerSeleccion(this.value)

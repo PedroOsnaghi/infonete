@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Editar Edición</title>
+</head>
+<body>
+
+<div class="container-scroller">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: Nuevo producto -->
+                <div class="card fadeIn">
+                    <div class="card-body">
+                        <div class="container max-with-600 mx-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Editar edición</h4>
+                                <a class="btn btn-secondary text-center" title="Cerrar ventana"
+                                   href="/infonete/edicion/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
+                            </div>
+                            <hr class="bg-dark-gray">
+
+                            <div class="d-flex flex-column rounded bg-dark-gray p-2 mb-3">
+                                {{#product}}
+                                    <div class="d-flex align-items-center"><i class="mdi mdi-paperclip icon-md"></i>
+                                        <div class="d-flex flex-column w-100">
+                                            <div class="d-flex w-100 max-with-800 align-items-center">
+                                                <h5 class="display-6 mb-0 mr-3">Producto relacionado:</h5>
+                                                <img class="product-image-mini mr-2 mb-2"
+                                                     src="/infonete/public/uploads/product/{{getImagen}}" alt="">
+                                                <p class="p-0 m-0 mr-1"># {{getId}} </p>
+                                                <p class="p-0 m-0 mr-1">/ {{getNombreTipo}} / </p>
+                                                <p class="p-0 m-0 text-primary">{{getNombre}}</p>
+                                            </div>
+                                            <hr class="bg-light-gray w-100 m-0 p-0 d-block mb-2">
+                                        </div>
+                                    </div>
+
+
+                                {{/product}}
+
+                            </div>
+                            <form action="/infonete/edicion/actualizar" method="post" enctype="multipart/form-data">
+                                {{#edicion}}
+                                    <div class="d-flex flex-column flex-lg-row">
+                                        <div class="d-flex flex-column flex-shrink-0 align-items-center px-0 px-lg-5 ">
+                                            <div class="file-image-container">
+                                                <img class="edicion-image" id="preview"
+                                                     src="/infonete/public/uploads/portada/{{getPortada}}" alt="">
+                                                <div class="file btn btn-info btn-block mb-2 mt-0">
+                                                    <p class="d-flex align-content-center justify-content-center">
+                                                        <i class="mdi mdi-camera d-inline me-2"></i>Seleccionar Portada
+                                                    </p>
+                                                    <input type="file" accept="image/png,image/jpeg" id="file"
+                                                           name="file"
+                                                           class="form-control ">
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="d-flex flex-column w-100">
+                                            <div class="d-flex flex-column flex-lg-row">
+                                                <div class="flex-shrink-1 mr-lg-3">
+                                                    <input type="hidden" value="{{getId}}" name="id">
+                                                    <label>Número *</label>
+                                                    <input class="form-control mb-2" type="text" name="numero"
+                                                           placeholder="Número" value="{{getNumero}}" required>
+                                                </div>
+                                                <div class="w-100">
+                                                    <label>Título *</label>
+                                                    <input class="form-control mb-2" type="text" name="titulo"
+                                                           placeholder="Título" value="{{getTitulo}}" required>
+                                                </div>
+                                            </div>
+
+
+                                            <label>Descripción*</label>
+                                            <textarea class="form-control mb-2" rows="4" maxlength="255"
+                                                      name="descripcion" placeholder="Describa la edición"
+                                                      required>{{getDescripcion}}</textarea>
+                                            <label>Precio *</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-primary text-white">$</span>
+                                                </div>
+                                                <input type="text" name="precio" class="form-control" value="{{getPrecio}}" required>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="d-flex justify-content-end mt-2">
+                                        <button class="btn btn-primary mb-2" type="submit">Actualizar</button>
+                                    </div>
+
+
+                                    {{#success}}
+                                        <div class="alert alert-success" role="alert">
+                                            {{success}}
+                                        </div>
+                                    {{/success}}
+
+                                    {{#error}}
+                                        <div class="alert alert-danger" role="alert">
+                                            {{error}}
+                                        </div>
+                                    {{/error}}
+                                {{/edicion}}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main-panel ends -->
+    </div>
+</div>
+
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+
+
+<script type='text/javascript' src="/infonete/public/js/app/preview.js"></script>
+
+
+</body>
+</html>
+
+

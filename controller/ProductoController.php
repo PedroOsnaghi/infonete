@@ -52,8 +52,27 @@ class ProductoController
         echo $this->render->render("public/view/producto.mustache", $data);
     }
 
-    private function setearProducto()
+    public function editar()
     {
+        $data = $this->getDataEditar($_GET['id']);
+        echo $this->render->render("public/view/editar-producto.mustache",$data);
+    }
+
+    public function actualizar()
+    {
+        $id = $_POST['id'];
+        $this->setearProducto($id);
+        $data = ($this->productoModel->update()) ?
+            $this->getDataEditar($id, ["success" => "El producto se actualizó correctamente"]):
+            $this->getDataEditar($id, ["error" => "Hubo un error al actualizar el producto"]);
+
+        echo $this->render->render("public/view/editar-producto.mustache", $data);
+
+    }
+
+    private function setearProducto($id = null)
+    {
+        if($id != null) $this->productoModel->setId($id);
         $this->productoModel->setNombre($_POST['nombre']);
         $this->productoModel->setTipo($this->valida($_POST['tipo']));
         $this->productoModel->setImagen($this->getFileName());
@@ -77,6 +96,16 @@ class ProductoController
     private function getDataTipo($msg = [])
     {
         return array_merge($msg, array(
+            "tipo" => $this->productoModel->getTipoProductList(),
+            "userAuth" => $this->session->getAuthUser(),
+            $msg
+        ));
+    }
+
+    private function getDataEditar($id, $msg = [])
+    {
+        return array_merge($msg, array(
+            "producto" => $this->productoModel->getProduct($id),
             "tipo" => $this->productoModel->getTipoProductList(),
             "userAuth" => $this->session->getAuthUser(),
             $msg

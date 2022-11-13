@@ -1,0 +1,42 @@
+[22-11-13 12:00:23][INFO] Iniciando File
+[22-11-13 12:08:33][INFO] Iniciando File
+[22-11-13 12:08:34][INFO] Iniciando File
+[22-11-13 12:08:34][INFO] Iniciando File
+[22-11-13 12:08:34][INFO] Iniciando File
+[22-11-13 12:08:37][INFO] Iniciando File
+[22-11-13 12:08:42][INFO] Iniciando File
+[22-11-13 12:10:10][INFO] Iniciando File
+[22-11-13 12:10:16][INFO] Iniciando File
+[22-11-13 12:10:19][INFO] Iniciando File
+[22-11-13 12:10:22][INFO] Iniciando File
+[22-11-13 12:10:25][INFO] Iniciando File
+[22-11-13 12:10:25][INFO] Iniciando File
+[22-11-13 12:10:26][INFO] Iniciando File
+[22-11-13 12:10:27][INFO] Iniciando File
+[22-11-13 12:10:28][INFO] Iniciando File
+[22-11-13 12:10:32][INFO] Iniciando File
+[22-11-13 12:22:06][INFO] Iniciando File
+[22-11-13 12:22:09][INFO] Iniciando File
+[22-11-13 12:22:13][INFO] Iniciando File
+[22-11-13 12:22:14][INFO] Iniciando File
+[22-11-13 12:22:16][INFO] Iniciando File
+[22-11-13 12:22:20][INFO] Iniciando File
+[22-11-13 12:22:20][INFO] Actualizar edicion sql : UPDATE edicion SET numero = 1, titulo = 'Título1', 
+                                        descripcion = 'descripcion de titulo 1', precio = 100, 
+                                        portada = 'default.jpg', id_producto = 1, 
+                                        estado =  WHERE id = 1
+[22-11-13 12:25:14][INFO] Iniciando File
+[22-11-13 12:25:17][INFO] Iniciando File
+[22-11-13 12:25:18][INFO] Iniciando File
+[22-11-13 12:25:19][INFO] Iniciando File
+[22-11-13 12:25:19][INFO] Iniciando File
+[22-11-13 12:25:20][INFO] Iniciando File
+[22-11-13 12:25:24][INFO] Iniciando File
+[22-11-13 12:25:24][INFO] Actualizar edicion sql : UPDATE edicion SET numero = 1, titulo = 'Título1', 
+                                        descripcion = 'descripcion de titulo 1', precio = 1005, 
+                                        portada = 'default.jpg', id_producto = 1
+                                        WHERE id = 1
+[22-11-13 12:25:29][INFO] Iniciando File
+[22-11-13 12:25:30][INFO] Iniciando File
+[22-11-13 01:01:38][INFO] Iniciando File
+[22-11-13 01:01:38][INFO] Iniciando File

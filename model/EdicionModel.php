@@ -18,10 +18,9 @@ class EdicionModel
 
 
     //GETTERS Y SETTERS
-    /**
-     * @var mixed
-     */
+
     private $nombreProducto;
+    private $logger;
 
     public function getId()
     {
@@ -127,8 +126,9 @@ class EdicionModel
 
 
 
-    public function __construct($database)
+    public function __construct($logger, $database)
     {
+        $this->logger = $logger;
         $this->database = $database;
     }
 
@@ -154,6 +154,14 @@ class EdicionModel
         return $this->toEdition($query);
     }
 
+    public function update()
+    {
+        return $this->database->execute("UPDATE edicion SET numero = $this->numero, titulo = '$this->titulo', 
+                                        descripcion = '$this->descripcion', precio = $this->precio, 
+                                        portada = '$this->portada', id_producto = $this->producto
+                                        WHERE id = $this->id");
+    }
+
     private function toEdition($array)
     {
         $this->id = $array['id'];
@@ -168,4 +176,6 @@ class EdicionModel
         $this->portada = $array['portada'];
         return $this;
     }
+
+
 }

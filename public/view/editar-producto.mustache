@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Editar Producto</title>
+</head>
+<body>
+
+<div class="container-scroller">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: Nuevo producto -->
+                <div class="card fadeIn">
+                    <div class="card-body">
+                        <div class="container max-with-600 mx-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Editar producto</h4>
+                                <a class="btn btn-secondary text-center" title="Cerrar ventana"
+                                   href="/infonete/producto/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
+                            </div>
+                            <hr>
+
+                            <!--el enctype multipart form data se pone para enviar archivos-->
+                            <form action="/infonete/producto/actualizar" method="post" enctype="multipart/form-data">
+                                {{#producto}}
+                                    <div class="d-flex flex-column flex-lg-row">
+                                        <div class="d-flex flex-column flex-shrink-0 align-items-center px-0 px-lg-5 ">
+                                            <div class="file-image-container">
+                                                <img class="product-logo-image" id="preview"
+                                                     src="/infonete/public/uploads/product/{{getImagen}}" alt="">
+                                                <div class="file btn btn-info btn-block mb-2 mt-0">
+                                                    <p class="d-flex align-content-center justify-content-center">
+                                                        <i class="mdi mdi-camera d-inline me-2"></i>Cambiar imagen
+                                                    </p>
+                                                    <input type="file" accept="image/png,image/jpeg" id="file"
+                                                           name="file" class="form-control ">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="d-flex flex-column w-100">
+                                           <input type="hidden" value="{{getId}}" name="id">
+                                            <label for="tipo"></label>
+                                            <select class="form-control mb-2" id="tipo" name="tipo" required>
+                                                <option value="{{getTipo}}" selected hidden>{{getNombreTipo}}</option>
+                                                {{#tipo}}
+                                                    <option value="{{id}}">{{tipo}}</option>
+                                                {{/tipo}}
+
+                                            </select>
+
+                                            <label for="nombre"></label>
+                                            <input class="form-control mb-2" type="text" id="nombre" name="nombre"
+                                                   placeholder="Nombre" value="{{getNombre}}" required>
+
+                                            <div class="d-flex justify-content-end">
+                                                <button class="btn btn-primary mb-2 " type="submit">Actualizar</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    {{#success}}
+                                        <div class="alert alert-success" role="alert">
+                                            {{success}}
+                                        </div>
+                                    {{/success}}
+
+                                    {{#error}}
+                                        <div class="alert alert-danger" role="alert">
+                                            {{error}}
+                                        </div>
+                                    {{/error}}
+
+                                {{/producto}}
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main-panel ends -->
+    </div>
+</div>
+
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+
+
+<script type='text/javascript' src="/infonete/public/js/app/preview.js"></script>
+
+
+</body>
+</html>
+
+

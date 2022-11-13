@@ -50,7 +50,6 @@
                                             <th class="text-pink">Imagen</th>
                                             <th class="text-pink">Titulo</th>
                                             <th class="text-pink">Tipo</th>
-                                            <th class="text-pink">Estado</th>
                                             <th class="text-pink">Acciones rápidas</th>
                                         </tr>
                                     </thead>
@@ -61,15 +60,9 @@
                                             <td><img class="product-image me-4" src="/infonete/public/uploads/product/{{imagen}}"></td>
                                             <td>{{nombre}}</td>
                                             <td>{{tipo}}</td>
-                                            <td>
-                                                <label class="badge badge-success me-1" >Activo</label>
-                                            </td>
 
                                             <td>
-                                                <a  class="btn btn-secondary" title="Publicar" >
-                                                        <i class="mdi mdi-web mx-auto"  ></i>
-                                                </a>
-                                                <a  class="btn btn-secondary" title="Editar" id-user="{{id}}" blank-pass><i class="mdi mdi-pencil mx-auto" ></i></a>
+                                                <a  class="btn btn-secondary" title="Editar" href="/infonete/producto/editar?id={{id}}"><i class="mdi mdi-pencil mx-auto" ></i></a>
 
                                             </td>
                                         </tr>

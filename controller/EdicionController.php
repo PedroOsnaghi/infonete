@@ -53,12 +53,32 @@ class EdicionController
         echo $this->render->render("public/view/partial/lista-edicion.mustache", $data);
     }
 
-
-
-    private function setEdicionValidada()
+    public function editar()
     {
+        $data = $this->getDataEdicion($_GET['id']);
+        echo $this->render->render("public/view/editar-edicion.mustache", $data);
+    }
+
+    public function actualizar()
+    {
+        $id = $_POST['id'];
+        $this->setEdicionValidada($id);
+
+        $data = ($this->edicionModel->update()) ?
+            $this->getDataEdicion($id, ['success' => "La edición se actualizó correctamente"]) :
+            $this->getDataEdicion($id, ['error' => "Hubo un error al actualizar la edición"]);
+
+        echo $this->render->render("public/view/edicion.mustache",$data);
+    }
+
+
+
+    private function setEdicionValidada($id = null)
+    {
+        if($id != null) $this->edicionModel->setId($id);
         $this->edicionModel->setNumero($_POST['numero']);
         $this->edicionModel->setTitulo($_POST['titulo']);
+        $this->edicionModel->setDescripcion($_POST['descripcion']);
         $this->edicionModel->setPrecio($_POST['precio']);
         $this->edicionModel->setProducto($this->session->getParameter('activeProduct')->getId());
         $this->edicionModel->setPortada($this->getFileName());
@@ -76,6 +96,15 @@ class EdicionController
     private function getData($msg = [])
     {
         return array_merge($msg, array(
+            "product" =>  $this->session->getParameter("activeProduct"),
+            "userAuth" => $this->session->getAuthUser()
+        ));
+    }
+
+    private function getDataEdicion($id, $msg = [])
+    {
+        return array_merge($msg, array(
+            "edicion" => $this->edicionModel->getEdition($id),
             "product" =>  $this->session->getParameter("activeProduct"),
             "userAuth" => $this->session->getAuthUser()
         ));
