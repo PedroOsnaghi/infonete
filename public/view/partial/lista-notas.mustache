@@ -3,7 +3,7 @@
     <tr>
         <td><i class="text-info mdi mdi-note-outline d-inline pr-2 fs-3"></i>{{id}}</td>
         <td>{{seccion}}</td>
-        <td>{{titulo}}</td>
+        <td class="max-with-250 text-elipsis">{{titulo}}</td>
         <td>{{create_at}}</td>
         <td>
             {{#update_at}}
@@ -19,9 +19,9 @@
 
         <td>
             <a  class="btn btn-secondary" title="Enviar a Revisión" >
-                <i class="mdi mdi-web mx-auto"  ></i>
+                <i class="mdi mdi-send mx-auto"  ></i>
             </a>
-            <a  class="btn btn-secondary" title="Editar" id-user="{{id}}" href="/infonete/edicion/editar?id={{id}}" blank-pass><i class="mdi mdi-pencil mx-auto" ></i></a>
+            <a  class="btn btn-secondary" title="Editar" id-user="{{id}}" href="/infonete/edicion/editar?id={{id}}" ><i class="mdi mdi-pencil mx-auto" ></i></a>
 
         </td>
     </tr>

@@ -9,7 +9,6 @@ select_edition.addEventListener("change", function (){
 
 function establecerSeleccion(id){
     btn_nuevanota.classList.remove("disabled");
-    btn_nuevanota.href = "/infonete/articulo/crear?ide=" + id;
     request("http://localhost/infonete/articulo/list?ide=" + id);
 }
 
@@ -25,15 +24,11 @@ function request(url){
     });
 }
 
-function verificar(id){
-   for (var i = 0; i < select_edition.children.length; i++){
-       if (select_edition.children[i].value == id){
-           select_edition.children[i].setAttribute("selected", true);
-           establecerSeleccion(id);
-       }
-
-   }
+function verificarSeleccion(){
+  if(select_edition.value != "0") establecerSeleccion(select_edition.value);
 }
+
+
 
 
 

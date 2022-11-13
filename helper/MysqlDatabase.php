@@ -38,5 +38,10 @@ class MysqlDatabase
         return $this->connection->affected_rows;
     }
 
+    public function lastInsertId()
+    {
+        return $this->connection->insert_id;
+    }
+
 }
 

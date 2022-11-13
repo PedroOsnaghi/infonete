@@ -162,6 +162,22 @@ class EdicionModel
                                         WHERE id = $this->id");
     }
 
+    public function publicar($id)
+    {
+        $time = date("Y-m-d h:m");
+
+        $this->database->execute("UPDATE edicion SET estado = " . self::ESTADO_PUBLICADO . ", fecha ='" . $time . "' WHERE id = $id");
+
+        return array("publicado" => self::ESTADO_PUBLICADO,
+                     "date" => $time);
+    }
+
+    public function despublicar($id)
+    {
+        $this->database->execute("UPDATE edicion SET estado = " . self::ESTADO_EN_EDICION . ", fecha = null WHERE id = $id");
+        return array("publicado" => self::ESTADO_EN_EDICION);
+    }
+
     private function toEdition($array)
     {
         $this->id = $array['id'];

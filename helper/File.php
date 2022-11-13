@@ -57,22 +57,27 @@ class File
 
     public function uploadFiles($folder = '', callable $callback = null)
     {
-        $directorio = $this->verificarDirectorio($folder);
+        if(isset($_FILES['file'])){
+            $directorio = $this->verificarDirectorio($folder);
 
-        $this->logger->info($directorio);
+            $this->logger->info($directorio);
 
-        foreach ($_FILES['file']['tmp_name'] as $key => $file){
+            foreach ($_FILES['file']['tmp_name'] as $key => $file){
 
-            //movemos de temporal a fisico
-            $ruta = $directorio . "/" . $_FILES['file']['name'][$key];
+                //movemos de temporal a fisico
+                $ruta = $directorio . "/" . $_FILES['file']['name'][$key];
 
-            $dataFile = (move_uploaded_file($file, $ruta )) ?
-                $this->getDataFile($key, self::UPLOAD_STATE_OK):
-                $this->getDataFile($key, self::UPLOAD_STATE_ERROR);
+                $dataFile = (move_uploaded_file($file, $ruta )) ?
+                    $this->getDataFile($key, self::UPLOAD_STATE_OK):
+                    $this->getDataFile($key, self::UPLOAD_STATE_ERROR);
 
-           if($callback != null) $callback($dataFile);
+                if($callback != null) $callback($dataFile);
+            }
+            return self::UPLOAD_STATE_OK;
+        }else{
+            return self::UPLOAD_STATE_NO_FILE;
         }
-        return self::UPLOAD_STATE_OK;
+
 
     }
 
@@ -83,12 +88,19 @@ class File
     private function verificarDirectorio($folder)
     {
         $dir = $this->uploadDir . (empty($folder) ? '/' : "/" .  $folder  . "/");
-        if(!file_exists($dir)) {
-           if (mkdir($dir, 0777))
-               opendir($dir);
-           return false;
+        $this->logger->info("FILES-- dir: " . $dir);
 
-        }
+            if(!file_exists($dir)) {
+                if (!mkdir($dir, 0777, true)){
+                    $this->logger->error("No se creo el directorio: " . $dir);
+                    return false;
+                }else{
+                    $this->logger->info("Se creo el directorio:" . $dir);
+                    opendir($dir);
+                }
+
+
+            }
 
         return $dir;
     }

@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="infonete/public/css/index/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="/infonete/public/css/app/thumb.css">
-    <link rel="stylesheet" href="/infonete/public/css/style.css">
+
     <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
     <link rel="stylesheet" href="/infonete/public/css/app/maps.css">
 
     <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
@@ -34,16 +35,53 @@
             <div id="main-content" class="content-wrapper">
                 <!-- form: Nueva Nota -->
                 <div class="card fadeIn">
+                    <div class="d-flex flex-column bg-x-dark-gray shadow-max overflow-hidden ">
+                        {{#edicion}}
+
+                                <div class="d-flex px-3 align-items-center">
+                                    <img class="portada-image-mini mr-2 "
+                                         src="/infonete/public/uploads/portada/{{getPortada}}"
+                                         alt="">
+                                    <div class="d-flex flex-column ">
+                                        <h6 class="display-6 my-1">Edición Activa</h6>
+                                        <div class="d-flex">
+                                            <p class="text-muted p-0 mb-0 mr-1">Producto:</p>
+                                            <p class="p-0 m-0 mr-3">{{getNombreProducto}}</p>
+
+                                            <p class="text-muted p-0 mb-0 mr-1">Número de edición:</p>
+                                            <p class="p-0 m-0 mr-3"> {{getNumero}}</p>
+
+                                            <p class="text-muted p-0 mb-0 mr-1">Título de edición:</p>
+                                            <p class="p-0 m-0 text-primary">{{getTitulo}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        {{/edicion}}
+                        <div class="w-100 card-tipo-border mt-0"></div>
+                    </div>
                     <div class="card-body">
                         <form id="form-noticia" action="" method="post" enctype="multipart/form-data">
                             <div class="container  mx-auto">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <h4>Crear Nota</h4>
-                                    <div class="d-flex justify-content-end align-items-stretch">
-                                        <button class="btn btn-primary mr-2" type="submit">Guardar Nota</button>
-                                        <a class="btn btn-secondary text-center" title="Cerrar ventana"
-                                           href="/infonete/edicion/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
+                                    <h4 class="mb-0">Crear Nota</h4>
+                                    <div class="d-flex justify-content-end w-75">
+                                        <select class="form-control w-75" tabindex="0" name="seccion" id="">
+
+                                                <option value="0" selected disabled hidden>Seleccione la Seccion de Noticias </option>
+
+                                            {{#secciones}}
+                                                <option value="{{id}}">{{nombre}}</option>
+                                            {{/secciones}}
+                                        </select>
+
+                                        <div class="d-flex  align-items-stretch">
+                                            <button class="nav-item btn btn-primary mx-2 " type="submit" id="btn-save" >Guardar Nota</button>
+                                            <a class="btn btn-secondary text-center" title="Cerrar ventana"
+                                               href="/infonete/articulo/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
+                                        </div>
                                     </div>
+
 
                                 </div>
                                 <hr class="bg-dark-gray">
@@ -60,12 +98,12 @@
                                                ref="#v-tabs-content"
                                                role="tab"
                                                aria-controls="v-tabs-home"
-                                               aria-selected="true">Contenido</a>
+                                               aria-selected="true">Contenido <spam class="fs-12 text-success">(requerido)</spam></a>
                                             <a class="nav-link" id="v-tabs-profile-tab" data-mdb-toggle="tab"
                                                ref="#v-tabs-geo"
                                                role="tab"
                                                aria-controls="v-tabs-profile"
-                                               aria-selected="false">Posicionar en el mapa</a>
+                                               aria-selected="false">Posicionar en el mapa <spam class="fs-12 text-success">(requerido)</spam></a>
                                             <a class="nav-link" id="v-tabs-messages-tab" data-mdb-toggle="tab"
                                                ref="#v-tabs-image"
                                                role="tab"
@@ -82,33 +120,7 @@
                                                aria-controls="v-tabs-messages"
                                                aria-selected="false">Capturar Video</a>
                                         </div>
-                                        <div class="d-flex flex-column rounded bg-x-dark-gray  shadow-max overflow-hidden mt-5">
-                                            {{#edicion}}
 
-                                                <div class="d-flex flex-column w-100 mx-auto justify-content-center p-2">
-
-                                                    <h6 class="display-6 ">Edición Activa</h6>
-                                                    <div class="d-flex mt-2 mx-auto">
-                                                        <img class="portada-image-mini mr-2 mb-2"
-                                                             src="/infonete/public/uploads/portada/{{getPortada}}"
-                                                             alt="">
-                                                        <div class="d-flex flex-column">
-                                                            <p class="text-muted p-0 m-0">Número:</p>
-                                                            <p class="p-0 m-0 mr-1"> {{getNumero}}</p>
-                                                            <p class="text-muted p-0 m-0">Producto:</p>
-                                                            <p class="p-0 m-0 mr-1">{{getNombreProducto}}</p>
-                                                            <p class="text-muted p-0 m-0">Título:</p>
-                                                            <p class="p-0 m-0 text-primary">{{getTitulo}}</p>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                </div>
-
-                                            {{/edicion}}
-                                            <div class="w-100 card-tipo-border"></div>
-                                        </div>
                                         <!-- Tab navs -->
                                     </div>
 
@@ -116,30 +128,22 @@
                                         <!-- Tab content -->
 
 
-                                        <div class="tab-content al" id="v-tabs-body">
+                                        <div class="tab-content pb-1" id="v-tabs-body">
 
                                             <div class="active" id="v-tabs-content" role="tabpanel"
                                                  aria-labelledby="v-tabs-home-tab">
-                                                <label for="">Sección</label>
-                                                <select class="form-control" name="" id="">
-                                                    <option value="0" selected disabled hidden>Seleccione la Seccion de
-                                                        Noticias
-                                                    </option>
-                                                    {{#secciones}}
-                                                        <option value="{{id}}">{{nombre}}</option>
-                                                    {{/secciones}}
-                                                </select>
+
 
                                                 <h5 class="display-6 mb-1 mt-2 text-primary">Contenido:</h5>
                                                 <hr class="bg-gray w-100 m-0 p-0 d-block mb-2">
                                                 <label for="">Titulo de Nota *</label>
-                                                <input class="form-control mb-2" type="text" name="titulo"
+                                                <input class="form-control mb-2" tabindex="1" type="text" name="titulo"
                                                        placeholder="Título">
                                                 <label for="">Subtitulo de Nota *</label>
-                                                <input class="form-control mb-2" type="text" name="subtitulo"
+                                                <input class="form-control mb-2" tabindex="2" type="text" name="subtitulo"
                                                        placeholder="Subtitulo">
                                                 <label for="">contenido *</label>
-                                                <textarea id="text-content" class="form-control mb-2"  name="contenido"
+                                                <textarea id="text-content" class="form-control mb-2" tabindex="3" name="contenido"
                                                           placeholder="Cuerpo de la Notícia" ></textarea>
 
                                             </div>
@@ -152,7 +156,7 @@
                                                 <hr class="bg-gray w-100 m-0 p-0 d-block mb-2">
                                                 <div id="input-container">
 
-                                                    <input id="pac-input" class="form-control mb-0" type="text"
+                                                    <input id="pac-input" tabindex="4" class="form-control mb-0" type="text"
                                                            name="ubicacion"
                                                            placeholder="Buscar un lugar" required>
                                                     <div id="dir-validate-msg" class="text-left valid-feedback">
@@ -218,15 +222,15 @@
                                                 <h5 class="display-6 mb-1 mt-3 text-primary">Enlaces externos:</h5>
                                                 <hr class="bg-gray w-100 m-0 p-0 d-block mb-2">
 
-
-                                                <div class="input-group mb-2 mt-3">
+                                                <label for="">Link a un sitio relacionado a la noticia o enlace de interes <span class="text-muted fs-12">(copie y pegue la url en la caja de texto)</span></label>
+                                                <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text">http://</span>
+                                                        <span class="input-group-text">url</span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="link"
+                                                    <input type="url" class="form-control" name="link"
                                                            placeholder="url a pagina relacionada">
                                                 </div>
-
+                                                <label for="">Link a un video de YouTube <span class="text-muted fs-12">(copie y pegue la url en la caja de texto)</span></label>
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-append">
                                                         <a class="btn btn-youtube" href="http://youtube.com"
@@ -255,17 +259,14 @@
 
 
 
-                                            {{#success}}
-                                                <div class="alert alert-success" role="alert">
-                                                    {{success}}
-                                                </div>
-                                            {{/success}}
+                                            <!-- MENSAJE DEL SERVIDOR -->
+                                                <div class="alert alert-success hidden mt-4" role="alert" id="message">
 
-                                            {{#error}}
-                                                <div class="alert alert-danger" role="alert">
-                                                    {{error}}
                                                 </div>
-                                            {{/error}}
+
+
+
+
                                         </div>
 
 

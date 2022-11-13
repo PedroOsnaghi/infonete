@@ -51,13 +51,13 @@ class Configuration
     public function getArticuloModel()
     {
         $database = $this->getDatabase();
-        return new ArticuloModel($database);
+        return new ArticuloModel($this->getFile(), $this->getLogger(), $database);
     }
 
     public function getArticuloController()
     {
         $articuloModel = $this->getArticuloModel();
-        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSeccionModel(),  $this->getSession(), $this->getFile(), $this->getLogger(),  $this->getRender());
+        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSeccionModel(),  $this->getSession(),  $this->getLogger(),  $this->getRender());
     }
 
     public function getIndexController()

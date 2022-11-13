@@ -24,56 +24,72 @@ class EdicionController
     }
 
     public function crear(){
-
-        $this->session->setParameter('activeProduct', $this->productModel->getProduct($_GET["idp"]));
-        $data = $this->getData();
+        $data = $this->datos();
         echo $this->render->render("public/view/edicion.mustache", $data);
     }
 
     public function guardar(){
-        $this->setEdicionValidada();
+        $this->setEdition();
 
         $data = ($this->edicionModel->guardar()) ?
-                $this->getData(['success' => "La edición se guardó correctamente"]) :
-                $this->getData(['error' => "Hubo un error al guardar la edición"]);
+                $this->datos(['success' => "La edición se guardó correctamente"]) :
+                $this->datos(['error' => "Hubo un error al guardar la edición"]);
 
         echo $this->render->render("public/view/edicion.mustache",$data);
     }
 
     public function admin()
     {
-        $data = $this->getDataList();
+        $data = $this->datos(["product" =>  $this->session->getParameter("activeProduct"),
+                              "productos" => $this->productModel->list()]);
         echo $this->render->render("public/view/gestion-edicion.mustache", $data);
     }
 
     public function list()
     {
         $idProducto = $_GET['idp'];
-        $data["ediciones"] = $this->edicionModel->listBy($idProducto);
+        $this->session->setParameter('activeProduct', $this->productModel->getProduct($idProducto));
+        $data = $this->datos(["ediciones" => $this->edicionModel->listBy($idProducto)]);
         echo $this->render->render("public/view/partial/lista-edicion.mustache", $data);
     }
 
     public function editar()
     {
-        $data = $this->getDataEdicion($_GET['id']);
+        $data = $this->datos(["edicion" =>  $this->edicionModel->getEdition($_GET['id'])]);
         echo $this->render->render("public/view/editar-edicion.mustache", $data);
     }
 
     public function actualizar()
     {
-        $id = $_POST['id'];
-        $this->setEdicionValidada($id);
+        $this->setEdition($_POST['id']);
 
         $data = ($this->edicionModel->update()) ?
-            $this->getDataEdicion($id, ['success' => "La edición se actualizó correctamente"]) :
-            $this->getDataEdicion($id, ['error' => "Hubo un error al actualizar la edición"]);
+            $this->datos(['success' => "La edición se actualizó correctamente"]):
+            $this->datos(['error' => "Hubo un error al actualizar la edición"]);
 
         echo $this->render->render("public/view/edicion.mustache",$data);
     }
 
+    public function publicar()
+    {
+        $id = $_GET['id'];
+        $res = $this->edicionModel->publicar($id);
+        header('Content-Type: application/json');
+        echo json_encode($res,JSON_FORCE_OBJECT);
+    }
+
+    public function despublicar()
+    {
+        $id = $_GET['id'];
+        $res = $this->edicionModel->despublicar($id);
+        header('Content-Type: application/json');
+        echo json_encode($res,JSON_FORCE_OBJECT);
+    }
 
 
-    private function setEdicionValidada($id = null)
+
+
+    private function setEdition($id = null)
     {
         if($id != null) $this->edicionModel->setId($id);
         $this->edicionModel->setNumero($_POST['numero']);
@@ -84,31 +100,17 @@ class EdicionController
         $this->edicionModel->setPortada($this->getFileName());
     }
 
-    private function getDataList()
-    {
-        return array(
-            "productoActivo" => $this->session->getParameter('activeProduct'),
-            "productos" => $this->productModel->list(),
-            "userAuth" => $this->session->getAuthUser()
-        );
-    }
 
-    private function getData($msg = [])
+
+    private function datos($data = [])
     {
-        return array_merge($msg, array(
+        return array_merge($data, array(
             "product" =>  $this->session->getParameter("activeProduct"),
             "userAuth" => $this->session->getAuthUser()
         ));
     }
 
-    private function getDataEdicion($id, $msg = [])
-    {
-        return array_merge($msg, array(
-            "edicion" => $this->edicionModel->getEdition($id),
-            "product" =>  $this->session->getParameter("activeProduct"),
-            "userAuth" => $this->session->getAuthUser()
-        ));
-    }
+
 
     private function getFileName()
     {

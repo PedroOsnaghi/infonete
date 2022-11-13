@@ -155,3 +155,8 @@
     background-color: var(--x-gray-dark) !important;
 }
 
+.badge-edit{
+    background-color: var(--orange) !important;
+    color: var(--gray-dark) !important;
+}
+

@@ -29,7 +29,31 @@
             <div id="main-content" class="content-wrapper">
                 <!-- form: Nuevo producto -->
                 <div class="card fadeIn">
+                    <div class="d-flex flex-column bg-x-dark-gray shadow-max overflow-hidden ">
+                        {{#product}}
+                            <div class="d-flex px-3 align-items-center">
+                                <img class="product-image-mini mr-2 "
+                                     src="/infonete/public/uploads/product/{{getImagen}}"
+                                     alt="">
+                                <div class="d-flex flex-column ">
+                                    <h6 class="display-6 my-1">Producto Activo</h6>
+                                    <div class="d-flex">
+                                        <p class="text-muted p-0 mb-0 mr-1">ID Producto:</p>
+                                        <p class="p-0 m-0 mr-3">{{getId}}</p>
+
+                                        <p class="text-muted p-0 mb-0 mr-1">Tipo de producto:</p>
+                                        <p class="p-0 m-0 mr-3"> {{getNombreTipo}}</p>
+
+                                        <p class="text-muted p-0 mb-0 mr-1">Nombre:</p>
+                                        <p class="p-0 m-0 text-primary">{{getNombre}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/product}}
+                        <div class="w-100 card-tipo-border mt-0"></div>
+                    </div>
                     <div class="card-body">
+
                         <div class="container max-with-600 mx-auto">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4>Crear nueva edición</h4>
@@ -37,25 +61,7 @@
                             </div>
                             <hr class="bg-dark-gray">
                             
-                            <div class="d-flex flex-column rounded bg-dark-gray p-2 mb-3">
-                                {{#product}}
-                                    <div class="d-flex align-items-center"><i class="mdi mdi-paperclip icon-md"></i>
-                                        <div class="d-flex flex-column w-100">
-                                            <div class="d-flex w-100 max-with-800 align-items-center">
-                                                <h5 class="display-6 mb-0 mr-3">Producto relacionado:</h5>
-                                                <img class="product-image-mini mr-2 mb-2" src="/infonete/public/uploads/product/{{getImagen}}" alt="">
-                                                <p class="p-0 m-0 mr-1"># {{getId}} </p>
-                                                <p class="p-0 m-0 mr-1">/ {{getNombreTipo}} / </p>
-                                                <p class="p-0 m-0 text-primary">{{getNombre}}</p>
-                                            </div>
-                                            <hr class="bg-light-gray w-100 m-0 p-0 d-block mb-2">
-                                        </div>
-                                    </div>
 
-
-                                {{/product}}
-
-                            </div>
                             <form action="/infonete/edicion/guardar" method="post" enctype="multipart/form-data">
 
                                 <div class="d-flex flex-column flex-lg-row">

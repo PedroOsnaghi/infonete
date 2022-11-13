@@ -36,7 +36,13 @@
                             <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
                                 <li class="nav-item w-75">
                                     <select id="select-product" class="form-control"  >
-                                        <option value="0" selected hidden disabled>Seleccione un producto</option>
+                                        {{#product}}
+                                            <option value="{{getId}}" selected hidden>{{getNombre}}</option>
+                                        {{/product}}
+                                        {{^product}}
+                                            <option value="0" selected hidden disabled>Seleccione un producto</option>
+                                        {{/product}}
+
                                         {{#productos}}
                                             <option value={{id}} >{{nombre}}</option>
                                         {{/productos}}
@@ -54,7 +60,7 @@
                                         <input type="text" name="value"  id="search-user-box" class="form-control" value="{{value}}" placeholder="Buscar por título o número de edición">
                                     </form>
                                 </li>
-                                <li><a class="nav-item btn btn-primary disabled" id="nueva-edicion"  ><i class="mdi mdi-playlist-plus"></i>Crear Edición</a></li>
+                                <li><a class="nav-item btn btn-primary disabled" id="nueva-edicion" href="/infonete/edicion/crear" ><i class="mdi mdi-playlist-plus"></i>Crear Edición</a></li>
                             </ul>
                         </div>
 
@@ -107,10 +113,8 @@
 
 
 <script type='text/javascript' src="/infonete/public/js/app/edicion.js"></script>
-{{#productoActivo}}
-    <script>verificar({{getId}})</script>
-{{/productoActivo}}
 
+<script>verificarSeleccion()</script>
 
 
 </body>

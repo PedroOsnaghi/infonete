@@ -7,6 +7,8 @@
 
     var text_empty = document.getElementById("text-empty");
 
+    var btn_guardar = document.getElementById("btn-save");
+
     var formDataFile = new FormData();
 
 
@@ -62,11 +64,11 @@
         }
     });
 
-    form.addEventListener("submit", function (e){
+    form.addEventListener("submit", function (e) {
         e.preventDefault();
 
 
-        //obtener contenido de tiny
+        //obtener contenido de tiny y colocarlo en textarea
         tinymce.activeEditor.save();
 
         var myContent = tinymce.activeEditor.getContent();
@@ -75,50 +77,64 @@
 
         tinymce.get("text-content").setContent(myContent);
 
-
+        //obtenemos los datos del formulario
         var formDataMain = new FormData(e.target);
 
 
-        if (formDataMain.has("file[]")){
+        if (formDataMain.has("file[]")) {
             formDataMain.delete("file[]");
         }
 
+        for (var pair of formDataFile.entries())
+            formDataMain.append("file[]", pair[1]);
 
 
-        var files = [];
+        sendRequest("http://localhost/infonete/articulo/guardar", formDataMain, function (response) {
+            if(response && response.success){
+                console.log(response.success);
+                success(response.success);
+                deshabilitarBoton();
+            } else{
+                console.log(response.error);
+                error(response.error);
+            }
 
-        for (var pair of formDataFile.entries()) {
-
-            files.push(pair[1]);
-        }
-
-        console.log(files);
-
-        files.forEach(function (file){
-            formDataMain.append("file[]", file);
         });
-        var data = Object.fromEntries(formDataMain);
-        //console.log(JSON.stringify(data));
-
-        for (var pair of formDataMain.entries()) {
-            console.log(pair);
-
-
-        }
-
-        fetch("http://localhost/infonete/articulo/guardar", {
-            method: "POST",
-            body: formDataMain
-        })
-            .then(function(resp){
-                console.log(resp);
-            })
-            .catch(function (err){
-                console.log(err);
-            })
-
-
-
-
     });
 
+    function sendRequest(url, data, callback){
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: callback
+        });
+    }
+
+    function success(msg){
+        var msg_container = document.getElementById("message");
+
+        msg_container.classList.remove("alert-danger");
+        msg_container.classList.add("alert-success");
+        msg_container.classList.remove("hidden");
+        msg_container.innerHTML = msg;
+        msg_container.scrollIntoView();
+    }
+
+    function error(msg){
+        var msg_container = document.getElementById("message");
+
+        msg_container.classList.remove("alert-success");
+        msg_container.classList.add("alert-danger");
+        msg_container.classList.remove("hidden");
+        msg_container.innerHTML = msg;
+        msg_container.scrollIntoView();
+    }
+
+    function deshabilitarBoton(){
+        btn_guardar.classList.add("disabled");
+        btn_guardar.setAttribute("disabled", "true");
+    }

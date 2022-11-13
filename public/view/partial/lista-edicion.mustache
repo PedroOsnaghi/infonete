@@ -4,7 +4,7 @@
         <td><img class="portada-mini me-4" src="/infonete/public/uploads/portada/{{portada}}"></td>
         <td>{{titulo}}</td>
         <td>{{numero}}</td>
-        <td>
+        <td id="date-{{id}}">
             {{#fecha}}
                 {{fecha}}
             {{/fecha}}
@@ -13,12 +13,25 @@
             {{/fecha}}
         </td>
         <td>
-            <label class="badge badge-success me-1" >Edición</label>
+            {{#estado}}
+                <label class="badge badge-success me-1" id="label-{{id}}" >Publicada</label>
+            {{/estado}}
+            {{^estado}}
+                <label class="badge badge-edit me-1 text-dark-gray" id="label-{{id}}" >Edición</label>
+            {{/estado}}
+
         </td>
 
         <td>
-            <a  class="btn btn-secondary" title="Publicar" id-edicion="{{id}}" ed-state>
-                <i class="mdi mdi-earth mx-auto" ></i>
+            <a  class="btn btn-secondary" title="Publicar" id-edicion="{{id}}" state="{{estado}}" ed-state>
+                {{#estado}}
+                    <i class="mdi mdi-earth-off mx-auto" ></i>
+                {{/estado}}
+                {{^estado}}
+                    <i class="mdi mdi-earth mx-auto" ></i>
+                {{/estado}}
+
+
             </a>
             <a  class="btn btn-secondary" title="Editar"  href="/infonete/edicion/editar?id={{id}}" blank-pass><i class="mdi mdi-pencil mx-auto" ></i></a>
 
