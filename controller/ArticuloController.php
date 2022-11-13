@@ -50,6 +50,11 @@ class ArticuloController
 
     }
 
+    public function preview()
+    {
+        echo $this->render->render("public/view/articulo-preview.mustache");
+    }
+
     public function guardar()
     {
         $this->setearArticulo();
@@ -59,6 +64,14 @@ class ArticuloController
         header('Content-Type: application/json');
         echo json_encode($response,JSON_FORCE_OBJECT);
 
+    }
+
+    public function revision()
+    {
+        $response = $this->articuloModel->solicitarRevision($_GET['id']);
+
+        header('Content-Type: application/json');
+        echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
     private function setearArticulo()

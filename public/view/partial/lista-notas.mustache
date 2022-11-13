@@ -14,14 +14,26 @@
             {{/update_at}}
         </td>
         <td>
-            <label class="badge badge-success me-1" >Draft</label>
+            <label class="badge badge-state-{{idEstado}} me-1"  id="label-{{id}}">{{nombreEstado}}</label>
         </td>
 
         <td>
-            <a  class="btn btn-secondary" title="Enviar a Revisión" >
-                <i class="mdi mdi-send mx-auto"  ></i>
-            </a>
-            <a  class="btn btn-secondary" title="Editar" id-user="{{id}}" href="/infonete/edicion/editar?id={{id}}" ><i class="mdi mdi-pencil mx-auto" ></i></a>
+                {{#idEstado}}
+                    <a  class="btn btn-secondary disabled" title="Enviar a Revisión" id-nota="{{id}}"  nota-state>
+                        <i class="mdi mdi-read mx-auto"  ></i>
+                    </a>
+                    <a  class="btn btn-secondary disabled" title="Editar" id-user="{{id}}" href="" ><i class="mdi mdi mdi-pencil-off mx-auto" ></i></a>
+                {{/idEstado}}
+                {{^idEstado}}
+                    <a  class="btn btn-secondary" title="Enviar a Revisión" id-nota="{{id}}"  nota-state>
+                        <i class="mdi mdi-send mx-auto"  ></i>
+                    </a>
+                    <a  class="btn btn-secondary" title="Editar"  href="/infonete/articulo/editar?id={{id}}" ><i class="mdi mdi-pencil mx-auto" ></i></a>
+                {{/idEstado}}
+
+
+
+            <a  class="btn btn-secondary" title="Previsualizar"  href="/infonete/articulo/preview?id={{id}}" ><i class="mdi mdi-eye mx-auto" ></i></a>
 
         </td>
     </tr>

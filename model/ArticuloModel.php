@@ -3,10 +3,10 @@
 class ArticuloModel
 {
     //CONSTANTES
-    const ART_ST_DRAFT = 1;
-    const ART_ST_A_PUBLICAR = 2;
-    const ART_ST_PUBLICADO = 3;
-    const ART_ST_BAJA = 0;
+    const ART_ST_DRAFT = 0;
+    const ART_ST_REVISION = 1;
+    const ART_ST_PUBLICADO = 2;
+    const ART_ST_BAJA = -1;
 
     //PROPIEDADES
     private $id;
@@ -19,6 +19,7 @@ class ArticuloModel
     private $create_at;
     private $update_at;
     private $estado;
+    private $nombreEstado;
 
     private $seccion;
     private $edicion;
@@ -127,6 +128,16 @@ class ArticuloModel
         $this->estado = $estado;
     }
 
+    public function getNombreEstado()
+    {
+        return $this->nombreEstado;
+    }
+
+    public function setNombreEstado($nombreEstado)
+    {
+        $this->nombreEstado = $nombreEstado;
+    }
+
     public function getUbicacion()
     {
         return $this->ubicacion;
@@ -190,10 +201,27 @@ class ArticuloModel
 
     }
 
+    public function solicitarRevision($id)
+    {
+        $res = $this->database->execute("UPDATE articulo SET id_estado = " . self::ART_ST_REVISION . " WHERE id = $id");
+
+
+        if($res){
+            $response = array("state" => "En Revision");
+        }else{
+            $response = array("state" => false);
+        }
+
+        return $response;
+
+
+
+    }
+
 
     public function listBy($idEdicion)
     {
-        return $this->database->list("SELECT a.*, es.estado, s.nombre as 'seccion', e.id as 'id_edicion' FROM articulo a JOIN estado_articulo es JOIN articulo_edicion ae JOIN edicion e JOIN seccion s ON a.id_estado = es.id AND a.id = ae.id_articulo AND ae.id_edicion = e.id AND ae.id_seccion = s.id  WHERE e.id = $idEdicion");
+        return $this->database->list("SELECT a.*, es.id as 'idEstado', es.estado as 'nombreEstado', s.nombre as 'seccion', e.id as 'id_edicion' FROM articulo a JOIN estado_articulo es JOIN articulo_edicion ae JOIN edicion e JOIN seccion s ON a.id_estado = es.id AND a.id = ae.id_articulo AND ae.id_edicion = e.id AND ae.id_seccion = s.id  WHERE e.id = $idEdicion");
     }
 
     private function guardarArchivos($id)

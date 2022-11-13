@@ -138,7 +138,7 @@ insert into usuario (nombre, apellido, email, pass, domicilio, latitud, longitud
              
 insert into tipo_archivo(tipo) values('IMAGEN'),('VIDEO'),('AUDIO');
 
-insert into estado_articulo(estado) values('DRAFT'),('A_PUBLICAR'),('PUBLICADO'),('BAJA');
+insert into estado_articulo(id, estado) values(0, 'Draft'),(1, 'En Revision'),(2, 'Publicado'),(-1, 'Baja');
 
 insert into tipo_suscripcion(duracion,descripcion) values(30,'mensual'),(180,'semestral'),(365,'anual');
 

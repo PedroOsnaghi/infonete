@@ -155,7 +155,19 @@
     background-color: var(--x-gray-dark) !important;
 }
 
+/** etiquetas de estados de edicion **/
 .badge-edit{
+    background-color: var(--orange) !important;
+    color: var(--gray-dark) !important;
+}
+
+/** etiquetas de estados de articulos **/
+.badge-state-1{
+    background-color: var(--teal) !important;
+    color: var(--gray-dark) !important;
+}
+
+.badge-state-0{
     background-color: var(--orange) !important;
     color: var(--gray-dark) !important;
 }
