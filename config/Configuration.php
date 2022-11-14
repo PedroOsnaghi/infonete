@@ -57,7 +57,7 @@ class Configuration
     public function getArticuloController()
     {
         $articuloModel = $this->getArticuloModel();
-        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSeccionModel(),  $this->getSession(),  $this->getLogger(),  $this->getRender());
+        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSeccionModel(), $this->getUsuarioModel(),  $this->getSession(),  $this->getLogger(),  $this->getRender());
     }
 
     public function getIndexController()
@@ -121,8 +121,8 @@ class Configuration
 
     public function getLoginController()
     {
-        $loginModel = $this->getLoginModel();
-        return new LoginController($loginModel, $this->getSession(), $this->getRender());
+        $usuarioModel = $this->getUsuarioModel();
+        return new LoginController($usuarioModel, $this->getSession(), $this->getRender());
     }
 
     public function getRegisterController()

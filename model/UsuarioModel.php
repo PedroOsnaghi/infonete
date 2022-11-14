@@ -237,31 +237,43 @@ class UsuarioModel
         return $this->database->execute("UPDATE usuario SET activo = 1  WHERE id = $id ");
     }
 
-
-    public function toObject($array = [])
+    public function autenticar($email, $pass)
     {
-        return !sizeof($array) ? null : $this->setObject($array);
+        $query = $this->database->query("SELECT u.*,r.rol_name FROM usuario u JOIN rol r ON u.rol = r.id WHERE u.email = '$email' AND u.pass = '$pass'");
+        return $this->toUsuario($query);
     }
 
-    private function setObject($array)
+    public function getUsuario($id)
     {
-        $this->id = $array['id'] ?? null;
-        $this->nombre = $array['nombre'] ?? null;
-        $this->apellido = $array['apellido'] ?? null;
-        $this->pass = $array['pass'] ?? null;
-        $this->email = $array['email'] ?? null;
-        $this->domicilio = $array['domicilio'] ?? null;
-        $this->latitud = $array['latitud'] ?? null;
-        $this->longitud = $array['longitud'] ?? null;
-        $this->avatar = $array['avatar'] ?? null;
-        $this->hash = $array['vhash'] ?? null;
-        $this->rol = $array['rol'] ?? null;
-        $this->rol_name = $array['rol_name'] ?? null;
-        $this->estado = $array['estado'] ?? null;
-        $this->activo = $array['activo'] ?? null;
+        $query = $this->database->query("SELECT u.*,r.rol_name FROM usuario u JOIN rol r ON u.rol = r.id WHERE u.id = $id");
+        return $this->toUsuario($query);
+    }
+
+
+
+    private function toUsuario($array)
+    {
+
+        if($array == null) return null;
+
+        $this->id = $array['id'];
+        $this->nombre = $array['nombre'];
+        $this->apellido = $array['apellido'];
+        $this->pass = $array['pass'];
+        $this->email = $array['email'];
+        $this->domicilio = $array['domicilio'];
+        $this->latitud = $array['latitud'];
+        $this->longitud = $array['longitud'];
+        $this->avatar = $array['avatar'];
+        $this->hash = $array['vhash'];
+        $this->rol = $array['rol'];
+        $this->rol_name = $array['rol_name'];
+        $this->estado = $array['estado'];
+        $this->activo = $array['activo'];
 
         return $this;
     }
+
 
     public function rolTools()
     {

@@ -7,9 +7,9 @@ class LoginController
     private $loginModel;
     private $session;
 
-    public function __construct($loginModel, $session, $render)
+    public function __construct($usuarioModel, $session, $render)
     {
-        $this->loginModel = $loginModel;
+        $this->usuarioModel = $usuarioModel;
         $this->session = $session;
         $this->render = $render;
     }
@@ -25,7 +25,7 @@ class LoginController
         $email = $_POST['email'];
         $pass = $_POST['pass'] ;
 
-        $usuarioAuth = $this->loginModel->auth($email, hasher::encrypt($pass));
+        $usuarioAuth = $this->usuarioModel->autenticar($email, hasher::encrypt($pass));
 
         // $usuarioAuth es un objeto usuario o null
         if ($usuarioAuth != null){

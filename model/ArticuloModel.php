@@ -5,7 +5,8 @@ class ArticuloModel
     //CONSTANTES
     const ART_ST_DRAFT = 0;
     const ART_ST_REVISION = 1;
-    const ART_ST_PUBLICADO = 2;
+    const ART_ST_APROBADA = 2;
+    const ART_ST_PUBLICADO = 3;
     const ART_ST_BAJA = -1;
 
     //PROPIEDADES
@@ -222,6 +223,32 @@ class ArticuloModel
     public function listBy($idEdicion)
     {
         return $this->database->list("SELECT a.*, es.id as 'idEstado', es.estado as 'nombreEstado', s.nombre as 'seccion', e.id as 'id_edicion' FROM articulo a JOIN estado_articulo es JOIN articulo_edicion ae JOIN edicion e JOIN seccion s ON a.id_estado = es.id AND a.id = ae.id_articulo AND ae.id_edicion = e.id AND ae.id_seccion = s.id  WHERE e.id = $idEdicion");
+    }
+
+    public function getArticle($id)
+    {
+        $query = $this->database->query("SELECT a.*,  es.estado as 'nombreEstado', ae.* FROM articulo a JOIN estado_articulo es  ON a.id_estado = es.id JOIN articulo_edicion ae ON a.id = ae.id_articulo  WHERE a.id = $id");
+        return $this->toArticle($query);
+    }
+
+    private function toArticle($array)
+    {
+
+        $this->id = $array['id'];
+        $this->titulo = $array['titulo'];
+        $this->subtitulo = $array['subtitulo'];
+        $this->contenido = $array['contenido'];
+        $this->link = $array['link'];
+        $this->linkvideo = $array['link_video'];
+        $this->ubicacion = $array['ubicacion'];
+        $this->create_at = $array['create_at'];
+        $this->update_at = $array['update_at'];
+        $this->estado = $array['id_estado'];
+        $this->nombreEstado = $array['nombreEstado'];
+        $this->seccion = $array['id_seccion'];
+        $this->edicion = $array['id_edicion'];
+        $this->autor = $array['id_autor'];
+        return $this;
     }
 
     private function guardarArchivos($id)

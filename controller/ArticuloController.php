@@ -10,12 +10,14 @@ class ArticuloController
     private $seccionModel;
 
     private $logger;
+    private $usuarioModel;
 
-    public function __construct($articuloModel, $edicionModel, $seccionModel,  $session, $logger, $render)
+    public function __construct($articuloModel, $edicionModel, $seccionModel, $usuarioModel,  $session, $logger, $render)
     {
         $this->articuloModel = $articuloModel;
         $this->edicionModel = $edicionModel;
         $this->seccionModel = $seccionModel;
+        $this->usuarioModel = $usuarioModel;
         $this->session = $session;
         $this->logger = $logger;
         $this->render = $render;
@@ -52,7 +54,11 @@ class ArticuloController
 
     public function preview()
     {
-        echo $this->render->render("public/view/articulo-preview.mustache");
+        $articulo = $this->articuloModel->getArticle($_GET['id']);
+        $data = $this->dato(["articulo" => $articulo,
+                              "edicion" => $this->edicionModel->getEdition($articulo->getEdicion()),
+                                "autor" => $this->usuarioModel->getUsuario($articulo->getAutor())]);
+        echo $this->render->render("public/view/articulo-preview.mustache", $data);
     }
 
     public function guardar()
