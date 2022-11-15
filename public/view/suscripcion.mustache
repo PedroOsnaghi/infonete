@@ -1,40 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/infonete/public/css/bootstrap.css">
-    <link rel="stylesheet" href="/infonete/public/css/global.css">
-    <title>Crear Suscripción</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Crear Plan</title>
 </head>
 <body>
-<h2>Crear Suscripción</h2>
 
-<form action="/infonete/suscripcion/guardar" method="post" enctype="application/x-www-form-urlencoded">
-    <input class="form-control mb-2" type="text" name="descripcion" placeholder="Descripción">
-    <select class="form-control mb-2" name="duracion">
-        <option value="0" disabled selected hidden>Seleccione una duración</option>
-        <option value="1">MENSUAL</option>
-        <option value="2">SEMESTRAL</option>
-        <option value="2">ANUAL</option>
-    </select>
-    <input class="form-control mb-2" type="text" name="precio" placeholder="Precio">
+<div class="container-scroller">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
 
-    {{#success}}
-        <div class="alert alert-success" role="alert">
-            {{success}}
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: Nuevo producto -->
+                <div class="card fadeIn">
+
+                    <div class="card-body">
+
+                        <div class="container max-with-600 mx-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Crear nuevo Plan</h4>
+                                <a class="btn btn-secondary text-center" title="Cerrar ventana" href="/infonete/suscripcion/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
+                            </div>
+                            <hr class="bg-dark-gray">
+                            
+
+                            <form action="/infonete/suscripcion/guardar" method="post" >
+
+
+
+                                    <div class="d-flex flex-column w-100">
+
+                                          <div class="w-100">
+                                              <label>Descripcion del plan *</label>
+                                              <input class="form-control mb-2" type="text" name="descripcion"  placeholder="Nombre" required>
+                                          </div>
+
+                                            <div class="w-100">
+                                                <label>Tipo de plan *</label>
+                                                <select class="form-control mb-2" name="duracion">
+                                                    <option value="0" disabled selected hidden>Seleccione una duración</option>
+                                                    {{#tipos}}
+                                                        <option value="{{idTipo}}">{{tipo}} - {{dias}} dias</option>
+                                                    {{/tipos}}
+
+                                                </select>
+
+
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <div class="col-12 px-0">
+                                                    <label>Tema visual del plan *</label>
+                                                    <div class="d-flex">
+                                                        <select class="form-control mb-0" name="tag" id="tag">
+                                                            <option value="0" disabled selected hidden>Seleccione un tema</option>
+                                                            <option value="basic">Basic</option>
+                                                            <option value="premium">Premium</option>
+                                                            <option value="pro">Pro</option>
+                                                            <option value="gold">Gold</option>
+                                                        </select>
+                                                        <div class="col-3 ml-3 bg-gray-dark  rounded" id="paleta"></div>
+                                                        <input class="col-3 form-control mb-0 ml-3" type="text" name="precio"  placeholder="$ 0.00" required>
+                                                    </div>
+
+                                                </div>
+
+
+
+                                            </div>
+
+                                    </div>
+
+
+
+
+
+
+
+
+                                <div class="d-flex justify-content-end mt-2">
+                                    <button class="btn btn-primary mb-2" type="submit">Guardar</button>
+                                </div>
+
+
+                                {{#success}}
+                                    <div class="alert alert-success" role="alert">
+                                        {{success}}
+                                    </div>
+                                {{/success}}
+
+                                {{#error}}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{error}}
+                                    </div>
+                                {{/error}}
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    {{/success}}
+        <!-- main-panel ends -->
+    </div>
+</div>
 
-    {{#error}}
-        <div class="alert alert-danger" role="alert">
-            {{error}}
-        </div>
-    {{/error}}
 
-    <button class="btn btn-primary mb-2" type="submit">Guardar</button>
-</form>
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+
+
+<script type='text/javascript' src="/infonete/public/js/app/suscrip.js"></script>
+
+
 </body>
 </html>
+
+

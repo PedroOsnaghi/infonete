@@ -90,7 +90,7 @@ class ArticuloController
         $this->articuloModel->setUbicacion($_POST['ubicacion']);
         $this->articuloModel->setCreateAt($this->getFechaHoraActual());
         $this->articuloModel->setUpdateAt($this->getFechaHoraActual());
-        $this->articuloModel->setEstado(1);
+        $this->articuloModel->setEstado(0);
         $this->articuloModel->setAutor($this->session->getAuthUser()->getId());
         $this->articuloModel->setSeccion($_POST['seccion']);
         $this->articuloModel->setEdicion($this->session->getParameter('activeEdition')->getId());

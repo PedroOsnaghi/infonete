@@ -1,4 +1,4 @@
-var tabs_items = document.querySelectorAll(".nav-link");
+var tabs_items = document.querySelectorAll("a[tab-menu]");
 
 
 tabs_items.forEach(function (item){

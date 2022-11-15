@@ -183,8 +183,12 @@ class ArticuloModel
 
     public function guardar()
     {
+        $this->logger->info("entro en Guardar Articulo");
+
         $res = $this->database->execute("INSERT INTO articulo(titulo, subtitulo, contenido, link, link_video, ubicacion, create_at, id_estado, id_autor) 
                                          VALUES ('$this->titulo', '$this->subtitulo', '$this->contenido', '$this->link', '$this->linkvideo', '$this->ubicacion', '$this->create_at', $this->estado, $this->autor)");
+
+        $this->logger->info("respuesta guardar artivculo: " .  $res);
 
         $idArticulo = $this->database->lastInsertId();
 
@@ -256,6 +260,7 @@ class ArticuloModel
         $folder = "article/" . $id;
         $this->logger->info($folder);
         $this->file->uploadFiles($folder);
+        $this->file->uploadStream($folder);
     }
 
     private function guardarRelacionEdicionSeccion($idArticulo)

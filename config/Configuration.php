@@ -68,13 +68,13 @@ class Configuration
     public function getSeccionModel()
     {
         $database = $this->getDatabase();
-        return new SeccionModel($database);
+        return new SeccionModel($this->getLogger(), $database);
     }
 
     public function getSeccionController()
     {
         $seccionModel = $this->getSeccionModel();
-        return new SeccionController($seccionModel, $this->getRender());
+        return new SeccionController($seccionModel, $this->getSession(), $this->getRender());
     }
 
     public function getSuscripcionModel()
@@ -92,13 +92,13 @@ class Configuration
     public function getEdicionModel()
     {
         $database = $this->getDatabase();
-        return new EdicionModel($this->getLogger(), $database);
+        return new EdicionModel($this->getLogger(),$this->getFile(), $database);
     }
 
     public function getEdicionController()
     {
         $edicionModel = $this->getEdicionModel();
-        return new EdicionController($edicionModel, $this->getProductoModel(), $this->getSession(), $this->getFile(), $this->getRender());
+        return new EdicionController($edicionModel, $this->getProductoModel(), $this->getSession(), $this->getRender());
     }
 
     public function getProductoModel()

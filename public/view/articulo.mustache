@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="infonete/public/css/index/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="/infonete/public/css/app/thumb.css">
-
     <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
     <link rel="stylesheet" href="/infonete/public/css/style.css">
     <link rel="stylesheet" href="/infonete/public/css/app/maps.css">
 
@@ -94,27 +94,27 @@
                                         <!-- Tab navs -->
                                         <div class="flex-column nav-tabs nav-tabs-vertical-custom " id="v-tabs-tab"
                                              role="tablist" aria-orientation="vertical">
-                                            <a class="nav-link active" id="v-tabs-home-tab" data-mdb-toggle="tab"
+                                            <a class="nav-link active"  tab-menu id="v-tabs-home-tab" data-mdb-toggle="tab"
                                                ref="#v-tabs-content"
                                                role="tab"
                                                aria-controls="v-tabs-home"
                                                aria-selected="true">Contenido <spam class="fs-12 text-success">(requerido)</spam></a>
-                                            <a class="nav-link" id="v-tabs-profile-tab" data-mdb-toggle="tab"
+                                            <a class="nav-link" tab-menu id="v-tabs-profile-tab" data-mdb-toggle="tab"
                                                ref="#v-tabs-geo"
                                                role="tab"
                                                aria-controls="v-tabs-profile"
                                                aria-selected="false">Posicionar en el mapa <spam class="fs-12 text-success">(requerido)</spam></a>
-                                            <a class="nav-link" id="v-tabs-messages-tab" data-mdb-toggle="tab"
+                                            <a class="nav-link" tab-menu id="v-tabs-messages-tab" data-mdb-toggle="tab"
                                                ref="#v-tabs-image"
                                                role="tab"
                                                aria-controls="v-tabs-messages"
                                                aria-selected="false">Adjuntar Imagenes</a>
-                                            <a class="nav-link" id="v-tabs-messages-tab" data-mdb-toggle="tab"
+                                            <a class="nav-link" tab-menu id="v-tabs-messages-tab" data-mdb-toggle="tab"
                                                ref="#v-tabs-links"
                                                role="tab"
                                                aria-controls="v-tabs-messages"
                                                aria-selected="false">Adjuntar Links</a>
-                                            <a class="nav-link" id="v-tabs-messages-tab" data-mdb-toggle="tab"
+                                            <a class="nav-link" tab-menu id="v-tabs-messages-tab" data-mdb-toggle="tab"
                                                ref="#v-tabs-camera"
                                                role="tab"
                                                aria-controls="v-tabs-messages"
@@ -252,12 +252,44 @@
 
                                             <div class="tab-pane" id="v-tabs-camera" role="tabpanel"
                                                  aria-labelledby="v-tabs-home-tab">
-                                                <div>
-                                                    <button type="button" id="stream" class="btn btn-primary">Iniciar Stream</button>
-                                                    <video autoplay id="video"></video>
-                                                    <button type="button" id="grabar" class="btn btn-success">Grabar</button>
-                                                    <button type="button" id="detener" class="btn btn-danger">Detener Grabación</button>
-                                                    <a id="ver" target="_blank">Ver Video</a>
+                                                <div class="d-flex flex-column mx-auto w-100 p-2">
+                                                    <p class="text-muted mb-1">Dispositivos multimedia disponibles:</p>
+                                                    <div class=" d-flex flex-column flex-lg-row">
+                                                        <div class="col-12 col-lg-6 px-0 pr-lg-2">
+                                                            <label class="pb-0 mb-0" for="d-audio">Micrófono:</label>
+                                                            <select class="form-control form-control-sm mb-1 fs-16" name="d-audio" id="d-audio"></select>
+                                                        </div>
+                                                        <div class="col-12 col-lg-6 px-0">
+                                                            <label class="pb-0 mb-0" for="d-video">Cámara:</label><br>
+                                                            <select class="form-control form-control-sm" name="d-video" id="d-video"></select>
+                                                        </div>
+
+                                                    </div>
+                                                   <div class="d-flex w-100 mt-3">
+                                                       <div class="col-9 position-relative">
+                                                           <video class="video w-100 "  autoplay id="video">
+
+                                                           </video>
+
+
+                                                           <div class="align-items-center record-label pl-4 pt-2 text-danger position-absolute d-none" id="record-label"><i class="mdi mdi-radiobox-marked mr-2 intermit"></i>Grabando <span class="ml-2" id="duracion"> 00:00:00</span> </div>
+                                                           <div class="align-items-center record-label pl-4 pt-2 text-light position-absolute d-none" id="play-label"><i class="mdi mdi-play mr-2 intermit"></i>Reproduciendo <span class="ml-2" id="duracion-play"> 00:00:00</span> </div>
+                                                       </div>
+
+                                                       <div class="col-3 d-flex flex-column ml-3 mx-auto pb-2">
+                                                           <button type="button" id="stream" class="btn btn-primary mb-2">Iniciar Stream</button>
+                                                           <button type="button" id="grabar" title="Iniciar Grabación" class="btn btn-light text-danger mb-2" disabled><i class="mdi mdi-radiobox-marked"></i></button>
+                                                           <button type="button" id="detener" title="Detener Grabación" class="btn btn-light text-dark-gray" disabled><i class="mdi mdi-stop"></i></button>
+
+                                                           <button type="button" id="ver-video" title="Previsualizar" class="btn btn-info mt-auto" hidden><i class="mdi mdi-play"></i>Ver video</button>
+                                                       </div>
+                                                   </div>
+
+                                                    <div class="alert alert-success hidden mt-4" role="alert" id="message-stream">
+
+                                                    </div>
+
+
                                                 </div>
                                             </div>
 

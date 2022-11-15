@@ -9,13 +9,9 @@ class SuscripcionModel
     private $id;
     private $descripcion;
     private $duracion;
+    private $tag;
     private $precio;
     private $database;
-
-    public function __construct($database)
-    {
-        $this->database = $database;
-    }
 
     public function getId()
     {
@@ -57,14 +53,39 @@ class SuscripcionModel
         $this->precio = $precio;
     }
 
-    public function crear()
+    public function getTag()
     {
-        return $this->database->execute("INSERT INTO suscripcion (descripcion, id_tipo_suscripcion, precio)
-                                        VALUES ('$this->descripcion', $this->duracion, $this->precio)");
+        return $this->tag;
     }
 
-    public function listar()
+    public function setTag($tag): void
     {
-        return $this->database->list("SELECT s.*, t.duracion FROM suscripcion s JOIN tipo_suscripcion t ON s.id_tipo_suscripcion = t.id ORDER BY s.id ASC");
+        $this->tag = $tag;
+    }
+
+    public function __construct($database)
+    {
+        $this->database = $database;
+    }
+
+    public function guardar()
+    {
+        $response = $this->database->execute("INSERT INTO suscripcion (descripcion, id_tipo_suscripcion, tag, precio)
+                                        VALUES ('$this->descripcion', $this->duracion, '$this->tag',  $this->precio)");
+
+        if ($response) return array('success' => "La suscripción se guardó correctamente");
+
+        return array('error' => "Hubo un error al guardar la suscripción");
+
+    }
+
+    public function list()
+    {
+        return $this->database->list("SELECT s.*, t.duracion as 'dias', t.descripcion as 'tipo' FROM suscripcion s JOIN tipo_suscripcion t ON s.id_tipo_suscripcion = t.id ORDER BY s.id ASC");
+    }
+
+    public function listTipos()
+    {
+        return $this->database->list("SELECT id as 'idTipo', duracion as 'dias', descripcion as 'tipo' FROM tipo_suscripcion  ORDER BY  id ASC");
     }
 }

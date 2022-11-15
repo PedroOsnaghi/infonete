@@ -1,0 +1,8 @@
+[22-11-16 12:00:48][INFO] 1
+[22-11-16 12:01:34][INFO] Iniciando File
+[22-11-16 12:46:56][INFO] Iniciando File
+[22-11-16 12:46:56][INFO] Iniciando File
+[22-11-16 12:47:00][INFO] Iniciando File
+[22-11-16 12:47:00][INFO] Iniciando File
+[22-11-16 12:47:03][INFO] Iniciando File
+[22-11-16 12:47:03][INFO] Iniciando File

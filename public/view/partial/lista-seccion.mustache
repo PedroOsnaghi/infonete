@@ -1,0 +1,24 @@
+
+{{#secciones}}
+    <tr>
+        <td><i class="text-info mdi mdi-note-outline d-inline pr-2 fs-3"></i>{{id}}</td>
+        <td>{{nombre}}</td>
+        <td>{{descripcion}}</td>
+
+        <td>
+
+            <a  class="btn btn-secondary" title="Editar"  href="/infonete/seccion/editar?id={{id}}" ><i class="mdi mdi-pencil mx-auto" ></i></a>
+
+        </td>
+    </tr>
+{{/secciones}}
+
+{{^secciones}}
+    <tr>
+        <td>
+            No hay secciones para mostrar.
+        </td>
+
+    </tr>
+
+{{/secciones}}

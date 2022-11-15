@@ -120,9 +120,14 @@
     background-color: var(--x-light-gray)!important;
 }
 
+.bg-gradient-gold{
+    background: rgb(108,238,249)!important;
+    background: linear-gradient(90deg, rgb(178, 176, 67) 0%, rgb(47, 194, 112) 0%, rgb(3, 114, 65) 86%)!important;
+}
+
 .bg-gradient-basic{
     background: rgb(108,238,249)!important;
-    background: linear-gradient(90deg, rgba(108,238,249,1) 0%, rgba(44,190,174,1) 0%, rgba(220,57,255,1) 86%)!important;
+    background: linear-gradient(90deg, rgb(85, 67, 178) 0%, rgb(123, 88, 199) 0%, rgba(220,57,255,1) 86%)!important;
 }
 
 .bg-gradient-premium{
@@ -132,11 +137,11 @@
 
 .bg-gradient-pro{
     background: rgb(108,238,249);
-    background: linear-gradient(90deg, rgba(108,238,249,1) 0%, rgba(255,201,130,1) 0%, rgba(255,79,30,1) 100%);
+    background: linear-gradient(90deg, rgb(196, 143, 77) 0%, rgba(255,201,130,1) 0%, rgba(255,79,30,1) 100%);
 }
 
 .bd-gradient-basic{
-    border-image: linear-gradient(90deg, rgba(108,238,249,1) 0%, rgba(44,190,174,1) 0%, rgba(220,57,255,1) 86%) 1!important;
+    border-image: linear-gradient(90deg, rgb(85, 67, 178) 0%, rgb(123, 88, 199) 0%, rgba(220,57,255,1) 86%) 1!important;
 }
 
 .bd-gradient-premium{

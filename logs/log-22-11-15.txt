@@ -24,3 +24,713 @@
 [22-11-15 04:57:39][INFO] Iniciando File
 [22-11-15 04:57:39][INFO] Iniciando File
 [22-11-15 04:57:41][INFO] Iniciando File
+[22-11-15 04:59:54][INFO] Iniciando File
+[22-11-15 05:01:53][INFO] Iniciando File
+[22-11-15 05:01:59][INFO] Iniciando File
+[22-11-15 05:02:15][INFO] Iniciando File
+[22-11-15 05:02:50][INFO] Iniciando File
+[22-11-15 05:03:46][INFO] Iniciando File
+[22-11-15 05:05:43][INFO] Iniciando File
+[22-11-15 05:10:55][INFO] Iniciando File
+[22-11-15 05:12:47][INFO] Iniciando File
+[22-11-15 05:13:17][INFO] Iniciando File
+[22-11-15 05:13:39][INFO] Iniciando File
+[22-11-15 05:14:59][INFO] Iniciando File
+[22-11-15 05:15:34][INFO] Iniciando File
+[22-11-15 05:16:04][INFO] Iniciando File
+[22-11-15 05:17:39][INFO] Iniciando File
+[22-11-15 05:18:32][INFO] Iniciando File
+[22-11-15 05:19:06][INFO] Iniciando File
+[22-11-15 05:19:45][INFO] Iniciando File
+[22-11-15 05:20:50][INFO] Iniciando File
+[22-11-15 05:21:21][INFO] Iniciando File
+[22-11-15 05:23:22][INFO] Iniciando File
+[22-11-15 05:24:22][INFO] Iniciando File
+[22-11-15 05:24:38][INFO] Iniciando File
+[22-11-15 05:26:02][INFO] Iniciando File
+[22-11-15 05:26:39][INFO] Iniciando File
+[22-11-15 05:27:08][INFO] Iniciando File
+[22-11-15 05:27:25][INFO] Iniciando File
+[22-11-15 05:28:08][INFO] Iniciando File
+[22-11-15 05:28:20][INFO] Iniciando File
+[22-11-15 05:30:09][INFO] Iniciando File
+[22-11-15 05:30:22][INFO] Iniciando File
+[22-11-15 05:31:42][INFO] Iniciando File
+[22-11-15 05:33:41][INFO] Iniciando File
+[22-11-15 05:34:48][INFO] Iniciando File
+[22-11-15 05:35:07][INFO] Iniciando File
+[22-11-15 05:35:28][INFO] Iniciando File
+[22-11-15 05:35:55][INFO] Iniciando File
+[22-11-15 05:36:13][INFO] Iniciando File
+[22-11-15 05:36:48][INFO] Iniciando File
+[22-11-15 05:37:50][INFO] Iniciando File
+[22-11-15 05:42:30][INFO] Iniciando File
+[22-11-15 05:44:08][INFO] Iniciando File
+[22-11-15 05:49:27][INFO] Iniciando File
+[22-11-15 05:50:22][INFO] Iniciando File
+[22-11-15 05:50:55][INFO] Iniciando File
+[22-11-15 05:51:11][INFO] Iniciando File
+[22-11-15 05:51:46][INFO] Iniciando File
+[22-11-15 05:52:21][INFO] Iniciando File
+[22-11-15 05:52:39][INFO] Iniciando File
+[22-11-15 05:54:00][INFO] Iniciando File
+[22-11-15 05:55:03][INFO] Iniciando File
+[22-11-15 05:55:47][INFO] Iniciando File
+[22-11-15 05:56:01][INFO] Iniciando File
+[22-11-15 05:56:14][INFO] Iniciando File
+[22-11-15 06:05:37][INFO] Iniciando File
+[22-11-15 06:06:00][INFO] Iniciando File
+[22-11-15 06:22:06][INFO] Iniciando File
+[22-11-15 06:22:20][INFO] Iniciando File
+[22-11-15 06:23:53][INFO] Iniciando File
+[22-11-15 06:25:07][INFO] Iniciando File
+[22-11-15 06:26:52][INFO] Iniciando File
+[22-11-15 06:31:52][INFO] Iniciando File
+[22-11-15 06:31:58][INFO] Iniciando File
+[22-11-15 06:32:09][INFO] Iniciando File
+[22-11-15 06:33:32][INFO] Iniciando File
+[22-11-15 06:35:05][INFO] Iniciando File
+[22-11-15 06:37:06][INFO] Iniciando File
+[22-11-15 06:37:18][INFO] Iniciando File
+[22-11-15 06:38:28][INFO] Iniciando File
+[22-11-15 06:39:30][INFO] Iniciando File
+[22-11-15 06:44:20][INFO] Iniciando File
+[22-11-15 06:44:26][INFO] Iniciando File
+[22-11-15 06:44:47][INFO] Iniciando File
+[22-11-15 06:45:16][INFO] Iniciando File
+[22-11-15 06:48:05][INFO] Iniciando File
+[22-11-15 07:21:23][INFO] Iniciando File
+[22-11-15 07:22:40][INFO] Iniciando File
+[22-11-15 07:24:54][INFO] Iniciando File
+[22-11-15 07:32:06][INFO] Iniciando File
+[22-11-15 07:32:45][INFO] Iniciando File
+[22-11-15 07:33:14][INFO] Iniciando File
+[22-11-15 07:33:37][INFO] Iniciando File
+[22-11-15 07:34:35][INFO] Iniciando File
+[22-11-15 07:35:34][INFO] Iniciando File
+[22-11-15 07:38:15][INFO] Iniciando File
+[22-11-15 07:38:42][INFO] Iniciando File
+[22-11-15 07:39:23][INFO] Iniciando File
+[22-11-15 07:40:28][INFO] Iniciando File
+[22-11-15 07:40:52][INFO] Iniciando File
+[22-11-15 07:41:18][INFO] Iniciando File
+[22-11-15 07:41:33][INFO] Iniciando File
+[22-11-15 07:41:44][INFO] Iniciando File
+[22-11-15 07:42:15][INFO] Iniciando File
+[22-11-15 08:07:09][INFO] Iniciando File
+[22-11-15 08:07:26][INFO] Iniciando File
+[22-11-15 08:11:26][INFO] Iniciando File
+[22-11-15 08:13:49][INFO] Iniciando File
+[22-11-15 08:15:35][INFO] Iniciando File
+[22-11-15 08:16:58][INFO] Iniciando File
+[22-11-15 08:18:09][INFO] Iniciando File
+[22-11-15 08:19:18][INFO] Iniciando File
+[22-11-15 08:19:49][INFO] Iniciando File
+[22-11-15 08:20:15][INFO] Iniciando File
+[22-11-15 08:20:39][INFO] Iniciando File
+[22-11-15 08:20:39][INFO] Iniciando File
+[22-11-15 08:22:23][INFO] Iniciando File
+[22-11-15 08:22:24][INFO] Iniciando File
+[22-11-15 08:22:26][INFO] Iniciando File
+[22-11-15 08:22:40][INFO] Iniciando File
+[22-11-15 08:35:04][INFO] Iniciando File
+[22-11-15 08:35:26][INFO] Iniciando File
+[22-11-15 08:35:52][INFO] Iniciando File
+[22-11-15 08:37:10][INFO] Iniciando File
+[22-11-15 08:39:36][INFO] Iniciando File
+[22-11-15 08:41:21][INFO] Iniciando File
+[22-11-15 08:44:09][INFO] Iniciando File
+[22-11-15 08:47:40][INFO] Iniciando File
+[22-11-15 08:52:17][INFO] Iniciando File
+[22-11-15 08:53:57][INFO] Iniciando File
+[22-11-15 08:57:43][INFO] Iniciando File
+[22-11-15 09:00:12][INFO] Iniciando File
+[22-11-15 09:07:23][INFO] Iniciando File
+[22-11-15 10:15:39][INFO] Iniciando File
+[22-11-15 10:29:08][INFO] Iniciando File
+[22-11-15 10:32:26][INFO] Iniciando File
+[22-11-15 10:45:33][INFO] Iniciando File
+[22-11-15 10:45:48][INFO] Iniciando File
+[22-11-15 10:46:04][INFO] Iniciando File
+[22-11-15 10:48:09][INFO] Iniciando File
+[22-11-15 10:49:55][INFO] Iniciando File
+[22-11-15 10:51:13][INFO] Iniciando File
+[22-11-15 10:51:57][INFO] Iniciando File
+[22-11-15 11:09:06][INFO] Iniciando File
+[22-11-15 11:09:06][INFO] article/46
+[22-11-15 11:09:06][INFO] FILES-- dir: public/uploads/article/46/
+[22-11-15 11:09:06][INFO] Se creo el directorio:public/uploads/article/46/
+[22-11-15 11:09:06][INFO] public/uploads/article/46/
+[22-11-15 11:09:06][INFO] FILES-- dir: public/uploads/article/46/stream/
+[22-11-15 11:09:06][INFO] Se creo el directorio:public/uploads/article/46/stream/
+[22-11-15 11:09:06][INFO] ruta stream: public/uploads/article/46/stream//637365422adec.webm
+[22-11-15 11:09:21][INFO] Iniciando File
+[22-11-15 11:09:21][INFO] article/47
+[22-11-15 11:09:21][INFO] FILES-- dir: public/uploads/article/47/
+[22-11-15 11:09:21][INFO] Se creo el directorio:public/uploads/article/47/
+[22-11-15 11:09:21][INFO] public/uploads/article/47/
+[22-11-15 11:09:21][INFO] FILES-- dir: public/uploads/article/47/stream/
+[22-11-15 11:09:21][INFO] Se creo el directorio:public/uploads/article/47/stream/
+[22-11-15 11:09:21][INFO] ruta stream: public/uploads/article/47/stream//63736551c7498.webm
+[22-11-15 11:09:40][INFO] Iniciando File
+[22-11-15 11:09:40][INFO] article/48
+[22-11-15 11:09:40][INFO] FILES-- dir: public/uploads/article/48/
+[22-11-15 11:09:40][INFO] Se creo el directorio:public/uploads/article/48/
+[22-11-15 11:09:40][INFO] public/uploads/article/48/
+[22-11-15 11:09:40][INFO] FILES-- dir: public/uploads/article/48/stream/
+[22-11-15 11:09:40][INFO] Se creo el directorio:public/uploads/article/48/stream/
+[22-11-15 11:09:40][INFO] ruta stream: public/uploads/article/48/stream//63736564f2c09.webm
+[22-11-15 11:10:24][INFO] Iniciando File
+[22-11-15 11:16:31][INFO] Iniciando File
+[22-11-15 11:16:31][INFO] article/49
+[22-11-15 11:16:31][INFO] FILES-- dir: public/uploads/article/49/
+[22-11-15 11:16:31][INFO] Se creo el directorio:public/uploads/article/49/
+[22-11-15 11:16:31][INFO] public/uploads/article/49/
+[22-11-15 11:16:31][INFO] FILES-- dir: public/uploads/article/49/stream/
+[22-11-15 11:16:31][INFO] Se creo el directorio:public/uploads/article/49/stream/
+[22-11-15 11:16:31][INFO] solo dir: public/uploads/article/49/stream/
+[22-11-15 11:16:31][INFO] solo nombre: 637366ff7fb0a.webm
+[22-11-15 11:16:31][INFO] ruta stream: public/uploads/article/49/stream//637366ff7fb0a.webm
+[22-11-15 11:18:17][INFO] Iniciando File
+[22-11-15 11:19:19][INFO] Iniciando File
+[22-11-15 11:19:19][INFO] article/50
+[22-11-15 11:19:19][INFO] FILES-- dir: public/uploads/article/50/
+[22-11-15 11:19:19][INFO] Se creo el directorio:public/uploads/article/50/
+[22-11-15 11:19:19][INFO] public/uploads/article/50/
+[22-11-15 11:19:19][INFO] ruta archivos: public/uploads/article/50//carrie.jpg
+[22-11-15 11:19:19][INFO] ruta archivos: public/uploads/article/50//default.jpg
+[22-11-15 11:19:19][INFO] ruta archivos: public/uploads/article/50//gente.jpg
+[22-11-15 11:19:19][INFO] ruta archivos: public/uploads/article/50//blob
+[22-11-15 11:19:19][INFO] FILES-- dir: public/uploads/article/50/stream/
+[22-11-15 11:19:19][INFO] Se creo el directorio:public/uploads/article/50/stream/
+[22-11-15 11:19:19][INFO] solo dir: public/uploads/article/50/stream/
+[22-11-15 11:19:19][INFO] solo nombre: 637367a778006.webm
+[22-11-15 11:19:19][INFO] ruta stream: public/uploads/article/50/stream//637367a778006.webm
+[22-11-15 11:20:30][INFO] Iniciando File
+[22-11-15 11:20:31][INFO] article/51
+[22-11-15 11:20:31][INFO] FILES-- dir: public/uploads/article/51/
+[22-11-15 11:20:31][INFO] Se creo el directorio:public/uploads/article/51/
+[22-11-15 11:20:31][INFO] public/uploads/article/51/
+[22-11-15 11:20:31][INFO] ruta archivos: public/uploads/article/51/carrie.jpg
+[22-11-15 11:20:31][INFO] ruta archivos: public/uploads/article/51/default.jpg
+[22-11-15 11:20:31][INFO] ruta archivos: public/uploads/article/51/gente.jpg
+[22-11-15 11:20:31][INFO] ruta archivos: public/uploads/article/51/blob
+[22-11-15 11:20:31][INFO] FILES-- dir: public/uploads/article/51/stream/
+[22-11-15 11:20:31][INFO] Se creo el directorio:public/uploads/article/51/stream/
+[22-11-15 11:20:31][INFO] solo dir: public/uploads/article/51/stream/
+[22-11-15 11:20:31][INFO] solo nombre: 637367ef03bc8.webm
+[22-11-15 11:20:31][INFO] ruta stream: public/uploads/article/51/stream/637367ef03bc8.webm
+[22-11-15 11:29:31][INFO] Iniciando File
+[22-11-15 11:30:05][INFO] Iniciando File
+[22-11-15 11:30:05][INFO] article/52
+[22-11-15 11:30:05][INFO] FILES-- dir: public/uploads/article/52/
+[22-11-15 11:30:05][INFO] Se creo el directorio:public/uploads/article/52/
+[22-11-15 11:30:05][INFO] public/uploads/article/52/
+[22-11-15 11:30:05][INFO] ruta archivos: public/uploads/article/52/marie.jpg
+[22-11-15 11:30:05][INFO] ruta archivos: public/uploads/article/52/noticias.jpg
+[22-11-15 11:30:05][INFO] FILES-- dir: public/uploads/article/52/stream/
+[22-11-15 11:30:05][INFO] Se creo el directorio:public/uploads/article/52/stream/
+[22-11-15 11:30:05][INFO] solo dir: public/uploads/article/52/stream/
+[22-11-15 11:30:05][INFO] solo nombre: 63736a2d5ad78.webm
+[22-11-15 11:30:05][INFO] ruta stream: public/uploads/article/52/stream/63736a2d5ad78.webm
+[22-11-15 11:33:38][INFO] Iniciando File
+[22-11-15 11:34:28][INFO] Iniciando File
+[22-11-15 11:34:28][INFO] article/53
+[22-11-15 11:34:28][INFO] FILES-- dir: public/uploads/article/53/
+[22-11-15 11:34:28][INFO] Se creo el directorio:public/uploads/article/53/
+[22-11-15 11:34:28][INFO] public/uploads/article/53/
+[22-11-15 11:34:28][INFO] ruta archivos: public/uploads/article/53/gente.jpg
+[22-11-15 11:34:28][INFO] ruta archivos: public/uploads/article/53/marie.jpg
+[22-11-15 11:34:28][INFO] ruta archivos: public/uploads/article/53/noticias.jpg
+[22-11-15 11:34:28][INFO] FILES-- dir: public/uploads/article/53/stream/
+[22-11-15 11:34:28][INFO] Se creo el directorio:public/uploads/article/53/stream/
+[22-11-15 11:34:28][INFO] solo dir: public/uploads/article/53/stream/
+[22-11-15 11:34:28][INFO] solo nombre: 63736b3426ddc.webm
+[22-11-15 11:34:28][INFO] ruta stream: public/uploads/article/53/stream/63736b3426ddc.webm
+[22-11-15 11:37:15][INFO] Iniciando File
+[22-11-15 11:40:33][INFO] Iniciando File
+[22-11-15 11:42:58][INFO] Iniciando File
+[22-11-15 11:45:32][INFO] Iniciando File
+[22-11-15 11:45:37][INFO] Iniciando File
+[22-11-15 11:50:22][INFO] Iniciando File
+[22-11-15 11:50:27][INFO] Iniciando File
+[22-11-15 11:51:33][INFO] Iniciando File
+[22-11-15 11:53:15][INFO] Iniciando File
+[22-11-15 11:56:22][INFO] Iniciando File
+[22-11-15 11:56:30][INFO] Iniciando File
+[22-11-15 11:56:31][INFO] Iniciando File
+[22-11-15 11:56:49][INFO] Iniciando File
+[22-11-15 11:56:49][INFO] Iniciando File
+[22-11-15 11:57:20][INFO] Iniciando File
+[22-11-15 11:57:24][INFO] Iniciando File
+[22-11-15 11:57:26][INFO] Iniciando File
+[22-11-15 11:58:18][INFO] Iniciando File
+[22-11-15 11:58:18][INFO] Iniciando File
+[22-11-15 11:58:21][INFO] Iniciando File
+[22-11-15 11:58:22][INFO] Iniciando File
+[22-11-15 11:58:54][INFO] Iniciando File
+[22-11-15 11:58:55][INFO] Iniciando File
+[22-11-15 12:02:45][INFO] Iniciando File
+[22-11-15 12:02:45][INFO] Iniciando File
+[22-11-15 12:07:41][INFO] Iniciando File
+[22-11-15 12:07:41][INFO] Iniciando File
+[22-11-15 12:08:09][INFO] Iniciando File
+[22-11-15 12:08:10][INFO] Iniciando File
+[22-11-15 12:08:13][INFO] Iniciando File
+[22-11-15 12:08:13][INFO] Iniciando File
+[22-11-15 12:08:33][INFO] Iniciando File
+[22-11-15 12:08:34][INFO] Iniciando File
+[22-11-15 12:09:16][INFO] Iniciando File
+[22-11-15 12:09:17][INFO] Iniciando File
+[22-11-15 12:30:26][INFO] Iniciando File
+[22-11-15 12:30:27][INFO] Iniciando File
+[22-11-15 12:31:43][INFO] Iniciando File
+[22-11-15 12:31:44][INFO] Iniciando File
+[22-11-15 12:31:45][INFO] Iniciando File
+[22-11-15 12:31:46][INFO] Iniciando File
+[22-11-15 05:28:14][INFO] 0
+[22-11-15 05:29:28][INFO] 1
+[22-11-15 05:31:03][INFO] 0
+[22-11-15 05:31:22][INFO] 0
+[22-11-15 05:31:29][INFO] 1
+[22-11-15 05:32:18][INFO] 1
+[22-11-15 05:35:24][INFO] 1
+[22-11-15 05:36:01][INFO] 0
+[22-11-15 05:36:07][INFO] 0
+[22-11-15 05:45:36][INFO] 0
+[22-11-15 05:48:13][INFO] 0
+[22-11-15 05:54:21][INFO] 0
+[22-11-15 05:57:45][INFO] 0
+[22-11-15 05:58:09][INFO] 0
+[22-11-15 05:59:17][INFO] 0
+[22-11-15 06:00:45][INFO] 0
+[22-11-15 06:00:51][INFO] 0
+[22-11-15 06:02:46][INFO] 0
+[22-11-15 06:03:02][INFO] 0
+[22-11-15 06:03:06][INFO] 0
+[22-11-15 06:04:17][INFO] 0
+[22-11-15 06:07:51][INFO] 1
+[22-11-15 06:09:19][INFO] 0
+[22-11-15 06:09:32][INFO] 1
+[22-11-15 06:09:54][INFO] Iniciando File
+[22-11-15 06:09:54][INFO] Iniciando File
+[22-11-15 06:10:01][INFO] Iniciando File
+[22-11-15 06:10:18][INFO] Iniciando File
+[22-11-15 06:29:01][INFO] Iniciando File
+[22-11-15 06:29:11][INFO] Iniciando File
+[22-11-15 06:29:11][INFO] Iniciando File
+[22-11-15 06:29:13][INFO] Iniciando File
+[22-11-15 06:29:19][INFO] Iniciando File
+[22-11-15 06:32:08][INFO] Iniciando File
+[22-11-15 06:32:12][INFO] Iniciando File
+[22-11-15 06:32:13][INFO] Iniciando File
+[22-11-15 06:32:14][INFO] Iniciando File
+[22-11-15 06:32:15][INFO] Iniciando File
+[22-11-15 06:32:19][INFO] Iniciando File
+[22-11-15 06:36:16][INFO] Iniciando File
+[22-11-15 06:36:19][INFO] Iniciando File
+[22-11-15 06:36:19][INFO] Iniciando File
+[22-11-15 06:36:22][INFO] Iniciando File
+[22-11-15 06:36:24][INFO] Iniciando File
+[22-11-15 06:37:10][INFO] Iniciando File
+[22-11-15 06:37:13][INFO] Iniciando File
+[22-11-15 06:37:13][INFO] Iniciando File
+[22-11-15 06:37:14][INFO] Iniciando File
+[22-11-15 06:37:18][INFO] Iniciando File
+[22-11-15 06:37:22][INFO] Iniciando File
+[22-11-15 06:38:14][INFO] Iniciando File
+[22-11-15 06:38:14][INFO] Iniciando File
+[22-11-15 06:38:15][INFO] Iniciando File
+[22-11-15 06:38:17][INFO] Iniciando File
+[22-11-15 06:38:17][INFO] 
+[22-11-15 06:46:37][INFO] Iniciando File
+[22-11-15 06:46:37][INFO] 
+[22-11-15 06:46:40][INFO] Iniciando File
+[22-11-15 06:46:40][INFO] 
+[22-11-15 06:46:46][INFO] Iniciando File
+[22-11-15 06:46:46][INFO] 
+[22-11-15 06:46:48][INFO] Iniciando File
+[22-11-15 06:46:48][INFO] Iniciando File
+[22-11-15 06:46:51][INFO] Iniciando File
+[22-11-15 06:46:55][INFO] Iniciando File
+[22-11-15 06:46:57][INFO] Iniciando File
+[22-11-15 06:47:00][INFO] Iniciando File
+[22-11-15 06:47:00][INFO] 
+[22-11-15 06:47:04][INFO] Iniciando File
+[22-11-15 06:47:04][INFO] 
+[22-11-15 06:47:06][INFO] Iniciando File
+[22-11-15 06:47:06][INFO] Iniciando File
+[22-11-15 06:47:09][INFO] Iniciando File
+[22-11-15 06:47:11][INFO] Iniciando File
+[22-11-15 06:47:11][INFO] Iniciando File
+[22-11-15 06:47:13][INFO] Iniciando File
+[22-11-15 06:47:15][INFO] Iniciando File
+[22-11-15 06:47:15][INFO] Iniciando File
+[22-11-15 06:47:17][INFO] Iniciando File
+[22-11-15 06:47:19][INFO] Iniciando File
+[22-11-15 06:47:19][INFO] Iniciando File
+[22-11-15 06:47:49][INFO] Iniciando File
+[22-11-15 06:47:50][INFO] Iniciando File
+[22-11-15 06:47:52][INFO] Iniciando File
+[22-11-15 06:47:55][INFO] Iniciando File
+[22-11-15 06:47:55][INFO] 
+[22-11-15 06:49:30][INFO] Iniciando File
+[22-11-15 06:49:30][INFO] 
+[22-11-15 06:49:32][INFO] Iniciando File
+[22-11-15 06:49:32][INFO] Iniciando File
+[22-11-15 06:49:34][INFO] Iniciando File
+[22-11-15 06:49:36][INFO] Iniciando File
+[22-11-15 06:49:36][INFO] default.jpg
+[22-11-15 06:49:44][INFO] Iniciando File
+[22-11-15 06:49:44][INFO] default.jpg
+[22-11-15 06:50:15][INFO] Iniciando File
+[22-11-15 06:50:15][INFO] default.jpg
+[22-11-15 06:50:15][INFO] FILES-- dir: public/uploads/portada/
+[22-11-15 06:50:48][INFO] Iniciando File
+[22-11-15 06:50:55][INFO] Iniciando File
+[22-11-15 06:50:55][INFO] default.jpg
+[22-11-15 06:50:55][INFO] FILES-- dir: public/uploads/portada/
+[22-11-15 06:51:01][INFO] Iniciando File
+[22-11-15 06:51:01][INFO] Iniciando File
+[22-11-15 06:51:04][INFO] Iniciando File
+[22-11-15 06:51:08][INFO] Iniciando File
+[22-11-15 06:51:08][INFO] gente.jpg
+[22-11-15 06:51:16][INFO] Iniciando File
+[22-11-15 06:51:16][INFO] Iniciando File
+[22-11-15 06:51:19][INFO] Iniciando File
+[22-11-15 06:51:25][INFO] Iniciando File
+[22-11-15 06:51:25][INFO] gente.jpg
+[22-11-15 06:51:25][INFO] FILES-- dir: public/uploads/portada/
+[22-11-15 06:51:29][INFO] Iniciando File
+[22-11-15 06:51:30][INFO] Iniciando File
+[22-11-15 06:51:33][INFO] Iniciando File
+[22-11-15 06:51:40][INFO] Iniciando File
+[22-11-15 06:51:40][INFO] noticias.jpg
+[22-11-15 06:51:43][INFO] Iniciando File
+[22-11-15 06:51:43][INFO] Iniciando File
+[22-11-15 06:58:00][INFO] Iniciando File
+[22-11-15 06:58:00][INFO] Iniciando File
+[22-11-15 07:55:20][INFO] Iniciando File
+[22-11-15 11:07:19][INFO] Iniciando File
+[22-11-15 11:07:19][INFO] Iniciando File
+[22-11-15 11:07:22][INFO] Iniciando File
+[22-11-15 11:07:22][INFO] Iniciando File
+[22-11-15 11:07:26][INFO] Iniciando File
+[22-11-15 11:07:26][INFO] Iniciando File
+[22-11-15 11:09:12][INFO] Iniciando File
+[22-11-15 11:09:12][INFO] Iniciando File
+[22-11-15 11:09:26][INFO] Iniciando File
+[22-11-15 11:09:26][INFO] Iniciando File
+[22-11-15 11:09:33][INFO] Iniciando File
+[22-11-15 11:09:33][INFO] Iniciando File
+[22-11-15 11:09:35][INFO] Iniciando File
+[22-11-15 11:09:35][INFO] Iniciando File
+[22-11-15 11:09:48][INFO] Iniciando File
+[22-11-15 11:09:48][INFO] Iniciando File
+[22-11-15 11:10:16][INFO] Iniciando File
+[22-11-15 11:10:16][INFO] Iniciando File
+[22-11-15 11:14:17][INFO] Iniciando File
+[22-11-15 11:14:17][INFO] Iniciando File
+[22-11-15 11:14:40][INFO] Iniciando File
+[22-11-15 11:14:40][INFO] Iniciando File
+[22-11-15 11:16:16][INFO] Iniciando File
+[22-11-15 11:16:16][INFO] Iniciando File
+[22-11-15 11:16:30][INFO] Iniciando File
+[22-11-15 11:16:30][INFO] Iniciando File
+[22-11-15 11:16:30][INFO] entro en Guardar Articulo
+[22-11-15 11:16:30][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:16:30][INFO] article/54
+[22-11-15 11:16:30][INFO] FILES-- dir: public/uploads/article/54/stream/
+[22-11-15 11:16:30][INFO] Se creo el directorio:public/uploads/article/54/stream/
+[22-11-15 11:16:30][INFO] solo dir: public/uploads/article/54/stream/
+[22-11-15 11:16:30][INFO] solo nombre: 63740fbecb3c1.webm
+[22-11-15 11:16:30][INFO] ruta stream: public/uploads/article/54/stream/63740fbecb3c1.webm
+[22-11-15 11:16:35][INFO] Iniciando File
+[22-11-15 11:16:35][INFO] Iniciando File
+[22-11-15 11:16:35][INFO] entro en Guardar Articulo
+[22-11-15 11:16:35][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:16:35][INFO] article/55
+[22-11-15 11:16:35][INFO] FILES-- dir: public/uploads/article/55/stream/
+[22-11-15 11:16:35][INFO] Se creo el directorio:public/uploads/article/55/stream/
+[22-11-15 11:16:35][INFO] solo dir: public/uploads/article/55/stream/
+[22-11-15 11:16:35][INFO] solo nombre: 63740fc392c3b.webm
+[22-11-15 11:16:35][INFO] ruta stream: public/uploads/article/55/stream/63740fc392c3b.webm
+[22-11-15 11:20:43][INFO] Iniciando File
+[22-11-15 11:20:43][INFO] Iniciando File
+[22-11-15 11:20:43][INFO] entro en Guardar Articulo
+[22-11-15 11:20:43][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:20:43][INFO] article/56
+[22-11-15 11:20:43][INFO] FILES-- dir: public/uploads/article/56/stream/
+[22-11-15 11:20:43][INFO] Se creo el directorio:public/uploads/article/56/stream/
+[22-11-15 11:20:43][INFO] solo dir: public/uploads/article/56/stream/
+[22-11-15 11:20:43][INFO] solo nombre: 637410bb1bf52.webm
+[22-11-15 11:20:43][INFO] ruta stream: public/uploads/article/56/stream/637410bb1bf52.webm
+[22-11-15 11:20:54][INFO] Iniciando File
+[22-11-15 11:20:54][INFO] Iniciando File
+[22-11-15 11:21:10][INFO] Iniciando File
+[22-11-15 11:21:10][INFO] Iniciando File
+[22-11-15 11:21:10][INFO] entro en Guardar Articulo
+[22-11-15 11:21:10][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:21:10][INFO] article/57
+[22-11-15 11:21:10][INFO] FILES-- dir: public/uploads/article/57/stream/
+[22-11-15 11:21:10][INFO] Se creo el directorio:public/uploads/article/57/stream/
+[22-11-15 11:21:10][INFO] solo dir: public/uploads/article/57/stream/
+[22-11-15 11:21:10][INFO] solo nombre: 637410d61f559.webm
+[22-11-15 11:21:10][INFO] ruta stream: public/uploads/article/57/stream/637410d61f559.webm
+[22-11-15 11:21:23][INFO] Iniciando File
+[22-11-15 11:21:23][INFO] Iniciando File
+[22-11-15 11:21:23][INFO] entro en Guardar Articulo
+[22-11-15 11:21:23][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:21:23][INFO] article/58
+[22-11-15 11:21:23][INFO] FILES-- dir: public/uploads/article/58/stream/
+[22-11-15 11:21:23][INFO] Se creo el directorio:public/uploads/article/58/stream/
+[22-11-15 11:21:23][INFO] solo dir: public/uploads/article/58/stream/
+[22-11-15 11:21:23][INFO] solo nombre: 637410e3aa870.webm
+[22-11-15 11:21:23][INFO] ruta stream: public/uploads/article/58/stream/637410e3aa870.webm
+[22-11-15 11:21:52][INFO] Iniciando File
+[22-11-15 11:21:52][INFO] Iniciando File
+[22-11-15 11:22:08][INFO] Iniciando File
+[22-11-15 11:22:08][INFO] Iniciando File
+[22-11-15 11:22:08][INFO] entro en Guardar Articulo
+[22-11-15 11:22:08][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:22:08][INFO] article/59
+[22-11-15 11:22:08][INFO] FILES-- dir: public/uploads/article/59/stream/
+[22-11-15 11:22:08][INFO] Se creo el directorio:public/uploads/article/59/stream/
+[22-11-15 11:22:08][INFO] solo dir: public/uploads/article/59/stream/
+[22-11-15 11:22:08][INFO] solo nombre: 6374111038e5d.webm
+[22-11-15 11:22:08][INFO] ruta stream: public/uploads/article/59/stream/6374111038e5d.webm
+[22-11-15 11:23:46][INFO] Iniciando File
+[22-11-15 11:23:46][INFO] Iniciando File
+[22-11-15 11:24:02][INFO] Iniciando File
+[22-11-15 11:24:02][INFO] Iniciando File
+[22-11-15 11:24:02][INFO] entro en Guardar Articulo
+[22-11-15 11:24:45][INFO] Iniciando File
+[22-11-15 11:24:45][INFO] Iniciando File
+[22-11-15 11:24:45][INFO] entro en Guardar Articulo
+[22-11-15 11:24:45][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:24:45][INFO] article/60
+[22-11-15 11:24:45][INFO] FILES-- dir: public/uploads/article/60/stream/
+[22-11-15 11:24:45][INFO] Se creo el directorio:public/uploads/article/60/stream/
+[22-11-15 11:24:45][INFO] solo dir: public/uploads/article/60/stream/
+[22-11-15 11:24:45][INFO] solo nombre: 637411ad77ca3.webm
+[22-11-15 11:24:45][INFO] ruta stream: public/uploads/article/60/stream/637411ad77ca3.webm
+[22-11-15 11:24:58][INFO] Iniciando File
+[22-11-15 11:24:58][INFO] Iniciando File
+[22-11-15 11:24:58][INFO] entro en Guardar Articulo
+[22-11-15 11:24:58][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:24:58][INFO] article/61
+[22-11-15 11:24:58][INFO] FILES-- dir: public/uploads/article/61/stream/
+[22-11-15 11:24:58][INFO] Se creo el directorio:public/uploads/article/61/stream/
+[22-11-15 11:24:58][INFO] solo dir: public/uploads/article/61/stream/
+[22-11-15 11:24:58][INFO] solo nombre: 637411ba92a2c.webm
+[22-11-15 11:24:58][INFO] ruta stream: public/uploads/article/61/stream/637411ba92a2c.webm
+[22-11-15 11:25:20][INFO] Iniciando File
+[22-11-15 11:25:20][INFO] Iniciando File
+[22-11-15 11:25:20][INFO] Iniciando File
+[22-11-15 11:25:20][INFO] Iniciando File
+[22-11-15 11:25:24][INFO] Iniciando File
+[22-11-15 11:25:24][INFO] Iniciando File
+[22-11-15 11:25:38][INFO] Iniciando File
+[22-11-15 11:25:38][INFO] Iniciando File
+[22-11-15 11:25:38][INFO] entro en Guardar Articulo
+[22-11-15 11:25:38][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:25:38][INFO] article/62
+[22-11-15 11:25:38][INFO] FILES-- dir: public/uploads/article/62/stream/
+[22-11-15 11:25:38][INFO] Se creo el directorio:public/uploads/article/62/stream/
+[22-11-15 11:25:38][INFO] solo dir: public/uploads/article/62/stream/
+[22-11-15 11:25:38][INFO] solo nombre: 637411e26e4fa.webm
+[22-11-15 11:25:38][INFO] ruta stream: public/uploads/article/62/stream/637411e26e4fa.webm
+[22-11-15 11:25:42][INFO] Iniciando File
+[22-11-15 11:25:42][INFO] Iniciando File
+[22-11-15 11:25:42][INFO] entro en Guardar Articulo
+[22-11-15 11:25:42][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:25:42][INFO] article/63
+[22-11-15 11:25:42][INFO] FILES-- dir: public/uploads/article/63/stream/
+[22-11-15 11:25:42][INFO] Se creo el directorio:public/uploads/article/63/stream/
+[22-11-15 11:25:42][INFO] solo dir: public/uploads/article/63/stream/
+[22-11-15 11:25:42][INFO] solo nombre: 637411e660944.webm
+[22-11-15 11:25:42][INFO] ruta stream: public/uploads/article/63/stream/637411e660944.webm
+[22-11-15 11:25:51][INFO] Iniciando File
+[22-11-15 11:25:51][INFO] Iniciando File
+[22-11-15 11:25:51][INFO] entro en Guardar Articulo
+[22-11-15 11:25:51][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:25:51][INFO] article/64
+[22-11-15 11:25:51][INFO] FILES-- dir: public/uploads/article/64/stream/
+[22-11-15 11:25:51][INFO] Se creo el directorio:public/uploads/article/64/stream/
+[22-11-15 11:25:51][INFO] solo dir: public/uploads/article/64/stream/
+[22-11-15 11:25:51][INFO] solo nombre: 637411efbdf4b.webm
+[22-11-15 11:25:51][INFO] ruta stream: public/uploads/article/64/stream/637411efbdf4b.webm
+[22-11-15 11:25:54][INFO] Iniciando File
+[22-11-15 11:25:54][INFO] Iniciando File
+[22-11-15 11:25:54][INFO] entro en Guardar Articulo
+[22-11-15 11:25:54][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:25:54][INFO] article/65
+[22-11-15 11:25:54][INFO] FILES-- dir: public/uploads/article/65/stream/
+[22-11-15 11:25:54][INFO] Se creo el directorio:public/uploads/article/65/stream/
+[22-11-15 11:25:54][INFO] solo dir: public/uploads/article/65/stream/
+[22-11-15 11:25:54][INFO] solo nombre: 637411f2c0013.webm
+[22-11-15 11:25:54][INFO] ruta stream: public/uploads/article/65/stream/637411f2c0013.webm
+[22-11-15 11:26:00][INFO] Iniciando File
+[22-11-15 11:26:00][INFO] Iniciando File
+[22-11-15 11:26:00][INFO] entro en Guardar Articulo
+[22-11-15 11:26:00][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:26:00][INFO] article/66
+[22-11-15 11:26:00][INFO] FILES-- dir: public/uploads/article/66/stream/
+[22-11-15 11:26:00][INFO] Se creo el directorio:public/uploads/article/66/stream/
+[22-11-15 11:26:00][INFO] solo dir: public/uploads/article/66/stream/
+[22-11-15 11:26:00][INFO] solo nombre: 637411f8bb74c.webm
+[22-11-15 11:26:00][INFO] ruta stream: public/uploads/article/66/stream/637411f8bb74c.webm
+[22-11-15 11:27:23][INFO] Iniciando File
+[22-11-15 11:27:23][INFO] Iniciando File
+[22-11-15 11:27:23][INFO] entro en Guardar Articulo
+[22-11-15 11:27:23][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:29:34][INFO] Iniciando File
+[22-11-15 11:29:34][INFO] Iniciando File
+[22-11-15 11:29:39][INFO] Iniciando File
+[22-11-15 11:29:39][INFO] Iniciando File
+[22-11-15 11:29:51][INFO] Iniciando File
+[22-11-15 11:29:51][INFO] Iniciando File
+[22-11-15 11:29:51][INFO] entro en Guardar Articulo
+[22-11-15 11:29:51][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:29:51][INFO] article/68
+[22-11-15 11:29:51][INFO] FILES-- dir: public/uploads/article/68/stream/
+[22-11-15 11:29:51][INFO] Se creo el directorio:public/uploads/article/68/stream/
+[22-11-15 11:29:51][INFO] solo dir: public/uploads/article/68/stream/
+[22-11-15 11:29:51][INFO] solo nombre: 637412df63400.webm
+[22-11-15 11:29:51][INFO] ruta stream: public/uploads/article/68/stream/637412df63400.webm
+[22-11-15 11:31:01][INFO] Iniciando File
+[22-11-15 11:31:01][INFO] Iniciando File
+[22-11-15 11:31:12][INFO] Iniciando File
+[22-11-15 11:31:12][INFO] Iniciando File
+[22-11-15 11:31:26][INFO] Iniciando File
+[22-11-15 11:31:26][INFO] Iniciando File
+[22-11-15 11:31:26][INFO] entro en Guardar Articulo
+[22-11-15 11:31:26][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:31:26][INFO] article/69
+[22-11-15 11:31:26][INFO] FILES-- dir: public/uploads/article/69/stream/
+[22-11-15 11:31:26][INFO] Se creo el directorio:public/uploads/article/69/stream/
+[22-11-15 11:31:26][INFO] solo dir: public/uploads/article/69/stream/
+[22-11-15 11:31:26][INFO] solo nombre: 6374133e5473d.webm
+[22-11-15 11:31:26][INFO] ruta stream: public/uploads/article/69/stream/6374133e5473d.webm
+[22-11-15 11:37:40][INFO] Iniciando File
+[22-11-15 11:37:40][INFO] Iniciando File
+[22-11-15 11:37:40][INFO] entro en Guardar Articulo
+[22-11-15 11:37:40][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:37:40][INFO] article/70
+[22-11-15 11:37:40][INFO] FILES-- dir: public/uploads/article/70/stream/
+[22-11-15 11:37:40][INFO] Se creo el directorio:public/uploads/article/70/stream/
+[22-11-15 11:37:40][INFO] solo dir: public/uploads/article/70/stream/
+[22-11-15 11:37:40][INFO] solo nombre: 637414b4b7129.webm
+[22-11-15 11:37:40][INFO] ruta stream: public/uploads/article/70/stream/637414b4b7129.webm
+[22-11-15 11:37:48][INFO] Iniciando File
+[22-11-15 11:37:48][INFO] Iniciando File
+[22-11-15 11:37:48][INFO] entro en Guardar Articulo
+[22-11-15 11:37:48][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:37:48][INFO] article/71
+[22-11-15 11:37:48][INFO] FILES-- dir: public/uploads/article/71/stream/
+[22-11-15 11:37:48][INFO] Se creo el directorio:public/uploads/article/71/stream/
+[22-11-15 11:37:48][INFO] solo dir: public/uploads/article/71/stream/
+[22-11-15 11:37:48][INFO] solo nombre: 637414bc7990e.webm
+[22-11-15 11:37:48][INFO] ruta stream: public/uploads/article/71/stream/637414bc7990e.webm
+[22-11-15 11:37:52][INFO] Iniciando File
+[22-11-15 11:37:52][INFO] Iniciando File
+[22-11-15 11:38:04][INFO] Iniciando File
+[22-11-15 11:38:04][INFO] Iniciando File
+[22-11-15 11:38:04][INFO] entro en Guardar Articulo
+[22-11-15 11:38:04][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:38:04][INFO] article/72
+[22-11-15 11:38:04][INFO] FILES-- dir: public/uploads/article/72/stream/
+[22-11-15 11:38:04][INFO] Se creo el directorio:public/uploads/article/72/stream/
+[22-11-15 11:38:04][INFO] solo dir: public/uploads/article/72/stream/
+[22-11-15 11:38:04][INFO] solo nombre: 637414cc3c45f.webm
+[22-11-15 11:38:04][INFO] ruta stream: public/uploads/article/72/stream/637414cc3c45f.webm
+[22-11-15 11:43:29][INFO] Iniciando File
+[22-11-15 11:43:29][INFO] Iniciando File
+[22-11-15 11:43:40][INFO] Iniciando File
+[22-11-15 11:43:40][INFO] Iniciando File
+[22-11-15 11:43:40][INFO] entro en Guardar Articulo
+[22-11-15 11:43:40][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:43:40][INFO] article/73
+[22-11-15 11:43:40][INFO] isset = true
+[22-11-15 11:43:40][INFO] FILES-- dir: public/uploads/article/73/stream/
+[22-11-15 11:43:40][INFO] Se creo el directorio:public/uploads/article/73/stream/
+[22-11-15 11:43:40][INFO] solo dir: public/uploads/article/73/stream/
+[22-11-15 11:43:40][INFO] solo nombre: 6374161c257be.webm
+[22-11-15 11:43:40][INFO] ruta stream: public/uploads/article/73/stream/6374161c257be.webm
+[22-11-15 11:44:34][INFO] Iniciando File
+[22-11-15 11:44:34][INFO] Iniciando File
+[22-11-15 11:44:34][INFO] entro en Guardar Articulo
+[22-11-15 11:44:34][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:44:34][INFO] article/74
+[22-11-15 11:44:34][INFO] isset = true
+[22-11-15 11:46:14][INFO] Iniciando File
+[22-11-15 11:46:14][INFO] Iniciando File
+[22-11-15 11:47:09][INFO] Iniciando File
+[22-11-15 11:47:09][INFO] Iniciando File
+[22-11-15 11:47:09][INFO] entro en Guardar Articulo
+[22-11-15 11:47:09][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:47:09][INFO] article/75
+[22-11-15 11:47:09][INFO] FILES-- dir: public/uploads/article/75/stream/
+[22-11-15 11:47:09][INFO] Se creo el directorio:public/uploads/article/75/stream/
+[22-11-15 11:47:09][INFO] solo dir: public/uploads/article/75/stream/
+[22-11-15 11:47:09][INFO] solo nombre: 637416eda5da2.webm
+[22-11-15 11:47:09][INFO] ruta stream: public/uploads/article/75/stream/637416eda5da2.webm
+[22-11-15 11:50:59][INFO] Iniciando File
+[22-11-15 11:50:59][INFO] Iniciando File
+[22-11-15 11:51:00][INFO] Iniciando File
+[22-11-15 11:51:00][INFO] Iniciando File
+[22-11-15 11:52:14][INFO] Iniciando File
+[22-11-15 11:52:14][INFO] Iniciando File
+[22-11-15 11:52:47][INFO] Iniciando File
+[22-11-15 11:52:47][INFO] Iniciando File
+[22-11-15 11:52:47][INFO] entro en Guardar Articulo
+[22-11-15 11:52:47][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:52:47][INFO] article/76
+[22-11-15 11:52:47][INFO] FILES-- dir: public/uploads/article/76/stream/
+[22-11-15 11:52:47][INFO] Se creo el directorio:public/uploads/article/76/stream/
+[22-11-15 11:52:47][INFO] solo dir: public/uploads/article/76/stream/
+[22-11-15 11:52:47][INFO] solo nombre: 6374183fae2ff.webm
+[22-11-15 11:52:47][INFO] ruta stream: public/uploads/article/76/stream/6374183fae2ff.webm
+[22-11-15 11:55:14][INFO] Iniciando File
+[22-11-15 11:55:14][INFO] Iniciando File
+[22-11-15 11:55:14][INFO] Iniciando File
+[22-11-15 11:55:14][INFO] Iniciando File
+[22-11-15 11:55:24][INFO] Iniciando File
+[22-11-15 11:55:24][INFO] Iniciando File
+[22-11-15 11:55:48][INFO] Iniciando File
+[22-11-15 11:55:48][INFO] Iniciando File
+[22-11-15 11:55:48][INFO] entro en Guardar Articulo
+[22-11-15 11:55:48][INFO] respuesta guardar artivculo: 1
+[22-11-15 11:55:48][INFO] article/77
+[22-11-15 11:55:48][INFO] FILES-- dir: public/uploads/article/77/
+[22-11-15 11:55:48][INFO] Se creo el directorio:public/uploads/article/77/
+[22-11-15 11:55:48][INFO] public/uploads/article/77/
+[22-11-15 11:55:48][INFO] ruta archivos: public/uploads/article/77//marie.jpg
+[22-11-15 11:55:48][INFO] ruta archivos: public/uploads/article/77//noticias.jpg
+[22-11-15 11:55:48][INFO] FILES-- dir: public/uploads/article/77/stream/
+[22-11-15 11:55:48][INFO] Se creo el directorio:public/uploads/article/77/stream/
+[22-11-15 11:55:48][INFO] solo dir: public/uploads/article/77/stream/
+[22-11-15 11:55:48][INFO] solo nombre: 637418f46237d.webm
+[22-11-15 11:55:48][INFO] ruta stream: public/uploads/article/77/stream/637418f46237d.webm
+[22-11-15 11:57:50][INFO] Iniciando File
+[22-11-15 11:57:50][INFO] Iniciando File
+[22-11-15 11:57:51][INFO] Iniciando File
+[22-11-15 11:57:51][INFO] Iniciando File
+[22-11-15 11:58:03][INFO] Iniciando File
+[22-11-15 11:58:03][INFO] Iniciando File
+[22-11-15 11:58:04][INFO] Iniciando File
+[22-11-15 11:58:04][INFO] Iniciando File
+[22-11-15 11:58:17][INFO] Iniciando File
+[22-11-15 11:58:17][INFO] Iniciando File
+[22-11-15 11:58:24][INFO] Iniciando File
+[22-11-15 11:58:24][INFO] Iniciando File
+[22-11-15 11:58:25][INFO] Iniciando File
+[22-11-15 11:58:25][INFO] Iniciando File
+[22-11-15 11:59:00][INFO] Iniciando File
+[22-11-15 11:59:04][INFO] Iniciando File
+[22-11-15 11:59:06][INFO] Iniciando File
+[22-11-15 11:59:11][INFO] Iniciando File
+[22-11-15 11:59:34][INFO] Iniciando File
+[22-11-15 11:59:34][INFO] FILES-- dir: public/uploads/portada/
+[22-11-15 11:59:36][INFO] Iniciando File
+[22-11-15 11:59:36][INFO] Iniciando File

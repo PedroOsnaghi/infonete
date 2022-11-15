@@ -25,7 +25,7 @@ class File
      */
     public  function uploadFile($folder = '')
     {
-        if(isset($_FILES) && $_FILES['file']['error'] == UPLOAD_ERR_OK){
+        if(isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK){
             $this->fileName = $_FILES['file']['name'];
 
             $directorio = $this->verificarDirectorio($folder);
@@ -33,6 +33,8 @@ class File
 
             //movemos de temporal a fisico
             $ruta = $directorio . "/" . $_FILES['file']['name'];
+
+
             if(move_uploaded_file($_FILES['file']['tmp_name'], $ruta )){
                    $response = self::UPLOAD_STATE_OK;
             }else{
@@ -67,6 +69,8 @@ class File
                 //movemos de temporal a fisico
                 $ruta = $directorio . "/" . $_FILES['file']['name'][$key];
 
+                $this->logger->info("ruta archivos: " . $ruta);
+
                 $dataFile = (move_uploaded_file($file, $ruta )) ?
                     $this->getDataFile($key, self::UPLOAD_STATE_OK):
                     $this->getDataFile($key, self::UPLOAD_STATE_ERROR);
@@ -78,6 +82,36 @@ class File
             return self::UPLOAD_STATE_NO_FILE;
         }
 
+
+    }
+
+    public function uploadStream($folder)
+    {
+        if(isset($_FILES['video']) && $_FILES['video']['error'] == UPLOAD_ERR_OK){
+            $this->fileName = uniqid() . ".webm";
+
+            $directorio = $this->verificarDirectorio($folder . "/stream");
+
+
+            //movemos de temporal a fisico
+            $ruta = $directorio . $this->fileName;
+            $this->logger->info("solo dir: " . $directorio);
+            $this->logger->info("solo nombre: " . $this->fileName);
+
+            $this->logger->info("ruta stream: " . $ruta);
+
+            if(move_uploaded_file($_FILES['video']['tmp_name'], $ruta )){
+                $response = self::UPLOAD_STATE_OK;
+            }else{
+                $response = self::UPLOAD_STATE_ERROR;
+            }
+
+
+        }else{
+            $response = self::UPLOAD_STATE_NO_FILE;
+        }
+
+            return $response;
 
     }
 

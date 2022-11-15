@@ -7,14 +7,14 @@ class EdicionController
     private $render;
     private $productModel;
     private $session;
-    private $file;
 
-    public function __construct($edicionModel, $productModel, $session, $file, $render)
+
+    public function __construct($edicionModel, $productModel, $session, $render)
     {
         $this->edicionModel  = $edicionModel;
         $this->productModel = $productModel;
         $this->session = $session;
-        $this->file = $file;
+
         $this->render = $render;
     }
 
@@ -63,11 +63,9 @@ class EdicionController
     {
         $this->setEdition($_POST['id']);
 
-        $data = ($this->edicionModel->update()) ?
-            $this->datos(['success' => "La edición se actualizó correctamente"]):
-            $this->datos(['error' => "Hubo un error al actualizar la edición"]);
+        $data = $this->datos($this->edicionModel->update());
 
-        echo $this->render->render("public/view/edicion.mustache",$data);
+        echo $this->render->render("public/view/editar-edicion.mustache",$data);
     }
 
     public function publicar()
@@ -97,7 +95,8 @@ class EdicionController
         $this->edicionModel->setDescripcion($_POST['descripcion']);
         $this->edicionModel->setPrecio($_POST['precio']);
         $this->edicionModel->setProducto($this->session->getParameter('activeProduct')->getId());
-        $this->edicionModel->setPortada($this->getFileName());
+        if(isset($_POST['portada'])) $this->edicionModel->setPortada($_POST['portada']);
+
     }
 
 
@@ -112,12 +111,7 @@ class EdicionController
 
 
 
-    private function getFileName()
-    {
-        return ($this->file->uploadFile("portada"))?
-                $this->file->get_file_uploaded():
-                "default.jpg";
-    }
+
 
 
 }

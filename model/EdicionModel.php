@@ -21,6 +21,7 @@ class EdicionModel
 
     private $nombreProducto;
     private $logger;
+    private $file;
 
     public function getId()
     {
@@ -126,15 +127,17 @@ class EdicionModel
 
 
 
-    public function __construct($logger, $database)
+    public function __construct($logger, $file, $database)
     {
         $this->logger = $logger;
+        $this->file = $file;
         $this->database = $database;
     }
 
 
     public function guardar()
     {
+        $this->guardarPortada();
         return $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto, estado) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', ". $this->producto . "," . self::ESTADO_EN_EDICION . ")");
     }
 
@@ -156,10 +159,17 @@ class EdicionModel
 
     public function update()
     {
-        return $this->database->execute("UPDATE edicion SET numero = $this->numero, titulo = '$this->titulo', 
+        $sql_portada = ($this->verificarCambioPortada())? ", portada = '$this->portada'" : "";
+
+        $response = $this->database->execute("UPDATE edicion SET numero = $this->numero, titulo = '$this->titulo', 
                                         descripcion = '$this->descripcion', precio = $this->precio, 
-                                        portada = '$this->portada', id_producto = $this->producto
-                                        WHERE id = $this->id");
+                                        id_producto = $this->producto" . $sql_portada . "  WHERE id = $this->id");
+
+        if($response) return array("success" => "La edición se actualizó correctamente",
+                                   "edicion" => $this );
+
+                      return array("error" => "Hubo un error al actualizar la edición",
+                                   "edicion" => $this);
     }
 
     public function publicar($id)
@@ -193,5 +203,19 @@ class EdicionModel
         return $this;
     }
 
+    private function guardarPortada()
+    {
+        $this->portada = ($this->file->uploadFile("portada") == File::UPLOAD_STATE_OK)?
+                          $this->file->get_file_uploaded():
+                         "default.jpg";
+    }
 
+    private function verificarCambioPortada()
+    {
+        if($this->file->uploadFile("portada") > File::UPLOAD_STATE_NO_FILE){
+            $this->portada = $this->file->get_file_uploaded();
+            return true;
+        }
+        return false;
+    }
 }

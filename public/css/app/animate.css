@@ -5,6 +5,11 @@
     animation: fade-in .4s ease-in;
 }
 
+.intermit{
+    -webkit-animation: fade-in .3s infinite ease-in-out;
+    animation: fade-in .3s infinite ease-in-out;
+}
+
 
 @keyframes fade-in{
     0%{
@@ -15,3 +20,4 @@
         opacity: 1;
     }
 }
+

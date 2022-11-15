@@ -20,6 +20,7 @@
 
 
 
+
     file.addEventListener('change', function (e) {
 
         for ( var i = 0; i < file.files.length; i++ ) {
@@ -78,20 +79,32 @@
         tinymce.get("text-content").setContent(myContent);
 
         //obtenemos los datos del formulario
-        var formDataMain = new FormData(e.target);
+        let formDataMain = new FormData(e.target);
 
 
         if (formDataMain.has("file[]")) {
             formDataMain.delete("file[]");
         }
 
-        for (var pair of formDataFile.entries())
-            formDataMain.append("file[]", pair[1]);
+
+        for (var pair of formDataFile.entries()) {
+            if (pair[0] == "video")
+                formDataMain.append(pair[0], pair[1]);
+            else
+                formDataMain.append("file[]", pair[1]);
+        }
+
+        var obj = Object.fromEntries(formDataMain);
+
+        console.log(JSON.stringify(obj));
 
 
-        sendRequest("http://localhost/infonete/articulo/guardar", formDataMain, function (response) {
+        sendRequest("http://localhost/infonete/articulo/guardar", formDataMain,  response => {
+            console.log(response);
             if(response && response.success){
                 console.log(response.success);
+                formDataMain = null;
+                formDataFile = null;
                 success(response.success);
                 deshabilitarBoton();
             } else{

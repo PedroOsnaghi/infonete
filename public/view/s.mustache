@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/infonete/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/infonete/public/css/global.css">
+    <title>Crear Suscripción</title>
+</head>
+<body>
+<h2>Crear Suscripción</h2>
+
+<form action="/infonete/suscripcion/guardar" method="post" enctype="application/x-www-form-urlencoded">
+    <input class="form-control mb-2" type="text" name="descripcion" placeholder="Descripción">
+    <select class="form-control mb-2" name="duracion">
+        <option value="0" disabled selected hidden>Seleccione una duración</option>
+        <option value="1">MENSUAL</option>
+        <option value="2">SEMESTRAL</option>
+        <option value="2">ANUAL</option>
+    </select>
+    <input class="form-control mb-2" type="text" name="precio" placeholder="Precio">
+
+    {{#success}}
+        <div class="alert alert-success" role="alert">
+            {{success}}
+        </div>
+    {{/success}}
+
+    {{#error}}
+        <div class="alert alert-danger" role="alert">
+            {{error}}
+        </div>
+    {{/error}}
+
+    <button class="btn btn-primary mb-2" type="submit">Guardar</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Gestion de Planes</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: gestion productos -->
+
+                <div class="card fadeIn">
+                    <div class="card-body">
+                        <h4 class="card-title">Administración de Planes de venta</h4>
+
+                        <hr>
+
+                        <div class="navbar-menu-wrapper navbar-expand flex-grow d-flex align-items-stretch">
+                            <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
+                                <li class="nav-item w-75">
+                                    <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search d-block " action="/infonete/seccion/search" id="search-section" method="GET">
+                                        <input type="text" name="value"  id="search-section-box" class="form-control" value="{{value}}" placeholder="Buscar por código o nombre de sección">
+                                    </form>
+                                </li>
+                                <li><a class="nav-item btn btn-primary" id="nueva-seccion" href="/infonete/suscripcion/crear" ><i class="mdi mdi-playlist-plus"></i>Crear Nuevo Plan</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th class="text-pink">Plan</th>
+                                    <th class="text-pink">Descripcion</th>
+                                    <th class="text-pink">Duracion / tipo</th>
+                                    <th class="text-pink">Precio</th>
+                                </tr>
+                                </thead>
+
+                                <tbody id="seccion-container">
+                                {{#planes}}
+                                    <tr>
+                                        <td><i class="text-success mdi mdi-wallet-membership d-inline pr-2 fs-3"></i>{{id}}</td>
+                                        <td>{{descripcion}}</td>
+                                        <td>{{dias}} dias ({{tipo}})</td>
+
+                                        <td>
+
+                                           $ {{precio}}
+
+                                        </td>
+                                    </tr>
+                                {{/planes}}
+
+                                {{^planes}}
+                                    <tr>
+                                        <td>
+                                            No hay Planes para mostrar.
+                                        </td>
+
+                                    </tr>
+
+                                {{/planes}}
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- main-panel ends -->
+    </div>
+</div>
+
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+
+
+
+<script type='text/javascript' src="/infonete/public/js/app/seccion.js"></script>
+
+<script>verificarSeleccion()</script>
+
+
+</body>
+</html>

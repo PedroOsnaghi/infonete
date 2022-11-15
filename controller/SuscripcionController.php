@@ -18,42 +18,47 @@ class SuscripcionController
 
     }
 
+    public function admin()
+    {
+        $data = $this->datos(["planes" => $this->suscripcionModel->list()]);
+        echo $this->render->render("public/view/gestion-suscripcion.mustache", $data);
+    }
+
     public function crear()
     {
-        echo $this->render->render("public/view/suscripcion.mustache");
+        $data = $this->datos(["tipos" => $this->suscripcionModel->listTipos()]);
+        echo $this->render->render("public/view/suscripcion.mustache", $data);
     }
 
     public function guardar()
     {
-        $this->setSuscripcionValidada();
+        $this->setSuscripcion();
 
-        ($this->suscripcionModel->crear()) ?
-            $data['success'] = "La suscripción se guardó correctamente" :
-            $data['error'] = "Hubo un error al guardar la suscripción";
+        $data = $this->datos($this->suscripcionModel->guardar());
 
         echo $this->render->render("public/view/suscripcion.mustache", $data);
     }
 
     public function planes(){
 
-        $data = $this->getData();
+        $data = $this->datos(["planes" => $this->suscripcionModel->list()]);
 
         echo $this->render->render("public/view/planes.mustache", $data);
     }
 
-    private function setSuscripcionValidada()
+    private function setSuscripcion()
     {
         $this->suscripcionModel->setDescripcion($_POST['descripcion']);
         $this->suscripcionModel->setDuracion($_POST['duracion']);
         $this->suscripcionModel->setPrecio($_POST['precio']);
+        $this->suscripcionModel->setTag($_POST['tag']);
     }
 
-    private function getData()
+    private function datos($data = [])
     {
-        return array(
-            "planes" => $this->suscripcionModel->listar(),
+        return array_merge($data, array(
             "userAuth" => $this->session->getAuthUser()
-        );
+        ));
     }
 
 

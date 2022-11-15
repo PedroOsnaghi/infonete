@@ -103,9 +103,23 @@
 
 /**OVERRIDE**/
 
-.fs-12{
+.fs-10{
   font-size: 10px!important;
 
+}
+
+.fs-12{
+  font-size: 12px!important;
+
+}
+.record-label{
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+.video{
+  border: 1px solid var(--gray);
 }
 
 .disabled, .disabled:hover{
@@ -160,8 +174,8 @@
 }
 
 .table .portada-mini{
-  width: 30px;
-  height: 40px;
+  width: 40px;
+  height: 60px;
   border-radius: 0px!important;
 }
 
@@ -8758,7 +8772,10 @@ pre {
     border-bottom: 2px solid #2c2e33; }
   .table tbody + tbody, .jsgrid .jsgrid-table tbody + tbody {
     border-top: 2px solid #2c2e33; }
-
+  .table td{
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+  }
 .table-sm th,
 .table-sm td {
   padding: 0.3rem; }
@@ -9142,7 +9159,7 @@ select.tt-hint:focus::-ms-value {
 .form-control-sm {
   height: 2.575rem;
   padding: 0.5rem 0.81rem;
-  font-size: 0.875rem;
+  font-size: 12px!important;
   line-height: 1.5;
   border-radius: 0.2rem; }
 
@@ -19204,7 +19221,7 @@ body.avgrund-active {
   .fc .fc-widget-header table tr th {
     border-width: 0 0 1px 0;
     text-align: right;
-    padding: 1rem; }
+    padding: .5rem; }
     .fc .fc-widget-header table tr th span {
       font-size: 10px;
       text-transform: uppercase;
