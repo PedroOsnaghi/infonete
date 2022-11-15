@@ -252,7 +252,13 @@
 
                                             <div class="tab-pane" id="v-tabs-camera" role="tabpanel"
                                                  aria-labelledby="v-tabs-home-tab">
-                                                GRABAR VIDEO
+                                                <div>
+                                                    <button type="button" id="stream" class="btn btn-primary">Iniciar Stream</button>
+                                                    <video autoplay id="video"></video>
+                                                    <button type="button" id="grabar" class="btn btn-success">Grabar</button>
+                                                    <button type="button" id="detener" class="btn btn-danger">Detener Grabación</button>
+                                                    <a id="ver" target="_blank">Ver Video</a>
+                                                </div>
                                             </div>
 
 
@@ -323,7 +329,7 @@
 <script type='text/javascript' src="/infonete/public/js/app/nota.js"></script>
 <script type='text/javascript' src="/infonete/public/js/app/tabs.js"></script>
 <script type='text/javascript' src="/infonete/public/js/app/file-image.js"></script>
-
+<script type='text/javascript' src="/infonete/public/js/app/records.js"></script>
 
 </body>
 </html>
