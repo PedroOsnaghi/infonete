@@ -66,9 +66,9 @@ btn_inciar.addEventListener("click", function (){
         audio: {
             deviceId: sel_audio.value, // Indicar dispositivo de audio
         },
-        video: false /*{
+        video: {
             deviceId: sel_video.value, // Indicar dispositivo de vídeo
-        }*/
+        }
     })
         .then(iniciarStream)
         .catch(error => {

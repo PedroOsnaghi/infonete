@@ -88,7 +88,7 @@ nombre varchar(50),
 descripcion varchar(100));
 
 create table estado_articulo(
-id int primary key auto_increment,
+id int primary key,
 estado varchar(30));
 
 create table articulo(
@@ -98,7 +98,7 @@ subtitulo varchar(100),
 contenido longtext,
 link varchar(100),
 link_video varchar(100),
-ubicacion varchar(100),
+ubicacion varchar(255),
 create_at timestamp,
 id_estado int,
 id_autor int,

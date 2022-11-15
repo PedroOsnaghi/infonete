@@ -54,10 +54,7 @@ class ArticuloController
 
     public function preview()
     {
-        $articulo = $this->articuloModel->getArticle($_GET['id']);
-        $data = $this->dato(["articulo" => $articulo,
-                              "edicion" => $this->edicionModel->getEdition($articulo->getEdicion()),
-                                "autor" => $this->usuarioModel->getUsuario($articulo->getAutor())]);
+        $data = $this->dato(["articulo" => $this->articuloModel->getArticlePreview($_GET['id'])]);
         echo $this->render->render("public/view/articulo-preview.mustache", $data);
     }
 

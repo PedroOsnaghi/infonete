@@ -6,3 +6,58 @@
 [22-11-16 12:47:00][INFO] Iniciando File
 [22-11-16 12:47:03][INFO] Iniciando File
 [22-11-16 12:47:03][INFO] Iniciando File
+[22-11-16 12:57:35][INFO] Iniciando File
+[22-11-16 12:57:38][INFO] Iniciando File
+[22-11-16 12:58:44][INFO] Iniciando File
+[22-11-16 12:58:44][INFO] FILES-- dir: public/uploads/product/
+[22-11-16 12:58:48][INFO] Iniciando File
+[22-11-16 12:59:45][INFO] Iniciando File
+[22-11-16 12:59:54][INFO] Iniciando File
+[22-11-16 12:59:55][INFO] Iniciando File
+[22-11-16 01:00:54][INFO] Iniciando File
+[22-11-16 01:00:54][INFO] FILES-- dir: public/uploads/portada/
+[22-11-16 01:00:57][INFO] Iniciando File
+[22-11-16 01:00:57][INFO] Iniciando File
+[22-11-16 01:02:53][INFO] Iniciando File
+[22-11-16 01:02:53][INFO] Iniciando File
+[22-11-16 01:02:56][INFO] Iniciando File
+[22-11-16 01:02:56][INFO] Iniciando File
+[22-11-16 01:03:02][INFO] Iniciando File
+[22-11-16 01:03:02][INFO] Iniciando File
+[22-11-16 01:14:15][INFO] Iniciando File
+[22-11-16 01:14:15][INFO] Iniciando File
+[22-11-16 12:18:11][INFO] Iniciando File
+[22-11-16 12:18:11][INFO] Iniciando File
+[22-11-16 12:18:11][INFO] entro en Guardar Articulo
+[22-11-16 12:18:11][INFO] respuesta guardar artivculo: 1
+[22-11-16 12:18:35][INFO] Iniciando File
+[22-11-16 12:18:35][INFO] Iniciando File
+[22-11-16 12:18:35][INFO] entro en Guardar Articulo
+[22-11-16 12:18:53][INFO] Iniciando File
+[22-11-16 12:18:53][INFO] Iniciando File
+[22-11-16 12:18:53][INFO] entro en Guardar Articulo
+[22-11-16 12:18:53][INFO] respuesta guardar artivculo: 1
+[22-11-16 12:19:18][INFO] Iniciando File
+[22-11-16 12:19:18][INFO] Iniciando File
+[22-11-16 12:19:18][INFO] entro en Guardar Articulo
+[22-11-16 12:19:29][INFO] Iniciando File
+[22-11-16 12:19:29][INFO] Iniciando File
+[22-11-16 12:19:29][INFO] entro en Guardar Articulo
+[22-11-16 12:19:29][INFO] respuesta guardar artivculo: 1
+[22-11-16 12:19:29][INFO] article/3
+[22-11-16 12:19:29][INFO] FILES-- dir: public/uploads/article/3/
+[22-11-16 12:19:29][INFO] Se creo el directorio:public/uploads/article/3/
+[22-11-16 12:19:29][INFO] public/uploads/article/3/
+[22-11-16 12:19:29][INFO] ruta archivos: public/uploads/article/3//luisana-lopilato-1443098.jpg
+[22-11-16 12:19:29][INFO] ruta archivos: public/uploads/article/3//luisana-lopilato-1443099.jpg
+[22-11-16 12:19:29][INFO] FILES-- dir: public/uploads/article/3/stream/
+[22-11-16 12:19:29][INFO] Se creo el directorio:public/uploads/article/3/stream/
+[22-11-16 12:19:29][INFO] solo dir: public/uploads/article/3/stream/
+[22-11-16 12:19:29][INFO] solo nombre: 63741e81ea2c7.webm
+[22-11-16 12:19:29][INFO] ruta stream: public/uploads/article/3/stream/63741e81ea2c7.webm
+[22-11-16 12:22:57][INFO] Iniciando File
+[22-11-16 12:22:57][INFO] Iniciando File
+[22-11-16 12:22:57][INFO] Iniciando File
+[22-11-16 12:22:57][INFO] Iniciando File
+[22-11-16 12:23:11][INFO] Iniciando File
+[22-11-16 12:23:11][INFO] Iniciando File
