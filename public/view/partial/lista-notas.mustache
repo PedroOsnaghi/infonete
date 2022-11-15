@@ -22,13 +22,13 @@
                     <a  class="btn btn-secondary disabled" title="Enviar a Revisión" id-nota="{{id}}"  nota-state>
                         <i class="mdi mdi-read mx-auto"  ></i>
                     </a>
-                    <a  class="btn btn-secondary disabled" title="Editar" id-user="{{id}}" href="" ><i class="mdi mdi mdi-pencil-off mx-auto" ></i></a>
+                    <a  class="btn btn-secondary disabled" title="Editar" id-nota="{{id}}" href="" nota-edit><i class="mdi mdi mdi-pencil-off mx-auto" ></i></a>
                 {{/idEstado}}
                 {{^idEstado}}
                     <a  class="btn btn-secondary" title="Enviar a Revisión" id-nota="{{id}}"  nota-state>
                         <i class="mdi mdi-send mx-auto"  ></i>
                     </a>
-                    <a  class="btn btn-secondary" title="Editar"  href="/infonete/articulo/editar?id={{id}}" ><i class="mdi mdi-pencil mx-auto" ></i></a>
+                    <a  class="btn btn-secondary" title="Editar"  href="/infonete/articulo/editar?id={{id}}" nota-edit><i class="mdi mdi-pencil mx-auto" ></i></a>
                 {{/idEstado}}
 
 

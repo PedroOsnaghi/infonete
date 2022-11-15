@@ -5,6 +5,7 @@ var select_edition = document.getElementById("select-edition");
 
 function iniciar_lista(){
     var btn_state = document.querySelectorAll("a[nota-state]");
+    var btn_edit = document.querySelectorAll("a[nota-edit]");
 
     btn_state.forEach(function (btn){
         btn.addEventListener("click",function (){
@@ -27,10 +28,14 @@ function iniciar_lista(){
                     btn.children[0].classList.remove("mdi-send");
                     btn.children[0].classList.add("mdi-read");
                     label_state.innerHTML = response.state;
-                    label_state.classList.remove("badge-edit");
-                    label_state.classList.add("badge-revision");
+                    label_state.classList.remove("badge-state-0");
+                    label_state.classList.add("badge-state-1");
                     btn.href = "";
                     btn.classList.add("disabled");
+                    btn.parentElement.children[1].href = "";
+                    btn.parentElement.children[1].children[0].classList.remove("mdi-pencil");
+                    btn.parentElement.children[1].children[0].classList.add("mdi-pencil-off");
+                    btn.parentElement.children[1].classList.add("disabled");
 
                 }
             });
