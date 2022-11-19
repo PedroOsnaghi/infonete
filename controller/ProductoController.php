@@ -24,6 +24,8 @@ class ProductoController
     //muestra el formulario
     public function agregar()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
         $data = $this->getDataTipo();
         echo $this->render->render("public/view/producto.mustache", $data);
     }
@@ -37,12 +39,16 @@ class ProductoController
 
     public function admin()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
         $data = $this->getData();
         echo $this->render->render("public/view/gestion-producto.mustache", $data);
     }
 
     public function guardar()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
         $this->setearProducto();
 
        $data = ($this->productoModel->guardar()) ?
@@ -54,6 +60,8 @@ class ProductoController
 
     public function editar()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
         $data = $this->getDataEditar($_GET['id']);
         echo $this->render->render("public/view/editar-producto.mustache",$data);
     }

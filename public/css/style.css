@@ -112,6 +112,19 @@
   font-size: 12px!important;
 
 }
+
+.fs-40{
+  font-size: 40px!important;
+}
+
+
+.fs-24{
+  font-size: 24px!important;
+}
+
+.fs-18{
+  font-size: 18px!important;
+}
 .record-label{
   top: 0px;
   left: 0px;
@@ -16004,6 +16017,11 @@ code {
   width: 43px;
   height: 43px; }
 
+
+.img-md {
+  width: 58px!important;
+  height: 58px!important; }
+
 .img-xs {
   width: 35px!important;
   height: 35px!important; }
@@ -19589,7 +19607,7 @@ body.avgrund-active {
   height: 200px; }
 
 .owl-carousel.portfolio-carousel.full-width .owl-nav {
-  top: auto;
+  top: -75px;
   bottom: 100%;
   text-align: right; }
   .rtl .owl-carousel.portfolio-carousel.full-width .owl-nav {
@@ -19598,7 +19616,7 @@ body.avgrund-active {
   .owl-carousel.portfolio-carousel.full-width .owl-nav .owl-next {
     color: #a7afb7;
     margin: 0;
-    padding: 0px 2px 14px 2px !important; }
+    padding: 2px 2px 2px 2px !important; }
     @media (min-width: 768px) and (max-width: 1200px) {
       .owl-carousel.portfolio-carousel.full-width .owl-nav .owl-prev,
       .owl-carousel.portfolio-carousel.full-width .owl-nav .owl-next {

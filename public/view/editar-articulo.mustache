@@ -17,7 +17,7 @@
 
     <script src="https://cdn.tiny.cloud/1/2cz3fg5z9k08c9s1umqm5vrd95zs4t9gavamel6hycaoo6lm/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
-    <title>Crear Nota</title>
+    <title>Editar Nota</title>
 </head>
 <body>
 
@@ -61,22 +61,23 @@
                         <div class="w-100 card-tipo-border mt-0"></div>
                     </div>
                     <div class="card-body">
+                        {{#noticia}}
                         <form id="form-noticia" action="" method="post" enctype="multipart/form-data">
                             <div class="container  mx-auto">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <h4 class="mb-0">Crear Nota</h4>
+                                    <h4 class="mb-0">Editar Nota</h4>
                                     <div class="d-flex justify-content-end w-75">
                                         <select class="form-control w-75" tabindex="0" name="seccion" id="seccion">
-
-                                                <option value="0" selected disabled hidden>Seleccione la Seccion de Noticias </option>
 
                                             {{#secciones}}
                                                 <option value="{{id}}">{{nombre}}</option>
                                             {{/secciones}}
                                         </select>
 
+                                        <script>document.getElementById("seccion").value = {{getSeccion}};</script>
+
                                         <div class="d-flex  align-items-stretch">
-                                            <button class="nav-item btn btn-primary mx-2 " type="submit" id="btn-save" >Guardar Nota</button>
+                                            <button class="nav-item btn btn-primary mx-2 " type="submit" id="btn-save" >Guardar</button>
                                             <a class="btn btn-secondary text-center" title="Cerrar ventana"
                                                href="/infonete/articulo/admin"><i class="mdi mdi-close d-inline mx-auto"></i></a>
                                         </div>
@@ -138,13 +139,13 @@
                                                 <hr class="bg-gray w-100 m-0 p-0 d-block mb-2">
                                                 <label for="">Titulo de Nota *</label>
                                                 <input class="form-control mb-2" tabindex="1" maxlength="255" type="text" name="titulo"
-                                                       placeholder="Título" id="titulo">
+                                                       placeholder="Título" id="titulo" value="{{getTitulo}}">
                                                 <label for="">Subtitulo de Nota *</label>
                                                 <input class="form-control mb-2" tabindex="2" maxlength="255" type="text" name="subtitulo"
-                                                       placeholder="Subtitulo" id="subtitulo">
+                                                       placeholder="Subtitulo" id="subtitulo" value="{{getSubtitulo}}">
                                                 <label for="">contenido *</label>
                                                 <textarea id="text-content" class="form-control mb-2" tabindex="3" name="contenido"
-                                                          placeholder="Cuerpo de la Notícia" ></textarea>
+                                                          placeholder="Cuerpo de la Notícia" >{{getContenido}}</textarea>
 
                                             </div>
 
@@ -158,7 +159,7 @@
 
                                                     <input id="pac-input" tabindex="4" class="form-control mb-0" type="text"
                                                            name="ubicacion" maxlength="250"
-                                                           placeholder="Buscar un lugar" >
+                                                           placeholder="Buscar un lugar" value="{{getUbicacion}}">
                                                     <div id="dir-validate-msg" class="text-left valid-feedback">
 
                                                     </div>
@@ -170,7 +171,7 @@
                                                                 </div>
                                                                 <input type="text" class="form-control" name="lat"
                                                                        id="lat"
-                                                                       placeholder="Geo-latitud" readonly/>
+                                                                       placeholder="Geo-latitud" value="{{getLatitud}}" style="color: var(--dark-gray)!important;" readonly/>
                                                             </div>
                                                             <div class="input-group my-3 col">
                                                                 <div class="input-group-prepend">
@@ -178,7 +179,7 @@
                                                                 </div>
                                                                 <input type="text" class="form-control" name="lng"
                                                                        id="lng"
-                                                                       placeholder="Geo-longitud" readonly/>
+                                                                       placeholder="Geo-longitud" value="{{getLongitud}}" style="color: var(--dark-gray)!important;" readonly/>
                                                             </div>
 
 
@@ -209,9 +210,20 @@
                                                     </div>
                                                     <div class="thumbnail-scroller d-flex align-items-center pl-2 pb-2"
                                                          id="img-scroller">
-                                                        <p class="text-danger text-center w-100" id="text-empty">No ha
-                                                            seleccionado
-                                                            imagenes</p>
+                                                        {{#getImagenes}}
+                                                            <div class="thumbnail " art-id="{{getId}}" file-id="{{archivo}}" style="background-image: url('/infonete/public/uploads/article/{{getId}}/{{archivo}}')">
+                                                                <div class="close-button">x</div>
+                                                            </div>
+                                                            <p class="text-danger text-center w-100" id="text-empty" hidden>No ha
+                                                                seleccionado
+                                                                imagenes</p>
+                                                        {{/getImagenes}}
+                                                        {{^getImagenes}}
+                                                            <p class="text-danger text-center w-100" id="text-empty">No ha
+                                                                seleccionado
+                                                                imagenes</p>
+                                                        {{/getImagenes}}
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -228,7 +240,7 @@
                                                         <span class="input-group-text">url</span>
                                                     </div>
                                                     <input type="url" class="form-control" name="link"
-                                                           placeholder="url a pagina relacionada">
+                                                           placeholder="url a pagina relacionada" value="{{getLink}}">
                                                 </div>
                                                 <label for="">Link a un video de YouTube <span class="text-muted fs-12">(copie y pegue la url en la caja de texto)</span></label>
                                                 <div class="input-group mb-3">
@@ -239,11 +251,18 @@
                                                         </a>
                                                     </div>
                                                     <input type="text" id="inYt" class="form-control" name="linkvideo"
-                                                           placeholder="enlace a video YouTube">
+                                                           placeholder="enlace a video YouTube" value="{{getLinkvideo}}">
                                                 </div>
 
                                                 <div>
-                                                    <iframe id="yt-preview" width="560" height="315" src=""
+                                                    <iframe id="yt-preview" width="560" height="315"
+                                                            {{#getLinkvideo}}
+                                                                src="https://www.youtube.com/embed/{{getLinkvideo}}"
+                                                            {{/getLinkvideo}}
+                                                            {{^getLinkvideo}}
+                                                                src=""
+                                                            {{/getLinkvideo}}
+
                                                             title="YouTube video player" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                             allowfullscreen></iframe>
@@ -267,9 +286,17 @@
                                                     </div>
                                                    <div class="d-flex w-100 mt-3">
                                                        <div class="col-9 position-relative">
-                                                           <video class="video w-100 "  autoplay id="video">
+                                                           {{#getStreamFile}}
+                                                               <video class="video w-100 " src="/infonete/public/uploads/article/{{getId}}/stream/{{archivo}}"   controls id="video">
 
-                                                           </video>
+                                                               </video>
+                                                           {{/getStreamFile}}
+                                                           {{^getStreamFile}}
+                                                               <video class="video w-100 "  autoplay id="video">
+
+                                                               </video>
+                                                           {{/getStreamFile}}
+
 
 
                                                            <div class="align-items-center record-label pl-4 pt-2 text-danger position-absolute d-none" id="record-label"><i class="mdi mdi-radiobox-marked mr-2 intermit"></i>Grabando <span class="ml-2" id="duracion"> 00:00:00</span> </div>
@@ -280,7 +307,11 @@
                                                            <button type="button" id="stream" class="btn btn-primary mb-2">Iniciar Stream</button>
                                                            <button type="button" id="grabar" title="Iniciar Grabación" class="btn btn-light text-danger mb-2" disabled><i class="mdi mdi-radiobox-marked"></i></button>
                                                            <button type="button" id="detener" title="Detener Grabación" class="btn btn-light text-dark-gray" disabled><i class="mdi mdi-stop"></i></button>
+                                                            {{#getStreamFile}}
+                                                                <button type="button" id="borrar-strm" title="Eliminar Stream" class="btn btn-danger mt-auto"><i class="mdi mdi-delete"></i>Eliminar Stream</button>
+                                                                <input type="hidden" name="delete-stream" value="false" id="borrar-strm-value">
 
+                                                            {{/getStreamFile}}
                                                            <button type="button" id="ver-video" title="Previsualizar" class="btn btn-info mt-auto" hidden><i class="mdi mdi-play"></i>Ver video</button>
                                                        </div>
                                                    </div>
@@ -315,6 +346,7 @@
 
                             </div>
                         </form>
+                        {{/noticia}}
                     </div>
                 </div>
             </div>
@@ -353,14 +385,20 @@
 <!--script vistas Infonete -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeluO_jCvIS_iT6Y3Thw8A6YJW5gyzh0M&callback=initAutocomplete&libraries=places&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeluO_jCvIS_iT6Y3Thw8A6YJW5gyzh0M&callback=initInverseAutocomplete&libraries=places&v=weekly"
         defer>
 
 </script>
 <script type='text/javascript' src="/infonete/public/js/vendors/google.maps.js"></script>
 <script type='text/javascript' src="/infonete/public/js/app/tabs.js"></script>
-<script type='text/javascript' src="/infonete/public/js/app/nota.js"></script>
+<script type='text/javascript' src="/infonete/public/js/app/editar-nota.js"></script>
 <script type='text/javascript' src="/infonete/public/js/app/records.js"></script>
+{{#noticia}}
+    {{#getStreamFile}}
+        <script>activarBorrado();</script>
+    {{/getStreamFile}}
+{{/noticia}}
+
 
 </body>
 </html>

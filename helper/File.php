@@ -119,6 +119,45 @@ class File
         return $this->fileName;
     }
 
+    public function getFiles($folder)
+    {
+        $arrFiles = array();
+        $fulldir = dirname(__FILE__,2) . "/public/uploads/$folder";
+        //logs
+        $this->logger->info("funcion File->getFiles: recorrera el siguiente directorio " . $fulldir );
+
+        //verifica que exista el directorio o retorna false
+        if(file_exists($fulldir)){
+            $files = new FilesystemIterator($fulldir);
+        }else{
+            return false;
+        }
+
+
+        //carga arreglo de archivos
+        foreach($files as $file) {
+            if(is_file($file)){
+                $nombre = array("archivo" => $file->getFilename());
+                array_push($arrFiles, $nombre );
+                //logs
+                $this->logger->info("Archivo encontrado: " . $file->getFilename() );
+
+                //[{"archivo"=>"aaa.jpg"},{"archivo"=>"bb.jpg"}]
+            }
+        }
+
+        return $arrFiles;
+    }
+
+    public function eliminar($file)
+    {
+        $fulldir = dirname(__FILE__,2) . "/public/uploads/$file";
+
+        if(unlink($fulldir)) return array("status" => "archivo eliminado");
+
+        return array("status" => "No se pudo eliminar el archivo");
+    }
+
     private function verificarDirectorio($folder)
     {
         $dir = $this->uploadDir . (empty($folder) ? '/' : "/" .  $folder  . "/");

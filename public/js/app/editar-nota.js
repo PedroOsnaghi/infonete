@@ -16,6 +16,7 @@ const subtitulo = document.getElementById("subtitulo");
 const ubicacion = document.getElementById("pac-input");
 
 let formDataFile = new FormData();
+let deletedFiles = [];
 
 //***********************ARCHIVOS***************************************//
 file.addEventListener('change', function (e) {
@@ -55,10 +56,30 @@ var createCloseButton = function (thumbnail_id) {
 
 scroller.addEventListener('click', function (e) {
     if ( e.target.classList.contains('close-button') ) {
+        //archivo que se elimina ya existia en el servidor
+        eliminarArchivo(e);
+
+        console.log(deletedFiles);
         e.target.parentNode.remove();
-        formDataFile.delete(e.target.parentNode.dataset.id);
+        //archivo agregado y eliminado
+        if (formDataFile.has(e.target.parentNode.dataset.id)) formDataFile.delete(e.target.parentNode.dataset.id);
     }
 });
+
+function eliminarArchivo(e)
+{
+    if(e.target.parentNode.hasAttribute("file-id")){
+        let opt = confirm("Se eliminara el archivo del servidor. confirma?");
+        if(opt) {
+            //AJAX
+            sendRequestGET("http://localhost/infonete/articulo/eliminarImagen?id=" + e.target.parentNode.getAttribute("art-id") + "&name=" + e.target.parentNode.getAttribute("file-id"),response => {
+                console.log(response);
+
+
+            });
+        }
+    }
+}
 
 
 
@@ -96,6 +117,11 @@ form.addEventListener("submit", function (e) {
                 formDataMain.append("file[]", pair[1]);
         }
 
+        //agrego como dato al formDataMain el arreglo de archivos preexistentes eliminados
+
+        formDataMain.append('deletedfile', JSON.stringify(deletedFiles) );
+
+
 
         //VER POR CONSOLA LOS DATOS ENVIADOS
         var obj = Object.fromEntries(formDataMain);
@@ -104,7 +130,7 @@ form.addEventListener("submit", function (e) {
 
 
         //AJAX
-        sendRequest("http://localhost/infonete/articulo/guardar", formDataMain,  response => {
+        sendRequest("http://localhost/infonete/articulo/actualizar", formDataMain,  response => {
             console.log(response);
             if(response && response.success){
                 console.log(response.success);
@@ -114,7 +140,7 @@ form.addEventListener("submit", function (e) {
                 deshabilitarBoton();
             } else{
                 console.log(response.error);
-                error("Ocurrio un error al intentar guardar el Articulo");
+                error("No se realizaron cambios en el Articulo");
             }
 
         });
@@ -164,6 +190,15 @@ function sendRequest(url, data, callback){
         success: callback
     });
 }
+
+function sendRequestGET(url, callback){
+    $.ajax({
+        url: url,
+        type: "GET",
+        success: callback
+    });
+}
+
 
 function success(msg){
     var msg_container = document.getElementById("message");

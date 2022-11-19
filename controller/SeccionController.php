@@ -20,12 +20,16 @@ class SeccionController
 
     public function admin()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $data = $this->datos(["secciones" =>  $this->seccionModel->list()]);
         echo $this->render->render("public/view/gestion-seccion.mustache", $data);
     }
 
     public function crear()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $data = $this->datos();
         echo $this->render->render("public/view/seccion.mustache", $data);
     }
@@ -43,6 +47,8 @@ class SeccionController
 
     public function editar()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $data = $this->datos(["seccion" =>  $this->seccionModel->getSection($_GET['id'])]);
         echo $this->render->render("public/view/editar-seccion.mustache", $data);
     }

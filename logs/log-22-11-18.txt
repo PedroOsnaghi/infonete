@@ -1,0 +1,853 @@
+[22-11-18 05:49:45][INFO] Iniciando File
+[22-11-18 05:49:45][INFO] Iniciando File
+[22-11-18 05:49:45][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 05:49:45][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 05:49:45][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 05:49:45][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 05:49:45][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 05:49:45][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 05:49:45][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 05:49:45][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 05:49:45][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 05:49:45][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 05:54:32][INFO] Iniciando File
+[22-11-18 05:54:32][INFO] Iniciando File
+[22-11-18 05:54:33][INFO] Iniciando File
+[22-11-18 05:54:33][INFO] Iniciando File
+[22-11-18 05:54:59][INFO] Iniciando File
+[22-11-18 05:54:59][INFO] Iniciando File
+[22-11-18 05:54:59][INFO] Iniciando File
+[22-11-18 05:54:59][INFO] Iniciando File
+[22-11-18 05:55:02][INFO] Iniciando File
+[22-11-18 05:55:02][INFO] Iniciando File
+[22-11-18 05:55:37][INFO] Iniciando File
+[22-11-18 05:55:37][INFO] Iniciando File
+[22-11-18 05:55:37][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 05:55:37][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 05:55:37][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 05:55:37][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 05:55:37][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 05:55:37][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 05:55:37][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 05:55:37][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 05:55:37][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 05:55:37][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 05:56:00][INFO] Iniciando File
+[22-11-18 05:56:00][INFO] Iniciando File
+[22-11-18 05:56:00][INFO] Iniciando File
+[22-11-18 05:56:00][INFO] Iniciando File
+[22-11-18 05:56:13][INFO] Iniciando File
+[22-11-18 05:56:13][INFO] Iniciando File
+[22-11-18 05:56:16][INFO] Iniciando File
+[22-11-18 05:56:16][INFO] Iniciando File
+[22-11-18 05:56:16][INFO] Iniciando File
+[22-11-18 05:56:16][INFO] Iniciando File
+[22-11-18 05:56:18][INFO] Iniciando File
+[22-11-18 05:56:18][INFO] Iniciando File
+[22-11-18 05:56:18][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 05:56:18][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 05:56:18][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 05:56:18][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 05:56:18][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 05:56:18][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 05:56:18][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 05:56:18][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 05:56:18][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 05:56:18][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 05:56:38][INFO] Iniciando File
+[22-11-18 05:56:38][INFO] Iniciando File
+[22-11-18 05:56:38][INFO] Iniciando File
+[22-11-18 05:56:38][INFO] Iniciando File
+[22-11-18 05:56:51][INFO] Iniciando File
+[22-11-18 05:56:51][INFO] Iniciando File
+[22-11-18 05:56:54][INFO] Iniciando File
+[22-11-18 05:56:54][INFO] Iniciando File
+[22-11-18 05:56:54][INFO] Iniciando File
+[22-11-18 05:56:54][INFO] Iniciando File
+[22-11-18 06:00:48][INFO] Iniciando File
+[22-11-18 06:00:48][INFO] Iniciando File
+[22-11-18 06:00:48][INFO] Iniciando File
+[22-11-18 06:00:48][INFO] Iniciando File
+[22-11-18 06:00:59][INFO] Iniciando File
+[22-11-18 06:00:59][INFO] Iniciando File
+[22-11-18 06:00:59][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:00:59][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:00:59][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:00:59][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:00:59][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:00:59][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:00:59][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:00:59][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:00:59][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:00:59][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:03:04][INFO] Iniciando File
+[22-11-18 06:03:04][INFO] Iniciando File
+[22-11-18 06:03:04][INFO] Iniciando File
+[22-11-18 06:03:04][INFO] Iniciando File
+[22-11-18 06:03:11][INFO] Iniciando File
+[22-11-18 06:03:11][INFO] Iniciando File
+[22-11-18 06:03:11][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:03:11][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:03:11][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:03:11][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:03:11][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:03:11][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:03:11][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:03:11][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:03:11][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:03:11][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:04:54][INFO] Iniciando File
+[22-11-18 06:04:54][INFO] Iniciando File
+[22-11-18 06:04:54][INFO] Iniciando File
+[22-11-18 06:04:54][INFO] Iniciando File
+[22-11-18 06:04:57][INFO] Iniciando File
+[22-11-18 06:04:57][INFO] Iniciando File
+[22-11-18 06:04:57][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:04:57][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:04:57][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:04:57][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:04:57][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:04:57][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:04:57][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:04:57][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:04:57][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:04:57][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:05:29][INFO] Iniciando File
+[22-11-18 06:05:29][INFO] Iniciando File
+[22-11-18 06:05:29][INFO] Iniciando File
+[22-11-18 06:05:29][INFO] Iniciando File
+[22-11-18 06:08:09][INFO] Iniciando File
+[22-11-18 06:08:09][INFO] Iniciando File
+[22-11-18 06:08:09][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:08:09][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:08:09][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:08:09][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:08:09][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:08:09][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:08:09][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:08:09][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:08:09][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:08:09][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:18:32][INFO] Iniciando File
+[22-11-18 06:18:32][INFO] Iniciando File
+[22-11-18 06:18:33][INFO] Iniciando File
+[22-11-18 06:18:33][INFO] Iniciando File
+[22-11-18 06:18:39][INFO] Iniciando File
+[22-11-18 06:18:39][INFO] Iniciando File
+[22-11-18 06:18:51][INFO] Iniciando File
+[22-11-18 06:18:51][INFO] Iniciando File
+[22-11-18 06:18:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:18:51][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:18:51][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:18:51][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:18:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:18:51][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:18:51][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:18:51][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:18:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:18:51][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:19:00][INFO] Iniciando File
+[22-11-18 06:19:00][INFO] Iniciando File
+[22-11-18 06:19:00][INFO] Iniciando File
+[22-11-18 06:19:00][INFO] Iniciando File
+[22-11-18 06:37:17][INFO] Iniciando File
+[22-11-18 06:37:17][INFO] Iniciando File
+[22-11-18 06:38:24][INFO] Iniciando File
+[22-11-18 06:38:24][INFO] Iniciando File
+[22-11-18 06:38:27][INFO] Iniciando File
+[22-11-18 06:38:27][INFO] Iniciando File
+[22-11-18 06:38:50][INFO] Iniciando File
+[22-11-18 06:38:50][INFO] Iniciando File
+[22-11-18 06:38:50][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:38:50][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:38:50][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:38:50][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:38:50][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:38:50][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:38:50][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:38:50][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:38:50][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:38:50][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:39:02][INFO] Iniciando File
+[22-11-18 06:39:02][INFO] Iniciando File
+[22-11-18 06:39:03][INFO] Iniciando File
+[22-11-18 06:39:03][INFO] Iniciando File
+[22-11-18 06:39:12][INFO] Iniciando File
+[22-11-18 06:39:12][INFO] Iniciando File
+[22-11-18 06:39:12][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:39:12][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:39:12][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:39:12][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:39:12][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:39:12][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:39:12][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:39:12][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:39:12][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:39:12][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:39:32][INFO] Iniciando File
+[22-11-18 06:39:32][INFO] Iniciando File
+[22-11-18 06:39:32][INFO] Iniciando File
+[22-11-18 06:39:32][INFO] Iniciando File
+[22-11-18 06:41:57][INFO] Iniciando File
+[22-11-18 06:41:57][INFO] Iniciando File
+[22-11-18 06:41:57][INFO] Iniciando File
+[22-11-18 06:41:57][INFO] Iniciando File
+[22-11-18 06:42:01][INFO] Iniciando File
+[22-11-18 06:42:01][INFO] Iniciando File
+[22-11-18 06:42:01][INFO] Iniciando File
+[22-11-18 06:42:01][INFO] Iniciando File
+[22-11-18 06:42:07][INFO] Iniciando File
+[22-11-18 06:42:07][INFO] Iniciando File
+[22-11-18 06:42:07][INFO] Iniciando File
+[22-11-18 06:42:07][INFO] Iniciando File
+[22-11-18 06:44:00][INFO] Iniciando File
+[22-11-18 06:44:00][INFO] Iniciando File
+[22-11-18 06:44:01][INFO] Iniciando File
+[22-11-18 06:44:01][INFO] Iniciando File
+[22-11-18 06:44:09][INFO] Iniciando File
+[22-11-18 06:44:09][INFO] Iniciando File
+[22-11-18 06:44:11][INFO] Iniciando File
+[22-11-18 06:44:11][INFO] Iniciando File
+[22-11-18 06:44:12][INFO] Iniciando File
+[22-11-18 06:44:12][INFO] Iniciando File
+[22-11-18 06:52:31][INFO] Iniciando File
+[22-11-18 06:52:31][INFO] Iniciando File
+[22-11-18 06:52:31][INFO] Iniciando File
+[22-11-18 06:52:31][INFO] Iniciando File
+[22-11-18 06:52:34][INFO] Iniciando File
+[22-11-18 06:52:34][INFO] Iniciando File
+[22-11-18 06:52:34][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:52:34][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:52:34][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:52:34][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:52:34][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:52:34][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:52:34][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:52:34][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:52:34][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:52:34][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:53:25][INFO] Iniciando File
+[22-11-18 06:53:25][INFO] Iniciando File
+[22-11-18 06:53:25][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:53:25][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:53:25][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:53:25][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:53:25][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:53:25][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:53:25][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:53:25][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:53:25][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:53:25][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:54:34][INFO] Iniciando File
+[22-11-18 06:54:34][INFO] Iniciando File
+[22-11-18 06:54:34][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:54:34][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:54:34][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:54:34][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:54:34][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:54:34][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:54:34][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:54:34][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:54:34][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:54:34][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:55:45][INFO] Iniciando File
+[22-11-18 06:55:45][INFO] Iniciando File
+[22-11-18 06:55:45][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:55:45][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:55:45][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:55:45][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:55:45][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:55:45][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:55:45][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:55:45][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:55:45][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:55:45][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:56:22][INFO] Iniciando File
+[22-11-18 06:56:22][INFO] Iniciando File
+[22-11-18 06:56:22][INFO] Iniciando File
+[22-11-18 06:56:22][INFO] Iniciando File
+[22-11-18 06:56:56][INFO] Iniciando File
+[22-11-18 06:56:56][INFO] Iniciando File
+[22-11-18 06:56:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:56:56][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:56:56][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:56:56][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:56:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 06:56:56][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 06:56:56][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 06:56:56][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 06:56:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 06:56:56][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 06:57:56][INFO] Iniciando File
+[22-11-18 06:57:56][INFO] Iniciando File
+[22-11-18 06:57:57][INFO] Iniciando File
+[22-11-18 06:57:57][INFO] Iniciando File
+[22-11-18 07:00:28][INFO] Iniciando File
+[22-11-18 07:00:28][INFO] Iniciando File
+[22-11-18 07:00:28][INFO] Iniciando File
+[22-11-18 07:00:29][INFO] Iniciando File
+[22-11-18 07:00:37][INFO] Iniciando File
+[22-11-18 07:00:37][INFO] Iniciando File
+[22-11-18 07:00:37][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:00:37][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:00:37][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:00:37][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:00:37][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:00:37][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:00:37][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:00:37][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:00:37][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:00:37][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:00:51][INFO] Iniciando File
+[22-11-18 07:00:51][INFO] Iniciando File
+[22-11-18 07:00:51][INFO] Iniciando File
+[22-11-18 07:00:51][INFO] Iniciando File
+[22-11-18 07:01:16][INFO] Iniciando File
+[22-11-18 07:01:16][INFO] Iniciando File
+[22-11-18 07:01:17][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:01:17][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:01:17][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:01:17][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:01:17][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:01:17][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:01:17][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:01:17][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:01:17][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:01:17][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:06:40][INFO] Iniciando File
+[22-11-18 07:06:40][INFO] Iniciando File
+[22-11-18 07:06:40][INFO] Iniciando File
+[22-11-18 07:06:40][INFO] Iniciando File
+[22-11-18 07:06:57][INFO] Iniciando File
+[22-11-18 07:06:57][INFO] Iniciando File
+[22-11-18 07:06:57][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:06:57][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:06:57][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:06:57][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:06:57][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:06:57][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:06:57][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:06:57][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:06:57][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:06:57][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:07:36][INFO] Iniciando File
+[22-11-18 07:07:36][INFO] Iniciando File
+[22-11-18 07:07:36][INFO] Iniciando File
+[22-11-18 07:07:36][INFO] Iniciando File
+[22-11-18 07:08:17][INFO] Iniciando File
+[22-11-18 07:08:17][INFO] Iniciando File
+[22-11-18 07:08:21][INFO] Iniciando File
+[22-11-18 07:08:21][INFO] Iniciando File
+[22-11-18 07:08:31][INFO] Iniciando File
+[22-11-18 07:08:31][INFO] Iniciando File
+[22-11-18 07:08:31][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:08:31][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:08:31][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:08:31][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:08:31][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:08:31][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:08:31][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:08:31][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:08:31][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:08:31][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:08:49][INFO] Iniciando File
+[22-11-18 07:08:49][INFO] Iniciando File
+[22-11-18 07:08:50][INFO] Iniciando File
+[22-11-18 07:08:50][INFO] Iniciando File
+[22-11-18 07:09:35][INFO] Iniciando File
+[22-11-18 07:09:35][INFO] Iniciando File
+[22-11-18 07:09:38][INFO] Iniciando File
+[22-11-18 07:09:38][INFO] Iniciando File
+[22-11-18 07:10:14][INFO] Iniciando File
+[22-11-18 07:10:14][INFO] Iniciando File
+[22-11-18 07:10:14][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:10:14][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:10:14][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:10:14][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:10:14][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:10:14][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:10:14][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:10:14][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:10:14][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:10:14][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:10:53][INFO] Iniciando File
+[22-11-18 07:10:53][INFO] Iniciando File
+[22-11-18 07:10:54][INFO] Iniciando File
+[22-11-18 07:10:54][INFO] Iniciando File
+[22-11-18 07:33:57][INFO] Iniciando File
+[22-11-18 07:33:57][INFO] Iniciando File
+[22-11-18 07:33:58][INFO] Iniciando File
+[22-11-18 07:33:58][INFO] Iniciando File
+[22-11-18 07:34:02][INFO] Iniciando File
+[22-11-18 07:34:02][INFO] Iniciando File
+[22-11-18 07:34:02][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:34:02][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:34:02][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:34:02][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:34:02][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:34:02][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:34:02][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:34:02][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:34:02][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:34:02][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:34:11][INFO] Iniciando File
+[22-11-18 07:34:11][INFO] Iniciando File
+[22-11-18 07:34:11][INFO] Iniciando File
+[22-11-18 07:34:11][INFO] Iniciando File
+[22-11-18 07:34:11][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:34:11][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:34:11][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:34:11][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:34:11][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:34:11][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:34:11][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:34:11][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:34:11][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:34:11][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:35:00][INFO] Iniciando File
+[22-11-18 07:35:00][INFO] Iniciando File
+[22-11-18 07:35:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:35:00][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:35:00][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:35:00][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:35:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:35:00][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:35:00][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:35:00][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:35:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:35:00][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:35:06][INFO] Iniciando File
+[22-11-18 07:35:06][INFO] Iniciando File
+[22-11-18 07:36:08][INFO] Iniciando File
+[22-11-18 07:36:08][INFO] Iniciando File
+[22-11-18 07:36:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:36:08][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:36:08][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:36:08][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:36:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:36:08][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:36:08][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:36:08][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:36:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:36:08][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:36:14][INFO] Iniciando File
+[22-11-18 07:36:14][INFO] Iniciando File
+[22-11-18 07:38:53][INFO] Iniciando File
+[22-11-18 07:38:53][INFO] Iniciando File
+[22-11-18 07:38:53][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:38:53][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:38:53][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:38:53][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:38:53][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:38:53][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:38:53][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:38:53][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:38:53][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:38:53][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:39:16][INFO] Iniciando File
+[22-11-18 07:39:16][INFO] Iniciando File
+[22-11-18 07:39:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:39:16][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:39:16][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:39:16][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:39:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:39:16][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:39:16][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:39:16][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:39:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:39:16][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:40:11][INFO] Iniciando File
+[22-11-18 07:40:11][INFO] Iniciando File
+[22-11-18 07:40:12][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:40:12][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:40:12][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:40:12][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:40:12][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:40:12][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:40:12][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:40:12][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:40:12][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:40:12][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:40:28][INFO] Iniciando File
+[22-11-18 07:40:28][INFO] Iniciando File
+[22-11-18 07:40:28][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:40:28][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:40:28][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:40:28][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:40:28][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:40:28][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:40:28][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:40:28][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:40:28][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:40:28][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:41:00][INFO] Iniciando File
+[22-11-18 07:41:00][INFO] Iniciando File
+[22-11-18 07:41:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:41:00][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:41:00][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:41:00][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:41:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:41:00][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:41:00][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:41:00][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:41:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:41:00][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:41:21][INFO] Iniciando File
+[22-11-18 07:41:21][INFO] Iniciando File
+[22-11-18 07:41:21][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:41:21][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:41:21][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:41:21][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:41:21][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:41:21][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:41:21][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:41:21][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:41:21][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:41:21][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:41:51][INFO] Iniciando File
+[22-11-18 07:41:51][INFO] Iniciando File
+[22-11-18 07:41:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:41:51][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:41:51][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:41:51][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:41:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:41:51][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:41:51][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:41:51][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:41:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:41:51][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:42:08][INFO] Iniciando File
+[22-11-18 07:42:08][INFO] Iniciando File
+[22-11-18 07:42:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:42:08][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:42:08][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:42:08][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:42:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:42:08][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:42:08][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:42:08][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:42:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:42:08][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:43:00][INFO] Iniciando File
+[22-11-18 07:43:00][INFO] Iniciando File
+[22-11-18 07:43:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:43:00][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:43:00][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:43:00][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:43:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:43:00][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:43:00][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:43:00][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:43:00][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:43:00][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:43:09][INFO] Iniciando File
+[22-11-18 07:43:09][INFO] Iniciando File
+[22-11-18 07:43:09][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:43:09][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:43:09][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:43:09][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:43:09][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:43:09][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:43:09][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:43:09][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:43:09][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:43:09][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:43:26][INFO] Iniciando File
+[22-11-18 07:43:26][INFO] Iniciando File
+[22-11-18 07:43:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:43:26][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:43:26][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:43:26][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:43:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:43:26][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:43:26][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:43:26][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:43:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:43:26][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:44:20][INFO] Iniciando File
+[22-11-18 07:44:21][INFO] Iniciando File
+[22-11-18 07:47:19][INFO] Iniciando File
+[22-11-18 07:47:19][INFO] Iniciando File
+[22-11-18 07:47:19][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:47:19][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:47:19][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:47:19][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:47:19][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:47:19][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:47:19][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:47:19][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:47:19][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:47:19][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:47:28][INFO] Iniciando File
+[22-11-18 07:47:28][INFO] Iniciando File
+[22-11-18 07:47:36][INFO] Iniciando File
+[22-11-18 07:47:36][INFO] Iniciando File
+[22-11-18 07:47:36][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:47:36][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:47:36][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:47:36][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:47:36][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:47:36][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:47:36][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:47:36][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:47:36][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:47:36][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:48:01][INFO] Iniciando File
+[22-11-18 07:48:01][INFO] Iniciando File
+[22-11-18 07:48:01][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:48:01][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:48:01][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:48:01][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:48:01][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:48:01][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:48:01][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:48:01][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:48:01][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:48:01][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:48:05][INFO] Iniciando File
+[22-11-18 07:48:05][INFO] Iniciando File
+[22-11-18 07:48:15][INFO] Iniciando File
+[22-11-18 07:48:15][INFO] Iniciando File
+[22-11-18 07:48:15][INFO] Iniciando File
+[22-11-18 07:48:15][INFO] Iniciando File
+[22-11-18 07:51:13][INFO] Iniciando File
+[22-11-18 07:51:13][INFO] Iniciando File
+[22-11-18 07:51:14][INFO] Iniciando File
+[22-11-18 07:51:14][INFO] Iniciando File
+[22-11-18 07:51:15][INFO] Iniciando File
+[22-11-18 07:51:15][INFO] Iniciando File
+[22-11-18 07:51:15][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:51:15][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:51:15][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:51:15][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:51:15][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:51:15][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:51:15][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:51:15][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:51:15][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:51:15][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:51:26][INFO] Iniciando File
+[22-11-18 07:51:26][INFO] Iniciando File
+[22-11-18 07:51:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:51:26][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:51:26][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:51:26][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:51:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:51:26][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:51:26][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:51:26][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:51:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:51:26][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:52:26][INFO] Iniciando File
+[22-11-18 07:52:26][INFO] Iniciando File
+[22-11-18 07:52:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:52:26][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:52:26][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:52:26][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:52:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:52:26][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:52:26][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:52:26][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:52:26][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:52:26][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:52:30][INFO] Iniciando File
+[22-11-18 07:52:30][INFO] Iniciando File
+[22-11-18 07:52:33][INFO] Iniciando File
+[22-11-18 07:52:33][INFO] Iniciando File
+[22-11-18 07:52:34][INFO] Iniciando File
+[22-11-18 07:52:34][INFO] Iniciando File
+[22-11-18 07:53:51][INFO] Iniciando File
+[22-11-18 07:53:51][INFO] Iniciando File
+[22-11-18 07:54:01][INFO] Iniciando File
+[22-11-18 07:54:01][INFO] Iniciando File
+[22-11-18 07:54:04][INFO] Iniciando File
+[22-11-18 07:54:04][INFO] Iniciando File
+[22-11-18 07:54:12][INFO] Iniciando File
+[22-11-18 07:54:12][INFO] Iniciando File
+[22-11-18 07:54:15][INFO] Iniciando File
+[22-11-18 07:54:16][INFO] Iniciando File
+[22-11-18 07:54:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:54:16][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:54:16][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:54:16][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:54:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:54:16][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:54:16][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:54:16][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:54:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:54:16][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:54:27][INFO] Iniciando File
+[22-11-18 07:54:27][INFO] Iniciando File
+[22-11-18 07:54:28][INFO] Iniciando File
+[22-11-18 07:54:28][INFO] Iniciando File
+[22-11-18 07:54:34][INFO] Iniciando File
+[22-11-18 07:54:34][INFO] Iniciando File
+[22-11-18 07:54:39][INFO] Iniciando File
+[22-11-18 07:54:39][INFO] Iniciando File
+[22-11-18 07:54:39][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:54:39][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:54:39][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:54:39][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:54:39][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:54:39][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:54:39][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:54:39][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:54:39][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:54:39][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:54:42][INFO] Iniciando File
+[22-11-18 07:54:42][INFO] Iniciando File
+[22-11-18 07:54:44][INFO] Iniciando File
+[22-11-18 07:54:44][INFO] Iniciando File
+[22-11-18 07:54:44][INFO] Iniciando File
+[22-11-18 07:54:44][INFO] Iniciando File
+[22-11-18 07:54:53][INFO] Iniciando File
+[22-11-18 07:54:53][INFO] Iniciando File
+[22-11-18 07:54:53][INFO] Iniciando File
+[22-11-18 07:54:53][INFO] Iniciando File
+[22-11-18 07:55:08][INFO] Iniciando File
+[22-11-18 07:55:08][INFO] Iniciando File
+[22-11-18 07:55:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:55:08][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:55:08][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:55:08][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:55:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:55:08][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:55:08][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:55:08][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:55:08][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:55:08][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:55:45][INFO] Iniciando File
+[22-11-18 07:55:45][INFO] Iniciando File
+[22-11-18 07:55:45][INFO] Iniciando File
+[22-11-18 07:55:45][INFO] Iniciando File
+[22-11-18 07:55:49][INFO] Iniciando File
+[22-11-18 07:55:49][INFO] Iniciando File
+[22-11-18 07:55:49][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:55:49][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:55:49][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:55:49][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:55:49][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:55:49][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:55:49][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:55:49][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:55:49][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:55:49][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:58:30][INFO] Iniciando File
+[22-11-18 07:58:30][INFO] Iniciando File
+[22-11-18 07:58:31][INFO] Iniciando File
+[22-11-18 07:58:31][INFO] Iniciando File
+[22-11-18 07:58:36][INFO] Iniciando File
+[22-11-18 07:58:36][INFO] Iniciando File
+[22-11-18 07:58:36][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:58:36][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:58:36][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:58:36][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:58:36][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 07:58:36][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 07:58:36][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 07:58:36][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 07:58:36][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 07:58:36][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 07:58:50][INFO] Iniciando File
+[22-11-18 07:58:50][INFO] Iniciando File
+[22-11-18 07:58:50][INFO] Iniciando File
+[22-11-18 07:58:50][INFO] Iniciando File
+[22-11-18 08:00:16][INFO] Iniciando File
+[22-11-18 08:00:16][INFO] Iniciando File
+[22-11-18 08:00:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 08:00:16][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 08:00:16][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 08:00:16][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 08:00:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 08:00:16][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 08:00:16][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 08:00:16][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 08:00:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 08:00:16][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 08:14:56][INFO] Iniciando File
+[22-11-18 08:14:56][INFO] Iniciando File
+[22-11-18 08:14:56][INFO] Iniciando File
+[22-11-18 08:14:56][INFO] Iniciando File
+[22-11-18 11:40:36][INFO] Iniciando File
+[22-11-18 11:40:36][INFO] Iniciando File
+[22-11-18 11:40:47][INFO] Iniciando File
+[22-11-18 11:40:47][INFO] Iniciando File
+[22-11-18 11:40:54][INFO] Iniciando File
+[22-11-18 11:40:54][INFO] Iniciando File
+[22-11-18 11:40:57][INFO] Iniciando File
+[22-11-18 11:40:57][INFO] Iniciando File
+[22-11-18 11:41:28][INFO] Iniciando File
+[22-11-18 11:41:28][INFO] Iniciando File
+[22-11-18 11:41:28][INFO] Iniciando File
+[22-11-18 11:41:28][INFO] Iniciando File
+[22-11-18 11:41:42][INFO] Iniciando File
+[22-11-18 11:41:42][INFO] Iniciando File
+[22-11-18 11:41:45][INFO] Iniciando File
+[22-11-18 11:41:45][INFO] Iniciando File
+[22-11-18 11:41:49][INFO] Iniciando File
+[22-11-18 11:41:49][INFO] Iniciando File
+[22-11-18 11:42:03][INFO] Iniciando File
+[22-11-18 11:42:03][INFO] Iniciando File
+[22-11-18 11:42:03][INFO] Iniciando File
+[22-11-18 11:42:03][INFO] Iniciando File
+[22-11-18 11:42:06][INFO] Iniciando File
+[22-11-18 11:42:06][INFO] Iniciando File
+[22-11-18 11:42:07][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 11:42:07][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 11:42:07][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 11:42:07][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 11:42:07][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 11:42:07][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 11:42:07][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 11:42:07][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 11:42:07][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 11:42:07][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 11:44:08][INFO] Iniciando File
+[22-11-18 11:44:08][INFO] Iniciando File
+[22-11-18 11:44:08][INFO] Iniciando File
+[22-11-18 11:44:08][INFO] Iniciando File
+[22-11-18 11:44:13][INFO] Iniciando File
+[22-11-18 11:44:13][INFO] Iniciando File
+[22-11-18 11:44:13][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 11:44:13][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 11:44:13][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 11:44:13][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 11:44:13][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 11:44:13][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 11:44:13][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 11:44:13][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 11:44:13][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 11:44:13][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 11:44:16][INFO] Iniciando File
+[22-11-18 11:44:16][INFO] Iniciando File
+[22-11-18 11:44:17][INFO] Iniciando File
+[22-11-18 11:44:17][INFO] Iniciando File
+[22-11-18 11:44:20][INFO] Iniciando File
+[22-11-18 11:44:20][INFO] Iniciando File
+[22-11-18 11:44:24][INFO] Iniciando File
+[22-11-18 11:44:24][INFO] Iniciando File
+[22-11-18 11:44:24][INFO] Iniciando File
+[22-11-18 11:44:24][INFO] Iniciando File
+[22-11-18 11:44:40][INFO] Iniciando File
+[22-11-18 11:44:40][INFO] Iniciando File
+[22-11-18 11:44:40][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 11:44:40][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 11:44:40][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 11:44:40][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 11:44:40][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-18 11:44:40][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-18 11:44:40][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-18 11:44:40][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-18 11:44:40][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-18 11:44:40][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-18 11:44:42][INFO] Iniciando File
+[22-11-18 11:44:42][INFO] Iniciando File
+[22-11-18 11:44:42][INFO] Iniciando File
+[22-11-18 11:44:42][INFO] Iniciando File
+[22-11-18 11:45:19][INFO] Iniciando File
+[22-11-18 11:45:19][INFO] Iniciando File
+[22-11-18 11:46:21][INFO] Iniciando File
+[22-11-18 11:46:24][INFO] Iniciando File
+[22-11-18 11:46:29][INFO] Iniciando File
+[22-11-18 11:46:39][INFO] Iniciando File
+[22-11-18 11:46:44][INFO] Iniciando File

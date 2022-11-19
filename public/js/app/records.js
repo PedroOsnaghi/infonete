@@ -235,7 +235,24 @@ function comenzarAContar (label){
     idIntervalo = setInterval(refrescar, 500);
 }
 
+//Borrado de stream solo para edicion
+function activarBorrado() {
+    const borrar = document.getElementById("borrar-strm");
+    const borrar_value = document.getElementById("borrar-strm-value");
 
+    btn_inciar.setAttribute('disabled','true');
+    btn_inciar.classList.add('disabled');
+
+    borrar.addEventListener('click', function (){
+        borrar_value.value = 'true';
+        this.setAttribute('disabled', 'true');
+        this.classList.add('disabled');
+        preview.removeAttribute('controls');
+        preview.src = null;
+        btn_inciar.removeAttribute('disabled');
+        btn_inciar.classList.remove('disabled');
+        successMessage('El Stream se removerá del servidor al guardar los cambios')
+    });
 
 
 //mensajes
@@ -254,6 +271,9 @@ let successMessage = function (msg){
     alert.textContent = msg;
     alert.classList.remove("hidden");
     console.log(msg);
+}
+
+
 }
 
 cargarDispositivos();

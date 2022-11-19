@@ -20,12 +20,16 @@ class SuscripcionController
 
     public function admin()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
         $data = $this->datos(["planes" => $this->suscripcionModel->list()]);
         echo $this->render->render("public/view/gestion-suscripcion.mustache", $data);
     }
 
     public function crear()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
         $data = $this->datos(["tipos" => $this->suscripcionModel->listTipos()]);
         echo $this->render->render("public/view/suscripcion.mustache", $data);
     }

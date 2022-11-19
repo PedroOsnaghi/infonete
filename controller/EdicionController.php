@@ -24,11 +24,17 @@ class EdicionController
     }
 
     public function crear(){
+
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $data = $this->datos();
         echo $this->render->render("public/view/edicion.mustache", $data);
     }
 
     public function guardar(){
+
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $this->setEdition();
 
         $data = ($this->edicionModel->guardar()) ?
@@ -40,6 +46,8 @@ class EdicionController
 
     public function admin()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $data = $this->datos(["product" =>  $this->session->getParameter("activeProduct"),
                               "productos" => $this->productModel->list()]);
         echo $this->render->render("public/view/gestion-edicion.mustache", $data);
@@ -47,6 +55,8 @@ class EdicionController
 
     public function list()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $idProducto = $_GET['idp'];
         $this->session->setParameter('activeProduct', $this->productModel->getProduct($idProducto));
         $data = $this->datos(["ediciones" => $this->edicionModel->listBy($idProducto)]);
@@ -55,12 +65,16 @@ class EdicionController
 
     public function editar()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $data = $this->datos(["edicion" =>  $this->edicionModel->getEdition($_GET['id'])]);
         echo $this->render->render("public/view/editar-edicion.mustache", $data);
     }
 
     public function actualizar()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
+
         $this->setEdition($_POST['id']);
 
         $data = $this->datos($this->edicionModel->update());

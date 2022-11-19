@@ -27,6 +27,22 @@ class Session{
         return $_SESSION[$key] ?? false;
     }
 
+    public function urlRestriction($roles = []){
+        //Verifica usuario logueado
+        if (!isset($_SESSION['user'])) Redirect::doIt("/infonete");
+
+        //si no se especifican roles lo deja pasar
+        if(sizeof($roles) == 0) return true;
+
+        //verifica Rol
+        foreach ($roles as $rol){
+            if(($_SESSION['user'])->getRol() == $rol) return true;
+        }
+
+        Redirect::doIt("/infonete");
+
+    }
+
 
     public function closeSession(){
         session_unset();

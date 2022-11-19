@@ -1,0 +1,149 @@
+<div class="card-body">
+
+    {{#articulo}}
+
+        <h4 class="text-primary mb-0">{{getSeccion}}</h4>
+        <h1 class="text-dark-gray fs-40">{{getTitulo}}</h1>
+        <h4 class="text-dark-gray fs-24 font-weight-lighter">{{getSubtitulo}}</h4>
+
+
+        <div class="d-flex  text-gray mt-3">
+            <div class="d-flex col-7 align-items-center">
+                <img class="img-md rounded-circle mr-2"
+                     src="/infonete/public/uploads/profiles/{{getImagenAutor}}" alt="">
+                <div class="text-gray">
+                    <p class="mb-0 navbar-profile-name">por <strong>{{getAutor}}</strong></p>
+                    <p class="font-italic font-weight-light fs-12  mb-0">El {{getCreateAt}}</p>
+                </div>
+            </div>
+
+
+        </div>
+        <hr class="bg-light-gray mt-1">
+
+        <div class="d-flex justify-content-between mt-4">
+            <div class="col-7">
+                <div class="card-header d-flex align-items-center justify-content-start">
+                    <div class="icon icon-box-danger mr-2">
+                        <span class="mdi mdi-image-multiple icon-item"></span>
+                    </div>
+                    <h5 class="text-gray mb-0">Visualizar Imagenes</h5>
+                </div>
+                <div class="card-body">
+                    <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel"
+                         id="owl-carousel-basic">
+                        {{#getImagenes}}
+                            <div class="item">
+                                <img src="/infonete/public/uploads/article/{{getId}}/{{archivo}}"
+                                     alt="">
+                            </div>
+                        {{/getImagenes}}
+                        {{^getImagenes}}
+                            <p class="text-muted text-center">El autor no adjuntó imagenes para este articulo</p>
+                        {{/getImagenes}}
+                    </div>
+                </div>
+
+                <div class="text-dark-gray mt-4 px-2 text-justify fs-18">
+                    {{{getContenido}}}
+                </div>
+            </div>
+
+            <div class="col-5">
+                <div class="card bg-light">
+                    <div class="card-header bg-light d-flex align-items-center justify-content-start">
+
+                        <div class="icon icon-box-info mr-2">
+                            <span class="mdi mdi-google-maps icon-item"></span>
+                        </div>
+
+                        <h5 class="text-gray mb-0"> Ubicación en el mapa</h5>
+
+                    </div>
+                    <div class="card-body text-gray ">
+
+
+                        <div class="d-flex flex-column">
+                            <div class="d-flex align-items-center ">
+                                <i class="mdi mdi-map-marker"></i>
+                                <p class="fs-12 mb-0" id="position">{{getUbicacion}}</p>
+                                <input type="hidden" value="{{getLatitud}}" id="lat">
+                                <input type="hidden" value="{{getLongitud}}" id="lng">
+                            </div>
+
+                        </div>
+                        <div id="map"></div>
+
+
+                    </div>
+                    <div class="card-footer bg-light d-flex flex-column ">
+                        <div class="d-flex align-items-center justify-content-start">
+                            <div class="icon icon-box-danger mr-2">
+                                <span class="mdi mdi mdi-link icon-item"></span>
+                            </div>
+                            <h5 class="text-gray mb-0"> Link relacionado a este articulo</h5>
+                        </div>
+
+                        <div class="mt-2 pl-5">
+                            {{#getLink}}
+                                <p class="text-muted mb-0">Mas información en:</p>
+                                <a href="{{getLink}}">{{getLink}}</a>
+                            {{/getLink}}
+                            {{^getLink}}
+                                <p class="text-muted text-center">El autor no adjunto Links relacionados a este articulo</p>
+                            {{/getLink}}
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="card bg-light mt-2">
+                    <div class="card-header bg-light">
+
+                        <div class="d-flex align-items-center justify-content-start">
+                            <div class="icon icon-box-primary mr-2">
+                                <span class="mdi mdi-youtube icon-item"></span>
+                            </div>
+
+                            <h5 class="text-gray mb-0">Videos relacionados</h5>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        {{#getStreamFile}}
+
+                            <h5 class="text-danger">Stream del autor</h5>
+
+                            <video class="bd-light-gray mx-auto" width="560" height="315" src="/infonete/public/uploads/article/{{getId}}/stream/{{archivo}}" controls preload="auto">
+
+                            </video>
+
+
+                        {{/getStreamFile}}
+                        {{#getLinkVideo}}
+
+                            <h5 class="text-danger">Youtube</h5>
+
+
+                            <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/{{getLinkVideo}}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+
+
+                        {{/getLinkVideo}}
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    {{/articulo}}
+
+</div>

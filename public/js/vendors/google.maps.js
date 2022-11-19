@@ -40,7 +40,24 @@ function initAutocomplete() {
         mapTypeId: 'roadmap'
     });
 
+    setMap();
 
+
+
+}
+
+function initInverseAutocomplete() {
+    var map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: parseFloat(input_lat.value), lng: parseFloat(input_lng.value) },
+        zoom: 15,
+        disableDefaultUI: true,
+        mapTypeId: 'roadmap'
+    });
+
+    setMap();
+}
+
+function setMap(){
     var searchBox = new google.maps.places.SearchBox(input);
 
 
@@ -50,7 +67,7 @@ function initAutocomplete() {
         searchBox.setBounds(map.getBounds());
         var pos = map.getBounds();
         navigator.geolocation.getCurrentPosition(function (position){
-           // input_lat.value = position.coords.latitude;
+            // input_lat.value = position.coords.latitude;
 
         });
 
@@ -76,7 +93,7 @@ function initAutocomplete() {
         //console.log(bounds);
         places.forEach(function (place) {
             if (!place.geometry || !place.geometry.location) {
-               // console.log("Returned place contains no geometry");
+                // console.log("Returned place contains no geometry");
                 return;
             }
             // @ts-ignore
@@ -90,12 +107,12 @@ function initAutocomplete() {
             // Create a marker for each place.
             // @ts-ignore
             markers.push(
-            new google.maps.Marker({
-                map: map,
-                icon: icon,
-                title: place.name,
-                position: place.geometry.location
-            }));
+                new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+                }));
             if (place.geometry.viewport) {
                 // Only geocodes have viewport.
                 bounds.union(place.geometry.viewport);
@@ -119,8 +136,6 @@ function initAutocomplete() {
 
 
     });
-
-
 }
 
 

@@ -16,6 +16,7 @@ include_once("helper/Mailer.php");
 include_once("helper/File.php");
 include_once("helper/Session.php");
 include_once("helper/Logger.php");
+include_once("helper/Fecha.php");
 
 //MODELOS
 include_once("model/LoginModel.php");

@@ -67,6 +67,10 @@
     color: var(--dark-gray) !important;
 }
 
+.text-orange{
+    color: var(--orange)!important;
+}
+
 
 
 
@@ -152,6 +156,10 @@
     border-image: linear-gradient(90deg, rgba(108,238,249,1) 0%, rgba(255,201,130,1) 0%, rgba(255,79,30,1) 100%) 1!important;
 }
 
+.bd-light-gray{
+    border: 1px solid var(--x-light-gray)!important;
+}
+
 .bg-dark-gray{
     background-color: var(--dark-gray)!important;
 }
@@ -175,5 +183,20 @@
 .badge-state-0{
     background-color: var(--orange) !important;
     color: var(--gray-dark) !important;
+}
+
+.badge-state-2{
+    background-color: var(--success) !important;
+    color: var(--gray-dark) !important;
+}
+
+.badge-state-3{
+    background-color: var(--primary) !important;
+    color: var(--gray-dark) !important;
+}
+
+.badge-state--1{
+    background-color: var(--danger) !important;
+    color: var(--light) !important;
 }
 
