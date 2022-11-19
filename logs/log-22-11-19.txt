@@ -1098,3 +1098,316 @@
 [22-11-19 05:57:01][INFO] Iniciando File
 [22-11-19 05:57:01][INFO] Iniciando File
 [22-11-19 05:57:01][INFO] Iniciando File
+[22-11-19 06:25:25][INFO] Iniciando File
+[22-11-19 06:26:12][INFO] Iniciando File
+[22-11-19 06:26:12][INFO] Iniciando File
+[22-11-19 06:26:19][INFO] Iniciando File
+[22-11-19 06:26:19][INFO] Iniciando File
+[22-11-19 06:26:24][INFO] Iniciando File
+[22-11-19 06:26:24][INFO] Iniciando File
+[22-11-19 06:26:24][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 06:26:24][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 06:26:24][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 06:26:24][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 06:26:24][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 06:26:24][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 06:26:24][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 06:26:24][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 06:26:24][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78/stream
+[22-11-19 06:26:24][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-19 06:54:11][INFO] Iniciando File
+[22-11-19 06:54:11][INFO] Iniciando File
+[22-11-19 06:54:17][INFO] Iniciando File
+[22-11-19 06:54:17][INFO] Iniciando File
+[22-11-19 06:54:33][INFO] Iniciando File
+[22-11-19 06:54:33][INFO] Iniciando File
+[22-11-19 06:54:37][INFO] Iniciando File
+[22-11-19 06:54:37][INFO] Iniciando File
+[22-11-19 06:54:37][INFO] Iniciando File
+[22-11-19 06:54:37][INFO] Iniciando File
+[22-11-19 06:56:12][INFO] Iniciando File
+[22-11-19 06:56:12][INFO] Iniciando File
+[22-11-19 06:56:13][INFO] Iniciando File
+[22-11-19 06:56:13][INFO] Iniciando File
+[22-11-19 06:56:49][INFO] Iniciando File
+[22-11-19 06:56:49][INFO] Iniciando File
+[22-11-19 06:57:01][INFO] Iniciando File
+[22-11-19 06:57:01][INFO] Iniciando File
+[22-11-19 06:57:02][INFO] Iniciando File
+[22-11-19 06:57:02][INFO] Iniciando File
+[22-11-19 07:24:07][INFO] Iniciando File
+[22-11-19 07:24:07][INFO] Iniciando File
+[22-11-19 07:24:07][INFO] Iniciando File
+[22-11-19 07:24:07][INFO] Iniciando File
+[22-11-19 07:26:08][INFO] Iniciando File
+[22-11-19 07:26:08][INFO] Iniciando File
+[22-11-19 07:26:08][INFO] Iniciando File
+[22-11-19 07:26:08][INFO] Iniciando File
+[22-11-19 07:26:53][INFO] Iniciando File
+[22-11-19 07:26:53][INFO] Iniciando File
+[22-11-19 07:26:53][INFO] Iniciando File
+[22-11-19 07:26:53][INFO] Iniciando File
+[22-11-19 07:35:27][INFO] Iniciando File
+[22-11-19 07:35:27][INFO] Iniciando File
+[22-11-19 07:35:28][INFO] Iniciando File
+[22-11-19 07:35:28][INFO] Iniciando File
+[22-11-19 07:37:10][INFO] Iniciando File
+[22-11-19 07:37:10][INFO] Iniciando File
+[22-11-19 07:37:11][INFO] Iniciando File
+[22-11-19 07:37:11][INFO] Iniciando File
+[22-11-19 07:38:46][INFO] Iniciando File
+[22-11-19 07:38:46][INFO] Iniciando File
+[22-11-19 07:38:46][INFO] Iniciando File
+[22-11-19 07:38:46][INFO] Iniciando File
+[22-11-19 07:39:51][INFO] Iniciando File
+[22-11-19 07:39:51][INFO] Iniciando File
+[22-11-19 07:39:51][INFO] Iniciando File
+[22-11-19 07:39:51][INFO] Iniciando File
+[22-11-19 07:39:56][INFO] Iniciando File
+[22-11-19 07:39:56][INFO] Iniciando File
+[22-11-19 07:40:06][INFO] Iniciando File
+[22-11-19 07:40:06][INFO] Iniciando File
+[22-11-19 07:40:06][INFO] Iniciando File
+[22-11-19 07:40:06][INFO] Iniciando File
+[22-11-19 08:03:40][INFO] Iniciando File
+[22-11-19 08:03:40][INFO] Iniciando File
+[22-11-19 08:03:41][INFO] Iniciando File
+[22-11-19 08:03:41][INFO] Iniciando File
+[22-11-19 08:03:43][INFO] Iniciando File
+[22-11-19 08:03:43][INFO] Iniciando File
+[22-11-19 08:03:46][INFO] Iniciando File
+[22-11-19 08:03:46][INFO] Iniciando File
+[22-11-19 08:03:49][INFO] Iniciando File
+[22-11-19 08:03:49][INFO] Iniciando File
+[22-11-19 08:03:54][INFO] Iniciando File
+[22-11-19 08:03:54][INFO] Iniciando File
+[22-11-19 08:03:57][INFO] Iniciando File
+[22-11-19 08:03:57][INFO] Iniciando File
+[22-11-19 08:09:49][INFO] Iniciando File
+[22-11-19 08:09:49][INFO] Iniciando File
+[22-11-19 08:09:50][INFO] Iniciando File
+[22-11-19 08:09:50][INFO] Iniciando File
+[22-11-19 08:09:52][INFO] Iniciando File
+[22-11-19 08:09:52][INFO] Iniciando File
+[22-11-19 08:09:54][INFO] Iniciando File
+[22-11-19 08:09:54][INFO] Iniciando File
+[22-11-19 08:09:57][INFO] Iniciando File
+[22-11-19 08:09:57][INFO] Iniciando File
+[22-11-19 08:09:58][INFO] Iniciando File
+[22-11-19 08:09:58][INFO] Iniciando File
+[22-11-19 08:14:20][INFO] Iniciando File
+[22-11-19 08:14:20][INFO] Iniciando File
+[22-11-19 08:14:20][INFO] Iniciando File
+[22-11-19 08:14:20][INFO] Iniciando File
+[22-11-19 08:14:30][INFO] Iniciando File
+[22-11-19 08:14:30][INFO] Iniciando File
+[22-11-19 08:15:26][INFO] Iniciando File
+[22-11-19 08:15:26][INFO] Iniciando File
+[22-11-19 08:15:27][INFO] Iniciando File
+[22-11-19 08:15:27][INFO] Iniciando File
+[22-11-19 08:17:08][INFO] Iniciando File
+[22-11-19 08:17:08][INFO] Iniciando File
+[22-11-19 08:17:08][INFO] Iniciando File
+[22-11-19 08:17:08][INFO] Iniciando File
+[22-11-19 08:17:09][INFO] Iniciando File
+[22-11-19 08:17:09][INFO] Iniciando File
+[22-11-19 08:19:34][INFO] Iniciando File
+[22-11-19 08:19:34][INFO] Iniciando File
+[22-11-19 08:19:34][INFO] Iniciando File
+[22-11-19 08:19:34][INFO] Iniciando File
+[22-11-19 08:19:36][INFO] Iniciando File
+[22-11-19 08:19:36][INFO] Iniciando File
+[22-11-19 08:19:37][INFO] Iniciando File
+[22-11-19 08:19:37][INFO] Iniciando File
+[22-11-19 08:19:43][INFO] Iniciando File
+[22-11-19 08:19:43][INFO] Iniciando File
+[22-11-19 08:19:45][INFO] Iniciando File
+[22-11-19 08:19:45][INFO] Iniciando File
+[22-11-19 08:19:45][INFO] Iniciando File
+[22-11-19 08:19:45][INFO] Iniciando File
+[22-11-19 08:20:20][INFO] Iniciando File
+[22-11-19 08:20:20][INFO] Iniciando File
+[22-11-19 08:20:20][INFO] Iniciando File
+[22-11-19 08:20:21][INFO] Iniciando File
+[22-11-19 08:20:22][INFO] Iniciando File
+[22-11-19 08:20:22][INFO] Iniciando File
+[22-11-19 08:20:23][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:20:23][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:20:23][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:20:23][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:20:23][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:20:23][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:20:23][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:20:23][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:20:23][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78/stream
+[22-11-19 08:20:23][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-19 08:21:54][INFO] Iniciando File
+[22-11-19 08:21:54][INFO] Iniciando File
+[22-11-19 08:21:54][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:21:54][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:21:54][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:21:54][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:21:54][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:21:54][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:21:54][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:21:54][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:21:54][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78/stream
+[22-11-19 08:21:54][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-19 08:22:25][INFO] Iniciando File
+[22-11-19 08:22:25][INFO] Iniciando File
+[22-11-19 08:22:25][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:22:25][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:22:25][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:22:25][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:22:25][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:22:25][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:22:25][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:22:25][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:22:25][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78/stream
+[22-11-19 08:22:25][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-19 08:22:47][INFO] Iniciando File
+[22-11-19 08:22:47][INFO] Iniciando File
+[22-11-19 08:22:47][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:22:47][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:22:47][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:22:47][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:22:47][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:22:47][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:22:47][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:22:47][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:22:47][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78/stream
+[22-11-19 08:22:47][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-19 08:23:42][INFO] Iniciando File
+[22-11-19 08:23:42][INFO] Iniciando File
+[22-11-19 08:23:42][INFO] Iniciando File
+[22-11-19 08:23:42][INFO] Iniciando File
+[22-11-19 08:23:50][INFO] Iniciando File
+[22-11-19 08:23:50][INFO] Iniciando File
+[22-11-19 08:23:55][INFO] Iniciando File
+[22-11-19 08:23:55][INFO] Iniciando File
+[22-11-19 08:23:55][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:23:55][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:23:55][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:23:55][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:23:55][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:23:55][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:23:55][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:23:55][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:23:55][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78/stream
+[22-11-19 08:23:55][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-19 08:24:00][INFO] Iniciando File
+[22-11-19 08:24:00][INFO] Iniciando File
+[22-11-19 08:24:01][INFO] Iniciando File
+[22-11-19 08:24:01][INFO] Iniciando File
+[22-11-19 08:24:50][INFO] Iniciando File
+[22-11-19 08:24:50][INFO] Iniciando File
+[22-11-19 08:24:57][INFO] Iniciando File
+[22-11-19 08:24:57][INFO] Iniciando File
+[22-11-19 08:31:40][INFO] Iniciando File
+[22-11-19 08:31:40][INFO] Iniciando File
+[22-11-19 08:31:41][INFO] Iniciando File
+[22-11-19 08:31:41][INFO] Iniciando File
+[22-11-19 08:31:41][INFO] SELECT a.*, es.id as 'idEstado', es.estado as 'estado', s.nombre as 'seccion', e.id as 'id_edicion' 
+                                        FROM articulo a 
+                                            JOIN estado_articulo es ON a.id_estado = es.id
+                                            JOIN articulo_edicion ae ON a.id = ae.id_articulo
+                                            JOIN edicion e ON ae.id_edicion = e.id
+                                            JOIN seccion s ON ae.id_seccion = s.id 
+                                        WHERE  e.id = 1
+[22-11-19 08:34:40][INFO] Iniciando File
+[22-11-19 08:34:40][INFO] Iniciando File
+[22-11-19 08:34:41][INFO] Iniciando File
+[22-11-19 08:34:41][INFO] Iniciando File
+[22-11-19 08:34:41][INFO] SELECT a.*, es.id as 'idEstado', es.estado as 'estado', s.nombre as 'seccion', e.id as 'id_edicion' 
+                                        FROM articulo a 
+                                            JOIN estado_articulo es ON a.id_estado = es.id
+                                            JOIN articulo_edicion ae ON a.id = ae.id_articulo
+                                            JOIN edicion e ON ae.id_edicion = e.id
+                                            JOIN seccion s ON ae.id_seccion = s.id 
+                                        WHERE a.id_estado > 0 AND e.id = 1
+[22-11-19 08:52:08][INFO] Iniciando File
+[22-11-19 08:52:08][INFO] Iniciando File
+[22-11-19 08:52:09][INFO] Iniciando File
+[22-11-19 08:52:09][INFO] Iniciando File
+[22-11-19 08:52:20][INFO] Iniciando File
+[22-11-19 08:52:20][INFO] Iniciando File
+[22-11-19 08:52:27][INFO] Iniciando File
+[22-11-19 08:52:27][INFO] Iniciando File
+[22-11-19 08:52:27][INFO] Iniciando File
+[22-11-19 08:52:27][INFO] Iniciando File
+[22-11-19 08:52:37][INFO] Iniciando File
+[22-11-19 08:52:37][INFO] Iniciando File
+[22-11-19 08:52:37][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:52:37][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:52:37][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:52:37][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:52:37][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78
+[22-11-19 08:52:37][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-19 08:52:37][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-19 08:52:37][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-19 08:52:37][INFO] funcion File->getFiles: recorrera el siguiente directorio C:\Users\agost\PhpstormProjects\htdocs\infonete/public/uploads/article/78/stream
+[22-11-19 08:52:37][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-19 08:52:41][INFO] Iniciando File
+[22-11-19 08:52:41][INFO] Iniciando File
+[22-11-19 08:52:45][INFO] Iniciando File
+[22-11-19 08:52:45][INFO] Iniciando File
+[22-11-19 08:52:46][INFO] Iniciando File
+[22-11-19 08:52:46][INFO] Iniciando File
+[22-11-19 08:52:52][INFO] Iniciando File
+[22-11-19 08:52:58][INFO] Iniciando File
+[22-11-19 08:53:00][INFO] Iniciando File
+[22-11-19 08:53:07][INFO] Iniciando File
+[22-11-19 08:53:15][INFO] Iniciando File
+[22-11-19 08:53:34][INFO] Iniciando File
+[22-11-19 08:53:34][INFO] Iniciando File
+[22-11-19 08:53:47][INFO] Iniciando File
+[22-11-19 08:53:47][INFO] Iniciando File
+[22-11-19 08:53:48][INFO] Iniciando File
+[22-11-19 08:53:48][INFO] Iniciando File
+[22-11-19 08:54:15][INFO] Iniciando File
+[22-11-19 08:54:15][INFO] Iniciando File
+[22-11-19 09:02:10][INFO] Iniciando File
+[22-11-19 09:02:11][INFO] Iniciando File
+[22-11-19 09:02:30][INFO] Iniciando File
+[22-11-19 09:02:30][INFO] Iniciando File
+[22-11-19 09:02:31][INFO] Iniciando File
+[22-11-19 09:02:31][INFO] Iniciando File
+[22-11-19 09:06:34][INFO] Iniciando File
+[22-11-19 09:06:34][INFO] Iniciando File
+[22-11-19 09:06:39][INFO] Iniciando File
+[22-11-19 09:06:46][INFO] Iniciando File
+[22-11-19 09:07:29][INFO] Iniciando File
+[22-11-19 09:09:31][INFO] Iniciando File
+[22-11-19 09:09:31][INFO] Iniciando File
+[22-11-19 09:09:34][INFO] Iniciando File
+[22-11-19 09:09:36][INFO] Iniciando File
+[22-11-19 09:09:39][INFO] Iniciando File
+[22-11-19 09:09:43][INFO] Iniciando File
+[22-11-19 09:09:43][INFO] Iniciando File
+[22-11-19 09:09:43][INFO] Iniciando File
+[22-11-19 09:09:43][INFO] Iniciando File
+[22-11-19 09:09:50][INFO] Iniciando File
+[22-11-19 09:09:51][INFO] Iniciando File
+[22-11-19 09:09:54][INFO] Iniciando File
+[22-11-19 09:09:57][INFO] Iniciando File
+[22-11-19 09:09:57][INFO] Iniciando File
+[22-11-19 09:09:57][INFO] Iniciando File
+[22-11-19 09:09:57][INFO] Iniciando File
+[22-11-19 09:10:54][INFO] Iniciando File
+[22-11-19 09:10:54][INFO] Iniciando File
+[22-11-19 09:10:55][INFO] Iniciando File
+[22-11-19 09:10:55][INFO] Iniciando File
+[22-11-19 09:10:58][INFO] Iniciando File
+[22-11-19 09:10:59][INFO] Iniciando File
+[22-11-19 09:11:01][INFO] Iniciando File
+[22-11-19 09:11:05][INFO] Iniciando File
+[22-11-19 09:11:05][INFO] Iniciando File
+[22-11-19 09:11:06][INFO] Iniciando File
+[22-11-19 09:11:06][INFO] Iniciando File
+[22-11-19 09:11:09][INFO] Iniciando File
+[22-11-19 09:11:10][INFO] Iniciando File
+[22-11-19 09:11:12][INFO] Iniciando File
+[22-11-19 09:11:13][INFO] Iniciando File
+[22-11-19 09:11:13][INFO] Iniciando File
+[22-11-19 09:11:14][INFO] Iniciando File
+[22-11-19 09:11:14][INFO] Iniciando File

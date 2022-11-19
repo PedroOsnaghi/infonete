@@ -175,9 +175,11 @@ class EdicionModel
     public function publicar($id)
     {
         $time = date("Y-m-d h:m");
-
+        // Publicación de edición
         $this->database->execute("UPDATE edicion SET estado = " . self::ESTADO_PUBLICADO . ", fecha ='" . $time . "' WHERE id = $id");
 
+        // Publicación de artículos aprobados
+        $this->database->execute("UPDATE articulo a, articulo_edicion ae SET a.id_estado = ". ArticuloModel::ART_ST_PUBLICADO .", a.update_at = now() WHERE a.id = ae.id_articulo and a.id_estado = ". ArticuloModel::ART_ST_APROBADA ." and ae.id_edicion = $id;");
         return array("publicado" => self::ESTADO_PUBLICADO,
                      "date" => $time);
     }
@@ -185,6 +187,10 @@ class EdicionModel
     public function despublicar($id)
     {
         $this->database->execute("UPDATE edicion SET estado = " . self::ESTADO_EN_EDICION . ", fecha = null WHERE id = $id");
+
+        // Despublicación de artículos publicados
+        $this->database->execute("UPDATE articulo a, articulo_edicion ae SET a.id_estado = ". ArticuloModel::ART_ST_APROBADA .", a.update_at = null WHERE a.id = ae.id_articulo and a.id_estado = ". ArticuloModel::ART_ST_PUBLICADO ." and ae.id_edicion = $id;");
+
         return array("publicado" => self::ESTADO_EN_EDICION);
     }
 

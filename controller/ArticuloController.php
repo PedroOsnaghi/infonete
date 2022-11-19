@@ -31,7 +31,7 @@ class ArticuloController
 
     public function admin(){
 
-        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR, UsuarioModel::ROL_EDITOR]);
+        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR, UsuarioModel::ROL_EDITOR, UsuarioModel::ROL_ADMIN]);
 
         $data = $this->dato(["ediciones" => $this->edicionModel->listByState(EdicionModel::ESTADO_EN_EDICION)]);
         switch ($this->session->getAuthUser()->getRol()){
@@ -40,6 +40,9 @@ class ArticuloController
                 break;
             case UsuarioModel::ROL_EDITOR:
                 echo $this->render->render("public/view/gestion-noticias-editor.mustache", $data);
+                break;
+            case UsuarioModel::ROL_ADMIN:
+                echo $this->render->render("public/view/gestion-noticias-admin.mustache", $data);
                 break;
             default:
                 return false;
@@ -66,6 +69,9 @@ class ArticuloController
             case UsuarioModel::ROL_EDITOR:
                 echo $this->render->render("public/view/partial/lista-notas-editor.mustache", $data);
                 break;
+            case UsuarioModel::ROL_ADMIN:
+                echo $this->render->render("public/view/partial/lista-notas-admin.mustache", $data);
+                break;
             default:
                 return false;
         }
@@ -83,12 +89,33 @@ class ArticuloController
 
     }
 
+    public function baja()
+    {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
+        $response = $this->articuloModel->cambiarEstado($_GET['id'], ArticuloModel::ART_ST_BAJA);
+
+        header('Content-Type: application/json');
+        echo json_encode($response,JSON_FORCE_OBJECT);
+    }
+
+    public function restablecer()
+    {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
+        $response = $this->articuloModel->cambiarEstado($_GET['id'], ArticuloModel::ART_ST_REVISION);
+
+        header('Content-Type: application/json');
+        echo json_encode($response,JSON_FORCE_OBJECT);
+    }
+
     public function preview()
     {
         $data = $this->dato(["articulo" => $this->articuloModel->getArticuloPreview($_GET['id'])]);
 
         //según Rol retorna vista
         switch ($this->session->getAuthUser()->getRol()){
+            case UsuarioModel::ROL_ADMIN:
             case UsuarioModel::ROL_REDACTOR:
                 echo $this->render->render("public/view/preview-redactor.mustache", $data);
                 break;

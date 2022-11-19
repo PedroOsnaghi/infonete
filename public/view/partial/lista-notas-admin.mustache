@@ -1,0 +1,33 @@
+{{#noticias}}
+    <tr>
+        <td><i class="text-info mdi mdi-note-outline d-inline pr-2 fs-3"></i>{{id}}</td>
+        <td>{{seccion}}</td>
+        <td class="max-with-250 text-elipsis">{{titulo}}</td>
+        <td>{{create_at}}</td>
+        <td>
+            {{#update_at}}
+                {{update_at}}
+            {{/update_at}}
+            {{^update_at}}
+                no publicado
+            {{/update_at}}
+        </td>
+        <td>
+            <label class="badge badge-state-{{idEstado}} me-1" id="label-{{id}}">{{estado}}</label>
+        </td>
+
+        <td id-estado="{{idEstado}}" id-nota="{{id}}" tools>
+
+        </td>
+    </tr>
+{{/noticias}}
+
+{{^noticias}}
+    <tr>
+        <td>
+            No hay Notas para mostrar.
+        </td>
+
+    </tr>
+
+{{/noticias}}

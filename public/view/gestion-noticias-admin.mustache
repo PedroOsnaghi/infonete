@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Gestion de Noticias</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: gestion notas -->
+
+                <div class="card fadeIn">
+                    <div class="card-body">
+                        <h4 class="card-title">Administración de Notas Periodisticas</h4>
+
+                        <div class="navbar-menu-wrapper navbar-expand flex-grow d-flex align-items-stretch">
+                            <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
+                                <li class="nav-item w-75">
+                                    <select id="select-edition" class="form-control">
+                                        {{#edicion}}
+                                            <option value="{{getId}}" selected hidden>{{getNombreProducto}}
+                                                / {{getNumero}} - {{getTitulo}}</option>
+                                        {{/edicion}}
+                                        {{^edicion}}
+                                            <option value="0" selected hidden disabled>Seleccione una edición</option>
+                                        {{/edicion}}
+
+                                        {{#ediciones}}
+                                            <option value={{id}} >{{nombre}}/ {{numero}} - {{titulo}}</option>
+                                        {{/ediciones}}
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <hr>
+
+                        <div class="navbar-menu-wrapper navbar-expand flex-grow d-flex align-items-stretch">
+                            <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
+                                <li class="nav-item w-75">
+                                    <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search d-block "
+                                          action="/infonete/articulo/search" id="search-user" method="GET">
+                                        <input type="text" name="value" id="search-user-box" class="form-control"
+                                               value="{{value}}" placeholder="Buscar por titulo">
+                                    </form>
+                                </li>
+                                <li><a class="nav-item btn btn-primary disabled" id="nueva-nota"
+                                       href="/infonete/articulo/crear"><i class="mdi mdi-playlist-plus"></i>Crear una
+                                    Nota</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th class="text-pink">#id</th>
+                                    <th class="text-pink">Sección</th>
+                                    <th class="text-pink">Titulo</th>
+                                    <th class="text-pink">Iniciada</th>
+                                    <th class="text-pink">Publicada</th>
+                                    <th class="text-pink">Estado</th>
+                                    <th class="text-pink">Acciones rápidas</th>
+                                </tr>
+                                </thead>
+
+                                <tbody id="notas-container">
+                                <tr>
+                                    <td>
+                                        No hay Notas para mostrar.
+                                    </td>
+
+                                </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- main-panel ends -->
+    </div>
+</div>
+
+
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+
+
+<script type='text/javascript' src="/infonete/public/js/app/noticias-admin.js"></script>
+
+<script>verificarSeleccion()</script>
+
+
+</body>
+</html>

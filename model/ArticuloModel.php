@@ -214,8 +214,6 @@ class ArticuloModel
     }
 
 
-
-
     public function guardar()
     {
         $this->logger->info("entro en Guardar Articulo");
@@ -223,24 +221,22 @@ class ArticuloModel
         $res = $this->database->execute("INSERT INTO articulo(titulo, subtitulo, contenido, link, link_video, ubicacion, latitud, longitud, create_at, id_estado, id_autor) 
                                          VALUES ('$this->titulo', '$this->subtitulo', '$this->contenido', '$this->link', '$this->linkvideo', '$this->ubicacion', $this->latitud, $this->longitud, '$this->create_at', $this->estado, $this->autor)");
 
-        $this->logger->info("respuesta guardar artivculo: " .  $res);
+        $this->logger->info("respuesta guardar artivculo: " . $res);
 
         $idArticulo = $this->database->lastInsertId();
 
-        if($res){
+        if ($res) {
             $this->guardarRelacionEdicionSeccion($idArticulo);
             $this->guardarArchivos($idArticulo);
             $response = array("success" => "La Nota fue generada con exito");
-        }else{
+        } else {
             $response = array("error" => "Ocurrio un error al guardar la Nota");
         }
 
         return $response;
 
 
-
     }
-
 
 
     public function cambiarEstado($idNota, $estado)
@@ -248,9 +244,9 @@ class ArticuloModel
         $res = $this->database->execute("UPDATE articulo SET id_estado = " . $estado . " WHERE id = $idNota");
 
 
-        if($res){
+        if ($res) {
             $response = array("state" => $this->getNombreEstado($estado));
-        }else{
+        } else {
             $response = array("state" => false);
         }
 
@@ -269,13 +265,16 @@ class ArticuloModel
 
     public function list($idEdicion, $rol)
     {
-        switch ($rol){
+        switch ($rol) {
+            case UsuarioModel::ROL_REDACTOR:
+                $condicion = 'a.id_estado >= 0 AND';
+                break;
             case UsuarioModel::ROL_EDITOR:
                 $condicion = 'a.id_estado > 0 AND';
+                break;
             default:
                 $condicion = '';
         }
-
         return $this->database->list("SELECT a.*, es.id as 'idEstado', es.estado as 'estado', s.nombre as 'seccion', e.id as 'id_edicion' 
                                         FROM articulo a 
                                             JOIN estado_articulo es ON a.id_estado = es.id
@@ -284,7 +283,6 @@ class ArticuloModel
                                             JOIN seccion s ON ae.id_seccion = s.id 
                                         WHERE $condicion e.id = $idEdicion");
     }
-
 
 
     public function getArticulo($id)
@@ -337,7 +335,7 @@ class ArticuloModel
         $this->latitud = $array['latitud'];
         $this->longitud = $array['longitud'];
         $this->create_at = Fecha::longDate($array['create_at']);
-        $this->update_at =  Fecha::longDate($array['update_at']);
+        $this->update_at = Fecha::longDate($array['update_at']);
         $this->estado = $array['estado'];
         $this->seccion = $array['nombre_seccion'];
         $this->autor = $array['nombre_autor'] . " " . $array['apellido_autor'];
@@ -381,8 +379,6 @@ class ArticuloModel
                                          VALUES ($this->seccion, $idArticulo, $this->edicion)");
 
     }
-
-
 
 
 }
