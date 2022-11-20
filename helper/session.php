@@ -16,7 +16,7 @@ class Session{
     }
 
     public function getAuthUser(){
-        return $_SESSION['user'] ?? false;
+        return isset($_SESSION['user']) ? $_SESSION['user'] : false;
     }
 
     public function setParameter($key, $value){

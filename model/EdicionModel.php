@@ -191,22 +191,37 @@ class EdicionModel
         return array("publicado" => self::ESTADO_EN_EDICION);
     }
 
-    public function getNovedades()
+    public function getNovedades($session)
     {
+        if($session->getAuthUser() !== false)
+        {
+            $join = "LEFT JOIN compra_edicion ce 
+                     ON ce.id_edicion = e.id 
+                     AND ce.id_usuario = " . $session->getAuthUser()->getId();
+            $col = ", ce.id_usuario AS 'usuario'";
+        }else
+        {
+            $join = "";
+            $col = "";
+        }
+
         // Retorna las publicaciones de los últimos 3 días
-        return $this->database->query("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo
-                                        FROM edicion e JOIN producto p on e.id_producto = p.id 
-                                                        JOIN tipo_producto t on p.id_tipo_producto = t.id
-                                        WHERE datediff(now(), e.fecha) <= 3 and e.estado =" . self::ESTADO_PUBLICADO .
+        return $this->database->query("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo " . $col .
+                                      " FROM edicion e JOIN producto p on e.id_producto = p.id 
+										JOIN tipo_producto t on p.id_tipo_producto = t.id "
+										. $join .
+                                        " WHERE datediff(now(), e.fecha) <= 3 and e.estado =" . self::ESTADO_PUBLICADO .
                                         " ORDER BY e.fecha DESC");
     }
 
     public function registrarCompra($idUsuario, $idEdicion)
     {
         try {
-            return $this->database->execute("INSERT INTO compra_edicion (id_usuario, id_edicion, fecha) VALUES ($idUsuario, $idEdicion, now())");
+            $query = $this->database->execute("INSERT INTO compra_edicion (id_usuario, id_edicion, fecha) VALUES ($idUsuario, $idEdicion, now())");
+            if($query) return array('success' => 'La compra se realizó con éxito');
+            return array('error' => 'No se pudo registrar la compra');
         } catch (exception) {
-            return false;
+            return array('error' => 'Hubo un error al registrar la compra');
         }
     }
 

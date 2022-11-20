@@ -152,6 +152,10 @@
     border-image: linear-gradient(90deg, rgba(108,238,249,1) 0%, rgba(130,204,255,1) 0%, rgba(57,81,255,1) 96%) 1!important;
 }
 
+.bg-gradient-primary-red{
+    background: linear-gradient(to left, #d41459, #911a6c)!important;
+}
+
 .bd-gradient-pro{
     border-image: linear-gradient(90deg, rgba(108,238,249,1) 0%, rgba(255,201,130,1) 0%, rgba(255,79,30,1) 100%) 1!important;
 }

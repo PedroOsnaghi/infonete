@@ -20908,6 +20908,12 @@ div.tagsinput {
           max-width: 100%;
           height: 40px;
           margin: auto; }
+.viewer .sidebar .nav {
+  overflow: hidden;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-bottom: 60px;
+  padding-top: 0px; }
   .sidebar .nav {
     overflow: hidden;
     flex-wrap: nowrap;

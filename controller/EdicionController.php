@@ -110,22 +110,23 @@ class EdicionController
 
     public function comprar()
     {
+        $this->session->urlRestriction();
         $edicion = $this->edicionModel->getEdition($_GET['id']);
         $datosVenta = array('numero' => $edicion->getNumero(),
                             'descripcion' => 'infonete-compra de edición nro: ' . $edicion->getNumero(),
                             'precio' => $edicion->getPrecio());
         if ($this->mercadoPago->procesarPago($datosVenta)){
-           if ($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $edicion->getId())) {
-               $data = $this->datos(['success' => 'La compra se realizó con éxito']);
+               $data = $this->datos($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $edicion->getId()));
                echo $this->render->render('public/view/compra-checkout.mustache', $data);
-           } else {
-               $data = $this->datos(['error' => 'La compra no pudo registrarse']);
-               echo $this->render->render('public/view/compra-checkout.mustache', $data);
-           }
         } else {
             $data = $this->datos(['warning' => 'No se pudo procesar el pago. Vuelva a intentarlo más tarde']);
             echo $this->render->render('public/view/compra-checkout.mustache', $data);
         }
+    }
+
+    public function explore()
+    {
+        echo $this->render->render('public/view/viewer-edicion.mustache');
     }
 
     private function setEdition($id = null)

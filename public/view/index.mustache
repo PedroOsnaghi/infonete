@@ -92,7 +92,15 @@
 
                                                 <p class="text-gray mt-2">{{descripcion}}</p>
                                                 <h3 class="mb-0 text-dark-gray">${{precio}}</h3>
-                                                <a class="btn btn-primary btn-block" href="/infonete/edicion/verDetalle?id={{id}}">Comprar este número</a>
+                                                {{#usuario}}
+                                                    <a class="btn btn-success btn-block"
+                                                       href="/infonete/edicion/explore?id={{id}}">Leer</a>
+                                                {{/usuario}}
+                                                {{^usuario}}
+                                                    <a class="btn btn-primary btn-block"
+                                                       href="/infonete/edicion/verDetalle?id={{id}}">Comprar este
+                                                    número</a>
+                                                {{/usuario}}
                                             </div>
 
                                             <div class="w-100 card-tipo-border">

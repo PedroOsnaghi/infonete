@@ -16,7 +16,7 @@ class IndexController
 
     public function execute()
     {
-        $data = $this->datos(['novedades'=>$this->edicionModel->getNovedades()]);
+        $data = $this->datos(['novedades'=>$this->edicionModel->getNovedades($this->session)]);
         echo $this->render->render("public/view/index.mustache", $data);
     }
 
