@@ -124,9 +124,6 @@ class EdicionModel
     }
 
 
-
-
-
     public function __construct($logger, $file, $database)
     {
         $this->logger = $logger;
@@ -138,7 +135,7 @@ class EdicionModel
     public function guardar()
     {
         $this->guardarPortada();
-        return $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto, estado) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', ". $this->producto . "," . self::ESTADO_EN_EDICION . ")");
+        return $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto, estado) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', " . $this->producto . "," . self::ESTADO_EN_EDICION . ")");
     }
 
     public function listBy($product)
@@ -159,17 +156,17 @@ class EdicionModel
 
     public function update()
     {
-        $sql_portada = ($this->verificarCambioPortada())? ", portada = '$this->portada'" : "";
+        $sql_portada = ($this->verificarCambioPortada()) ? ", portada = '$this->portada'" : "";
 
         $response = $this->database->execute("UPDATE edicion SET numero = $this->numero, titulo = '$this->titulo', 
                                         descripcion = '$this->descripcion', precio = $this->precio, 
                                         id_producto = $this->producto" . $sql_portada . "  WHERE id = $this->id");
 
-        if($response) return array("success" => "La edición se actualizó correctamente",
-                                   "edicion" => $this );
+        if ($response) return array("success" => "La edición se actualizó correctamente",
+            "edicion" => $this);
 
-                      return array("error" => "Hubo un error al actualizar la edición",
-                                   "edicion" => $this);
+        return array("error" => "Hubo un error al actualizar la edición",
+            "edicion" => $this);
     }
 
     public function publicar($id)
@@ -179,9 +176,9 @@ class EdicionModel
         $this->database->execute("UPDATE edicion SET estado = " . self::ESTADO_PUBLICADO . ", fecha ='" . $time . "' WHERE id = $id");
 
         // Publicación de artículos aprobados
-        $this->database->execute("UPDATE articulo a, articulo_edicion ae SET a.id_estado = ". ArticuloModel::ART_ST_PUBLICADO .", a.update_at = now() WHERE a.id = ae.id_articulo and a.id_estado = ". ArticuloModel::ART_ST_APROBADA ." and ae.id_edicion = $id;");
+        $this->database->execute("UPDATE articulo a, articulo_edicion ae SET a.id_estado = " . ArticuloModel::ART_ST_PUBLICADO . ", a.update_at = now() WHERE a.id = ae.id_articulo and a.id_estado = " . ArticuloModel::ART_ST_APROBADA . " and ae.id_edicion = $id;");
         return array("publicado" => self::ESTADO_PUBLICADO,
-                     "date" => $time);
+            "date" => $time);
     }
 
     public function despublicar($id)
@@ -189,9 +186,28 @@ class EdicionModel
         $this->database->execute("UPDATE edicion SET estado = " . self::ESTADO_EN_EDICION . ", fecha = null WHERE id = $id");
 
         // Despublicación de artículos publicados
-        $this->database->execute("UPDATE articulo a, articulo_edicion ae SET a.id_estado = ". ArticuloModel::ART_ST_APROBADA .", a.update_at = null WHERE a.id = ae.id_articulo and a.id_estado = ". ArticuloModel::ART_ST_PUBLICADO ." and ae.id_edicion = $id;");
+        $this->database->execute("UPDATE articulo a, articulo_edicion ae SET a.id_estado = " . ArticuloModel::ART_ST_APROBADA . ", a.update_at = null WHERE a.id = ae.id_articulo and a.id_estado = " . ArticuloModel::ART_ST_PUBLICADO . " and ae.id_edicion = $id;");
 
         return array("publicado" => self::ESTADO_EN_EDICION);
+    }
+
+    public function getNovedades()
+    {
+        // Retorna las publicaciones de los últimos 3 días
+        return $this->database->query("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo
+                                        FROM edicion e JOIN producto p on e.id_producto = p.id 
+                                                        JOIN tipo_producto t on p.id_tipo_producto = t.id
+                                        WHERE datediff(now(), e.fecha) <= 3 and e.estado =" . self::ESTADO_PUBLICADO .
+                                        " ORDER BY e.fecha DESC");
+    }
+
+    public function registrarCompra($idUsuario, $idEdicion)
+    {
+        try {
+            return $this->database->execute("INSERT INTO compra_edicion (id_usuario, id_edicion, fecha) VALUES ($idUsuario, $idEdicion, now())");
+        } catch (exception) {
+            return false;
+        }
     }
 
     private function toEdition($array)
@@ -211,14 +227,14 @@ class EdicionModel
 
     private function guardarPortada()
     {
-        $this->portada = ($this->file->uploadFile("portada") == File::UPLOAD_STATE_OK)?
-                          $this->file->get_file_uploaded():
-                         "default.jpg";
+        $this->portada = ($this->file->uploadFile("portada") == File::UPLOAD_STATE_OK) ?
+            $this->file->get_file_uploaded() :
+            "default.jpg";
     }
 
     private function verificarCambioPortada()
     {
-        if($this->file->uploadFile("portada") > File::UPLOAD_STATE_NO_FILE){
+        if ($this->file->uploadFile("portada") > File::UPLOAD_STATE_NO_FILE) {
             $this->portada = $this->file->get_file_uploaded();
             return true;
         }

@@ -68,39 +68,40 @@
                         <div class="row">
                             <h3 class="col-12 text-left text-light-gray">Ultimos lanzamientos</h3>
 
-                            <div class="d-flex flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start">
+                            <!-- Tarjeta de ediciones publicadas -->
+                            {{#novedades}}
+                                <div class="d-flex flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start">
 
-                                <div class="card card-max bg-light-gray shadow-max">
-                                    <div class="card-img p-0 overflow-hidden">
-                                        <div class=" bg-light pt-4 pb-2 mb-2">
-                                            <img class="mx-auto portada mb-2 d-block shadow"
-                                                 src="/infonete/public/uploads/portada/caras.jpg" alt="">
-                                            <spam class="tag-tipo">REVISTA</spam>
-                                        </div>
-                                        <div class="d-flex flex-column px-2">
+                                    <div class="card card-max bg-light-gray shadow-max">
+                                        <div class="card-img p-0 overflow-hidden">
+                                            <div class=" bg-light pt-4 pb-2 mb-2">
+                                                <img class="mx-auto portada mb-2 d-block shadow"
+                                                     src="/infonete/public/uploads/portada/{{portada}}" alt="">
+                                                <spam class="tag-tipo">{{tipo}}</spam>
+                                            </div>
+                                            <div class="d-flex flex-column px-2">
 
-                                            <h4 class="font-weight-bolder mb-0 me-1 text-dark-gray">Revista Caras</h4>
+                                                <h4 class="font-weight-bolder mb-0 me-1 text-dark-gray">{{titulo}}</h4>
 
 
-                                            <div class="d-flex ">
-                                                <small class="text-muted pr-2">01-nov-2022</small> <small
-                                                    class="text-muted">Ed.: 3445</small>
+                                                <div class="d-flex ">
+                                                    <small class="text-muted pr-2">{{fecha}}</small>
+                                                    <small class="text-muted">Ed.: {{numero}}</small>
+                                                </div>
 
+
+                                                <p class="text-gray mt-2">{{descripcion}}</p>
+                                                <h3 class="mb-0 text-dark-gray">${{precio}}</h3>
+                                                <a class="btn btn-primary btn-block" href="/infonete/edicion/verDetalle?id={{id}}">Comprar este número</a>
                                             </div>
 
+                                            <div class="w-100 card-tipo-border">
 
-                                            <p class="text-gray mt-2">Lorem ipsum dolor sit amet, consectetur
-                                                adipisicing elit. Ad adipisci at, consequuntur enim, eos et fugit!</p>
-                                            <h3 class="mb-0 text-dark-gray">$17.34</h3>
-                                            <a class="btn btn-primary btn-block" href="">Comprar este número</a>
-                                        </div>
-
-                                        <div class="w-100 card-tipo-border">
-
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            {{/novedades}}
                         </div>
                     </div>
                 </div>
@@ -111,14 +112,14 @@
     </div>
 </div>
 
-    <script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
-    <script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
-    <script src="/infonete/public/js/vendors/settings.js"></script>
-    <script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
-    <script src="/infonete/public/js/vendors/misc.js"></script>
-    <script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
 
-    <!--script vistas Infonete -->
+<!--script vistas Infonete -->
 
 </body>
 </html>

@@ -7,12 +7,14 @@ class EdicionController
     private $render;
     private $productModel;
     private $session;
+    private $mercadoPago;
 
 
-    public function __construct($edicionModel, $productModel, $session, $render)
+    public function __construct($edicionModel, $productModel, $mercadoPago, $session, $render)
     {
-        $this->edicionModel  = $edicionModel;
+        $this->edicionModel = $edicionModel;
         $this->productModel = $productModel;
+        $this->mercadoPago = $mercadoPago;
         $this->session = $session;
 
         $this->render = $render;
@@ -23,7 +25,8 @@ class EdicionController
 
     }
 
-    public function crear(){
+    public function crear()
+    {
 
         $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
 
@@ -31,25 +34,26 @@ class EdicionController
         echo $this->render->render("public/view/edicion.mustache", $data);
     }
 
-    public function guardar(){
+    public function guardar()
+    {
 
         $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
 
         $this->setEdition();
 
         $data = ($this->edicionModel->guardar()) ?
-                $this->datos(['success' => "La edición se guardó correctamente"]) :
-                $this->datos(['error' => "Hubo un error al guardar la edición"]);
+            $this->datos(['success' => "La edición se guardó correctamente"]) :
+            $this->datos(['error' => "Hubo un error al guardar la edición"]);
 
-        echo $this->render->render("public/view/edicion.mustache",$data);
+        echo $this->render->render("public/view/edicion.mustache", $data);
     }
 
     public function admin()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
 
-        $data = $this->datos(["product" =>  $this->session->getParameter("activeProduct"),
-                              "productos" => $this->productModel->list()]);
+        $data = $this->datos(["product" => $this->session->getParameter("activeProduct"),
+            "productos" => $this->productModel->list()]);
         echo $this->render->render("public/view/gestion-edicion.mustache", $data);
     }
 
@@ -67,7 +71,7 @@ class EdicionController
     {
         $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
 
-        $data = $this->datos(["edicion" =>  $this->edicionModel->getEdition($_GET['id'])]);
+        $data = $this->datos(["edicion" => $this->edicionModel->getEdition($_GET['id'])]);
         echo $this->render->render("public/view/editar-edicion.mustache", $data);
     }
 
@@ -79,7 +83,7 @@ class EdicionController
 
         $data = $this->datos($this->edicionModel->update());
 
-        echo $this->render->render("public/view/editar-edicion.mustache",$data);
+        echo $this->render->render("public/view/editar-edicion.mustache", $data);
     }
 
     public function publicar()
@@ -87,7 +91,7 @@ class EdicionController
         $id = $_GET['id'];
         $res = $this->edicionModel->publicar($id);
         header('Content-Type: application/json');
-        echo json_encode($res,JSON_FORCE_OBJECT);
+        echo json_encode($res, JSON_FORCE_OBJECT);
     }
 
     public function despublicar()
@@ -95,37 +99,55 @@ class EdicionController
         $id = $_GET['id'];
         $res = $this->edicionModel->despublicar($id);
         header('Content-Type: application/json');
-        echo json_encode($res,JSON_FORCE_OBJECT);
+        echo json_encode($res, JSON_FORCE_OBJECT);
     }
 
+    public function verDetalle()
+    {
+        $data = $this->datos(['edicion' => $this->edicionModel->getEdition($_GET['id'])]);
+        echo $this->render->render('public/view/detalle-compra.mustache', $data);
+    }
 
-
+    public function comprar()
+    {
+        $edicion = $this->edicionModel->getEdition($_GET['id']);
+        $datosVenta = array('numero' => $edicion->getNumero(),
+                            'descripcion' => 'infonete-compra de edición nro: ' . $edicion->getNumero(),
+                            'precio' => $edicion->getPrecio());
+        if ($this->mercadoPago->procesarPago($datosVenta)){
+           if ($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $edicion->getId())) {
+               $data = $this->datos(['success' => 'La compra se realizó con éxito']);
+               echo $this->render->render('public/view/compra-checkout.mustache', $data);
+           } else {
+               $data = $this->datos(['error' => 'La compra no pudo registrarse']);
+               echo $this->render->render('public/view/compra-checkout.mustache', $data);
+           }
+        } else {
+            $data = $this->datos(['warning' => 'No se pudo procesar el pago. Vuelva a intentarlo más tarde']);
+            echo $this->render->render('public/view/compra-checkout.mustache', $data);
+        }
+    }
 
     private function setEdition($id = null)
     {
-        if($id != null) $this->edicionModel->setId($id);
+        if ($id != null) $this->edicionModel->setId($id);
         $this->edicionModel->setNumero($_POST['numero']);
         $this->edicionModel->setTitulo($_POST['titulo']);
         $this->edicionModel->setDescripcion($_POST['descripcion']);
         $this->edicionModel->setPrecio($_POST['precio']);
         $this->edicionModel->setProducto($this->session->getParameter('activeProduct')->getId());
-        if(isset($_POST['portada'])) $this->edicionModel->setPortada($_POST['portada']);
+        if (isset($_POST['portada'])) $this->edicionModel->setPortada($_POST['portada']);
 
     }
-
 
 
     private function datos($data = [])
     {
         return array_merge($data, array(
-            "product" =>  $this->session->getParameter("activeProduct"),
+            "product" => $this->session->getParameter("activeProduct"),
             "userAuth" => $this->session->getAuthUser()
         ));
     }
-
-
-
-
 
 
 }

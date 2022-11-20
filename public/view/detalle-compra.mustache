@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Planes</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: Planes -->
+                <div class="card fadeIn">
+                    <div class="card-body">
+                        <h1>Detalle de compra</h1>
+                        <p>Estás a punto de comprar el siguiente número:</p>
+                        <hr>
+                        {{#edicion}}
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="/infonete/public/uploads/portada/{{getPortada}}">
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="mb-0">{{getTitulo}}</h3>
+                                    <small class="mr-2 text-muted">Publicada: {{getFecha}}</small><small class="text-muted">Nro: {{getNumero}}</small>
+                                    <p class="mt-2">{{getDescripcion}}</p>
+                                    <h4>Precio: ${{getPrecio}}</h4>
+                                    <a class="btn btn-primary" href="/infonete/edicion/comprar?id={{getId}}">Confirmar compra</a>
+                                </div>
+                            </div>
+                        {{/edicion}}
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- main-panel ends -->
+    </div>
+</div>
+
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+
+
+<script type='text/javascript' src="/infonete/public/js/app/users.js"></script>
+
+
+</body>
+
+
+</body>
+</html>
+
+

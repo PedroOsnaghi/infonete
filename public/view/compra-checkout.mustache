@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Planes</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <!-- form: Planes -->
+                <div class="card fadeIn">
+                    <div class="card-body">
+                        {{#success}}
+                            <div class="d-flex flex-column align-items-center justify-content-center w-100">
+                                <img src="/infonete/public/images/assets/success.png">
+                                <h4>{{success}}</h4>
+                                <a class="btn btn-primary">Ir a mi productos</a>
+                            </div>
+                        {{/success}}
+                        {{#error}}
+                            <div class="d-flex flex-column align-items-center justify-content-center w-100">
+                                <img src="/infonete/public/images/assets/error.png">
+                                <h4>{{error}}</h4>
+                                <a class="btn btn-primary" href="/infonete/">Volver</a>
+                            </div>
+                        {{/error}}
+                        {{#warning}}
+                            <div class="d-flex flex-column align-items-center justify-content-center w-100">
+                                <img src="/infonete/public/images/assets/warning.png">
+                                <h4>{{warning}}</h4>
+                                <a class="btn btn-primary" href="/infonete/">Volver</a>
+                            </div>
+                        {{/warning}}
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- main-panel ends -->
+    </div>
+</div>
+
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<!--script vistas Infonete -->
+
+
+<script type='text/javascript' src="/infonete/public/js/app/users.js"></script>
+
+
+</body>
+
+
+</body>
+</html>
+
+

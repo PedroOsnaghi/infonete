@@ -29,7 +29,7 @@ class Session{
 
     public function urlRestriction($roles = []){
         //Verifica usuario logueado
-        if (!isset($_SESSION['user'])) Redirect::doIt("/infonete");
+        if (!isset($_SESSION['user'])) Redirect::doIt("/infonete/login");
 
         //si no se especifican roles lo deja pasar
         if(sizeof($roles) == 0) return true;

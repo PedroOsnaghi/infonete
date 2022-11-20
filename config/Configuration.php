@@ -17,6 +17,7 @@ include_once("helper/File.php");
 include_once("helper/Session.php");
 include_once("helper/Logger.php");
 include_once("helper/Fecha.php");
+include_once("helper/MercadoPago.php");
 
 //MODELOS
 include_once("model/LoginModel.php");
@@ -63,7 +64,7 @@ class Configuration
 
     public function getIndexController()
     {
-        return new IndexController($this->getSession(), $this->getRender());
+        return new IndexController($this->getEdicionModel(), $this->getSession(), $this->getRender());
     }
 
     public function getSeccionModel()
@@ -99,7 +100,7 @@ class Configuration
     public function getEdicionController()
     {
         $edicionModel = $this->getEdicionModel();
-        return new EdicionController($edicionModel, $this->getProductoModel(), $this->getSession(), $this->getRender());
+        return new EdicionController($edicionModel, $this->getProductoModel(), $this->getMercadoPago(),  $this->getSession(), $this->getRender());
     }
 
     public function getProductoModel()
@@ -203,6 +204,11 @@ class Configuration
             $config['email_pass'],
             $config['smtp_host'],
             $config['smtp_port']);
+    }
+
+    private function getMercadoPago()
+    {
+        return new MercadoPago();
     }
 
     private function getFile()
