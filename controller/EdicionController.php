@@ -16,20 +16,13 @@ class EdicionController
         $this->productModel = $productModel;
         $this->mercadoPago = $mercadoPago;
         $this->session = $session;
-
         $this->render = $render;
     }
 
-    public function execute()
-    {
-
-    }
 
     public function crear()
     {
-
         $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
-
         $data = $this->datos();
         echo $this->render->render("public/view/edicion.mustache", $data);
     }
@@ -113,7 +106,7 @@ class EdicionController
         $this->session->urlRestriction();
         $edicion = $this->edicionModel->getEdition($_GET['id']);
         $datosVenta = array('numero' => $edicion->getNumero(),
-                            'descripcion' => 'infonete-compra de edición nro: ' . $edicion->getNumero(),
+                            'concepto' => 'infonete-compra de edición nro: ' . $edicion->getNumero(),
                             'precio' => $edicion->getPrecio());
         if ($this->mercadoPago->procesarPago($datosVenta)){
                $data = $this->datos($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $edicion->getId()));
@@ -124,10 +117,9 @@ class EdicionController
         }
     }
 
-    public function explore()
-    {
-        echo $this->render->render('public/view/viewer-edicion.mustache');
-    }
+
+
+
 
     private function setEdition($id = null)
     {

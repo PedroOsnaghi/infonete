@@ -216,18 +216,17 @@ class ArticuloModel
 
     public function guardar()
     {
-        $this->logger->info("entro en Guardar Articulo");
+
 
         $res = $this->database->execute("INSERT INTO articulo(titulo, subtitulo, contenido, link, link_video, ubicacion, latitud, longitud, create_at, id_estado, id_autor) 
                                          VALUES ('$this->titulo', '$this->subtitulo', '$this->contenido', '$this->link', '$this->linkvideo', '$this->ubicacion', $this->latitud, $this->longitud, '$this->create_at', $this->estado, $this->autor)");
 
-        $this->logger->info("respuesta guardar artivculo: " . $res);
 
-        $idArticulo = $this->database->lastInsertId();
+        $this->id = $this->database->lastInsertId();
 
         if ($res) {
-            $this->guardarRelacionEdicionSeccion($idArticulo);
-            $this->guardarArchivos($idArticulo);
+            $this->guardarRelacionEdicionSeccion($this->id);
+            $this->guardarArchivos($this->id);
             $response = array("success" => "La Nota fue generada con exito");
         } else {
             $response = array("error" => "Ocurrio un error al guardar la Nota");
@@ -282,6 +281,16 @@ class ArticuloModel
                                             JOIN edicion e ON ae.id_edicion = e.id
                                             JOIN seccion s ON ae.id_seccion = s.id 
                                         WHERE $condicion e.id = $idEdicion");
+    }
+
+    public function listBy($idSeccion, $idEdicion, $idUsuario){
+        return $this->database->list("SELECT a.*, f.nombre as 'thumb'
+			                            FROM articulo a 
+			                                            JOIN archivo f ON f.id_articulo = a.id
+                                                        JOIN articulo_edicion ae ON a.id = ae.id_articulo
+                                                        JOIN compra_edicion c ON ae.id_edicion = c.id_edicion
+                                        WHERE a.id_estado = ".self::ART_ST_PUBLICADO." AND ae.id_seccion = $idSeccion AND ae.id_edicion = $idEdicion AND c.id_usuario = $idUsuario GROUP BY a.id");
+
     }
 
 
@@ -368,9 +377,18 @@ class ArticuloModel
     private function guardarArchivos($id)
     {
         $folder = "article/" . $id;
-        $this->logger->info($folder);
-        $this->file->uploadFiles($folder);
+
+        $this->file->uploadFiles($folder, function ($file){
+            $this->guardarDatosArchivo($file['name']);
+        });
         $this->file->uploadStream($folder);
+    }
+
+    private function guardarDatosArchivo($filename)
+    {
+        return $this->database->execute("INSERT INTO archivo(id_articulo, id_tipo, nombre) 
+                                         VALUES ($this->id, 1 , '$filename')");
+
     }
 
     private function guardarRelacionEdicionSeccion($idArticulo)

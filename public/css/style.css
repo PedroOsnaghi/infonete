@@ -113,6 +113,11 @@
 
 }
 
+.fs-14{
+  font-size: 14px!important;
+
+}
+
 .fs-40{
   font-size: 40px!important;
 }
@@ -172,11 +177,30 @@
   border: 1px solid gray;
 }
 
+.mp{
+  width: 20% !important;
+}
+
+.icon-message{
+  width: 7% !important;
+}
+
 
 .product-image-mini{
   width: 70px;
   height: 40px;
   border: 1px solid gray;
+}
+
+
+.portada-image-lg{
+  width: 200px;
+  height: 250px;
+}
+
+.portada-xl{
+  width: 500px;
+  height: 630px;
 }
 
 
@@ -201,6 +225,8 @@
 }
 
 .portada{
+  width: 120px!important;
+  height: 152px!important;
   max-width: 120px!important;
   object-fit: cover;
   padding: 0px 0px 0px!important;

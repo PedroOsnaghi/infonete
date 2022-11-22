@@ -73,6 +73,13 @@ class SeccionModel
         return $this->database->list("SELECT * FROM seccion ORDER BY nombre ASC");
     }
 
+    public function listBy($idEdicion)
+    {
+        return $this->database->list("SELECT s.* FROM seccion s 
+                                                                JOIN articulo_edicion ae ON s.id = ae.id_seccion 
+                                       WHERE ae.id_edicion = $idEdicion GROUP BY s.id ORDER BY  s.nombre ASC");
+    }
+
     public function getSection($id)
     {
         $query = $this->database->query("SELECT * FROM seccion WHERE id = $id");

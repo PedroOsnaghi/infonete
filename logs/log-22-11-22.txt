@@ -1,0 +1,192 @@
+[22-11-22 12:43:27][INFO] Iniciando File
+[22-11-22 12:43:27][INFO] Iniciando File
+[22-11-22 12:43:41][INFO] Iniciando File
+[22-11-22 12:43:41][INFO] Iniciando File
+[22-11-22 12:43:46][INFO] Iniciando File
+[22-11-22 12:43:46][INFO] Iniciando File
+[22-11-22 12:43:46][INFO] Iniciando File
+[22-11-22 12:43:52][INFO] Iniciando File
+[22-11-22 12:43:52][INFO] Iniciando File
+[22-11-22 12:43:55][INFO] Iniciando File
+[22-11-22 12:43:55][INFO] Iniciando File
+[22-11-22 12:44:15][INFO] Iniciando File
+[22-11-22 12:44:15][INFO] Iniciando File
+[22-11-22 12:44:31][INFO] Iniciando File
+[22-11-22 12:44:31][INFO] Iniciando File
+[22-11-22 12:44:39][INFO] Iniciando File
+[22-11-22 12:44:48][INFO] Iniciando File
+[22-11-22 12:44:58][INFO] Iniciando File
+[22-11-22 12:44:58][INFO] Iniciando File
+[22-11-22 12:45:36][INFO] Iniciando File
+[22-11-22 12:45:41][INFO] Iniciando File
+[22-11-22 12:47:20][INFO] Iniciando File
+[22-11-22 12:47:23][INFO] Iniciando File
+[22-11-22 12:47:24][INFO] Iniciando File
+[22-11-22 12:47:26][INFO] Iniciando File
+[22-11-22 12:48:00][INFO] Iniciando File
+[22-11-22 12:48:03][INFO] Iniciando File
+[22-11-22 12:48:06][INFO] Iniciando File
+[22-11-22 12:52:12][INFO] Iniciando File
+[22-11-22 12:52:25][INFO] Iniciando File
+[22-11-22 12:52:29][INFO] Iniciando File
+[22-11-22 12:52:50][INFO] Iniciando File
+[22-11-22 12:52:51][INFO] Iniciando File
+[22-11-22 01:04:56][INFO] Iniciando File
+[22-11-22 01:09:23][INFO] Iniciando File
+[22-11-22 01:09:23][INFO] Iniciando File
+[22-11-22 01:09:23][INFO] Iniciando File
+[22-11-22 01:32:44][INFO] Iniciando File
+[22-11-22 01:32:44][INFO] Iniciando File
+[22-11-22 01:32:44][INFO] Iniciando File
+[22-11-22 01:34:30][INFO] Iniciando File
+[22-11-22 01:34:30][INFO] Iniciando File
+[22-11-22 01:34:32][INFO] Iniciando File
+[22-11-22 01:34:34][INFO] Iniciando File
+[22-11-22 01:34:34][INFO] Iniciando File
+[22-11-22 01:34:34][INFO] Iniciando File
+[22-11-22 01:34:38][INFO] Iniciando File
+[22-11-22 01:34:38][INFO] Iniciando File
+[22-11-22 01:34:38][INFO] Iniciando File
+[22-11-22 01:34:58][INFO] Iniciando File
+[22-11-22 01:34:58][INFO] Iniciando File
+[22-11-22 01:35:03][INFO] Iniciando File
+[22-11-22 01:35:03][INFO] Iniciando File
+[22-11-22 01:35:03][INFO] Iniciando File
+[22-11-22 01:35:04][INFO] Iniciando File
+[22-11-22 01:35:04][INFO] Iniciando File
+[22-11-22 01:35:04][INFO] Iniciando File
+[22-11-22 01:35:05][INFO] Iniciando File
+[22-11-22 01:35:05][INFO] Iniciando File
+[22-11-22 01:35:05][INFO] Iniciando File
+[22-11-22 01:35:16][INFO] Iniciando File
+[22-11-22 01:35:16][INFO] Iniciando File
+[22-11-22 01:35:16][INFO] Iniciando File
+[22-11-22 01:35:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-22 01:35:16][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-22 01:35:16][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-22 01:35:16][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-22 01:35:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-22 01:35:16][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-22 01:35:16][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-22 01:35:16][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-22 01:35:16][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:35:16][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:35:27][INFO] Iniciando File
+[22-11-22 01:35:27][INFO] Iniciando File
+[22-11-22 01:35:29][INFO] Iniciando File
+[22-11-22 01:35:29][INFO] Iniciando File
+[22-11-22 01:35:42][INFO] Iniciando File
+[22-11-22 01:35:42][INFO] Iniciando File
+[22-11-22 01:35:47][INFO] Iniciando File
+[22-11-22 01:35:47][INFO] Iniciando File
+[22-11-22 01:35:47][INFO] Iniciando File
+[22-11-22 01:35:50][INFO] Iniciando File
+[22-11-22 01:35:50][INFO] Iniciando File
+[22-11-22 01:35:50][INFO] Iniciando File
+[22-11-22 01:35:51][INFO] Iniciando File
+[22-11-22 01:35:51][INFO] Iniciando File
+[22-11-22 01:35:51][INFO] Iniciando File
+[22-11-22 01:35:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-22 01:35:51][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-22 01:35:51][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-22 01:35:51][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-22 01:35:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-22 01:35:51][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-22 01:35:51][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-22 01:35:51][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-22 01:35:51][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:35:51][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:35:54][INFO] Iniciando File
+[22-11-22 01:35:54][INFO] Iniciando File
+[22-11-22 01:35:54][INFO] Iniciando File
+[22-11-22 01:36:01][INFO] Iniciando File
+[22-11-22 01:36:01][INFO] Iniciando File
+[22-11-22 01:36:01][INFO] Iniciando File
+[22-11-22 01:36:02][INFO] Iniciando File
+[22-11-22 01:36:02][INFO] Iniciando File
+[22-11-22 01:36:02][INFO] Iniciando File
+[22-11-22 01:36:04][INFO] Iniciando File
+[22-11-22 01:36:04][INFO] Iniciando File
+[22-11-22 01:36:04][INFO] Iniciando File
+[22-11-22 01:36:11][INFO] Iniciando File
+[22-11-22 01:36:11][INFO] Iniciando File
+[22-11-22 01:36:11][INFO] Iniciando File
+[22-11-22 01:36:11][INFO] Iniciando File
+[22-11-22 01:36:11][INFO] Iniciando File
+[22-11-22 01:36:11][INFO] Iniciando File
+[22-11-22 01:36:13][INFO] Iniciando File
+[22-11-22 01:36:13][INFO] Iniciando File
+[22-11-22 01:36:13][INFO] Iniciando File
+[22-11-22 01:36:13][INFO] Iniciando File
+[22-11-22 01:36:13][INFO] Iniciando File
+[22-11-22 01:36:13][INFO] Iniciando File
+[22-11-22 01:36:20][INFO] Iniciando File
+[22-11-22 01:36:20][INFO] Iniciando File
+[22-11-22 01:36:20][INFO] Iniciando File
+[22-11-22 01:37:29][INFO] Iniciando File
+[22-11-22 01:37:29][INFO] Iniciando File
+[22-11-22 01:37:32][INFO] Iniciando File
+[22-11-22 01:37:32][INFO] Iniciando File
+[22-11-22 01:37:46][INFO] Iniciando File
+[22-11-22 01:37:46][INFO] Iniciando File
+[22-11-22 01:37:50][INFO] Iniciando File
+[22-11-22 01:37:50][INFO] Iniciando File
+[22-11-22 01:37:50][INFO] Iniciando File
+[22-11-22 01:37:52][INFO] Iniciando File
+[22-11-22 01:37:52][INFO] Iniciando File
+[22-11-22 01:37:52][INFO] Iniciando File
+[22-11-22 01:37:56][INFO] Iniciando File
+[22-11-22 01:37:56][INFO] Iniciando File
+[22-11-22 01:37:56][INFO] Iniciando File
+[22-11-22 01:37:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-22 01:37:56][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-22 01:37:56][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-22 01:37:56][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-22 01:37:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-22 01:37:56][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-22 01:37:56][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-22 01:37:56][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-22 01:37:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:37:56][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:37:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:37:56][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:37:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:37:56][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:37:56][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:37:56][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:37:56][INFO] Iniciando File
+[22-11-22 01:38:42][INFO] Iniciando File
+[22-11-22 01:38:42][INFO] Iniciando File
+[22-11-22 01:38:42][INFO] Iniciando File
+[22-11-22 01:38:42][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-22 01:38:42][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-22 01:38:42][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-22 01:38:42][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-22 01:38:42][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78
+[22-11-22 01:38:42][INFO] Archivo encontrado: DLVLVICZPRCW3GDJT5IYLBFBCE.webp
+[22-11-22 01:38:42][INFO] Archivo encontrado: EYZRAM6PFFBVXHASWCY4ESWTTI.webp
+[22-11-22 01:38:42][INFO] Archivo encontrado: KAZIZMPP4BFPBCPIIDE7WUINIE.webp
+[22-11-22 01:38:42][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:38:42][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:38:42][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:38:42][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:38:42][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:38:42][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:38:42][INFO] funcion File->getFiles: recorrera el siguiente directorio D:\xampp\htdocs\infonete/public/uploads/article/78/stream
+[22-11-22 01:38:42][INFO] Archivo encontrado: 63741e81ea2c7.webm
+[22-11-22 01:38:42][INFO] Iniciando File
+[22-11-22 01:40:06][INFO] Iniciando File
+[22-11-22 01:40:06][INFO] Iniciando File
+[22-11-22 01:40:06][INFO] Iniciando File
+[22-11-22 01:41:20][INFO] Iniciando File
+[22-11-22 01:41:20][INFO] Iniciando File
+[22-11-22 01:41:20][INFO] Iniciando File
+[22-11-22 01:41:21][INFO] Iniciando File
+[22-11-22 01:41:21][INFO] Iniciando File
+[22-11-22 01:41:21][INFO] Iniciando File
+[22-11-22 01:41:24][INFO] Iniciando File
+[22-11-22 01:41:24][INFO] Iniciando File
+[22-11-22 01:41:24][INFO] Iniciando File
+[22-11-22 01:49:09][INFO] Iniciando File
+[22-11-22 01:49:12][INFO] Iniciando File
+[22-11-22 01:49:12][INFO] Iniciando File

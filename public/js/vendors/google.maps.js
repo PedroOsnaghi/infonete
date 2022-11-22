@@ -9,6 +9,8 @@ var dirmsg = document.getElementById('dir-validate-msg');
 // Creamos Search Box y lo linkeamos al input
 var input = document.getElementById("pac-input");
 
+var map;
+
 function valid(input, msg){
     input.classList.remove('invalid');
 
@@ -33,7 +35,7 @@ function invalid(input, msg){
 
 function initAutocomplete() {
 
-    var map = new google.maps.Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: -34.668544, lng: -58.5531392 },
         zoom: 15,
         disableDefaultUI: true,
@@ -47,7 +49,7 @@ function initAutocomplete() {
 }
 
 function initInverseAutocomplete() {
-    var map = new google.maps.Map(document.getElementById("map"), {
+   map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: parseFloat(input_lat.value), lng: parseFloat(input_lng.value) },
         zoom: 15,
         disableDefaultUI: true,

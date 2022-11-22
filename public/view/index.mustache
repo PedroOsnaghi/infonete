@@ -69,17 +69,18 @@
                             <h3 class="col-12 text-left text-light-gray">Ultimos lanzamientos</h3>
 
                             <!-- Tarjeta de ediciones publicadas -->
-                            {{#novedades}}
-                                <div class="d-flex flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start">
 
-                                    <div class="card card-max bg-light-gray shadow-max">
+                                <div class="d-flex flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start">
+                                {{#novedades}}
+                                    <div class="card card-max bg-light-gray shadow-max mr-2">
                                         <div class="card-img p-0 overflow-hidden">
                                             <div class=" bg-light pt-4 pb-2 mb-2">
                                                 <img class="mx-auto portada mb-2 d-block shadow"
                                                      src="/infonete/public/uploads/portada/{{portada}}" alt="">
                                                 <spam class="tag-tipo">{{tipo}}</spam>
                                             </div>
-                                            <div class="d-flex flex-column px-2">
+                                        </div>
+                                            <div class="d-flex flex-column h-100 px-2">
 
                                                 <h4 class="font-weight-bolder mb-0 me-1 text-dark-gray">{{titulo}}</h4>
 
@@ -91,25 +92,28 @@
 
 
                                                 <p class="text-gray mt-2">{{descripcion}}</p>
-                                                <h3 class="mb-0 text-dark-gray">${{precio}}</h3>
-                                                {{#usuario}}
-                                                    <a class="btn btn-success btn-block"
-                                                       href="/infonete/edicion/explore?id={{id}}">Leer</a>
-                                                {{/usuario}}
-                                                {{^usuario}}
-                                                    <a class="btn btn-primary btn-block"
-                                                       href="/infonete/edicion/verDetalle?id={{id}}">Comprar este
-                                                    número</a>
-                                                {{/usuario}}
+                                                <div class="mt-auto">
+                                                    <h3 class="mb-0 text-dark-gray ">${{precio}}</h3>
+                                                    {{#usuario}}
+                                                        <a class="btn btn-success btn-block "
+                                                           href="/infonete/viewer/show?id={{id}}">Leer</a>
+                                                    {{/usuario}}
+                                                    {{^usuario}}
+                                                        <a class="btn btn-primary btn-block "
+                                                           href="/infonete/edicion/verDetalle?id={{id}}">Comprar este
+                                                        número</a>
+                                                    {{/usuario}}
+                                                </div>
+
                                             </div>
 
-                                            <div class="w-100 card-tipo-border">
 
-                                            </div>
-                                        </div>
+
+                                        <div class="w-100 card-tipo-border"></div>
                                     </div>
+                                {{/novedades}}
                                 </div>
-                            {{/novedades}}
+
                         </div>
                     </div>
                 </div>

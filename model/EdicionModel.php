@@ -20,8 +20,10 @@ class EdicionModel
     //GETTERS Y SETTERS
 
     private $nombreProducto;
+    private $tipoProducto;
     private $logger;
     private $file;
+
 
     public function getId()
     {
@@ -123,6 +125,16 @@ class EdicionModel
         $this->nombreProducto = $nombreProducto;
     }
 
+    public function getTipoProducto()
+    {
+        return $this->tipoProducto;
+    }
+
+    public function setTipoProducto($tipoProducto): void
+    {
+        $this->tipoProducto = $tipoProducto;
+    }
+
 
     public function __construct($logger, $file, $database)
     {
@@ -145,12 +157,27 @@ class EdicionModel
 
     public function listByState($estado)
     {
-        return $this->database->list("SELECT e.*, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado");
+        return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.estado, e.id_producto, e.portada, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado");
     }
 
     public function getEdition($id)
     {
-        $query = $this->database->query("SELECT e.*, p.nombre as 'nombre_producto' FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.id = $id");
+        $query = $this->database->query("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, e.fecha, e.estado, e.id_producto, e.portada, p.nombre as 'nombre_producto', t.tipo 
+                                            FROM edicion e 
+                                                JOIN producto p ON e.id_producto = p.id 
+                                                JOIN tipo_producto t ON p.id_tipo_producto = t.id
+                                            WHERE e.id = $id");
+        return $this->toEdition($query);
+    }
+
+    public function getCompra($id, $idUsuario)
+    {
+        $query = $this->database->query("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, e.fecha, e.estado, e.id_producto, e.portada, p.nombre as 'nombre_producto', t.tipo 
+                                            FROM edicion e 
+                                                JOIN producto p ON e.id_producto = p.id 
+                                                JOIN tipo_producto t ON p.id_tipo_producto = t.id
+                                                JOIN compra_edicion ce ON e.id = ce.id_edicion AND ce.id_usuario = $idUsuario 
+                                            WHERE e.id = $id");
         return $this->toEdition($query);
     }
 
@@ -191,6 +218,8 @@ class EdicionModel
         return array("publicado" => self::ESTADO_EN_EDICION);
     }
 
+    //devuelve un array con las Ediciones publicadas en los ultimos 3 dias.
+    //recibe la session como parametro para verificar si hay compras para el usuario que visita el sitio
     public function getNovedades($session)
     {
         if($session->getAuthUser() !== false)
@@ -206,7 +235,7 @@ class EdicionModel
         }
 
         // Retorna las publicaciones de los últimos 3 días
-        return $this->database->query("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo " . $col .
+        return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo " . $col .
                                       " FROM edicion e JOIN producto p on e.id_producto = p.id 
 										JOIN tipo_producto t on p.id_tipo_producto = t.id "
 										. $join .
@@ -218,7 +247,8 @@ class EdicionModel
     {
         try {
             $query = $this->database->execute("INSERT INTO compra_edicion (id_usuario, id_edicion, fecha) VALUES ($idUsuario, $idEdicion, now())");
-            if($query) return array('success' => 'La compra se realizó con éxito');
+            if($query) return array('success' => 'La compra se realizó con éxito',
+                                    'edicion' => $idEdicion);
             return array('error' => 'No se pudo registrar la compra');
         } catch (exception) {
             return array('error' => 'Hubo un error al registrar la compra');
@@ -227,15 +257,18 @@ class EdicionModel
 
     private function toEdition($array)
     {
+        if ($array == null) return null;
+
         $this->id = $array['id'];
         $this->numero = $array['numero'];
         $this->titulo = $array['titulo'];
         $this->descripcion = $array['descripcion'];
         $this->precio = $array['precio'];
-        $this->fecha = $array['fecha'];
+        $this->fecha = Fecha::longDate($array['fecha']);
         $this->estado = $array['estado'];
         $this->producto = $array['id_producto'];
-        $this->nombreProducto = $array['nombre_producto'];
+        $this->nombreProducto = $array['nombre_producto'] ?? null;
+        $this->tipoProducto = $array['tipo'] ?? null;
         $this->portada = $array['portada'];
         return $this;
     }

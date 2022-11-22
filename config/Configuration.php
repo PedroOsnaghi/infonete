@@ -20,8 +20,6 @@ include_once("helper/Fecha.php");
 include_once("helper/MercadoPago.php");
 
 //MODELOS
-include_once("model/LoginModel.php");
-include_once("model/RegisterModel.php");
 include_once("model/UsuarioModel.php");
 include_once("model/ProductoModel.php");
 include_once("model/EdicionModel.php");
@@ -39,6 +37,7 @@ include_once("controller/EdicionController.php");
 include_once("controller/ArticuloController.php");
 include_once("controller/SeccionController.php");
 include_once("controller/SuscripcionController.php");
+include_once("controller/ViewerController.php");
 
 //vendors
 require('third-party/PHPMailer-master/src/Exception.php');
@@ -49,6 +48,11 @@ include_once("Router.php");
 
 class Configuration
 {
+
+    public function getViewerController()
+    {
+        return new ViewerController($this->getEdicionModel(), $this->getSeccionModel(), $this->getArticuloModel(), $this->getSession(), $this->getRender());
+    }
 
     public function getArticuloModel()
     {
@@ -115,25 +119,14 @@ class Configuration
         return new ProductoController($productoModel, $this->getFile(), $this->getSession(), $this->getRender());
     }
 
-    public function getLoginModel()
-    {
-        $database = $this->getDatabase();
-        return new LoginModel($database, $this->getUsuarioModel());
-    }
-
     public function getLoginController()
     {
-        $usuarioModel = $this->getUsuarioModel();
-        return new LoginController($usuarioModel, $this->getSession(), $this->getRender());
+        return new LoginController( $this->getUsuarioModel(), $this->getSession(), $this->getRender(), $this->getLogger());
     }
 
     public function getRegisterController()
     {
-        $registerModel = $this->getRegisterModel();
-        $usuarioModel = $this->getUsuarioModel();
-        $mailer = $this->getMailer();
-        $file = $this->getFile();
-        return new RegisterController($registerModel, $usuarioModel, $mailer, $file, $this->getRender());
+        return new RegisterController($this->getUsuarioModel(), $this->getRender());
     }
 
     public function getUsuarioController()
@@ -141,14 +134,10 @@ class Configuration
         return new UsuarioController($this->getUsuarioModel(), $this->getSession(), $this->getRender());
     }
 
-    private function getRegisterModel()
-    {
-        return new RegisterModel($this->getDatabase());
-    }
 
     private function getUsuarioModel()
     {
-        return new UsuarioModel($this->getDatabase());
+        return new UsuarioModel($this->getFile(), $this->getMailer(), $this->getDatabase());
     }
 
 

@@ -4,14 +4,16 @@ class LoginController
 {
 
     private $render;//render llama a la vista
-    private $loginModel;
+    private $usuarioModel;
     private $session;
+    private $logguer;
 
-    public function __construct($usuarioModel, $session, $render)
+    public function __construct($usuarioModel, $session, $render, $logger)
     {
         $this->usuarioModel = $usuarioModel;
         $this->session = $session;
         $this->render = $render;
+        $this->logguer = $logger;
     }
 
     public function execute()
@@ -40,11 +42,19 @@ class LoginController
 
     private function validateActivation($user)
     {
+        //verificar que esta activo para ingresar
+        if($user->getActivo() == 0){
+            $data['error'] = "Disculpe, su cuenta se ecuentra inhabilitada para acceder al sistema";
+            echo $this->render->render("public/view/login.mustache", $data);
+            exit();
+        }
+        //verificar activacion de cuenta
         if($user->getEstado() == UsuarioModel::STATE_UNVERIFIED){
             $data['error'] = "La cuenta aún no fue verificada. se envio un correo a " . $user->getEmail() ." con el link de verificación";
             echo $this->render->render("public/view/login.mustache", $data);
+            exit();
         }
-        //si esta verificada
+        //si esta todo ok
         $this->iniciarSession($user);
         $this->goToHome();
     }

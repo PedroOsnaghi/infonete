@@ -30,8 +30,11 @@ class UsuarioModel
     private $rol_name;
 
     private $database;
-
+    private $file;
+    private $mailer;
     //Getters & Setters
+
+
     public function getId()
     {
         return $this->id;
@@ -174,15 +177,20 @@ class UsuarioModel
     }
 
 
-    public function __construct($database)
+    public function __construct($file, $mailer, $database)
     {
+        $this->file = $file;
+        $this->mailer = $mailer;
         $this->database = $database;
     }
 
     public function registrar()
     {
+        //guarda imagen avatar
+        $this->avatar = $this->guardarAvatar();
 
-        return $this->database->execute("INSERT INTO usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo)
+        //guardamos el usuario en BD
+        $response = $this->database->execute("INSERT INTO usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo)
                                         VALUES('$this->nombre',
                                                '$this->apellido',
                                                '$this->email', 
@@ -195,6 +203,15 @@ class UsuarioModel
                                                 $this->rol, 
                                                 $this->estado, 
                                                 $this->activo)");
+
+        if($response){
+            if ($this->mailer->sendEmailVerification($this->email, $this->hash))
+                return array('status' => 'success', 'email' => $this->email);
+            return array('status' => 'error', 'error' => 'No pudimos enviar el email de verificación.');
+
+        }
+
+        return array('status'=>'error', "error" => 'El registro no se pudo completar debido a un error');
     }
 
     public function activate($email, $hash)
@@ -240,6 +257,7 @@ class UsuarioModel
     public function autenticar($email, $pass)
     {
         $query = $this->database->query("SELECT u.*,r.rol_name FROM usuario u JOIN rol r ON u.rol = r.id WHERE u.email = '$email' AND u.pass = '$pass'");
+
         return $this->toUsuario($query);
     }
 
@@ -292,6 +310,12 @@ class UsuarioModel
         }
 
         return $menu;
+    }
+
+    private function guardarAvatar(){
+        return ($this->file->uploadFile("profiles"))?
+            $this->file->get_file_uploaded():
+            'default.png';
     }
 }
 

@@ -29,20 +29,64 @@
                 <!-- form: Planes -->
                 <div class="card fadeIn">
                     <div class="card-body">
+                        {{#edicion}}
                         <h1>Detalle de compra</h1>
                         <p>Estás a punto de comprar el siguiente número:</p>
                         <hr>
-                        {{#edicion}}
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="/infonete/public/uploads/portada/{{getPortada}}">
+
+                        <div class="d-flex flex-column justify-content-center">
+
+
+                                <div class="d-flex mx-auto">
+
+                                    <img class="portada-image-lg shadow-max mr-5" src="/infonete/public/uploads/portada/{{getPortada}}">
+
+                                    <div class="d-flex flex-column w-100">
+                                        <div>
+                                            <small >Tipo:</small><small class="text-muted mr-3"> {{getTipoProducto}}</small><small>Producto:</small><small class="text-muted"> {{getNombreProducto}}</small>
+
+                                        </div>
+                                         <h3 class="mb-0 mt-3">{{getTitulo}}</h3>
+                                        <div>
+                                            <small class="mr-2 text-muted">Publicada: {{getFecha}}</small><small class="text-muted">Nro: {{getNumero}}</small>
+                                        </div>
+
+                                        <p class="mt-2">{{getDescripcion}}</p>
+                                        <div class="mt-auto">
+                                            Precio: <h2> ${{getPrecio}}</h2>
+                                        </div>
+
+
+
+                                    </div>
                                 </div>
-                                <div class="col-8">
-                                    <h3 class="mb-0">{{getTitulo}}</h3>
-                                    <small class="mr-2 text-muted">Publicada: {{getFecha}}</small><small class="text-muted">Nro: {{getNumero}}</small>
-                                    <p class="mt-2">{{getDescripcion}}</p>
-                                    <h4>Precio: ${{getPrecio}}</h4>
-                                    <a class="btn btn-primary" href="/infonete/edicion/comprar?id={{getId}}">Confirmar compra</a>
+                                <div class="d-flex align-items-center justify-content-center mt-5">
+                                    <a class="btn btn-primary mr-3" href="/infonete/edicion/comprar?id={{getId}}">Confirmar compra</a>
+                                    <a class="btn btn-light" href="/infonete/">Volver al inicio</a>
+                                </div>
+                                <hr class="text-light-gray w-100">
+                                <img class="mp mx-auto" src="/infonete/public/images/assets/mp.webp" alt="">
+
+                        </div>
+                        {{/edicion}}
+                        {{^edicion}}
+                            <div class="row flex-grow">
+                                <div class="col-lg-7 mx-auto text-white">
+                                    <div class="row align-items-center d-flex flex-row">
+                                        <div class="col-lg-6 text-lg-right pr-lg-4">
+                                            <h1 class="display-1 mb-0">404</h1>
+                                        </div>
+                                        <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4">
+                                            <h2>Lo sentimos!</h2>
+                                            <h3 class="font-weight-light">La pagina es inexistente.</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-12 text-center mt-xl-2">
+                                            <a class="text-white font-weight-medium" href="/infonete/">volver</a>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         {{/edicion}}

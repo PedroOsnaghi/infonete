@@ -60,6 +60,7 @@ class ArticuloController
         $this->session->setParameter('activeEdition', $this->edicionModel->getEdition($idEdicion));
 
         $userRol = $this->session->getAuthUser()->getRol();
+
         $data = $this->dato(["noticias" => $this->articuloModel->list($idEdicion, $userRol)]);
 
         switch ($userRol){
@@ -85,7 +86,6 @@ class ArticuloController
         $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
         $data = $this->dato(["secciones" => $this->seccionModel->list()]);
         echo $this->render->render("public/view/articulo.mustache", $data);
-
 
     }
 

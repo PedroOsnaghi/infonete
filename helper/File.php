@@ -13,7 +13,6 @@ class File
     public function __construct($logger, $uploadDir = "uploads"){
         $this->uploadDir = $uploadDir;
         $this->logger = $logger;
-        $this->logger->info("Iniciando File");
     }
 
     /**
@@ -62,14 +61,12 @@ class File
         if(isset($_FILES['file'])){
             $directorio = $this->verificarDirectorio($folder);
 
-            $this->logger->info($directorio);
 
             foreach ($_FILES['file']['tmp_name'] as $key => $file){
 
                 //movemos de temporal a fisico
                 $ruta = $directorio . "/" . $_FILES['file']['name'][$key];
 
-                $this->logger->info("ruta archivos: " . $ruta);
 
                 $dataFile = (move_uploaded_file($file, $ruta )) ?
                     $this->getDataFile($key, self::UPLOAD_STATE_OK):
@@ -95,10 +92,7 @@ class File
 
             //movemos de temporal a fisico
             $ruta = $directorio . $this->fileName;
-            $this->logger->info("solo dir: " . $directorio);
-            $this->logger->info("solo nombre: " . $this->fileName);
 
-            $this->logger->info("ruta stream: " . $ruta);
 
             if(move_uploaded_file($_FILES['video']['tmp_name'], $ruta )){
                 $response = self::UPLOAD_STATE_OK;
@@ -123,8 +117,7 @@ class File
     {
         $arrFiles = array();
         $fulldir = dirname(__FILE__,2) . "/public/uploads/$folder";
-        //logs
-        $this->logger->info("funcion File->getFiles: recorrera el siguiente directorio " . $fulldir );
+
 
         //verifica que exista el directorio o retorna false
         if(file_exists($fulldir)){
@@ -139,8 +132,7 @@ class File
             if(is_file($file)){
                 $nombre = array("archivo" => $file->getFilename());
                 array_push($arrFiles, $nombre );
-                //logs
-                $this->logger->info("Archivo encontrado: " . $file->getFilename() );
+
 
                 //[{"archivo"=>"aaa.jpg"},{"archivo"=>"bb.jpg"}]
             }
@@ -161,7 +153,7 @@ class File
     private function verificarDirectorio($folder)
     {
         $dir = $this->uploadDir . (empty($folder) ? '/' : "/" .  $folder  . "/");
-        $this->logger->info("FILES-- dir: " . $dir);
+
 
             if(!file_exists($dir)) {
                 if (!mkdir($dir, 0777, true)){

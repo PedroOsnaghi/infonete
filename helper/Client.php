@@ -5,7 +5,6 @@
 
     const GET = 80;
     const POST = 47;
-   
 
     private $session;
     private $uriBase;

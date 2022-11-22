@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/thumb.css">
+
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/maps.css">
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/carrousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/carrousel/owl.theme.default.min.css">
+
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Leer Nota</title>
+</head>
+<body>
+
+<div class="container-scroller" id="scroller">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+                <div class="card bg-light fadeIn viewer ">
+
+                    <div class="d-flex w-100 align-items-center bg-gradient-primary-red p-2 justify-content-between">
+                        <p class="mb-0">Visor de noticias.</p>
+                        <div>
+                            <a class="btn btn-light" href="/infonete/">Cerrar</a>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <nav class="sidebar sidebar-dark">
+                            {{#edicion}}
+                            <div class="d-flex w-100 p-2">
+
+                                <img class="portada-image-mini" src="/infonete/public/uploads/portada/{{getPortada}}">
+                                <div class="d-flex flex-column p-1">
+
+                                    <h5>{{getTitulo}}</h5>
+                                    <small class="text-muted">Número: {{getNumero}}</small>
+
+                                </div>
+
+                            </div>
+
+
+                            <hr>
+
+                            <ul class="nav" id="navigate">
+
+                                <li class="nav-item menu-items active" opt>
+                                    <a class="nav-link active" href="/infonete/viewer/show?id={{getId}}" >
+                                         <span class="menu-icon">
+                                            <i class="mdi mdi-file-image"></i>
+                                          </span>
+                                        <span class="menu-title">Portada</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item nav-category ">
+                                    <span class="nav-link text-primary">Secciones</span>
+                                </li>
+                                {{#secciones}}
+                                    <li class="nav-item menu-items" opt seccion>
+                                        <a class="nav-link" request="viewer/articles?s={{id}}&e={{getId}}">
+                                            <span class="menu-title">{{nombre}}</span>
+                                        </a>
+                                    </li>
+                                {{/secciones}}
+
+                            </ul>
+                            {{/edicion}}
+                        </nav>
+                        <div class="container-fluid text-dark-gray" id="viewer-content" >
+                            {{#edicion}}
+                                <div class="d-flex align-items-baseline">
+                                    <h1 class="display-4 mr-3 mb-0">Portada de Edicíon</h1>
+                                    <p class="mb-0 font-weight-light">Lanzamineto: {{getFecha}}</p>
+
+                                </div>
+                                <hr class="mt-1 text-dark">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="portada-xl shadow-max" src="/infonete/public/uploads/portada/{{getPortada}}"
+                                         alt="">
+                                </div>
+                            {{/edicion}}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/owl.carousel.min.js"></script>
+
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+
+<script src="/infonete/public/js/vendors/dashboard.js"></script>
+
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeluO_jCvIS_iT6Y3Thw8A6YJW5gyzh0M&callback=init_Preview&libraries=places&v=weekly"
+        defer>
+
+</script>
+
+
+<script src="/infonete/public/js/app/viewer.js"></script>
+
+</body>
+</html>
+
+

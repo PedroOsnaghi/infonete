@@ -2,18 +2,14 @@
 
 class RegisterController{
 
-    private $registerModel;
     private $usuarioModel;
-    private $mailer;
     private $render;
-    private $file;
 
-    public function __construct($registerModel, $usuarioModel, $mailer, $file, $render)
+
+    public function __construct($usuarioModel, $render)
     {
-        $this->registerModel = $registerModel;
         $this->usuarioModel = $usuarioModel;
-        $this->mailer = $mailer;
-        $this->file = $file;
+
         $this->render = $render;
     }
 
@@ -24,34 +20,27 @@ class RegisterController{
 
     public function validar()
     {
-        $usuario = $this->usuarioValidado();
+        $usuario = $this->setearUsuario();
 
+        $response = $usuario->registrar();
 
-        if ($this->registerModel->registrar($usuario)){
-           if($this->mailer->sendEmailVerification($usuario->getEmail(), $usuario->getHash())){
-               $data['email'] = $usuario->getEmail();
-               echo $this->render->render("public/view/register-success.mustache", $data);
-           }
+        if($response['status'] == 'success')
+            echo $this->render->render("public/view/register-success.mustache", $response);
 
-        } else{
-            $data["error"] = "ocurrió un error al registrarse";
-            echo $this->render->render("public/view/registro.mustache", $data);
-        }
+        $this->sendError("ocurrió un error al registrarse");
+
 
     }
 
-    private function usuarioValidado()
+    private function setearUsuario()
     {
-
-
-        $this->usuarioModel->setNombre($this->notEmpty("Nombre", $_POST['nombre']));
-        $this->usuarioModel->setApellido($this->notEmpty("Apellido", $_POST['apellido']));
-        $this->usuarioModel->setPass($this->notEmpty("Password", hasher::encrypt($_POST['pass'])));
-        $this->usuarioModel->setEmail($this->notEmpty("Email", $_POST['email']));
-        $this->usuarioModel->setDomicilio($this->notEmpty("Direccion", $_POST['direccion']));
-        $this->usuarioModel->setLatitud($this->notEmpty("Latitud", $_POST['lat']));
-        $this->usuarioModel->setLongitud($this->notEmpty("Longitud", $_POST['lng']));
-        $this->usuarioModel->setAvatar($this->getFileName());
+        $this->usuarioModel->setNombre($_POST['nombre']);
+        $this->usuarioModel->setApellido($_POST['apellido']);
+        $this->usuarioModel->setPass(hasher::encrypt($_POST['pass']));
+        $this->usuarioModel->setEmail($_POST['email']);
+        $this->usuarioModel->setDomicilio($_POST['direccion']);
+        $this->usuarioModel->setLatitud($_POST['lat']);
+        $this->usuarioModel->setLongitud($_POST['lng']);
         $this->usuarioModel->setHash(md5(rand(0000000000, 9999999999)));
         $this->usuarioModel->setRol(UsuarioModel::ROL_LECTOR);
         $this->usuarioModel->setEstado(UsuarioModel::STATE_UNVERIFIED);
@@ -60,10 +49,6 @@ class RegisterController{
         return $this->usuarioModel;
     }
 
-    private function notEmpty($key, $value)
-    {
-       return !empty($value) ? $value : $this->sendError("El campo $key no puede ser vacío");
-    }
 
     private function sendError($err_msg)
     {
@@ -71,11 +56,7 @@ class RegisterController{
         echo $this->render->render("public/view/registro.mustache", $data);
     }
 
-    private function getFileName(){
-        return ($this->file->uploadFile("profiles"))?
-                $this->file->get_file_uploaded():
-                'default.png';
-    }
+
 
 
 
