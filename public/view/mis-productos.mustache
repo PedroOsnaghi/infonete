@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
     <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
 
-    <title>Inicio</title>
+    <title>Mis productos</title>
 </head>
 <body>
 
@@ -33,45 +33,16 @@
                 <!-- CONTENIDO - HOME -->
                 <div class="card fadeIn">
                     <div class="card-body">
-                        <!-- Banner suscripciones -->
-                        <div class="row">
-                            <div class="col-12 grid-margin stretch-card">
-                                <div class="card corona-gradient-card">
-                                    <div class="card-body py-0 px-0 px-sm-3">
-                                        <!-- publicidad suscripcion -->
-
-                                        <div class="row align-items-center">
-                                            <div class="col-4 col-sm-3 col-xl-2">
-                                                <img src="/infonete/public/images/banner/Group126@2x.png"
-                                                     class="gradient-corona-img img-fluid" alt="">
-                                            </div>
-                                            <div class="col-5 col-sm-7 col-xl-8 p-0">
-                                                <h4 class="mb-1 mb-sm-0">Queres mantenerte al día?</h4>
-                                                <p class="mb-0 font-weight-normal d-none d-sm-block">Tenémos los mejores
-                                                    Planes para vos!</p>
-                                            </div>
-                                            <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">
-                                                <span>
-                                                  <a id="btn-banner-planes" href="/infonete/suscripcion/planes"
-                                                     class="btn btn-outline-light btn-rounded get-started-btn">Comprar suscripción</a>
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- seccion novedades -->
 
                         <div class="row">
-                            <h3 class="col-12 text-left text-light-gray">Ultimos lanzamientos</h3>
+                            <h3 class="col-12 text-left text-light-gray">Mis productos comprados</h3>
 
                             <!-- Tarjeta de ediciones publicadas -->
 
-                                <div class="d-flex flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start">
-                                {{#novedades}}
+                                <div class="d-flex flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start mt-3">
+                                {{#ediciones}}
                                     <div class="card card-max bg-light-gray shadow-max mr-2 mb-4">
                                         <div class="card-img p-0 overflow-hidden">
                                             <div class=" bg-light pt-4 pb-2 mb-2">
@@ -90,20 +61,11 @@
                                                     <small class="text-muted">Ed.: {{numero}}</small>
                                                 </div>
 
-
-                                                <p class="text-gray mt-2">{{descripcion}}</p>
                                                 <div class="mt-auto">
-                                                    <h3 class="mb-0 text-dark-gray ">${{precio}}</h3>
-                                                    {{#usuario}}
-                                                        <form action="/infonete/viewer/show" method="post">
-                                                            <button class="btn btn-success btn-block" name="id" value="{{id}}">Leer</button>
-                                                        </form>
-                                                    {{/usuario}}
-                                                    {{^usuario}}
-                                                        <form action="/infonete/edicion/verDetalle" method="get">
-                                                            <button class="btn btn-primary btn-block" name="id" value="{{id}}">Comprar este número</button>
-                                                        </form>
-                                                    {{/usuario}}
+                                                    <form action="/infonete/viewer/show" method="post">
+                                                        <input type="hidden" name="target" value="/infonete/edicion/misEdiciones">
+                                                        <button class="btn btn-primary btn-block" name="id" value="{{id}}">Leer esta edición</button>
+                                                    </form>
                                                 </div>
 
                                             </div>
@@ -112,7 +74,7 @@
 
                                         <div class="w-100 card-tipo-border"></div>
                                     </div>
-                                {{/novedades}}
+                                {{/ediciones}}
                                 </div>
 
                         </div>

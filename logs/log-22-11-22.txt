@@ -197,5 +197,10 @@
 [22-11-22 07:07:13][INFO] Se creo el directorio:public/uploads/article/119/
 [22-11-22 07:09:07][INFO] Se creo el directorio:public/uploads/article/120/
 [22-11-22 07:10:20][INFO] Se creo el directorio:public/uploads/article/121/
-[22-11-22 07:51:38][INFO] Se creo el directorio:public/uploads/article/122/
-[22-11-22 07:51:38][INFO] Se creo el directorio:public/uploads/article/122/stream/
+[22-11-22 11:39:32][INFO] /infonete/edicion/misEdiciones
+[22-11-22 11:39:42][INFO] /infonete/edicion/misEdiciones
+[22-11-22 11:44:16][INFO] /infonete/edicion/misEdiciones
+[22-11-22 11:44:24][INFO] /infonete/edicion/misEdiciones
+[22-11-22 11:47:47][INFO] 
+[22-11-22 11:47:55][INFO] 
+[22-11-22 11:48:32][INFO] 

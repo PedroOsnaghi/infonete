@@ -106,19 +106,23 @@ class EdicionController
         $this->session->urlRestriction();
         $edicion = $this->edicionModel->getEdition($_GET['id']);
         $datosVenta = array('numero' => $edicion->getNumero(),
-                            'concepto' => 'infonete-compra de edición nro: ' . $edicion->getNumero(),
-                            'precio' => $edicion->getPrecio());
-        if ($this->mercadoPago->procesarPago($datosVenta)){
-               $data = $this->datos($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $edicion->getId()));
-               echo $this->render->render('public/view/compra-checkout.mustache', $data);
+            'concepto' => 'infonete-compra de edición nro: ' . $edicion->getNumero(),
+            'precio' => $edicion->getPrecio());
+        if ($this->mercadoPago->procesarPago($datosVenta)) {
+            $data = $this->datos($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $edicion->getId()));
+            echo $this->render->render('public/view/compra-checkout.mustache', $data);
         } else {
             $data = $this->datos(['warning' => 'No se pudo procesar el pago. Vuelva a intentarlo más tarde']);
             echo $this->render->render('public/view/compra-checkout.mustache', $data);
         }
     }
 
-
-
+    public function misEdiciones()
+    {
+        $this->session->urlRestriction();
+        $data = $this->datos(['ediciones' => $this->edicionModel->listarCompras($this->session->getAuthUser()->getId())]);
+        echo $this->render->render('public/view/mis-productos.mustache', $data);
+    }
 
 
     private function setEdition($id = null)

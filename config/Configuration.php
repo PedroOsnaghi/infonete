@@ -51,7 +51,7 @@ class Configuration
 
     public function getViewerController()
     {
-        return new ViewerController($this->getEdicionModel(), $this->getSeccionModel(), $this->getArticuloModel(), $this->getSession(), $this->getRender());
+        return new ViewerController($this->getEdicionModel(), $this->getSeccionModel(), $this->getArticuloModel(), $this->getLogger(), $this->getSession(), $this->getRender());
     }
 
     public function getArticuloModel()

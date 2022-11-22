@@ -251,8 +251,18 @@ class EdicionModel
                                     'edicion' => $idEdicion);
             return array('error' => 'No se pudo registrar la compra');
         } catch (exception) {
-            return array('error' => 'Hubo un error al registrar la compra');
+            return array('error' => 'La compra ya ha sido realizada. Puedes verla en Mis Productos');
         }
+    }
+
+    public function listarCompras($idUsuario)
+    {
+        return $this->database->list("SELECT e.id, e.numero, e.titulo, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo
+                                        FROM edicion e JOIN producto p on e.id_producto = p.id 
+                                        JOIN tipo_producto t on p.id_tipo_producto = t.id                                  
+                                        JOIN compra_edicion ce on ce.id_edicion = e.id                                        
+                                        WHERE ce.id_usuario = $idUsuario
+                                        ORDER BY e.fecha DESC");
     }
 
     private function toEdition($array)

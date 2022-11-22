@@ -7,12 +7,14 @@ class ViewerController
     private $articuloModel;
     private $session;
     private $render;
+    private $logger;
 
-    public function __construct($edicionModel, $seccionModel, $articuloModel, $session, $render)
+    public function __construct($edicionModel, $seccionModel, $articuloModel, $logger, $session, $render)
     {
         $this->edicionModel = $edicionModel;
         $this->seccionModel = $seccionModel;
         $this->articuloModel = $articuloModel;
+        $this->logger = $logger;
         $this->session = $session;
         $this->render = $render;
     }
@@ -26,11 +28,11 @@ class ViewerController
     {
         $this->session->urlRestriction();
 
-        $id = $_GET['id'];
+        $id = isset($_POST['id']) ?? 0;
+        if(isset($_POST['target'])) $this->session->setParameter('target_request', $_POST['target']);
 
         $data = $this->datos(["edicion" => $this->obtenerCompra($id),
                             "secciones" => $this->cargarSecciones($id)]);
-
 
         echo $this->render->render('public/view/viewer/viewer-edicion.mustache', $data);
     }
@@ -49,7 +51,8 @@ class ViewerController
         echo $this->render->render('public/view/viewer/viewer-articles.mustache', $data);
     }
 
-    public function read(){
+    public function read()
+    {
         $article = $this->articuloModel->getArticuloPreview($_GET['id']);
 
         $data = $this->datos(["articulo" => $article,
@@ -59,6 +62,14 @@ class ViewerController
 
         echo $this->render->render("public/view/viewer/viewer-content.mustache", $data);
 
+    }
+
+    public function close()
+    {
+        $target = $this->session->getParameter('target_request');
+        $this->session->unsetParameter('target_request');
+        $this->logger->info($this->session->getParameter('target_request'));
+        $target ? Redirect::doIt($target) : Redirect::doIt('/infonete');
     }
 
     private function seccionSeleccionada($id)
