@@ -28,7 +28,7 @@ class Session{
     }
 
     public function unsetParameter($key){
-        $_SESSION[$key] = null;
+        unset($_SESSION[$key]);
     }
 
     public function urlRestriction($roles = []){
