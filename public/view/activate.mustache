@@ -7,33 +7,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- boostrap -->
     <link rel="stylesheet" href="/infonete/public/css/style.css">
-    <link rel="stylesheet" href="/infonete/public/css/global.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/global.css">
     <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png" type="image/x-icon">
 
     <title>Activacion de cuenta</title>
 </head>
 <body class="bg-dark">
-<main class="container">
-    <div class="text-center">
-        <img class="brand-logo mt-2" src="/infonete/public/images/logo/logo.png" alt="">
+<div id="register" class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+                <div class="card col-lg-6 mx-auto">
+                    <div class="card-body px-3 pb-5 pt-3">
+
+                        <div class="rounded text-center py-4 px-4 fadeIn">
+                            {{#success}}
+
+                                    <h3 class="fs-5 fs-3">Ya eres un usuario activo de Infonete.com</h3>
+                                    <p>Ahora inicia sesion para disfrutar de todo nuestro contenido.</p>
+
+                            {{/success}}
+
+                            {{^success}}
+
+                                    <h3 class="fs-5 fs-3">El link ha expirado o la cuenta ya está activa</h3>
+                                    <p>Puedes iniciar sesión para acceder a tu cuenta.</p>
+
+                            {{/success}}
+                            <a href="/infonete/login" class="btn btn-primary">Iniciar sesión</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- row ends -->
     </div>
-    <div class="login-box rounded text-center py-4 mt-5 fadeIn">
-        {{#success}}
-
-                <h3 class="fs-5 fs-3">Ya eres un usuario activo de Infonete.com</h3>
-                <p>Ahora inicia sesion para disfrutar de todo nuestro contenido.</p>
-
-        {{/success}}
-
-        {{^success}}
-
-                <h3 class="fs-5 fs-3">El link ha expirado o la cuenta ya está activa</h3>
-                <p>Puedes iniciar sesión para acceder a tu cuenta.</p>
-
-        {{/success}}
-        <a href="/infonete/login" class="btn btn-primary">Iniciar sesión</a>
-    </div>
-</main>
+    <!-- page-body-wrapper ends -->
+</div>
 
 </body>
 </html>

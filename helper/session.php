@@ -16,7 +16,7 @@ class Session{
     }
 
     public function getAuthUser(){
-        return isset($_SESSION['user']) ? $_SESSION['user'] : false;
+        return $_SESSION['user'] ?? null;
     }
 
     public function setParameter($key, $value){
@@ -24,7 +24,11 @@ class Session{
     }
 
     public function getParameter($key){
-        return $_SESSION[$key] ?? false;
+        return $_SESSION[$key] ?? null;
+    }
+
+    public function unsetParameter($key){
+        $_SESSION[$key] = null;
     }
 
     public function urlRestriction($roles = []){

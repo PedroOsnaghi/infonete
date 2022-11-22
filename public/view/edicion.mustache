@@ -84,7 +84,7 @@
                                       <div class="d-flex flex-column flex-lg-row">
                                           <div class="flex-shrink-1 mr-lg-3">
                                               <label>Número *</label>
-                                              <input class="form-control mb-2" type="text" name="numero" placeholder="Número" required>
+                                              <input class="form-control mb-2" type="text" name="numero" placeholder="Número" onkeypress="if(event.keyCode < 46 || event.keyCode > 57) event.returnValue = false;" required>
                                           </div>
                                           <div class="w-100">
                                               <label>Título *</label>
@@ -98,9 +98,9 @@
                                         <label>Precio *</label>
                                         <div class="input-group mb-2">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text bg-primary text-white">$</span>
+                                                <span class="input-group-text bg-primary border-primary text-white">$</span>
                                             </div>
-                                            <input type="text" name="precio" class="form-control" required>
+                                            <input type="text" name="precio" class="form-control" onkeypress="if(event.keyCode < 46 || event.keyCode > 57 || event.keyCode == 47) event.returnValue = false;" required>
 
                                         </div>
 

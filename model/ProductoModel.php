@@ -13,9 +13,11 @@ class ProductoModel
     private $nombre;
     private $imagen;
     private $database;
+    private $file;
 
-    public function __construct($database)
+    public function __construct($file, $database)
     {
+        $this->file = $file;
         $this->database = $database;
     }
 
@@ -92,6 +94,7 @@ class ProductoModel
 
     public function guardar()
     {
+        $this->guardarImagen();
         return $this->database->execute("INSERT INTO producto(id_tipo_producto, nombre, imagen) 
                                   VALUES($this->tipo, '$this->nombre', '$this->imagen')");
     }
@@ -109,9 +112,10 @@ class ProductoModel
 
     public function update()
     {
+        $sql_imagen = ($this->verificarCambioImagen()) ? ", imagen = '$this->imagen' " : "";
         return $this->database->execute("UPDATE producto SET id_tipo_producto = $this->tipo, 
-                                        nombre = '$this->nombre', 
-                                        imagen = '$this->imagen'
+                                        nombre = '$this->nombre'
+                                        $sql_imagen
                                         WHERE id = $this->id");
     }
 
@@ -124,6 +128,22 @@ class ProductoModel
         $this->imagen = $array['imagen'];
 
         return $this;
+    }
+
+    private function guardarImagen()
+    {
+        $this->imagen = ($this->file->uploadFile("product") == File::UPLOAD_STATE_OK) ?
+            $this->file->get_file_uploaded() :
+            "default.jpg";
+    }
+
+    private function verificarCambioImagen()
+    {
+        if ($this->file->uploadFile("product") > File::UPLOAD_STATE_NO_FILE) {
+            $this->imagen = $this->file->get_file_uploaded();
+            return true;
+        }
+        return false;
     }
 
 }

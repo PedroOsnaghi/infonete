@@ -62,7 +62,7 @@
                     </div>
                     <div class="card-body">
                         {{#noticia}}
-                        <form id="form-noticia" action="" method="post" enctype="multipart/form-data">
+                        <form id="form-noticia" action="" name="{{getId}}" method="post" enctype="multipart/form-data">
                             <div class="container  mx-auto">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <h4 class="mb-0">Editar Nota</h4>
@@ -308,8 +308,8 @@
                                                            <button type="button" id="grabar" title="Iniciar Grabación" class="btn btn-light text-danger mb-2" disabled><i class="mdi mdi-radiobox-marked"></i></button>
                                                            <button type="button" id="detener" title="Detener Grabación" class="btn btn-light text-dark-gray" disabled><i class="mdi mdi-stop"></i></button>
                                                             {{#getStreamFile}}
-                                                                <button type="button" id="borrar-strm" title="Eliminar Stream" class="btn btn-danger mt-auto"><i class="mdi mdi-delete"></i>Eliminar Stream</button>
-                                                                <input type="hidden" name="delete-stream" value="false" id="borrar-strm-value">
+                                                                <button type="button" id="borrar-strm" title="Eliminar Stream" class="btn btn-danger mt-auto" data-id = "{{getId}}" data-name="{{archivo}}"  ><i class="mdi mdi-delete"></i>Eliminar Stream</button>
+
 
                                                             {{/getStreamFile}}
                                                            <button type="button" id="ver-video" title="Previsualizar" class="btn btn-info mt-auto" hidden><i class="mdi mdi-play"></i>Ver video</button>

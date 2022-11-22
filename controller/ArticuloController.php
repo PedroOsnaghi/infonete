@@ -156,12 +156,12 @@ class ArticuloController
     {
         $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
 
-        $this->setearArticulo();
+        $this->setearArticulo($_GET['id']);
 
-       // $response = $this->articuloModel->guardar();
+        $response = $this->articuloModel->update();
 
-        //header('Content-Type: application/json');
-        //echo json_encode($response,JSON_FORCE_OBJECT);
+        header('Content-Type: application/json');
+        echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
     public function revision()
@@ -204,8 +204,19 @@ class ArticuloController
         echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
-    private function setearArticulo()
+    public function eliminarStream()
     {
+        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
+
+        $response = $this->articuloModel->eliminarStream($_GET['id'], $_GET['name']);
+
+        header('Content-Type: application/json');
+        echo json_encode($response,JSON_FORCE_OBJECT);
+    }
+
+    private function setearArticulo($id = null)
+    {
+        if($id) $this->articuloModel->setId($id);
         $this->articuloModel->setTitulo($_POST['titulo']);
         $this->articuloModel->setSubtitulo($_POST['subtitulo']);
         $this->articuloModel->setContenido($_POST['contenido']);
@@ -214,12 +225,19 @@ class ArticuloController
         $this->articuloModel->setUbicacion($_POST['ubicacion']);
         $this->articuloModel->setLatitud($_POST['lat']);
         $this->articuloModel->setLongitud($_POST['lng']);
-        $this->articuloModel->setCreateAt($this->getFechaHoraActual());
-        $this->articuloModel->setUpdateAt($this->getFechaHoraActual());
-        $this->articuloModel->setEstado(0);
-        $this->articuloModel->setAutor($this->session->getAuthUser()->getId());
         $this->articuloModel->setSeccion($_POST['seccion']);
-        $this->articuloModel->setEdicion($this->session->getParameter('activeEdition')->getId());
+        if ($id == null) {
+            $this->articuloModel->setCreateAt($this->getFechaHoraActual());
+            $this->articuloModel->setUpdateAt($this->getFechaHoraActual());
+            $this->articuloModel->setEstado(0);
+            $this->articuloModel->setAutor($this->session->getAuthUser()->getId());
+            $this->articuloModel->setEdicion($this->session->getParameter('activeEdition')->getId());
+        }
+
+
+
+
+
 
     }
 

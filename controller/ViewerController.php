@@ -17,6 +17,11 @@ class ViewerController
         $this->render = $render;
     }
 
+    public function __destruct()
+    {
+
+    }
+
     public function show()
     {
         $this->session->urlRestriction();
@@ -24,7 +29,7 @@ class ViewerController
         $id = $_GET['id'];
 
         $data = $this->datos(["edicion" => $this->obtenerCompra($id),
-                              "secciones" => $this->seccionModel->listBy($id)]);
+                            "secciones" => $this->cargarSecciones($id)]);
 
 
         echo $this->render->render('public/view/viewer/viewer-edicion.mustache', $data);
@@ -35,29 +40,57 @@ class ViewerController
         $this->session->urlRestriction();
 
         $idSeccion = $_GET['s'];
-        $idEdicion = $_GET['e'];
+        $edicion = $this->session->getParameter('viewer_edition') ?? $this->redirect();
 
-        $data = $this->datos(["articulos" => $this->articuloModel->listBy($idSeccion, $idEdicion, $this->session->getAuthUser()->getId())]);
+        $data = $this->datos(["articulos" => $this->articuloModel->listBy($idSeccion, $edicion->getId()),
+                                "edicion" => $this->session->getParameter('viewer_edition'),
+                              "secciones" => $this->session->getParameter('viewer_sections'),
+                                "current" => $this->seccionSeleccionada($idSeccion)]);
         echo $this->render->render('public/view/viewer/viewer-articles.mustache', $data);
     }
 
     public function read(){
-        $data = $this->datos(["articulo" => $this->articuloModel->getArticuloPreview($_GET['id'])]);
+        $article = $this->articuloModel->getArticuloPreview($_GET['id']);
 
-        echo $this->render->render("public/view/partial/articulo-content.mustache", $data);
+        $data = $this->datos(["articulo" => $article,
+                               "edicion" => $this->session->getParameter('viewer_edition'),
+                             "secciones" => $this->session->getParameter('viewer_sections'),
+                               "current" => $this->session->getParameter('current_section')]);
 
+        echo $this->render->render("public/view/viewer/viewer-content.mustache", $data);
+
+    }
+
+    private function seccionSeleccionada($id)
+    {
+        $this->session->setParameter('current_section', $id);
+        return $id;
+    }
+
+    private function cargarSecciones($idEdicion)
+    {
+        $listaSecciones = $this->seccionModel->listBy($idEdicion);
+        $this->session->setParameter('viewer_sections', $listaSecciones);
+        return $listaSecciones;
     }
 
 
 
     private function obtenerCompra($idEdicion)
     {
-        return $this->edicionModel->getCompra($idEdicion, $this->session->getAuthUser()->getId()) ?? $this->redirect();
+        $compra = $this->edicionModel->getCompra($idEdicion, $this->session->getAuthUser()->getId());
+        return  $compra ? $this->setInSession($compra) : $this->redirect($idEdicion);
     }
 
-    private function redirect()
+    private function setInSession($edicion)
     {
-        $data = $this->datos(['edicion' => $this->edicionModel->getEdition($_GET['id'])]);
+        $this->session->setParameter('viewer_edition', $edicion );
+        return $edicion;
+    }
+
+    private function redirect($idEdicion = 0)
+    {
+        $data = $this->datos(['edicion' => $this->edicionModel->getEdition($idEdicion)]);
         echo $this->render->render('public/view/detalle-compra.mustache', $data);
     }
 
@@ -67,5 +100,7 @@ class ViewerController
             "userAuth" => $this->session->getAuthUser()
         ));
     }
+
+
 
 }

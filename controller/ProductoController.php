@@ -4,15 +4,13 @@ class ProductoController
 {
     //PROPIEDADES
     private $productoModel;
-    private $file;
     private $render;
     private $session;
 
 
-    public function __construct($productoModel, $file, $session, $render)
+    public function __construct($productoModel, $session, $render)
     {
         $this->productoModel = $productoModel;
-        $this->file = $file;
         $this->session = $session;
         $this->render = $render;
     }
@@ -25,7 +23,6 @@ class ProductoController
     public function agregar()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
-
         $data = $this->getDataTipo();
         echo $this->render->render("public/view/producto.mustache", $data);
     }
@@ -40,7 +37,6 @@ class ProductoController
     public function admin()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
-
         $data = $this->getData();
         echo $this->render->render("public/view/gestion-producto.mustache", $data);
     }
@@ -83,15 +79,9 @@ class ProductoController
         if($id != null) $this->productoModel->setId($id);
         $this->productoModel->setNombre($_POST['nombre']);
         $this->productoModel->setTipo($this->valida($_POST['tipo']));
-        $this->productoModel->setImagen($this->getFileName());
+        if (isset($_POST['imagen'])) $this->productoModel->setImagen($_POST['imagen']);
     }
 
-    private function getFileName()
-    {
-        return ($this->file->uploadFile("product")) ?
-            $this->file->get_file_uploaded() :
-            'default.jpg';
-    }
 
     private function getData($msg = [])
     {

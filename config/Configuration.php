@@ -56,14 +56,12 @@ class Configuration
 
     public function getArticuloModel()
     {
-        $database = $this->getDatabase();
-        return new ArticuloModel($this->getFile(), $this->getLogger(), $database);
+        return new ArticuloModel($this->getFile(), $this->getLogger(), $this->getDatabase());
     }
 
     public function getArticuloController()
     {
-        $articuloModel = $this->getArticuloModel();
-        return new ArticuloController($articuloModel, $this->getEdicionModel(), $this->getSeccionModel(), $this->getUsuarioModel(),  $this->getSession(),  $this->getLogger(),  $this->getRender());
+        return new ArticuloController($this->getArticuloModel(), $this->getEdicionModel(), $this->getSeccionModel(), $this->getUsuarioModel(),  $this->getSession(),  $this->getLogger(),  $this->getRender());
     }
 
     public function getIndexController()
@@ -73,50 +71,42 @@ class Configuration
 
     public function getSeccionModel()
     {
-        $database = $this->getDatabase();
-        return new SeccionModel($this->getLogger(), $database);
+        return new SeccionModel($this->getLogger(), $this->getDatabase());
     }
 
     public function getSeccionController()
     {
-        $seccionModel = $this->getSeccionModel();
-        return new SeccionController($seccionModel, $this->getSession(), $this->getRender());
+        return new SeccionController($this->getSeccionModel(), $this->getSession(), $this->getRender());
     }
 
     public function getSuscripcionModel()
     {
-        $database = $this->getDatabase();
-        return new SuscripcionModel($database);
+        return new SuscripcionModel($this->getDatabase());
     }
 
     public function getSuscripcionController()
     {
-        $suscripcionModel = $this->getSuscripcionModel();
-        return new SuscripcionController($suscripcionModel, $this->getSession(), $this->getRender());
+        return new SuscripcionController($this->getSuscripcionModel(), $this->getSession(), $this->getRender());
     }
 
     public function getEdicionModel()
     {
-        $database = $this->getDatabase();
-        return new EdicionModel($this->getLogger(),$this->getFile(), $database);
+        return new EdicionModel($this->getLogger(),$this->getFile(), $this->getDatabase());
     }
 
     public function getEdicionController()
     {
-        $edicionModel = $this->getEdicionModel();
-        return new EdicionController($edicionModel, $this->getProductoModel(), $this->getMercadoPago(),  $this->getSession(), $this->getRender());
+        return new EdicionController($this->getEdicionModel(), $this->getProductoModel(), $this->getMercadoPago(),  $this->getSession(), $this->getRender());
     }
 
     public function getProductoModel()
     {
-        $database = $this->getDatabase();
-        return new ProductoModel($database);
+        return new ProductoModel($this->getFile(), $this->getDatabase());
     }
 
     public function getProductoController()
     {
-        $productoModel = $this->getProductoModel();
-        return new ProductoController($productoModel, $this->getFile(), $this->getSession(), $this->getRender());
+        return new ProductoController($this->getProductoModel(), $this->getSession(), $this->getRender());
     }
 
     public function getLoginController()

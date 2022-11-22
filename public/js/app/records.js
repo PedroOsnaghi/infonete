@@ -238,25 +238,44 @@ function comenzarAContar (label){
 //Borrado de stream solo para edicion
 function activarBorrado() {
     const borrar = document.getElementById("borrar-strm");
-    const borrar_value = document.getElementById("borrar-strm-value");
+
 
     btn_inciar.setAttribute('disabled','true');
     btn_inciar.classList.add('disabled');
 
-    borrar.addEventListener('click', function (){
-        borrar_value.value = 'true';
-        this.setAttribute('disabled', 'true');
-        this.classList.add('disabled');
-        preview.removeAttribute('controls');
-        preview.src = null;
-        btn_inciar.removeAttribute('disabled');
-        btn_inciar.classList.remove('disabled');
-        successMessage('El Stream se removerá del servidor al guardar los cambios')
+    borrar.addEventListener('click', function (e){
+
+
+            let opt = confirm("Se eliminara el archivo Stream del servidor. confirma?");
+            if(opt) {
+                //AJAX
+                sendRequestGET("http://localhost/infonete/articulo/eliminarStream?id=" + this.getAttribute("data-id") + "&name=" + this.getAttribute("data-name"),response => {
+                    console.log(response);
+                    if(response && response.success){
+                        alert(response.success);
+                        this.setAttribute('disabled', 'true');
+                        this.classList.add('disabled');
+                        preview.removeAttribute('controls');
+                        preview.src = null;
+                        btn_inciar.removeAttribute('disabled');
+                        btn_inciar.classList.remove('disabled');
+                    }else if(response.error){
+                        alert(response.error);
+                        return;
+                    }
+
+
+
+                });
+            }
+
+
+
     });
 
-
+}
 //mensajes
-let errorMessage = function (msg){
+function errorMessage(msg){
     let alert = document.getElementById("message-stream");
     alert.classList.remove("alert-success");
     alert.classList.add("alert-danger");
@@ -264,7 +283,7 @@ let errorMessage = function (msg){
     alert.classList.remove("hidden");
     console.log(msg);
 }
-let successMessage = function (msg){
+function successMessage(msg){
     let alert = document.getElementById("message-stream");
     alert.classList.remove("alert-danger");
     alert.classList.add("alert-success");
@@ -274,6 +293,6 @@ let successMessage = function (msg){
 }
 
 
-}
+
 
 cargarDispositivos();

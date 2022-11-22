@@ -190,3 +190,10 @@
 [22-11-22 01:49:09][INFO] Iniciando File
 [22-11-22 01:49:12][INFO] Iniciando File
 [22-11-22 01:49:12][INFO] Iniciando File
+[22-11-22 06:52:04][INFO] Se creo el directorio:public/uploads/article/115/
+[22-11-22 06:54:18][INFO] Se creo el directorio:public/uploads/article/116/
+[22-11-22 06:55:58][INFO] Se creo el directorio:public/uploads/article/117/
+[22-11-22 07:00:35][INFO] Se creo el directorio:public/uploads/article/118/
+[22-11-22 07:07:13][INFO] Se creo el directorio:public/uploads/article/119/
+[22-11-22 07:09:07][INFO] Se creo el directorio:public/uploads/article/120/
+[22-11-22 07:10:20][INFO] Se creo el directorio:public/uploads/article/121/

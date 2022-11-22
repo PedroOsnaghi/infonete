@@ -237,6 +237,31 @@ class ArticuloModel
 
     }
 
+    public function update()
+    {
+
+
+        $resQuery = $this->database->execute("UPDATE articulo SET titulo= '$this->titulo', 
+                                                            subtitulo='$this->subtitulo', 
+                                                            contenido='$this->contenido',
+                                                            link='$this->link',
+                                                            link_video='$this->linkvideo',
+                                                            ubicacion='$this->ubicacion',
+                                                            latitud=$this->latitud,
+                                                            longitud=$this->longitud
+                                          WHERE id = $this->id");
+
+        $resRel = $this->actualizarRelacionEdicionSeccion($this->id);
+        $resFile = $this->guardarArchivos($this->id);
+
+        if ($resQuery || $resRel || $resFile)
+            return array("success" => "La Nota se Actualizó con exito");
+
+        return array("error" => "No se registraron Cambios la Nota");
+
+
+    }
+
 
     public function cambiarEstado($idNota, $estado)
     {
@@ -283,13 +308,12 @@ class ArticuloModel
                                         WHERE $condicion e.id = $idEdicion");
     }
 
-    public function listBy($idSeccion, $idEdicion, $idUsuario){
+    public function listBy($idSeccion, $idEdicion){
         return $this->database->list("SELECT a.*, f.nombre as 'thumb'
 			                            FROM articulo a 
 			                                            JOIN archivo f ON f.id_articulo = a.id
                                                         JOIN articulo_edicion ae ON a.id = ae.id_articulo
-                                                        JOIN compra_edicion c ON ae.id_edicion = c.id_edicion
-                                        WHERE a.id_estado = ".self::ART_ST_PUBLICADO." AND ae.id_seccion = $idSeccion AND ae.id_edicion = $idEdicion AND c.id_usuario = $idUsuario GROUP BY a.id");
+                                        WHERE a.id_estado = ".self::ART_ST_PUBLICADO." AND ae.id_seccion = $idSeccion AND ae.id_edicion = $idEdicion  GROUP BY a.id");
 
     }
 
@@ -328,7 +352,21 @@ class ArticuloModel
 
     public function eliminarImagen($idArticulo, $filename)
     {
-        return $this->file->eliminar("article/$idArticulo/$filename");
+        $response = $this->file->eliminar("article/$idArticulo/$filename");
+        if($response){
+             $this->database->execute("DELETE FROM archivo WHERE nombre = '$filename' AND id_articulo = $idArticulo");
+             return array("success"=> "El archivo fue eliminado con exito");
+        }
+        return array("error"=> "No se pudo eliminar el archivo");
+    }
+
+    public function eliminarStream($idArticulo, $filename)
+    {
+        $response = $this->file->eliminar("article/$idArticulo/stream/$filename");
+        if($response)
+           return array("success"=> "El archivo Stream fue eliminado con exito");
+
+        return array("error"=> "No se pudo eliminar el archivo de Stream");
     }
 
 
@@ -378,10 +416,13 @@ class ArticuloModel
     {
         $folder = "article/" . $id;
 
-        $this->file->uploadFiles($folder, function ($file){
+        $resFile =$this->file->uploadFiles($folder, function ($file){
             $this->guardarDatosArchivo($file['name']);
         });
-        $this->file->uploadStream($folder);
+        $resStr = $this->file->uploadStream($folder);
+
+        if ($resFile || $resStr) return true;
+        return false;
     }
 
     private function guardarDatosArchivo($filename)
@@ -393,9 +434,14 @@ class ArticuloModel
 
     private function guardarRelacionEdicionSeccion($idArticulo)
     {
-        $res = $this->database->execute("INSERT INTO articulo_edicion(id_seccion, id_articulo, id_edicion) 
+        return $this->database->execute("INSERT INTO articulo_edicion(id_seccion, id_articulo, id_edicion) 
                                          VALUES ($this->seccion, $idArticulo, $this->edicion)");
 
+    }
+
+    private function actualizarRelacionEdicionSeccion($id)
+    {
+        return $this->database->execute("UPDATE articulo_edicion SET id_seccion = $this->seccion WHERE id_articulo = $id");
     }
 
 

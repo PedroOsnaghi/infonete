@@ -222,7 +222,7 @@ class EdicionModel
     //recibe la session como parametro para verificar si hay compras para el usuario que visita el sitio
     public function getNovedades($session)
     {
-        if($session->getAuthUser() !== false)
+        if($session->getAuthUser())
         {
             $join = "LEFT JOIN compra_edicion ce 
                      ON ce.id_edicion = e.id 

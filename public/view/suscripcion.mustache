@@ -76,7 +76,17 @@
                                                             <option value="gold">Gold</option>
                                                         </select>
                                                         <div class="col-3 ml-3 bg-gray-dark  rounded" id="paleta"></div>
-                                                        <input class="col-3 form-control mb-0 ml-3" type="text" name="precio"  placeholder="$ 0.00" required>
+                                                        <div class="col-3 form-group mb-0 ml-3">
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text bg-primary border-primary text-white">$</span>
+                                                                </div>
+                                                                <input class="form-control" type="text" name="precio"  placeholder="$ 0.00" onkeypress="if(event.keyCode < 46 || event.keyCode > 57 || event.keyCode == 47) event.returnValue = false;" required>
+
+                                                            </div>
+                                                        </div>
+
+
                                                     </div>
 
                                                 </div>

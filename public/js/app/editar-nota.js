@@ -1,13 +1,8 @@
 const input_yt = document.getElementById("inYt");
-
 const file = document.getElementById('file');
-
 const form = document.getElementById("form-noticia");
-
 const scroller = document.getElementById("img-scroller");
-
 const text_empty = document.getElementById("text-empty");
-
 const btn_guardar = document.getElementById("btn-save");
 
 const seccion = document.getElementById("seccion");
@@ -57,29 +52,38 @@ var createCloseButton = function (thumbnail_id) {
 scroller.addEventListener('click', function (e) {
     if ( e.target.classList.contains('close-button') ) {
         //archivo que se elimina ya existia en el servidor
-        eliminarArchivo(e);
 
-        console.log(deletedFiles);
-        e.target.parentNode.remove();
+        if(e.target.parentNode.hasAttribute("file-id")){
+            let opt = confirm("Se eliminara el archivo del servidor. confirma?");
+            if(opt) {
+                //AJAX
+                sendRequestGET("http://localhost/infonete/articulo/eliminarImagen?id=" + e.target.parentNode.getAttribute("art-id") + "&name=" + e.target.parentNode.getAttribute("file-id"),response => {
+                    console.log(response);
+                    if(response && response.success){
+                        alert(response.success);
+                        e.target.parentNode.remove();
+                    }else if(response.error){
+                        alert(response.error);
+                        return;
+                    }
+
+
+
+                });
+            }
+        }
+
+
+
         //archivo agregado y eliminado
-        if (formDataFile.has(e.target.parentNode.dataset.id)) formDataFile.delete(e.target.parentNode.dataset.id);
+        if (formDataFile.has(e.target.parentNode.dataset.id)){
+            e.target.parentNode.remove();
+            formDataFile.delete(e.target.parentNode.dataset.id);
+        }
     }
 });
 
-function eliminarArchivo(e)
-{
-    if(e.target.parentNode.hasAttribute("file-id")){
-        let opt = confirm("Se eliminara el archivo del servidor. confirma?");
-        if(opt) {
-            //AJAX
-            sendRequestGET("http://localhost/infonete/articulo/eliminarImagen?id=" + e.target.parentNode.getAttribute("art-id") + "&name=" + e.target.parentNode.getAttribute("file-id"),response => {
-                console.log(response);
 
-
-            });
-        }
-    }
-}
 
 
 
@@ -117,10 +121,6 @@ form.addEventListener("submit", function (e) {
                 formDataMain.append("file[]", pair[1]);
         }
 
-        //agrego como dato al formDataMain el arreglo de archivos preexistentes eliminados
-
-        formDataMain.append('deletedfile', JSON.stringify(deletedFiles) );
-
 
 
         //VER POR CONSOLA LOS DATOS ENVIADOS
@@ -130,7 +130,7 @@ form.addEventListener("submit", function (e) {
 
 
         //AJAX
-        sendRequest("http://localhost/infonete/articulo/actualizar", formDataMain,  response => {
+        sendRequest("http://localhost/infonete/articulo/actualizar?id=" + this.name, formDataMain,  response => {
             console.log(response);
             if(response && response.success){
                 console.log(response.success);

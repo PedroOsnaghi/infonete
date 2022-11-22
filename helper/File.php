@@ -145,9 +145,9 @@ class File
     {
         $fulldir = dirname(__FILE__,2) . "/public/uploads/$file";
 
-        if(unlink($fulldir)) return array("status" => "archivo eliminado");
+        if(unlink($fulldir)) return true;
 
-        return array("status" => "No se pudo eliminar el archivo");
+        return false;
     }
 
     private function verificarDirectorio($folder)
