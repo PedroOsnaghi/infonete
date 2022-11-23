@@ -169,6 +169,17 @@
     height: 100px;
 }
 
+.product-catalog{
+    width: 184px !important;
+    height: 65px !important;
+     max-width: 190px !important;
+    object-fit: contain;
+    padding: 0px 0px 0px !important;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 0px 0px 5px 5px;
+}
+
 .file-image-container {
     max-width: 200px !important;
 }

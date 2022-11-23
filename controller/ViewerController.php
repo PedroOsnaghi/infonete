@@ -28,8 +28,8 @@ class ViewerController
     {
         $this->session->urlRestriction();
 
-        $id = isset($_POST['id']) ?? 0;
-        if(isset($_POST['target'])) $this->session->setParameter('target_request', $_POST['target']);
+        $id = $_GET['id'] ?? 0;
+
 
         $data = $this->datos(["edicion" => $this->obtenerCompra($id),
                             "secciones" => $this->cargarSecciones($id)]);
@@ -66,11 +66,10 @@ class ViewerController
 
     public function close()
     {
-        $target = $this->session->getParameter('target_request');
-        $this->session->unsetParameter('target_request');
-        $this->logger->info($this->session->getParameter('target_request'));
-        $target ? Redirect::doIt($target) : Redirect::doIt('/infonete');
+        Redirect::doIt("/infonete/edicion/misEdiciones");
     }
+
+
 
     private function seccionSeleccionada($id)
     {

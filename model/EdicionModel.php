@@ -160,6 +160,27 @@ class EdicionModel
         return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.estado, e.id_producto, e.portada, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado");
     }
 
+    public function listCatalogBy($idProduct, $session)
+    {
+        if($session->getAuthUser())
+        {
+            $join = "LEFT JOIN compra_edicion ce 
+                     ON ce.id_edicion = e.id 
+                     AND ce.id_usuario = " . $session->getAuthUser()->getId();
+            $col = ", ce.id_usuario AS 'usuario'";
+        }else
+        {
+            $join = "";
+            $col = "";
+        }
+        return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo " . $col .
+                                        " FROM edicion e JOIN producto p on e.id_producto = p.id 
+                                                                    JOIN tipo_producto t on p.id_tipo_producto = t.id "
+                                        . $join .
+                                        " WHERE p.id= $idProduct AND e.estado =" . self::ESTADO_PUBLICADO .
+                                        " ORDER BY e.fecha DESC");
+    }
+
     public function getEdition($id)
     {
         $query = $this->database->query("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, e.fecha, e.estado, e.id_producto, e.portada, p.nombre as 'nombre_producto', t.tipo 

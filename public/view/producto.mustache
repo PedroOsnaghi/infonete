@@ -53,7 +53,7 @@
 
                                     </div>
                                     <div class="d-flex flex-column w-100">
-                                        <label for="tipo"></label>
+                                        <label for="tipo">Tipo</label>
                                         <select class="form-control mb-2" id="tipo" name="tipo" required>
                                             <option value="0" disabled selected hidden>Seleccione un tipo</option>
                                             {{#tipo}}
@@ -62,8 +62,10 @@
 
                                         </select>
 
-                                        <label for="nombre"></label>
+                                        <label for="nombre">Nombre</label>
                                         <input class="form-control mb-2" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                                        <label for="desc">Descripción</label>
+                                        <input class="form-control mb-2" type="text" id="desc" name="descripcion" maxlength="255" placeholder="Describe el producto" required>
 
                                         <div class="d-flex justify-content-end">
                                             <button class="btn btn-primary mb-2 " type="submit">Guardar</button>

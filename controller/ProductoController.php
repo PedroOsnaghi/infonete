@@ -23,21 +23,21 @@ class ProductoController
     public function agregar()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
-        $data = $this->getDataTipo();
+        $data = $this->datos(["tipo" => $this->productoModel->getTipoProductList()]);
         echo $this->render->render("public/view/producto.mustache", $data);
     }
 
     public function search()
     {
         $value = $_GET['value'];
-        $data = $this->getProductSearchList($value);
+        $data = $this->datos(["productos" => $this->productoModel->search($value)]);
         echo $this->render->render("public/view/gestion-producto.mustache", $data);
     }
 
     public function admin()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
-        $data = $this->getData();
+        $data = $this->datos([ "productos" => $this->productoModel->list()]);
         echo $this->render->render("public/view/gestion-producto.mustache", $data);
     }
 
@@ -47,9 +47,9 @@ class ProductoController
 
         $this->setearProducto();
 
-       $data = ($this->productoModel->guardar()) ?
-             $this->getDataTipo(["success" => "El producto se guardó correctamente"]):
-             $this->getDataTipo(["error" => "Hubo un error al guardar el producto"]);
+        $data = $this->datos([$this->productoModel->guardar(),
+                           "tipo" => $this->productoModel->getTipoProductList()]);
+
 
         echo $this->render->render("public/view/producto.mustache", $data);
     }
@@ -66,49 +66,31 @@ class ProductoController
     {
         $id = $_POST['id'];
         $this->setearProducto($id);
-        $data = ($this->productoModel->update()) ?
-            $this->getDataEditar($id, ["success" => "El producto se actualizó correctamente"]):
-            $this->getDataEditar($id, ["error" => "Hubo un error al actualizar el producto"]);
+        $data = $this->datos([$this->productoModel->update(),
+                                "producto" => $this->productoModel->getProduct($id),
+                                    "tipo" => $this->productoModel->getTipoProductList()]);
 
         echo $this->render->render("public/view/editar-producto.mustache", $data);
 
+    }
+
+    public function nuestrosProductos()
+    {
+        $data = $this->datos(["productos" => $this->productoModel->list()]);
+        echo $this->render->render("public/view/catalog/catalogo.mustache", $data);
     }
 
     private function setearProducto($id = null)
     {
         if($id != null) $this->productoModel->setId($id);
         $this->productoModel->setNombre($_POST['nombre']);
+        $this->productoModel->setDescripcion($_POST['descripcion']);
         $this->productoModel->setTipo($this->valida($_POST['tipo']));
         if (isset($_POST['imagen'])) $this->productoModel->setImagen($_POST['imagen']);
     }
 
 
-    private function getData($msg = [])
-    {
-        return array_merge($msg, array(
-            "productos" => $this->productoModel->list(),
-            "userAuth" => $this->session->getAuthUser()
-        ));
-    }
 
-    private function getDataTipo($msg = [])
-    {
-        return array_merge($msg, array(
-            "tipo" => $this->productoModel->getTipoProductList(),
-            "userAuth" => $this->session->getAuthUser(),
-            $msg
-        ));
-    }
-
-    private function getDataEditar($id, $msg = [])
-    {
-        return array_merge($msg, array(
-            "producto" => $this->productoModel->getProduct($id),
-            "tipo" => $this->productoModel->getTipoProductList(),
-            "userAuth" => $this->session->getAuthUser(),
-            $msg
-        ));
-    }
 
     private function valida($value)
     {
@@ -123,12 +105,13 @@ class ProductoController
         echo $this->render->render("public/view/producto.mustache", $data);
     }
 
-    private function getProductSearchList($value)
+
+
+    private function datos($msg = [])
     {
-        return array(
-            "productos" => $this->productoModel->searchList($value),
+        return array_merge($msg, array(
             "userAuth" => $this->session->getAuthUser()
-        );
+        ));
     }
 
 
