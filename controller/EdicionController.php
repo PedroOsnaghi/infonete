@@ -108,6 +108,8 @@ class EdicionController
         $datosVenta = array('numero' => $edicion->getNumero(),
             'concepto' => 'infonete-compra de edición nro: ' . $edicion->getNumero(),
             'precio' => $edicion->getPrecio());
+
+
         if ($this->mercadoPago->procesarPago($datosVenta)) {
             $data = $this->datos($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $edicion->getId()));
             echo $this->render->render('public/view/compra-checkout.mustache', $data);
@@ -122,6 +124,16 @@ class EdicionController
         $this->session->urlRestriction();
         $data = $this->datos(['ediciones' => $this->edicionModel->listarCompras($this->session->getAuthUser()->getId())]);
         echo $this->render->render('public/view/mis-productos.mustache', $data);
+    }
+
+    public function catalog()
+    {
+        $idProducto = $_GET['p'];
+
+        $data = $this->datos(["producto" => $this->productModel->getProduct($idProducto),
+                                "ediciones" => $this->edicionModel->listCatalogBy($idProducto, $this->session)]);
+
+        echo $this->render->render("public/view/catalog/catalogo-list.mustache",$data);
     }
 
 

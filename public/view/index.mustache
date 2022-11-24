@@ -35,12 +35,12 @@
                     <div class="card-body">
                         <!-- Banner suscripciones -->
                         <div class="row">
-                            <div class="col-12 grid-margin stretch-card">
-                                <div class="card corona-gradient-card">
+                            <div class="col-12 col-lg-9 ">
+                                <div class="card corona-gradient-card h-100">
                                     <div class="card-body py-0 px-0 px-sm-3">
                                         <!-- publicidad suscripcion -->
 
-                                        <div class="row align-items-center">
+                                        <div class="d-flex align-items-center">
                                             <div class="col-4 col-sm-3 col-xl-2">
                                                 <img src="/infonete/public/images/banner/Group126@2x.png"
                                                      class="gradient-corona-img img-fluid" alt="">
@@ -61,11 +61,33 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-12  col-lg-3 al">
+                                <div class="card card-inverse-primary mt-2 mt-lg-0 h-100">
+                                    <div class="card-body py-1">
+                                        <div class="row">
+                                            <div class="col-9 align-items-center">
+                                                <div class="d-flex align-items-center align-self-start">
+                                                    <h2 class="mb-0">24ºC</h2>
+                                                    <p class="text-success ml-2 mb-0 font-weight-medium">Max: 11</p>
+                                                    <p class="text-success ml-2 mb-0 font-weight-medium">Min: 11</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="icon icon-box-success">
+                                                    <span class="mdi mdi-arrow-top-right icon-item"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="text-muted font-weight-normal mb-0 mt-auto">San Justo</h6>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <!-- seccion novedades -->
 
-                        <div class="row">
+                        <div class="row mt-3">
                             <h3 class="col-12 text-left text-light-gray">Ultimos lanzamientos</h3>
 
                             <!-- Tarjeta de ediciones publicadas -->
@@ -95,14 +117,10 @@
                                                 <div class="mt-auto">
                                                     <h3 class="mb-0 text-dark-gray ">${{precio}}</h3>
                                                     {{#usuario}}
-                                                        <form action="/infonete/viewer/show" method="post">
-                                                            <button class="btn btn-success btn-block" name="id" value="{{id}}">Leer</button>
-                                                        </form>
+                                                        <a href="/infonete/edicion/misEdiciones" class="btn btn-success btn-block">Comprado</a>
                                                     {{/usuario}}
                                                     {{^usuario}}
-                                                        <form action="/infonete/edicion/verDetalle" method="get">
-                                                            <button class="btn btn-primary btn-block" name="id" value="{{id}}">Comprar este número</button>
-                                                        </form>
+                                                        <a href="/infonete/edicion/verDetalle?id={{id}}" class="btn btn-primary btn-block">Comprar este número</a>
                                                     {{/usuario}}
                                                 </div>
 

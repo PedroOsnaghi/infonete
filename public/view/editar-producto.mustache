@@ -59,7 +59,7 @@
                                         </div>
                                         <div class="d-flex flex-column w-100">
                                            <input type="hidden" value="{{getId}}" name="id">
-                                            <label for="tipo"></label>
+                                            <label for="tipo">Tipo</label>
                                             <select class="form-control mb-2" id="tipo" name="tipo" required>
                                                 <option value="{{getTipo}}" selected hidden>{{getNombreTipo}}</option>
                                                 {{#tipo}}
@@ -68,9 +68,12 @@
 
                                             </select>
 
-                                            <label for="nombre"></label>
+                                            <label for="nombre">Nombre</label>
                                             <input class="form-control mb-2" type="text" id="nombre" name="nombre"
                                                    placeholder="Nombre" value="{{getNombre}}" required>
+                                            <label for="desc">Descripcíon</label>
+                                            <input class="form-control mb-2" type="text" id="desc" maxlength="255" name="descripcion"
+                                                   placeholder="Describe el producto" value="{{getDescripcion}}" required>
 
                                             <div class="d-flex justify-content-end">
                                                 <button class="btn btn-primary mb-2 " type="submit">Actualizar</button>

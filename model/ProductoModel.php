@@ -11,6 +11,7 @@ class ProductoModel
     private $tipo;
     private $nombre_Tipo;
     private $nombre;
+    private $descripcion;
     private $imagen;
     private $database;
     private $file;
@@ -50,6 +51,16 @@ class ProductoModel
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
+    }
+
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
     }
 
     public function getImagen()
@@ -95,11 +106,13 @@ class ProductoModel
     public function guardar()
     {
         $this->guardarImagen();
-        return $this->database->execute("INSERT INTO producto(id_tipo_producto, nombre, imagen) 
-                                  VALUES($this->tipo, '$this->nombre', '$this->imagen')");
+        $res = $this->database->execute("INSERT INTO producto(id_tipo_producto, nombre, descripcion, imagen) 
+                                  VALUES($this->tipo, '$this->nombre', '$this->descripcion', '$this->imagen')");
+
+        return $res ? array("success" => "El producto se guardó con exito.") : array("error" => "No se pudo agregar el producto");
     }
 
-    public function searchList($value)
+    public function search($value)
     {
         return $this->database->list("SELECT p.*, t.tipo FROM producto p JOIN tipo_producto t ON p.id_tipo_producto = t.id WHERE p.nombre LIKE '%$value%' OR t.tipo LIKE '%$value%' ORDER BY t.tipo ASC, p.nombre ASC");
     }
@@ -113,10 +126,13 @@ class ProductoModel
     public function update()
     {
         $sql_imagen = ($this->verificarCambioImagen()) ? ", imagen = '$this->imagen' " : "";
-        return $this->database->execute("UPDATE producto SET id_tipo_producto = $this->tipo, 
-                                        nombre = '$this->nombre'
+        $res = $this->database->execute("UPDATE producto SET id_tipo_producto = $this->tipo, 
+                                        nombre = '$this->nombre',
+                                        descripcion = '$this->descripcion'
                                         $sql_imagen
                                         WHERE id = $this->id");
+
+        return $res ? array("success" => "El producto se actualizó con exito.") : array("error" => "No se realizaron cambios en el producto");
     }
 
     private function toProduct($array)
@@ -125,6 +141,7 @@ class ProductoModel
         $this->tipo = $array['id_tipo_producto'];
         $this->nombre_Tipo = $array['tipo'];
         $this->nombre = $array['nombre'];
+        $this->descripcion = $array['descripcion'];
         $this->imagen = $array['imagen'];
 
         return $this;

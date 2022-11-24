@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Productos</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+
+
+                <!-- Aqui todo el contenido -->
+
+                <!-- CONTENIDO - HOME -->
+                <div class="card  fadeIn">
+                    <div class="card-body pt-0">
+
+                        <!-- seccion novedades -->
+
+
+                            <!-- Tarjeta de ediciones publicadas -->
+
+                                <div class="d-flex w-100 mx-auto align-items-baseline justify-content-center justify-content-lg-start">
+                                {{#producto}}
+                                    <div class="card card-max bg-light-gray shadow-max mr-3 overflow-hidden">
+
+                                            <img class="mx-auto product-catalog mb-2 d-block shadow"
+                                                 src="/infonete/public/uploads/product/{{getImagen}}" alt="">
+                                            <div class="mx-auto text-dark-gray">{{getNombreTipo}} {{getNombre}}</div>
+                                            <div class="w-100 card-tipo-border"></div>
+
+                                    </div>
+                                    <h5 class="text-left text-muted mb-0 mt-auto"  >{{getDescripcion}}</h5>
+                                {{/producto}}
+
+                                </div>
+                            <hr>
+
+                        <div class="d-flex w-100">
+                            <form class="mt-2 search w-25">
+                                <input type="text" class="form-control" name="edition" placeholder="Buscar por Número de edicion o Título">
+                            </form>
+                        </div>
+
+                        <div class="d-flex mt-4 flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start">
+                            {{#ediciones}}
+                                <div class="card card-max bg-light-gray shadow-max mr-2 mb-4">
+                                    <div class="card-img p-0 overflow-hidden">
+                                        <div class=" bg-light pt-4 pb-2 mb-2">
+                                            <img class="mx-auto portada mb-2 d-block shadow"
+                                                 src="/infonete/public/uploads/portada/{{portada}}" alt="">
+                                            <spam class="tag-tipo">{{tipo}}</spam>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column h-100 px-2">
+
+                                        <h4 class="font-weight-bolder mb-0 me-1 text-dark-gray">{{titulo}}</h4>
+
+
+                                        <div class="d-flex ">
+                                            <small class="text-muted pr-2">{{fecha}}</small>
+                                            <small class="text-muted">Ed.: {{numero}}</small>
+                                        </div>
+
+
+                                        <p class="text-gray mt-2">{{descripcion}}</p>
+                                        <div class="mt-auto">
+                                            <h3 class="mb-0 text-dark-gray ">${{precio}}</h3>
+                                            {{#usuario}}
+                                                <a href="/infonete/edicion/misEdiciones" class="btn btn-success btn-block">Comprado</a>
+                                            {{/usuario}}
+                                            {{^usuario}}
+                                                <a href="/infonete/edicion/verDetalle?id={{id}}" class="btn btn-primary btn-block">Comprar este número</a>
+                                            {{/usuario}}
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="w-100 card-tipo-border"></div>
+                                </div>
+                            {{/ediciones}}
+                            {{^ediciones}}
+                                <p class="text-muted mt-5">No se encontraron Ediciones</p>
+                            {{/ediciones}}
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+
+    </div>
+</div>
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+
+<!--script vistas Infonete -->
+
+</body>
+</html>

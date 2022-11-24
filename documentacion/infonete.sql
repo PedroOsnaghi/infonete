@@ -39,6 +39,7 @@ create table producto
     id               int primary key auto_increment,
     id_tipo_producto int,
     nombre           varchar(100),
+    descripcion		 varchar(255),
     imagen           varchar(100),
     activo           BOOLEAN default (1),
     foreign key (id_tipo_producto) references tipo_producto (id)
@@ -200,7 +201,7 @@ INSERT INTO `articulo` VALUES (78,'Cristina Kirchner hablará en La Plata ante u
 
 INSERT INTO `archivo` VALUES (2,101,1,'C3ATM7ASE3SGKMRIQOUESRTKTY.webp',NULL),(3,102,1,'3ANL4H2ZKSIHNDD2W6SHUOC2IQ.webp',NULL),(4,103,1,'BE6P7VAIKJH7BC7PUCD5WHRACI.webp',NULL),(5,114,1,'HWI77OYQYBG3BM3PJ2MWYXJ4CI.webp',NULL),(6,114,1,'UEJHEB3WXJDFHHWTRKJ5AES77Q.webp',NULL),(7,113,1,'EEPUMUSTDZGKBDBFW6JSJO7IOY.webp',NULL),(13,78,1,'DLVLVICZPRCW3GDJT5IYLBFBCE.webp',NULL),(14,78,1,'EYZRAM6PFFBVXHASWCY4ESWTTI.webp',NULL),(16,78,1,'KAZIZMPP4BFPBCPIIDE7WUINIE.webp',NULL),(17,115,1,'5CPXHMXXLZHMNN6LMZEWB5HECY.webp',NULL),(18,115,1,'C3ATM7ASE3SGKMRIQOUESRTKTY.webp',NULL),(19,116,1,'7D3TF4P64BFC3G2ASHWNKPQ4BM.webp',NULL),(20,116,1,'K2VJ346NOFEHXDQNJKB6C3FMOU.webp',NULL),(21,117,1,'AV6OJDS2CBQE3YRNSSYKR4UZIU.webp',NULL),(22,117,1,'CTXZH464Y5DG7AFIMBF5AJIFNQ.webp',NULL),(23,118,1,'4XENCSYBLIFHP3SERC6APHCJDY.webp',NULL),(24,118,1,'65BIS3KPUIIIMSODU5W54DXUIY.webp',NULL),(25,119,1,'FRYVLIBUD5DUTHLD54WJOHYXKM.webp',NULL),(26,119,1,'WTG34JJAFJGNXM55M7UT3JWUAU.webp',NULL),(27,120,1,'BRLSPV4Y7ZBYPAHWZLVK33QYIA.webp',NULL),(28,120,1,'ESP2HARAYVF2VLBBDO45AXKAG4.webp',NULL),(29,120,1,'H62UYHNR7RCE3FYNBUGCDJ5PUU.webp',NULL),(30,121,1,'W3ZHNRUIDZEJJJZT2L563PUVTQ.webp',NULL),(31,121,1,'XFNQEVNL4ZDGBE4OFC7AFUAZDM.webp',NULL);
 
-INSERT INTO `producto` VALUES (1,1,'Clarin','clarin.png',1),(2,2,'Gente','gente.png',1),(3,1,'OLÉ','Olé_1996.svg',1);
+INSERT INTO `producto` VALUES (1,1,'Clarin','Ultimas noticias de Argentina y el mundo','clarin.png',1),(2,2,'Gente','Últimas noticias del espectáculo e interés general en Argentina y el mundo','gente.png',1),(3,1,'OLÉ','Olé, diario deportivo líder en Argentina. Noticias deportivas de: Fútbol local e internacional, Selección Nacional, tenis, rugby, autos y más','Olé_1996.svg',1);
 
 INSERT INTO `edicion` VALUES (1,1,'Luisana al rojo vivo','Luisana revela todos los secretos de su vida en familia. Todo y mucho mas en esta edicíon',100.5,'2022-11-22 07:11:00',1,2,'gente.jpg'),(2,1256,'Héroes para siempre','Somos Campeones de America!',450.75,'2022-11-21 10:11:00',1,3,'IcAx8HZtv_720x0.webp'),(3,3232,'La nueva Magistratura','Vea las ultimas novedades de la politica argentina',370.8,'2022-11-22 07:11:00',1,1,'HWI77OYQYBG3BM3PJ2MWYXJ4CI.webp'),(4,3256,'Boca Campeón','Detalles de la final de la copa',375.9,'2022-11-22 07:11:00',1,1,'m2UHgMsjx_720x0__1.webp'),(5,56,'Pampita al desnudo','Pampita revela todas sus intimidades',650.99,'2022-11-22 07:11:00',1,2,'Dv62Q08XgAEkpbo.jpg');
 
