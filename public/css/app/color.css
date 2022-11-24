@@ -124,6 +124,10 @@
     background-color: var(--x-light-gray)!important;
 }
 
+.bg-lightness-gray{
+    background-color: rgba(155, 155, 155, 0.8) !important;
+}
+
 .bg-gradient-gold{
     background: rgb(108,238,249)!important;
     background: linear-gradient(90deg, rgb(178, 176, 67) 0%, rgb(47, 194, 112) 0%, rgb(3, 114, 65) 86%)!important;

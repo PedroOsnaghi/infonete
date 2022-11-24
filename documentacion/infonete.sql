@@ -69,7 +69,7 @@ create table usuario_suscripcion
     id_producto    int,
     fecha_inicio   date,
     activa         BOOLEAN,
-    primary key (id_usuario, id_suscripcion),
+    primary key (id_usuario, id_suscripcion, fecha_inicio),
     foreign key (id_usuario) references usuario (id),
     foreign key (id_suscripcion) references suscripcion (id),
     foreign key (id_producto) references producto (id)

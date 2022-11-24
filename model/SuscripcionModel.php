@@ -125,6 +125,30 @@ class SuscripcionModel
         return $this->toSuscripcion($query);
     }
 
+    public function listarSuscripcionesUsuario($idUsuario)
+    {
+        return $this->database->list("SELECT DATE_FORMAT(us.fecha_inicio, '%d de %b del %Y') as 'fecha_inicio', DATE_FORMAT(DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY), '%d de %b del %Y') as 'fecha_vencimiento',
+                                    p.nombre, p.imagen, tp.tipo, us.activa as 'estado', s.descripcion, s.tag, s.precio, ts.duracion
+                                    FROM usuario_suscripcion us JOIN producto p on us.id_producto = p.id
+                                    JOIN tipo_producto tp on p.id_tipo_producto = tp.id       
+                                    JOIN suscripcion s on us.id_suscripcion = s.id
+                                    JOIN tipo_suscripcion ts on s.id_tipo_suscripcion = ts.id 
+                                    WHERE us.id_usuario = $idUsuario
+                                    ORDER BY us.activa DESC, us.fecha_inicio DESC");
+    }
+
+    public function registrarCompra($idUsuario, $idSuscripcion, $idProducto)
+    {
+        try {
+            $query = $this->database->execute("INSERT INTO usuario_suscripcion (id_usuario, id_suscripcion, id_producto, fecha_inicio, activa) VALUES ($idUsuario, $idSuscripcion, $idProducto, now(), 1)");
+            if($query) return array('success' => 'La suscripción se registró con éxito',
+                'suscripcion' => $idSuscripcion);
+            return array('error' => 'No se pudo registrar la suscripción');
+        } catch (exception) {
+            return array('error' => 'Ya tenés una suscripción activa para el producto seleccionado. Puedes verla en Mis Suscripciones');
+        }
+    }
+
     private function toSuscripcion($query)
     {
         if($query == null) return null;

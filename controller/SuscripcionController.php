@@ -68,13 +68,31 @@ class SuscripcionController
         $this->session->urlRestriction();
 
         $idSuscripcion = $_POST['id'];
-        $producto = $_POST['producto'];
-        $this->comprarSuscripcion($idSuscripcion, $producto);
+        $idProducto = $_POST['producto'];
+        $this->comprarSuscripcion($idSuscripcion, $idProducto);
+    }
+
+    public function misSuscripciones()
+    {
+        $this->session->urlRestriction();
+        $data = $this->datos(['suscripciones' => $this->suscripcionModel->listarSuscripcionesUsuario($this->session->getAuthUser()->getId())]);
+        echo $this->render->render("public/view/mis-suscripciones.mustache", $data);
     }
 
     private function comprarSuscripcion($idS, $idP)
     {
-        $this->mercadoPago->procesarPago();
+        $suscripcion = $this->suscripcionModel->getSuscripcion($idS);
+        $datosVenta = array('numero' => $idS,
+            'concepto' => 'infonete-compra de suscripción ' . $suscripcion->getDescripcion() . ' - ' . $suscripcion->getDuracion() . ' días',
+            'precio' => $suscripcion->getPrecio());
+
+        if ($this->mercadoPago->procesarPago($datosVenta)) {
+            $data = $this->datos($this->suscripcionModel->registrarCompra($this->session->getAuthUser()->getId(), $idS, $idP));
+            echo $this->render->render('public/view/compra-checkout.mustache', $data);
+        } else {
+            $data = $this->datos(['warning' => 'No se pudo procesar el pago. Vuelva a intentarlo más tarde']);
+            echo $this->render->render('public/view/compra-checkout.mustache', $data);
+        }
     }
 
     private function setSuscripcion()
