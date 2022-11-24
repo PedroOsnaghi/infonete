@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Suscribirse</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+
+
+                <!-- Aqui todo el contenido -->
+
+                <!-- CONTENIDO - HOME -->
+                <div class="card fadeIn">
+                    <div class="card-body">
+
+                        <!-- seccion novedades -->
+
+                        <div class="d-flex flex-column w-100">
+                            <h3 class="col-12 text-left text-light-gray">Comprar Suscripción</h3>
+                            <hr class="w-100">
+
+                            <div>
+                                <h4 class="col-12 text-left text-light-gray">Selecciona el producto al que deseas suscribirte</h4>
+                                <div class="d-flex flex-wrap w-100 mx-auto justify-content-center mt-3">
+                                    {{#productos}}
+                                        <div class="card card-max bg-light-gray shadow-max mr-2 mb-4 overflow-hidden">
+
+                                            <img class="mx-auto product-catalog mb-2 d-block shadow"
+                                                 src="/infonete/public/uploads/product/{{imagen}}" alt="">
+
+                                            <div class="mx-auto text-dark-gray"><label><input type="radio" value="{{id}}" name="producto" class="form-check-input">{{tipo}} {{nombre}}</label></div>
+
+                                            <div class="w-100 card-tipo-border"></div>
+
+
+                                        </div>
+                                    {{/productos}}
+                                    {{^productos}}
+                                        <div class="m-4">
+                                            <p class="text-muted">Aún no se cargaron productos en el sistema</p>
+                                        </div>
+                                    {{/productos}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+
+    </div>
+</div>
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+
+<!--script vistas Infonete -->
+
+</body>
+</html>

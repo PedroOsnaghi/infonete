@@ -3,12 +3,14 @@
 class SuscripcionController
 {
     private $suscripcionModel;
+    private $productoModel;
     private $render;
     private $session;
 
-    public function __construct($suscripcionModel, $session, $render)
+    public function __construct($suscripcionModel, $productoModel, $session, $render)
     {
         $this->suscripcionModel = $suscripcionModel;
+        $this->productoModel = $productoModel;
         $this->session = $session;
         $this->render = $render;
     }
@@ -29,9 +31,18 @@ class SuscripcionController
     public function crear()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
-
         $data = $this->datos(["tipos" => $this->suscripcionModel->listTipos()]);
         echo $this->render->render("public/view/suscripcion.mustache", $data);
+    }
+
+    public function suscribirse()
+    {
+        $this->session->urlRestriction();
+
+        $idSuscripcion = $_GET['s'];
+        $data = $this->datos(["suscripcion" => $this->suscripcionModel->getSuscripcion($idSuscripcion),
+                             "productos" => $this->productoModel->list()]);
+        echo $this->render->render("public/view/suscribirse.mustache", $data);
     }
 
     public function guardar()

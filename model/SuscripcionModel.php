@@ -12,6 +12,8 @@ class SuscripcionModel
     private $tag;
     private $precio;
     private $database;
+    private $id_tipo;
+    private $tipo;
 
     public function getId()
     {
@@ -63,6 +65,28 @@ class SuscripcionModel
         $this->tag = $tag;
     }
 
+    public function getIdTipo(): mixed
+    {
+        return $this->id_tipo;
+    }
+
+    public function setIdTipo(mixed $id_tipo): void
+    {
+        $this->id_tipo = $id_tipo;
+    }
+
+    public function getTipo(): mixed
+    {
+        return $this->tipo;
+    }
+
+    public function setTipo(mixed $tipo): void
+    {
+        $this->tipo = $tipo;
+    }
+
+
+
     public function __construct($database)
     {
         $this->database = $database;
@@ -87,5 +111,32 @@ class SuscripcionModel
     public function listTipos()
     {
         return $this->database->list("SELECT id as 'idTipo', duracion as 'dias', descripcion as 'tipo' FROM tipo_suscripcion  ORDER BY  id ASC");
+    }
+
+    public function getSuscripcion($idSuscripcion)
+    {
+        $query = $this->database->query("SELECT s.id, s.descripcion, s.tag, s.precio, t.id as 'id_tipo',
+                                        t.duracion,t.descripcion as 'tipo'
+                                        FROM suscripcion as s
+                                        JOIN tipo_suscripcion as t 
+                                        ON s.id_tipo_suscripcion = t.id
+                                        WHERE s.id = $idSuscripcion");
+
+        return $this->toSuscripcion($query);
+    }
+
+    private function toSuscripcion($query)
+    {
+        if($query == null) return null;
+
+        $this->id = $query['id'];
+        $this->descripcion = $query['descripcion'];
+        $this->tag = $query['tag'];
+        $this->precio = $query['precio'];
+        $this->id_tipo = $query['id_tipo'];
+        $this->duracion = $query['duracion'];
+        $this->tipo = $query['tipo'];
+
+        return $this;
     }
 }
