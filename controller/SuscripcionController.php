@@ -6,11 +6,13 @@ class SuscripcionController
     private $productoModel;
     private $render;
     private $session;
+    private $mercadoPago;
 
-    public function __construct($suscripcionModel, $productoModel, $session, $render)
+    public function __construct($suscripcionModel, $productoModel, $mercadoPago, $session, $render)
     {
         $this->suscripcionModel = $suscripcionModel;
         $this->productoModel = $productoModel;
+        $this->mercadoPago = $mercadoPago;
         $this->session = $session;
         $this->render = $render;
     }
@@ -59,6 +61,20 @@ class SuscripcionController
         $data = $this->datos(["planes" => $this->suscripcionModel->list()]);
 
         echo $this->render->render("public/view/planes.mustache", $data);
+    }
+
+    public function comprar()
+    {
+        $this->session->urlRestriction();
+
+        $idSuscripcion = $_POST['id'];
+        $producto = $_POST['producto'];
+        $this->comprarSuscripcion($idSuscripcion, $producto);
+    }
+
+    private function comprarSuscripcion($idS, $idP)
+    {
+        $this->mercadoPago->procesarPago();
     }
 
     private function setSuscripcion()

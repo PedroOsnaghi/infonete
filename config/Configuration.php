@@ -86,7 +86,7 @@ class Configuration
 
     public function getSuscripcionController()
     {
-        return new SuscripcionController($this->getSuscripcionModel(), $this->getProductoModel(), $this->getSession(), $this->getRender());
+        return new SuscripcionController($this->getSuscripcionModel(), $this->getProductoModel(), $this->getMercadoPago(), $this->getSession(), $this->getRender());
     }
 
     public function getEdicionModel()
