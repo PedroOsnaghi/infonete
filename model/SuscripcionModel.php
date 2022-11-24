@@ -60,27 +60,27 @@ class SuscripcionModel
         return $this->tag;
     }
 
-    public function setTag($tag): void
+    public function setTag($tag)
     {
         $this->tag = $tag;
     }
 
-    public function getIdTipo(): mixed
+    public function getIdTipo()
     {
         return $this->id_tipo;
     }
 
-    public function setIdTipo(mixed $id_tipo): void
+    public function setIdTipo(mixed $id_tipo)
     {
         $this->id_tipo = $id_tipo;
     }
 
-    public function getTipo(): mixed
+    public function getTipo()
     {
         return $this->tipo;
     }
 
-    public function setTipo(mixed $tipo): void
+    public function setTipo(mixed $tipo)
     {
         $this->tipo = $tipo;
     }
