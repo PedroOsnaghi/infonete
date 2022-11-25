@@ -2,6 +2,8 @@
 
 class Fecha
 {
+
+
     public static function longDate($fecha)
     {
         $fecha = substr($fecha, 0, 10);
@@ -17,6 +19,16 @@ class Fecha
         $nombreMes = str_replace($meses_EN, $meses_ES, $mes);
         return $nombredia." ".$numeroDia." de ".$nombreMes." de ".$anio;
     }
+
+    public static function hoy()
+    {
+        $datetime = new DateTime();
+        $datetime->setTimezone(new DateTimeZone('America/Argentina/Buenos_Aires'));
+
+        return $datetime;
+    }
+
+
 }
 
 

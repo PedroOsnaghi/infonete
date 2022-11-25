@@ -68,9 +68,9 @@ create table usuario_suscripcion
     id_suscripcion int,
     id_producto    int,
     fecha_inicio   datetime,
-    id_pago 		long,
+    id_pago 		double,
     activa         BOOLEAN,
-    primary key (id_usuario, id_suscripcion,id_producto, fecha_inicio),
+    primary key (id_usuario, id_suscripcion,id_producto, id_pago),
     foreign key (id_usuario) references usuario (id),
     foreign key (id_suscripcion) references suscripcion (id),
     foreign key (id_producto) references producto (id)
@@ -95,7 +95,8 @@ create table compra_edicion
     id_usuario int,
     id_edicion int,
     fecha      date,
-    primary key (id_usuario, id_edicion),
+    id_pago    double,
+    primary key (id_usuario, id_edicion,id_pago),
     foreign key (id_usuario) references usuario (id),
     foreign key (id_edicion) references edicion (id)
 );

@@ -4,71 +4,142 @@ class CheckoutController
 {
 
     private $mpPreference;
-    private $product = [];
     private $publicKey;
+
+    //atributos publicos requeridos
+    public $target; //tipo de checkout se lanzará
+    public $concepto;
+    public $cantidad;
+    public $precio;
+    public $data;
     
-    //recibe un array de datos del producto:
-    // $product['cantidad']
-    // $product['concepto']
-    // $product['precio']
+
     private $session;
     private $logger;
+    private $checkoutModel;
+    private $render;
 
 
-    public function setProduct($product): void
-    {
-        $this->product = $product;
-    }
+
     
 
-    public function __construct($token, $publicKey, $session, $logger)
+    public function __construct($config, $checkoutModel, $session, $logger, $render)
     {
-        $this->publicKey = $publicKey;
+        $this->checkoutModel = $checkoutModel;
+        $this->render = $render;
         $this->session = $session;
-        $this->logger = $logger;
 
-        
-        // Agrega credenciales
-        MercadoPago\SDK::setAccessToken($token);
-        $this->mpPreference = new MercadoPago\Preference();
-        $this->mpPreference->back_urls = array(
-            "success" => "https://localhost/infonete/checkout/informar",
-            "failure" => "https://localhost/infonete/checkout/informar",
-            "pending" => "https://localhost/infonete/checkout/informar"
-        );
-        $this->mpPreference->auto_return = "approved";
+        //Configuraciones MP
+        $this->publicKey = $config["publicKey"];
+        $this->token = $config["token"];
+
+        $this->setearCredenciales();
+
+        $this->setearPreferencias();
+
+
     }
 
-    public function checkOut(){
 
-            // Crea un ítem en la preferencia
-            $item = new MercadoPago\Item();
-            $item->title = $this->product['concepto'];
-            $item->quantity = $this->product['cantidad'];
-            $item->unit_price = $this->product['precio'];
-            $this->mpPreference->items = array($item);
-            $this->mpPreference->save();
 
-            return array("id" => $this->mpPreference->id, "publickey" => $this->publicKey);
+    public function show()
+    {
+        switch ($this->target){
+            case CheckoutModel::TARGET_EDITION:
+                $this->guardarDatosCompra(["type" => $this->target,
+                                            "id_edicion" => $this->data['edicion']->getId(),
+                                            "id_usuario" => $this->session->getAuthUser()->getId()]);
 
+                echo $this->render->render("public/view/checkout/edicion-checkout.mustache", $this->generarDatosCheckout());
+                break;
+
+            case CheckoutModel::TARGET_SUSCRIPTION:
+                $this->guardarDatosCompra(["type" => $this->target,
+                                            "id_suscripcion" => $this->data['suscripcion']->getId(),
+                                            "id_producto" => $this->data['producto']->getId(),
+                                            "id_usuario" => $this->session->getAuthUser()->getId()]);
+
+                echo $this->render->render("public/view/checkout/suscripcion-checkout.mustache", $this->generarDatosCheckout());
+                break;
+        }
     }
 
    
     
-    public function informar(){
+    public function success(){
 
-        $respuestaMP = $_GET['status'];
-        $payment_id = $_GET['payment_id'];
+        $status = $_GET['status'] ?? null;
+        $payment_id = $_GET['payment_id'] ?? null;
 
-        $this->logger->info("respuesta de MP: " . $respuestaMP);
-
-        switch ($respuestaMP){
-            case "approved":
-                $target = $this->session->getParameter('compra')['target'];
-                Redirect::doIt("/infonete/$target/registrarCompra?pi=$payment_id");
-            case "pending":
-        }
-
+        ($status && $payment_id) ?
+            $this->informarPago($payment_id):
+            $this->redirect404();
 
     }
+
+    private function informarPago($payment_id)
+    {
+        $data = ($payment_id) ?
+            $this->datos($this->checkoutModel->registrarPago($this->session->getParameter('compra'),$payment_id)):
+            $this->datos(['error' => 'Acceso denegado']);
+
+        echo $this->render->render('public/view/compra-checkout.mustache', $data);
+    }
+
+    private function guardarDatosCompra($datos)
+    {
+        $this->session->setParameter('compra', $datos);
+    }
+
+
+    private function generarDatosCheckout()
+    {
+        return array_merge($this->data,["pk" => $this->publicKey,
+                                        "pid" => $this->cargarItem(),
+                                        "userAuth" => $this->session->getAuthUser()]);
+    }
+
+    private function cargarItem()
+    {
+        // Crea un ítem en la preferencia
+        $item = new MercadoPago\Item();
+        $item->title = $this->concepto;
+        $item->quantity = $this->cantidad;
+        $item->unit_price = $this->precio;
+        $this->mpPreference->items = array($item);
+        $this->mpPreference->save();
+        return $this->mpPreference->id;
+    }
+
+    private function setearCredenciales()
+    {
+        // Agrega credenciales
+        MercadoPago\SDK::setAccessToken($this->token);
+    }
+
+    private function setearPreferencias()
+    {
+        $this->mpPreference = new MercadoPago\Preference();
+        //redirecciones
+        $this->mpPreference->back_urls = array(
+            "success" => "https://localhost/infonete/checkout/success",
+            //"failure" => "https://localhost/infonete/checkout/informar",
+            //"pending" => "https://localhost/infonete/checkout/informar"
+        );
+        $this->mpPreference->auto_return = "approved";
+    }
+
+    private function redirect404()
+    {
+        echo $this->render->render("public/view/404/404.mustache",$this->datos());
+    }
+
+    private function datos($data = [])
+    {
+        return array_merge($data, array(
+            "userAuth" => $this->session->getAuthUser()
+        ));
+    }
+
+
 }
