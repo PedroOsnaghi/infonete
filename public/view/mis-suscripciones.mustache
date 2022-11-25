@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Mis suscripciones</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+
+
+                <!-- Aqui todo el contenido -->
+
+                <!-- CONTENIDO - HOME -->
+                <div class="card fadeIn">
+                    <div class="card-body">
+
+                        <!-- seccion novedades -->
+
+                        <div class="row">
+                            <h3 class="col-12 text-left text-light-gray">Mis suscripciones adquiridas</h3>
+
+                            <!-- Tarjeta de ediciones publicadas -->
+
+                            <div class="d-flex flex-column w-100 mx-auto mt-3">
+                                {{#suscripciones}}
+                                    {{#estado}}
+                                        <div class="card bg-light-gray shadow-max mr-2 mb-4 overflow-hidden">
+                                            <div class="d-flex px-2 w-100">
+                                                <div class="d-flex flex-column">
+                                                    <img class="mx-auto product-catalog mb-2 d-block shadow"
+                                                         src="/infonete/public/uploads/product/{{imagen}}" alt="">
+                                                    <div class="mx-auto text-dark-gray">{{tipo}} {{nombre}}</div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between w-100 ml-3">
+                                                    <div class="d-flex flex-column">
+                                                        <p class="mb-2"><span
+                                                                class="text-primary">Tipo de suscripción: </span><span
+                                                                class="text-light px-2 py-1 bg-gradient-{{tag}} rounded ml-1 ">{{descripcion}}
+                                                            - {{duracion}}
+                                                            días</span></p>
+                                                        <p class="mb-0"><span
+                                                                class="text-primary">Fecha inicio: </span><span
+                                                                class="text-muted">{{fecha_inicio}}</span>
+                                                            <span class="ml-2 text-primary">Vencimiento: </span><span
+                                                                    class="text-muted">{{fecha_vencimiento}}</span></p>
+                                                    </div>
+                                                    <div class="">
+                                                        <span class="text-primary">Estado: </span>
+                                                        <span class="text-light bg-success px-2 py-1 rounded">VIGENTE</span>
+                                                    </div>
+                                                    <div class="">
+                                                        <a class="btn btn-primary">Cancelar suscripción</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="w-100 card-tipo-border"></div>
+                                        </div>
+                                    {{/estado}}
+                                    {{^estado}}
+                                        <div class="card bg-lightness-gray shadow-max mr-2 mb-4 overflow-hidden">
+                                            <div class="d-flex px-2 w-100">
+                                                <div class="d-flex flex-column">
+                                                    <img class="mx-auto product-catalog mb-2 d-block shadow"
+                                                         src="/infonete/public/uploads/product/{{imagen}}" alt="">
+                                                    <div class="mx-auto text-dark-gray">{{tipo}} {{nombre}}</div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between w-100 ml-3">
+                                                    <div class="d-flex flex-column">
+                                                        <p class="mb-2"><span
+                                                                class="text-dark-gray">Tipo de suscripción: </span><span
+                                                                class="text-light px-2 py-1 bg-gradient-{{tag}} rounded ml-1 ">{{descripcion}}
+                                                            - {{duracion}}
+                                                            días</span></p>
+                                                        <p class="mb-0"><span
+                                                                class="text-dark-gray">Fecha inicio: </span><span
+                                                                class="text-dark-gray">{{fecha_inicio}}</span>
+                                                            <span class="ml-2 text-dark-gray">Vencimiento: </span><span
+                                                                    class="text-dark-gray">{{fecha_vencimiento}}</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="">
+                                                        <span class="text-dark-gray">Estado: </span>
+                                                        <span class="text-light bg-danger px-2 py-1 rounded">VENCIDA</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="w-100 card-tipo-border"></div>
+                                        </div>
+                                    {{/estado}}
+
+                                {{/suscripciones}}
+                                {{^suscripciones}}
+                                    <div class="m-4">
+                                        <p class="text-muted">No tenés suscripciones en tu cuenta.</p>
+                                    </div>
+                                {{/suscripciones}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+
+    </div>
+</div>
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+
+<!--script vistas Infonete -->
+
+</body>
+</html>

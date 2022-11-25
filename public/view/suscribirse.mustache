@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/infonete/public/css/style.css">
     <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
     <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
-
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <title>Suscribirse</title>
 </head>
 <body>
@@ -51,7 +51,7 @@
 
                                     <h4 class="col-12 text-left text-light-gray mt-4">Selecciona el producto al que deseas suscribirte</h4>
 
-                                        <form action="/infonete/suscripcion/comprar" class="text-center" method="post">
+                                        <form action="/infonete/suscripcion/comprar" class="text-center" method="post" id="form-checkout">
                                             <input type="hidden" name="id" value="{{getId}}">
                                             <div class="d-flex flex-wrap w-100 mx-auto justify-content-center mt-3">
                                                 {{#productos}}
@@ -79,7 +79,7 @@
 
                                 {{/suscripcion}}
                             </div>
-                            <hr class="text-light-gray w-100">
+                            <hr class="text-light-gray w-100 mt-3">
                             <img class="mp mx-auto" src="/infonete/public/images/assets/mp.webp" alt="">
                         </div>
                     </div>
@@ -97,6 +97,8 @@
 <script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
 <script src="/infonete/public/js/vendors/misc.js"></script>
 <script src="/infonete/public/js/vendors/off-canvas.js"></script>
+
+<script src="/infonete/public/js/app/suscripcion-checkout.js"></script>
 
 <!--script vistas Infonete -->
 
