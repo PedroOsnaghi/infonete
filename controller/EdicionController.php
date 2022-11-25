@@ -7,14 +7,14 @@ class EdicionController
     private $render;
     private $productModel;
     private $session;
-    private $mercadoPago;
+    private $checkout;
 
 
-    public function __construct($edicionModel, $productModel, $mercadoPago, $session, $render)
+    public function __construct($edicionModel, $productModel, $checkout, $session, $render)
     {
         $this->edicionModel = $edicionModel;
         $this->productModel = $productModel;
-        $this->mercadoPago = $mercadoPago;
+        $this->checkout = $checkout;
         $this->session = $session;
         $this->render = $render;
     }
@@ -101,23 +101,7 @@ class EdicionController
         echo $this->render->render('public/view/detalle-compra.mustache', $data);
     }
 
-    public function comprar()
-    {
-        $this->session->urlRestriction();
-        $edicion = $this->edicionModel->getEdition($_GET['id']);
-        $datosVenta = array('numero' => $edicion->getNumero(),
-            'concepto' => 'infonete-compra de edición nro: ' . $edicion->getNumero(),
-            'precio' => $edicion->getPrecio());
 
-
-        if ($this->mercadoPago->procesarPago($datosVenta)) {
-            $data = $this->datos($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $edicion->getId()));
-            echo $this->render->render('public/view/compra-checkout.mustache', $data);
-        } else {
-            $data = $this->datos(['warning' => 'No se pudo procesar el pago. Vuelva a intentarlo más tarde']);
-            echo $this->render->render('public/view/compra-checkout.mustache', $data);
-        }
-    }
 
     public function misEdiciones()
     {
@@ -134,6 +118,55 @@ class EdicionController
                                 "ediciones" => $this->edicionModel->listCatalogBy($idProducto, $this->session)]);
 
         echo $this->render->render("public/view/catalog/catalogo-list.mustache",$data);
+    }
+
+    private function startCheckout($idE)
+    {
+
+        $this->guardarDatosEnSession($idE);
+
+        $edicion = $this->edicionModel->getEdition($idE);;
+
+        $this->checkout->setProduct(['cantidad' => 1,
+                                    'concepto' => 'Edicion Nº ' . $edicion->getNumero() . ' - ' . $edicion->getTipoProducto() . ' ' . $edicion->getNombreProducto(),
+                                    'precio' => $edicion->getPrecio()]);
+
+        header('Content-Type: application/json');
+        echo json_encode($this->checkout->checkOut(), JSON_FORCE_OBJECT);
+    }
+
+    public function generarDatosPago()
+    {
+        $this->session->urlRestriction();
+
+        $idEdicion = isset($_POST['id']) ? $_POST['id'] : null;
+
+       // $this->logger->info("pago edicion $idEdicion");
+
+        $this->startCheckout($idEdicion);
+    }
+
+    public function registrarCompra(){
+
+        $idPago = $_GET['pi'] ?? null;
+
+        if($idPago) {
+
+            $idE = $this->session->getParameter('compra') !== null ?  ($this->session->getParameter('compra'))['idE'] : null;
+
+            $data = ($idE) ?
+                          $this->datos($this->edicionModel->registrarCompra($this->session->getAuthUser()->getId(), $idE, $idPago)):
+                          $this->datos(['error' => 'Acceso denegado']);
+
+        } else {
+            $data = $this->datos(['error' => 'Acceso denegado']);
+        }
+        echo $this->render->render('public/view/compra-checkout.mustache', $data);
+    }
+
+    private function guardarDatosEnSession($idEdicion){
+        $compra = array("target" => "edicion", "idE" => $idEdicion);
+        $this->session->setParameter('compra', $compra);
     }
 
 

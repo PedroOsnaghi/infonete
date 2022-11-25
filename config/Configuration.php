@@ -1,8 +1,6 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 
 //HELPERS
 include_once("helper/MysqlDatabase.php");
@@ -17,7 +15,7 @@ include_once("helper/File.php");
 include_once("helper/Session.php");
 include_once("helper/Logger.php");
 include_once("helper/Fecha.php");
-include_once("helper/MercadoPago.php");
+
 
 //MODELOS
 include_once("model/UsuarioModel.php");
@@ -38,13 +36,15 @@ include_once("controller/ArticuloController.php");
 include_once("controller/SeccionController.php");
 include_once("controller/SuscripcionController.php");
 include_once("controller/ViewerController.php");
+include_once("controller/CheckoutController.php");
 
 //vendors
-require('third-party/PHPMailer-master/src/Exception.php');
-require('third-party/PHPMailer-master/src/PHPMailer.php');
-require('third-party/PHPMailer-master/src/SMTP.php');
-include_once('third-party/mustache/src/Mustache/Autoloader.php');
+include_once('vendor/PHPMailer-master/src/Exception.php');
+include_once('vendor/PHPMailer-master/src/PHPMailer.php');
+include_once('vendor/PHPMailer-master/src/SMTP.php');
+include_once('vendor/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
+include_once ("vendor/autoload.php");
 
 class Configuration
 {
@@ -86,7 +86,7 @@ class Configuration
 
     public function getSuscripcionController()
     {
-        return new SuscripcionController($this->getSuscripcionModel(), $this->getProductoModel(), $this->getMercadoPago(), $this->getSession(), $this->getRender());
+        return new SuscripcionController($this->getSuscripcionModel(), $this->getProductoModel(), $this->getCheckoutController(), $this->getSession(), $this->getLogger(),  $this->getRender());
     }
 
     public function getEdicionModel()
@@ -96,7 +96,7 @@ class Configuration
 
     public function getEdicionController()
     {
-        return new EdicionController($this->getEdicionModel(), $this->getProductoModel(), $this->getMercadoPago(),  $this->getSession(), $this->getRender());
+        return new EdicionController($this->getEdicionModel(), $this->getProductoModel(), $this->getCheckoutController(),  $this->getSession(), $this->getRender());
     }
 
     public function getProductoModel()
@@ -130,6 +130,11 @@ class Configuration
         return new UsuarioModel($this->getFile(), $this->getMailer(), $this->getDatabase());
     }
 
+    public function getCheckoutController()
+    {
+        $config = $this->getConfig();
+        return new CheckoutController($config['mp_token'], $config['mp_public_key'], $this->getSession(), $this->getLogger());
+    }
 
     private function getConfig()
     {
@@ -185,10 +190,7 @@ class Configuration
             $config['smtp_port']);
     }
 
-    private function getMercadoPago()
-    {
-        return new MercadoPago();
-    }
+
 
     private function getFile()
     {

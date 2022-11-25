@@ -264,10 +264,12 @@ class EdicionModel
                                         " ORDER BY e.fecha DESC");
     }
 
-    public function registrarCompra($idUsuario, $idEdicion)
+    public function registrarCompra($idUsuario, $idEdicion, $idPago)
     {
         try {
-            $query = $this->database->execute("INSERT INTO compra_edicion (id_usuario, id_edicion, fecha) VALUES ($idUsuario, $idEdicion, now())");
+            $sql = "INSERT INTO compra_edicion (id_usuario, id_edicion, fecha, id_pago) VALUES ($idUsuario, $idEdicion, now(), $idPago)";
+            $this->logger->info($sql);
+            $query = $this->database->execute($sql);
             if($query) return array('success' => 'La compra se realizó con éxito',
                                     'edicion' => $idEdicion);
             return array('error' => 'No se pudo registrar la compra');
