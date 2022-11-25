@@ -24,6 +24,7 @@ include_once("model/EdicionModel.php");
 include_once("model/ArticuloModel.php");
 include_once("model/SeccionModel.php");
 include_once("model/SuscripcionModel.php");
+include_once("model/CheckoutModel.php");
 
 //CONTROLADORES
 include_once("controller/IndexController.php");
@@ -133,7 +134,14 @@ class Configuration
     public function getCheckoutController()
     {
         $config = $this->getConfig();
-        return new CheckoutController($config['mp_token'], $config['mp_public_key'], $this->getSession(), $this->getLogger());
+        $cfgCheckout = array("token" => $config['mp_token'],
+                            "publicKey" => $config['mp_public_key'] );
+        return new CheckoutController($cfgCheckout, $this->getCheckoutModel(), $this->getSession(), $this->getLogger(), $this->getRender());
+    }
+
+    public function getCheckoutModel()
+    {
+        return new CheckoutModel($this->getDatabase());
     }
 
     private function getConfig()
@@ -208,6 +216,8 @@ class Configuration
     {
         return new Logger();
     }
+
+
 
 
 }

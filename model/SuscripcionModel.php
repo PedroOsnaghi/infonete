@@ -137,17 +137,7 @@ class SuscripcionModel
                                     ORDER BY us.activa DESC, us.fecha_inicio DESC");
     }
 
-    public function registrarCompra($idUsuario, $idSuscripcion, $idProducto, $idPago)
-    {
-        try {
-            $query = $this->database->execute("INSERT INTO usuario_suscripcion (id_usuario, id_suscripcion, id_producto, fecha_inicio, id_pago, activa) VALUES ($idUsuario, $idSuscripcion, $idProducto, now(), $idPago, 1)");
-            if($query) return array('success' => 'La suscripción se registró con éxito',
-                'suscripcion' => $idSuscripcion);
-            return array('error' => 'No se pudo registrar la suscripción');
-        } catch (exception) {
-            return array('error' => 'Ya tenés una suscripción activa para el producto seleccionado. Puedes verla en Mis Suscripciones');
-        }
-    }
+
 
     private function toSuscripcion($query)
     {

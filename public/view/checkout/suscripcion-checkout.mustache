@@ -36,11 +36,13 @@
 
                         <!-- seccion novedades -->
 
-                        <div class="d-flex flex-column w-100 justify-content-center">
-                            <h3 class="col-12 text-left text-light-gray">Suscribirse</h3>
+                        <div class="d-flex flex-column w-100">
+                            <h3 class="col-12 text-left text-light-gray">Confirmar Compra</h3>
                             <hr class="w-100">
 
-                            <div>
+
+                            <div class="container text-center">
+                                <h4 class="col-12 text-light-gray mb-4">Revisa tu Plan y finaliza la compra</h4>
                                 {{#suscripcion}}
                                     <div class="col-12 d-flex align-items-center card bg-gradient-{{getTag}} shadow-max">
                                         <div class="card-body">
@@ -49,47 +51,36 @@
                                     </div>
 
 
-                                    <h4 class="col-12 text-left text-light-gray mt-4">Selecciona el producto al que deseas suscribirte</h4>
+                                    <h4 class="col-12 text-left text-light-gray mt-4">Datos del producto al que te suscribes</h4>
 
-                                        <form action="/infonete/suscripcion/checkout" class="text-center" method="post" id="form-checkout">
-                                            <input type="hidden" name="s" value="{{getId}}">
+
                                             <div class="d-flex flex-wrap w-100 mx-auto justify-content-center mt-3">
-                                                {{#productos}}
+                                                {{#producto}}
                                                     <div class="card card-max bg-light-gray shadow-max mr-2 mb-4 overflow-hidden">
 
                                                         <img class="mx-auto product-catalog mb-2 d-block shadow"
-                                                             src="/infonete/public/uploads/product/{{imagen}}" alt="">
+                                                             src="/infonete/public/uploads/product/{{getImagen}}" alt="">
 
-                                                        <div class="mx-auto text-dark-gray"><label><input type="radio" value="{{id}}" name="p" class="form-check-input">{{tipo}} {{nombre}}</label></div>
+                                                        <div class="mx-auto text-dark-gray">{{getNombreTipo}} {{getNombre}}</div>
 
                                                         <div class="w-100 card-tipo-border"></div>
 
 
                                                     </div>
-                                                {{/productos}}
-                                                {{^productos}}
-                                                    <div class="m-4">
-                                                        <p class="text-muted">Aún no se cargaron productos en el sistema</p>
-                                                    </div>
-                                                {{/productos}}
+                                                {{/producto}}
+                                            </div>
+                                            <div class="d-flex flex-column align-items-center justify-content-center mt-3">
+                                                <p class=""><spam class="text-primary">Inicia el </spam><spam id="fi"></spam></p>
+                                                <p class="mt-3"><spam class="text-primary">Vencerá el </spam><spam id="fv"></spam></p>
                                             </div>
 
+                                            <button  type="button" class="btn btn-primary mt-3" onclick="showMP('{{pk}}','{{pid}}')" >Realizar Pago</button>
 
-<!--
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" >Al suscribirme acepto los <spam class="text-primary">TERMINOS Y CONDICIONES *</spam>
-                                                    <i class="input-helper"></i>
-                                                </label>
-                                            </div>-->
-
-                                            <button  type="submit" class="btn btn-primary ">Siguiente</button>
-                                        </form>
 
                                 {{/suscripcion}}
                             </div>
                             <hr class="text-light-gray w-100 mt-3">
-                            <p class="text-muted font-italic text-center mx-auto"><spam class="text-primary font-italic font-weight-light ">TERMINOS Y CONDICIONES: </spam>Oferta válida solo para las ediciones que se publiquen a partir de la fecha de suscripcion y hasta el vencimiento de la misma</p>
+                            <img class="mp mx-auto" src="/infonete/public/images/assets/mp.webp" alt="">
                         </div>
                     </div>
                 </div>
@@ -107,6 +98,12 @@
 <script src="/infonete/public/js/vendors/misc.js"></script>
 <script src="/infonete/public/js/vendors/off-canvas.js"></script>
 
+<script src="/infonete/public/js/app/checkout.js"></script>
+<!--
+script vistas Infonete -->
+{{#suscripcion}}
+    <script>init_suscripcion({{getDuracion}});</script>
+{{/suscripcion}}
 
 </body>
 </html>

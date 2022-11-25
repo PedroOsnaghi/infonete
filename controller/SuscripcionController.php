@@ -52,6 +52,25 @@ class SuscripcionController
         echo $this->render->render("public/view/suscribirse.mustache", $data);
     }
 
+    public function checkout()
+    {
+        $this->session->urlRestriction();
+
+        $suscripcion = $this->suscripcionModel->getSuscripcion($_POST['s']);
+
+        //configuracion del Checkout
+        $this->checkout->target = CheckoutModel::TARGET_SUSCRIPTION;
+        $this->checkout->cantidad = 1;
+        $this->checkout->concepto = "Suscripcion ".$suscripcion->getDescripcion()." - ".$suscripcion->getDuracion()." dias";
+        $this->checkout->precio = $suscripcion->getPrecio();
+        $this->checkout->data = array("suscripcion" => $suscripcion,
+                                      "producto" => $this->productoModel->getProduct($_POST['p']));
+
+        $this->checkout->show();
+
+    }
+
+
     public function guardar()
     {
         $this->setSuscripcion();
@@ -68,17 +87,6 @@ class SuscripcionController
         echo $this->render->render("public/view/planes.mustache", $data);
     }
 
-    public function generarDatosPago()
-    {
-        $this->session->urlRestriction();
-
-        $idSuscripcion = $_POST['id'];
-        $idProducto = $_POST['producto'];
-
-        $this->logger->info("generacion de Datos $idSuscripcion - $idProducto");
-
-        $this->startCheckout($idSuscripcion, $idProducto);
-    }
 
     public function misSuscripciones()
     {
@@ -87,44 +95,7 @@ class SuscripcionController
         echo $this->render->render("public/view/mis-suscripciones.mustache", $data);
     }
 
-    private function startCheckout($idS, $idP)
-    {
 
-        $this->guardarDatosEnSession($idS, $idP);
-
-        $suscripcion = $this->suscripcionModel->getSuscripcion($idS);
-
-        $this->checkout->setProduct(['cantidad' => 1,
-                                    'concepto' => 'Suscripción ' . $suscripcion->getDescripcion() . ' - ' . $suscripcion->getDuracion() . ' días',
-                                    'precio' => $suscripcion->getPrecio()]);
-
-        header('Content-Type: application/json');
-        echo json_encode($this->checkout->checkOut(), JSON_FORCE_OBJECT);
-    }
-
-    public function registrarCompra(){
-
-        $idPago = $_GET['pi'] ?? null;
-
-        if($idPago) {
-
-            $idS = $this->session->getParameter('compra') !== null ?  ($this->session->getParameter('compra'))['idS'] : null;
-            $idP = $this->session->getParameter('compra') !== null ?  ($this->session->getParameter('compra'))['idP'] : null;
-
-                $data = ($idS && $idP) ?
-                    $this->datos($this->suscripcionModel->registrarCompra($this->session->getAuthUser()->getId(), $idS, $idP, $idPago)):
-                    $this->datos(['error' => 'Acceso denegado']);
-
-        } else {
-            $data = $this->datos(['error' => 'Acceso denegado']);
-        }
-        echo $this->render->render('public/view/compra-checkout.mustache', $data);
-    }
-
-    private function guardarDatosEnSession($idSuscripcion, $idProducto){
-        $compra = array("target" => "suscripcion", "idS" => $idSuscripcion, "idP" => $idProducto);
-        $this->session->setParameter('compra', $compra);
-    }
 
     private function setSuscripcion()
     {

@@ -264,19 +264,7 @@ class EdicionModel
                                         " ORDER BY e.fecha DESC");
     }
 
-    public function registrarCompra($idUsuario, $idEdicion, $idPago)
-    {
-        try {
-            $sql = "INSERT INTO compra_edicion (id_usuario, id_edicion, fecha, id_pago) VALUES ($idUsuario, $idEdicion, now(), $idPago)";
-            $this->logger->info($sql);
-            $query = $this->database->execute($sql);
-            if($query) return array('success' => 'La compra se realizó con éxito',
-                                    'edicion' => $idEdicion);
-            return array('error' => 'No se pudo registrar la compra');
-        } catch (exception) {
-            return array('error' => 'La compra ya ha sido realizada. Puedes verla en Mis Productos');
-        }
-    }
+
 
     public function listarCompras($idUsuario)
     {
