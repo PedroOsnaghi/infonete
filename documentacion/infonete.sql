@@ -62,6 +62,15 @@ create table suscripcion
     foreign key (id_tipo_suscripcion) references tipo_suscripcion (id)
 );
 
+create table factura (
+    id double PRIMARY KEY,
+    cantidad int,
+    detalle varchar(255),
+    precio decimal,
+    id_usuario int,
+    foreign key (id_usuario) references usuario (id)
+);
+
 create table usuario_suscripcion
 (
     id_usuario     int,
@@ -73,7 +82,8 @@ create table usuario_suscripcion
     primary key (id_usuario, id_suscripcion,id_producto, id_pago),
     foreign key (id_usuario) references usuario (id),
     foreign key (id_suscripcion) references suscripcion (id),
-    foreign key (id_producto) references producto (id)
+    foreign key (id_producto) references producto (id),
+    foreign key (id_pago) references factura (id)
 );
 
 create table edicion
@@ -98,7 +108,8 @@ create table compra_edicion
     id_pago    double,
     primary key (id_usuario, id_edicion,id_pago),
     foreign key (id_usuario) references usuario (id),
-    foreign key (id_edicion) references edicion (id)
+    foreign key (id_edicion) references edicion (id),
+    foreign key (id_pago) references factura (id)
 );
 
 create table seccion

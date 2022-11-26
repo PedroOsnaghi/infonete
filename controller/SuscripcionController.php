@@ -95,7 +95,16 @@ class SuscripcionController
         echo $this->render->render("public/view/mis-suscripciones.mustache", $data);
     }
 
-
+    public function cancelar()
+    {
+        $this->session->urlRestriction();
+        $id_suscripcion = $_GET['s'] ?? null;
+        $id_producto = $_GET['p'] ?? null;
+        if ($id_suscripcion && $id_producto) {
+            $this->suscripcionModel->cancelarSuscripcion($id_suscripcion, $id_producto, $this->session->getAuthUser()->getId());
+            $this->misSuscripciones();
+        }
+    }
 
     private function setSuscripcion()
     {

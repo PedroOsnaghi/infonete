@@ -8,12 +8,14 @@ class ViewerController
     private $session;
     private $render;
     private $logger;
+    private $checkout;
 
-    public function __construct($edicionModel, $seccionModel, $articuloModel, $logger, $session, $render)
+    public function __construct($edicionModel, $seccionModel, $articuloModel, $checkout, $logger, $session, $render)
     {
         $this->edicionModel = $edicionModel;
         $this->seccionModel = $seccionModel;
         $this->articuloModel = $articuloModel;
+        $this->checkout = $checkout;
         $this->logger = $logger;
         $this->session = $session;
         $this->render = $render;
@@ -89,6 +91,7 @@ class ViewerController
     private function obtenerCompra($idEdicion)
     {
         $compra = $this->edicionModel->getCompra($idEdicion, $this->session->getAuthUser()->getId());
+        if ($compra == null) $compra = $this->edicionModel->getSuscripcion($idEdicion, $this->session->getAuthUser()->getId());
         return  $compra ? $this->setInSession($compra) : $this->redirect($idEdicion);
     }
 
@@ -100,8 +103,16 @@ class ViewerController
 
     private function redirect($idEdicion = 0)
     {
-        $data = $this->datos(['edicion' => $this->edicionModel->getEdition($idEdicion)]);
-        echo $this->render->render('public/view/detalle-compra.mustache', $data);
+        $edicion = $this->edicionModel->getEdition($idEdicion);
+
+        //configuracion del Checkout
+        $this->checkout->target = CheckoutModel::TARGET_EDITION;
+        $this->checkout->cantidad = 1;
+        $this->checkout->concepto = "Edicion Nº ".$edicion->getNumero()." - ".$edicion->getTipoProducto()." ".$edicion->getNombreProducto();
+        $this->checkout->precio = $edicion->getPrecio();
+        $this->checkout->data = array("edicion" => $edicion);
+
+        $this->checkout->show();
     }
 
     private function datos($data = [])

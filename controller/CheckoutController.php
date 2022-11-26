@@ -48,7 +48,10 @@ class CheckoutController
             case CheckoutModel::TARGET_EDITION:
                 $this->guardarDatosCompra(["type" => $this->target,
                                             "id_edicion" => $this->data['edicion']->getId(),
-                                            "id_usuario" => $this->session->getAuthUser()->getId()]);
+                                            "id_usuario" => $this->session->getAuthUser()->getId(),
+                                            "concepto" => $this->concepto,
+                                            "precio" => $this->precio,
+                                            "cantidad" => $this->cantidad]);
 
                 echo $this->render->render("public/view/checkout/edicion-checkout.mustache", $this->generarDatosCheckout());
                 break;
@@ -57,7 +60,10 @@ class CheckoutController
                 $this->guardarDatosCompra(["type" => $this->target,
                                             "id_suscripcion" => $this->data['suscripcion']->getId(),
                                             "id_producto" => $this->data['producto']->getId(),
-                                            "id_usuario" => $this->session->getAuthUser()->getId()]);
+                                            "id_usuario" => $this->session->getAuthUser()->getId(),
+                                            "concepto" => $this->concepto,
+                                            "precio" => $this->precio,
+                                            "cantidad" => $this->cantidad]);
 
                 echo $this->render->render("public/view/checkout/suscripcion-checkout.mustache", $this->generarDatosCheckout());
                 break;
@@ -75,6 +81,13 @@ class CheckoutController
             $this->informarPago($payment_id):
             $this->redirect404();
 
+    }
+
+    public function mostrarFactura()
+    {
+        $paymentId = $_GET['payment_id'];
+        $data = $this->datos(['factura' => $this->checkoutModel->getFactura($paymentId)]);
+        $this->render->pdf('public/view/pdf/factura.mustache', $data, 'factura-' . $paymentId . '.pdf');
     }
 
     private function informarPago($payment_id)

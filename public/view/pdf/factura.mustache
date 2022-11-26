@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <style>
+        img {
+            width: 200px;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    {{#factura}}
+        <div>
+            <h1>Infonete</h1>
+            <h3>Factura A</h3>
+            <hr>
+            <div>
+                <span>Nombre y apellido: </span><span>{{nombre}} {{apellido}}</span>
+                <span>Email: </span><span>{{email}}</span>
+                <hr>
+            </div>
+        </div>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <th>Cantidad</th>
+                    <th>Concepto</th>
+                    <th>Precio</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{cantidad}}</td>
+                    <td>{{detalle}}</td>
+                    <td>${{precio}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h4>Total: ${{precio}}</h4>
+        </div>
+    {{/factura}}
+</div>
+</body>
+
+</html>

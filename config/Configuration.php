@@ -1,6 +1,7 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
+use Dompdf\Dompdf;
 
 //HELPERS
 include_once("helper/MysqlDatabase.php");
@@ -25,6 +26,7 @@ include_once("model/ArticuloModel.php");
 include_once("model/SeccionModel.php");
 include_once("model/SuscripcionModel.php");
 include_once("model/CheckoutModel.php");
+include_once("model/ReporteModel.php");
 
 //CONTROLADORES
 include_once("controller/IndexController.php");
@@ -38,6 +40,7 @@ include_once("controller/SeccionController.php");
 include_once("controller/SuscripcionController.php");
 include_once("controller/ViewerController.php");
 include_once("controller/CheckoutController.php");
+include_once("controller/ReporteController.php");
 
 //vendors
 include_once('vendor/PHPMailer-master/src/Exception.php');
@@ -45,14 +48,23 @@ include_once('vendor/PHPMailer-master/src/PHPMailer.php');
 include_once('vendor/PHPMailer-master/src/SMTP.php');
 include_once('vendor/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
-include_once ("vendor/autoload.php");
+include_once("vendor/autoload.php");
 
 class Configuration
 {
+    public function getReporteController()
+    {
+        return new ReporteController($this->getReporteModel(), $this->getSession(), $this->getRender());
+    }
+
+    public function getReporteModel()
+    {
+        return new ReporteModel($this->getDatabase(), $this->getLogger());
+    }
 
     public function getViewerController()
     {
-        return new ViewerController($this->getEdicionModel(), $this->getSeccionModel(), $this->getArticuloModel(), $this->getLogger(), $this->getSession(), $this->getRender());
+        return new ViewerController($this->getEdicionModel(), $this->getSeccionModel(), $this->getArticuloModel(), $this->getCheckoutController(), $this->getLogger(), $this->getSession(), $this->getRender());
     }
 
     public function getArticuloModel()
@@ -151,7 +163,7 @@ class Configuration
 
     public function getRender()
     {
-        return new Render('public/view/partial');
+        return new Render('public/view/partial', $this->getPdf());
     }
 
     public function getRouter()
@@ -162,6 +174,11 @@ class Configuration
     public function getUrlHelper()
     {//interpreta la ruta
         return new UrlHelper();
+    }
+
+    public function getPdf()
+    {
+        return new Dompdf();
     }
 
     private function getDatabase()

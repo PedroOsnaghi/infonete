@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Dashboard</title>
+</head>
+<body>
+
+<div class="container-scroller fadeIn">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+
+
+                <!-- Aqui todo el contenido -->
+
+                <!-- CONTENIDO - HOME -->
+                <div class="card fadeIn">
+                    <div class="card-body">
+                        <h3>Dashboard</h3>
+                        <hr class="w-100">
+                        <div class="row">
+                            <div class="col-lg-6 grid-margin stretch-card">
+                                <div class="card shadow-max">
+                                    <div class="card-body">
+                                        <div class="chartjs-size-monitor">
+                                            <div class="chartjs-size-monitor-expand">
+                                                <div class=""></div>
+                                            </div>
+                                            <div class="chartjs-size-monitor-shrink">
+                                                <div class=""></div>
+                                            </div>
+                                        </div>
+                                        <h4 class="card-title">Venta suscripciones</h4>
+                                        <form class="d-flex justify-content-between align-items-center my-2">
+                                            <div class="w-50 mr-2">
+                                                <label class="mb-0">Desde</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                            <div class="w-50 ml-2">
+                                                <label class="mb-0">Hasta</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </form>
+                                        <canvas id="suscripcionChart" style="height: 369px; display: block; width: 738px;"
+                                                width="738" height="369" class="chartjs-render-monitor"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 grid-margin stretch-card">
+                                <div class="card shadow-max">
+                                    <div class="card-body">
+                                        <div class="chartjs-size-monitor">
+                                            <div class="chartjs-size-monitor-expand">
+                                                <div class=""></div>
+                                            </div>
+                                            <div class="chartjs-size-monitor-shrink">
+                                                <div class=""></div>
+                                            </div>
+                                        </div>
+                                        <h4 class="card-title">Ventas productos</h4>
+                                        <form class="d-flex justify-content-between align-items-center my-2">
+                                            <div class="w-50 mr-2">
+                                                <label class="mb-0">Desde</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                            <div class="w-50 ml-2">
+                                                <label class="mb-0">Hasta</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </form>
+                                        <canvas id="productoChart" style="height: 369px; display: block; width: 738px;"
+                                                width="738" height="369" class="chartjs-render-monitor"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+
+    </div>
+</div>
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<script src="/infonete/public/js/vendors/chart/Chart.min.js"></script>
+<script src="/infonete/public/js/app/chart.js"></script>
+
+<script>
+
+    iniciarChart();
+
+</script>
+
+
+<!--script vistas Infonete -->
+
+</body>
+</html>

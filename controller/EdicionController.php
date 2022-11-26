@@ -116,7 +116,8 @@ class EdicionController
     public function misEdiciones()
     {
         $this->session->urlRestriction();
-        $data = $this->datos(['ediciones' => $this->edicionModel->listarCompras($this->session->getAuthUser()->getId())]);
+        $data = $this->datos(['ediciones' => $this->edicionModel->listarCompras($this->session->getAuthUser()->getId()),
+                            'suscriptos' => $this->edicionModel->listarEdicionesSuscriptas($this->session->getAuthUser()->getId())]);
         echo $this->render->render('public/view/mis-productos.mustache', $data);
     }
 

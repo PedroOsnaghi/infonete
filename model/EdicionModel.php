@@ -202,6 +202,21 @@ class EdicionModel
         return $this->toEdition($query);
     }
 
+    public function getSuscripcion($id, $idUsuario)
+    {
+        $query = $this->database->query("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, e.fecha, e.estado, e.id_producto, e.portada, p.nombre as 'nombre_producto', t.tipo 
+                                        FROM edicion e JOIN producto p on e.id_producto = p.id 
+                                        JOIN tipo_producto t on p.id_tipo_producto = t.id                                  
+                                        JOIN usuario_suscripcion us on us.id_producto = p.id                                      							
+                                        JOIN tipo_suscripcion ts on us.id_suscripcion = ts.id 
+              	                        WHERE us.id_usuario = $idUsuario and us.activa = 1 
+                                        and DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY) >= now() 
+                                        and DATE(e.fecha) BETWEEN DATE(us.fecha_inicio) AND DATE(DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY)) 
+              	                        and e.id = $id                    
+                                        ORDER BY e.fecha DESC");
+        return $this->toEdition($query);
+    }
+
     public function update()
     {
         $sql_portada = ($this->verificarCambioPortada()) ? ", portada = '$this->portada'" : "";
@@ -273,6 +288,18 @@ class EdicionModel
                                         JOIN tipo_producto t on p.id_tipo_producto = t.id                                  
                                         JOIN compra_edicion ce on ce.id_edicion = e.id                                        
                                         WHERE ce.id_usuario = $idUsuario
+                                        ORDER BY e.fecha DESC");
+    }
+
+    public function listarEdicionesSuscriptas($idUsuario)
+    {
+        return $this->database->list("SELECT e.id, e.numero, e.titulo, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo, DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY) as vencimiento, us.fecha_inicio
+                                        FROM edicion e JOIN producto p on e.id_producto = p.id 
+                                        JOIN tipo_producto t on p.id_tipo_producto = t.id                                  
+                                        JOIN usuario_suscripcion us on us.id_producto = p.id                                      							JOIN tipo_suscripcion ts on us.id_suscripcion = ts.id 
+              	                        WHERE us.id_usuario = $idUsuario and us.activa = 1 
+                                        and DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY) >= now() 
+                                        and DATE(e.fecha) BETWEEN DATE(us.fecha_inicio) AND DATE(DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY)) 
                                         ORDER BY e.fecha DESC");
     }
 
