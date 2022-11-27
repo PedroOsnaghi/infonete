@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="container-scroller fadeIn">
+<div class="container-scroller">
     <!-- partial:partial/sidebar.mustache -->
     {{>sidebar}}
     <!-- partial -->
@@ -50,6 +50,7 @@
                                             <th class="text-pink">Imagen</th>
                                             <th class="text-pink">Titulo</th>
                                             <th class="text-pink">Tipo</th>
+                                            <th class="text-pink">Ediciones</th>
                                             <th class="text-pink">Acciones rápidas</th>
                                         </tr>
                                     </thead>
@@ -60,7 +61,7 @@
                                             <td><img class="product-image me-4" src="/infonete/public/uploads/product/{{imagen}}"></td>
                                             <td>{{nombre}}</td>
                                             <td>{{tipo}}</td>
-
+                                            <td>{{ediciones}}</td>
                                             <td>
                                                 <a  class="btn btn-secondary" title="Editar" href="/infonete/producto/editar?id={{id}}"><i class="mdi mdi-pencil mx-auto" ></i></a>
 

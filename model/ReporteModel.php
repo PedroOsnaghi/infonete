@@ -12,16 +12,36 @@ class ReporteModel
         $this->logger = $logger;
     }
 
-    public function getVentasSuscripciones($fechaI = null, $fechaF = null)
+    public function getVentasSuscripciones($fechaI , $fechaF )
     {
-         if (!$fechaI) $fechaI = date("Y-m-01");
-         if (!$fechaF) $fechaF = date("Y-m-t");
-         $this->logger->info('fi: ' . $fechaI);
-         $this->logger->info('ff: ' . $fechaF);
-            return $this->database->query("SELECT s.descripcion, count(s.id) as cantVenta
+
+         return $this->database->list("SELECT s.descripcion, count(s.id) as 'cantVenta'
                                             FROM suscripcion s
                                             JOIN usuario_suscripcion us ON us.id_suscripcion = s.id
-                                            WHERE DATE(us.fecha_inicio) BETWEEN DATE($fechaI) AND DATE($fechaF)
-                                            GROUP BY s.descripcion");
+                                            WHERE DATE(us.fecha_inicio) BETWEEN DATE('$fechaI') AND DATE('$fechaF') GROUP BY s.descripcion");
+
+       // {"basico" => 3, "premium" => 10, "pro" => 15}
+    }
+
+    public function getVentasProductos($fechaI , $fechaF )
+    {
+
+        return $this->database->list("SELECT p.nombre, count(p.id) as 'cantVenta'
+                                            FROM producto p
+                                            JOIN edicion e ON e.id_producto = p.id
+                                            JOIN compra_edicion ce ON ce.id_edicion = e.id
+                                            WHERE DATE(ce.fecha) BETWEEN DATE('$fechaI') AND DATE('$fechaF') GROUP BY p.nombre");
+    }
+
+    public function getComprasUsuario($fechaI , $fechaF )
+    {
+        $sql= "SELECT m.id, m.avatar, m.nombre, m.apellido, m.email, m.suscripcion, count(ce.id_usuario) as 'edicion' FROM (SELECT u.*, count(d.id_usuario) as 'suscripcion'
+                                            FROM usuario u
+                                            LEFT JOIN (SELECT id_usuario FROM usuario_suscripcion WHERE DATE(fecha_inicio) BETWEEN DATE('$fechaI') AND DATE('$fechaF') ) d ON d.id_usuario = u.id
+											GROUP BY u.id) m  LEFT JOIN compra_edicion ce ON ce.id_usuario = m.id
+                                            WHERE DATE(ce.fecha) BETWEEN DATE('$fechaI') AND DATE('$fechaF') GROUP BY m.id";
+
+        $this->logger->info($sql);
+        return $this->database->list($sql);
     }
 }

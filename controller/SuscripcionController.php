@@ -47,7 +47,7 @@ class SuscripcionController
 
 
         $data = $this->datos([ "suscripcion" => $suscripcion,
-                                "productos" => $this->productoModel->list()]);
+                                "productos" => $this->productoModel->listProductosDisponibles($this->session->getAuthUser()->getId(), $suscripcion->getId())]);
 
         echo $this->render->render("public/view/suscribirse.mustache", $data);
     }

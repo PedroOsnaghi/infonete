@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/infonete/public/css/index/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/infonete/public/css/style.css">
+    <link rel="stylesheet" href="/infonete/public/css/app/animate.css">
+    <link rel="shortcut icon" href="/infonete/public/images/logo/favicon.png"/>
+
+    <title>Dashboard</title>
+</head>
+<body>
+
+<div class="container-scroller">
+    <!-- partial:partial/sidebar.mustache -->
+    {{>sidebar}}
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partial/main-navbar.mustache -->
+        {{>main-navbar}}
+        <!-- partial -->
+
+        <!-- main panel -->
+        <div class="main-panel">
+            <div id="main-content" class="content-wrapper">
+
+
+                <!-- Aqui todo el contenido -->
+
+                <!-- CONTENIDO - HOME -->
+                <div class="card">
+
+                    <div class="card-body">
+                        <div class="d-flex align-items-baseline p-0 w-100">
+                            <div class="nav-item p-0">
+                                <h3 class="mb-0 pb-2 pt-1 pr-2 border-right">Dashboard</h3>
+                            </div>
+
+                            <ul class="navbar-nav px-2 border-right">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/infonete/reporte">Graficos</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav px-2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/infonete/reporte/compras">Compras de usuarios</a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <hr class="w-100 mt-0">
+                        <h4 class="card-title text-pink">Compras de usuarios</h4>
+
+                        <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+                            <ul class="navbar-nav w-100">
+                                <li class="nav-item w-100">
+                                    <form action="/infonete/reporte/compras" method="post" class="d-flex flex-column my-2">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="w-50 mr-2">
+                                                <label class="mb-0">Desde</label>
+                                                <input type="date" class="form-control" name="fechaI" value="{{fecha_inicio}}">
+                                            </div>
+                                            <div class="w-50 ml-2">
+                                                <label class="mb-0">Hasta</label>
+                                                <input type="date" class="form-control" name="fechaF" value="{{fecha_fin}}">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary align-self-end mt-2">Mostrar</button>
+                                    </form>
+                                </li>
+                                <li class="nav-item w-100">
+                                    <a class="btn btn-primary" href="/infonete/reporte/comprasPdf?fi={{fecha_inicio}}&ff={{fecha_fin}}">generar PDF</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th class="text-pink">Avatar</th>
+                                    <th class="text-pink">Apellido y Nombre</th>
+                                    <th class="text-pink">Usuario</th>
+                                    <th class="text-pink">Suscripciones</th>
+                                    <th class="text-pink">Ediciones</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#compras_usuario}}
+                                    <tr>
+                                        <td><img class="me-4" src="/infonete/public/uploads/profiles/{{avatar}}"></td>
+                                        <td>{{apellido}} {{nombre}}</td>
+                                        <td><i class="mdi mdi-account-circle text-danger d-inline"></i> {{email}}</td>
+                                        <td>
+                                           {{suscripcion}}
+                                        </td>
+
+                                        <td>
+                                           {{edicion}}
+                                        </td>
+
+                                    </tr>
+                                {{/compras_usuario}}
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+
+    </div>
+</div>
+
+<script src="/infonete/public/js/vendors/jquery-1.11.3.min.js"></script>
+<script src="/infonete/public/js/vendors/js/vendor.bundle.base.js"></script>
+<script src="/infonete/public/js/vendors/settings.js"></script>
+<script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
+<script src="/infonete/public/js/vendors/misc.js"></script>
+<script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<script src="/infonete/public/js/vendors/chart/Chart.min.js"></script>
+
+
+
+
+
+<!--script vistas Infonete -->
+
+</body>
+</html>

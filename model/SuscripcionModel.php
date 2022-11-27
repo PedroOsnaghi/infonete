@@ -108,6 +108,8 @@ class SuscripcionModel
         return $this->database->list("SELECT s.*, t.duracion as 'dias', t.descripcion as 'tipo' FROM suscripcion s JOIN tipo_suscripcion t ON s.id_tipo_suscripcion = t.id ORDER BY s.id ASC");
     }
 
+
+
     public function listTipos()
     {
         return $this->database->list("SELECT id as 'idTipo', duracion as 'dias', descripcion as 'tipo' FROM tipo_suscripcion  ORDER BY  id ASC");

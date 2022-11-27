@@ -121,15 +121,6 @@ class EdicionController
         echo $this->render->render('public/view/mis-productos.mustache', $data);
     }
 
-    public function catalog()
-    {
-        $idProducto = $_GET['p'];
-
-        $data = $this->datos(["producto" => $this->productModel->getProduct($idProducto),
-                                "ediciones" => $this->edicionModel->listCatalogBy($idProducto, $this->session)]);
-
-        echo $this->render->render("public/view/catalog/catalogo-list.mustache",$data);
-    }
 
 
 

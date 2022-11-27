@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="container-scroller fadeIn">
+<div class="container-scroller">
     <!-- partial:partial/sidebar.mustache -->
     {{>sidebar}}
     <!-- partial -->
@@ -32,9 +32,28 @@
 
                 <!-- CONTENIDO - HOME -->
                 <div class="card fadeIn">
+
                     <div class="card-body">
-                        <h3>Dashboard</h3>
-                        <hr class="w-100">
+                        <div class="d-flex align-items-baseline p-0 w-100">
+                            <div class="nav-item p-0">
+                                <h3 class="mb-0 pb-2 pt-1 pr-2 border-right">Dashboard</h3>
+                            </div>
+
+                            <ul class="navbar-nav px-2 border-right">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/infonete/reporte">Graficos</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav px-2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/infonete/reporte/compras">Compras de usuarios</a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <hr class="w-100 mt-0">
                         <div class="row">
                             <div class="col-lg-6 grid-margin stretch-card">
                                 <div class="card shadow-max">
@@ -48,18 +67,21 @@
                                             </div>
                                         </div>
                                         <h4 class="card-title">Venta suscripciones</h4>
-                                        <form class="d-flex justify-content-between align-items-center my-2">
-                                            <div class="w-50 mr-2">
-                                                <label class="mb-0">Desde</label>
-                                                <input type="date" class="form-control">
-                                            </div>
-                                            <div class="w-50 ml-2">
-                                                <label class="mb-0">Hasta</label>
-                                                <input type="date" class="form-control">
-                                            </div>
+                                        <form action="/infonete/reporte/" method="post" class="d-flex flex-column  my-2">
+                                           <div class="d-flex justify-content-between align-items-center">
+                                               <div class="w-50 mr-2">
+                                                   <label class="mb-0">Desde</label>
+                                                   <input type="date" class="form-control" name="fechaIs" value="{{fecha_inicio_s}}">
+                                               </div>
+                                               <div class="w-50 ml-2">
+                                                   <label class="mb-0">Hasta</label>
+                                                   <input type="date" class="form-control" name="fechaFs" value="{{fecha_fin_s}}">
+                                               </div>
+                                           </div>
+
+                                            <button type="submit" class="btn btn-primary align-self-end mt-2">Mostrar</button>
                                         </form>
-                                        <canvas id="suscripcionChart" style="height: 369px; display: block; width: 738px;"
-                                                width="738" height="369" class="chartjs-render-monitor"></canvas>
+                                        <canvas id="suscripcionChart" style="height: 369px; display: block; width: 738px;" width="738" height="369" class="chartjs-render-monitor"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -75,22 +97,27 @@
                                             </div>
                                         </div>
                                         <h4 class="card-title">Ventas productos</h4>
-                                        <form class="d-flex justify-content-between align-items-center my-2">
-                                            <div class="w-50 mr-2">
-                                                <label class="mb-0">Desde</label>
-                                                <input type="date" class="form-control">
+                                        <form action="/infonete/reporte/" method="post" class="d-flex flex-column my-2">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="w-50 mr-2">
+                                                    <label class="mb-0">Desde</label>
+                                                    <input type="date" class="form-control" name="fechaIp" value="{{fecha_inicio_p}}">
+                                                </div>
+                                                <div class="w-50 ml-2">
+                                                    <label class="mb-0">Hasta</label>
+                                                    <input type="date" class="form-control" name="fechaFp" value="{{fecha_fin_p}}">
+                                                </div>
                                             </div>
-                                            <div class="w-50 ml-2">
-                                                <label class="mb-0">Hasta</label>
-                                                <input type="date" class="form-control">
-                                            </div>
+                                            <button type="submit" class="btn btn-primary align-self-end mt-2">Mostrar</button>
                                         </form>
-                                        <canvas id="productoChart" style="height: 369px; display: block; width: 738px;"
+                                        <canvas id="productChart" style="height: 369px; display: block; width: 738px;"
                                                 width="738" height="369" class="chartjs-render-monitor"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
 
                     </div>
                 </div>
@@ -111,8 +138,14 @@
 <script src="/infonete/public/js/app/chart.js"></script>
 
 <script>
+        {{#datos_suscripcion}}
+            cargarDatoSuscripcion('{{descripcion}}','{{cantVenta}}');
+        {{/datos_suscripcion}}
 
-    iniciarChart();
+        {{#datos_productos}}
+            cargarDatoProducto('{{nombre}}','{{cantVenta}}');
+        {{/datos_productos}}
+    iniciar_graficos();
 
 </script>
 

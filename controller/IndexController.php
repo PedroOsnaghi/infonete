@@ -6,9 +6,11 @@ class IndexController
     private $render;
     private $session;
     private $edicionModel;
+    private $config;
 
-    public function __construct($edicionModel, $session, $render)
+    public function __construct($config, $edicionModel, $session, $render)
     {
+        $this->config = $config;
         $this->edicionModel = $edicionModel;
         $this->session = $session;
         $this->render = $render;
@@ -16,7 +18,8 @@ class IndexController
 
     public function execute()
     {
-        $data = $this->datos(['novedades'=>$this->edicionModel->getNovedades($this->session)]);
+        $data = $this->datos(['novedades'=>$this->edicionModel->getNovedades($this->session),
+                              'wather_key' => $this->config['wather_key'] ]);
         echo $this->render->render("public/view/index.mustache", $data);
     }
 

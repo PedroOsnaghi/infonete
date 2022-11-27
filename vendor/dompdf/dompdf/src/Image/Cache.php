@@ -97,6 +97,7 @@ class Cache
                 $image = null;
                 if ($is_data_uri) {
                     if (($parsed_data_uri = Helpers::parse_data_uri($url)) !== false) {
+                        var_dump($parsed_data_uri);
                         $image = $parsed_data_uri["data"];
                     }
                 } else {

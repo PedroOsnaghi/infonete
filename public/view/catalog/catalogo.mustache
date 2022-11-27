@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="container-scroller fadeIn">
+<div class="container-scroller">
     <!-- partial:partial/sidebar.mustache -->
     {{>sidebar}}
     <!-- partial -->
@@ -45,7 +45,7 @@
                                 <div class="d-flex flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start mt-3">
                                 {{#productos}}
                                     <div class="card card-max bg-light-gray shadow-max mr-2 mb-4 overflow-hidden">
-                                        <a href="/infonete/edicion/catalog?p={{id}}" class="text-decoration-none w-100 text-center" title="{{descripcion}}">
+                                        <a href="/infonete/catalogo/list?p={{id}}" class="text-decoration-none w-100 text-center" title="{{descripcion}}">
                                             <img class="mx-auto product-catalog mb-2 d-block shadow"
                                                  src="/infonete/public/uploads/product/{{imagen}}" alt="">
                                             <div class="mx-auto text-dark-gray">{{tipo}} {{nombre}}</div>

@@ -95,7 +95,20 @@ class ProductoModel
 
     public function list()
     {
-        return $this->database->list("SELECT p.*, t.tipo FROM producto p JOIN tipo_producto t ON p.id_tipo_producto = t.id ORDER BY t.tipo ASC, p.nombre ASC");
+        return $this->database->list("SELECT p.*, t.tipo, COUNT(e.id_producto) as 'ediciones' FROM producto p 
+                                        JOIN tipo_producto t ON p.id_tipo_producto = t.id 
+                                        LEFT JOIN edicion e ON e.id_producto = p.id
+                                        GROUP BY e.id_producto               
+                                        ORDER BY t.tipo ASC, p.nombre ASC");
+    }
+
+    public function listProductosDisponibles($idUsuario, $idSuscripcion)
+    {
+        return $this->database->list("SELECT p.*, t.tipo FROM producto p 
+                                        JOIN tipo_producto t ON p.id_tipo_producto = t.id 
+                                        WHERE p.id NOT IN(SELECT id_producto FROM usuario_suscripcion WHERE id_suscripcion = $idSuscripcion AND id_usuario = $idUsuario)
+											
+                                        ORDER BY t.tipo ASC, p.nombre ASC");
     }
 
     public function getTipoProductList()

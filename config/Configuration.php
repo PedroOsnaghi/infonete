@@ -3,6 +3,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use Dompdf\Dompdf;
 
+
+
 //HELPERS
 include_once("helper/MysqlDatabase.php");
 include_once("helper/Render.php");
@@ -41,6 +43,7 @@ include_once("controller/SuscripcionController.php");
 include_once("controller/ViewerController.php");
 include_once("controller/CheckoutController.php");
 include_once("controller/ReporteController.php");
+include_once("controller/CatalogoController.php");
 
 //vendors
 include_once('vendor/PHPMailer-master/src/Exception.php');
@@ -67,6 +70,11 @@ class Configuration
         return new ViewerController($this->getEdicionModel(), $this->getSeccionModel(), $this->getArticuloModel(), $this->getCheckoutController(), $this->getLogger(), $this->getSession(), $this->getRender());
     }
 
+    public function getCatalogoController()
+    {
+        return new CatalogoController($this->getProductoModel(), $this->getEdicionModel(), $this->getSession(), $this->getRender());
+    }
+
     public function getArticuloModel()
     {
         return new ArticuloModel($this->getFile(), $this->getLogger(), $this->getDatabase());
@@ -79,7 +87,9 @@ class Configuration
 
     public function getIndexController()
     {
-        return new IndexController($this->getEdicionModel(), $this->getSession(), $this->getRender());
+        $config = $this->getConfig();
+        $cfg = array('wather_key' => $config['wather_api_key']);
+        return new IndexController($cfg, $this->getEdicionModel(), $this->getSession(), $this->getRender());
     }
 
     public function getSeccionModel()

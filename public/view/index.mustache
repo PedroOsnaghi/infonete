@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="container-scroller fadeIn">
+<div class="container-scroller ">
     <!-- partial:partial/sidebar.mustache -->
     {{>sidebar}}
     <!-- partial -->
@@ -64,21 +64,16 @@
                             <div class="col-12  col-lg-3 al">
                                 <div class="card card-inverse-primary mt-2 mt-lg-0 h-100">
                                     <div class="card-body py-1">
-                                        <div class="row">
-                                            <div class="col-9 align-items-center">
+                                        <div class="row w-100">
+                                            <div class="col-12 align-items-center">
                                                 <div class="d-flex align-items-center align-self-start">
-                                                    <h2 class="mb-0">24ºC</h2>
-                                                    <p class="text-success ml-2 mb-0 font-weight-medium">Max: 11</p>
-                                                    <p class="text-success ml-2 mb-0 font-weight-medium">Min: 11</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="icon icon-box-success">
-                                                    <span class="mdi mdi-arrow-top-right icon-item"></span>
+                                                    <h2 class="mb-0" id="temp">--ºC</h2>
+                                                    <p class="text-success ml-2 mb-0 font-weight-medium" id="tmax">Max: --</p>
+                                                    <p class="text-success ml-2 mb-0 font-weight-medium" id="tmin">Min: --</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h6 class="text-muted font-weight-normal mb-0 mt-auto">San Justo</h6>
+                                        <h6 class="text-muted font-weight-normal mb-0 mt-auto" id="tcity">ubicando..</h6>
                                     </div>
                                 </div>
                             </div>
@@ -149,8 +144,11 @@
 <script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
 <script src="/infonete/public/js/vendors/misc.js"></script>
 <script src="/infonete/public/js/vendors/off-canvas.js"></script>
-
+<script src="/infonete/public/js/app/wather.js"></script>
 <!--script vistas Infonete -->
+<script>
+    init_wather('{{wather_key}}');
+</script>
 
 </body>
 </html>

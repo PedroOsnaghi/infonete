@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <style>
+        img {
+            width: 200px;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+
+        <div>
+            <h1>Infonete</h1>
+            <h3>Listado de compras realizadas por usuarios</h3>
+            <hr>
+            <div>
+                <span>Desde: {{fecha_inicio}} Hasta: {{fecha_fin}}</span>
+                <hr>
+            </div>
+        </div>
+        <div>
+            <table >
+                <thead>
+                <tr >
+                    <th style="text-align: left">Nombre y apellido</th>
+                    <th style="text-align: left">Usuario</th>
+                    <th style="text-align: left">Suscripciones</th>
+                    <th style="text-align: left">Ediciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#compras_usuario}}
+                    <tr>
+                        <td>{{nombre}} {{apellido}}</td>
+                        <td>{{email}}</td>
+                        <td>{{suscripcion}}</td>
+                        <td>{{edicion}}</td>
+                    </tr>
+                {{/compras_usuario}}
+
+                </tbody>
+            </table>
+            <hr>
+
+        </div>
+
+</div>
+</body>
+
+</html>

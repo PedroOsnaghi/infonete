@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="container-scroller fadeIn">
+<div class="container-scroller ">
     <!-- partial:partial/sidebar.mustache -->
     {{>sidebar}}
     <!-- partial -->
@@ -40,7 +40,7 @@
                             <h3 class="col-12 text-left text-light-gray">Suscribirse</h3>
                             <hr class="w-100">
 
-                            <div>
+                            <div class="container">
                                 {{#suscripcion}}
                                     <div class="col-12 d-flex align-items-center card bg-gradient-{{getTag}} shadow-max">
                                         <div class="card-body">
@@ -69,7 +69,7 @@
                                                 {{/productos}}
                                                 {{^productos}}
                                                     <div class="m-4">
-                                                        <p class="text-muted">Aún no se cargaron productos en el sistema</p>
+                                                        <p class="text-muted">Ya tenes una suscripcion {{getDescripcion}} para todos nuestros productos </p>
                                                     </div>
                                                 {{/productos}}
                                             </div>
@@ -83,7 +83,14 @@
                                                 </label>
                                             </div>-->
 
-                                            <button  type="submit" class="btn btn-primary ">Siguiente</button>
+                                                <button  type="submit" class="btn btn-primary "
+                                                    {{^productos}}
+                                                         disabled
+                                                    {{/productos}}>Siguiente</button>
+
+
+
+
                                         </form>
 
                                 {{/suscripcion}}

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="container-scroller fadeIn">
+<div class="container-scroller">
     <!-- partial:partial/sidebar.mustache -->
     {{>sidebar}}
     <!-- partial -->
@@ -31,7 +31,7 @@
                 <!-- Aqui todo el contenido -->
 
                 <!-- CONTENIDO - HOME -->
-                <div class="card  fadeIn">
+                <div class="card">
                     <div class="card-body pt-0">
 
                         <!-- seccion novedades -->
@@ -56,8 +56,9 @@
                             <hr>
 
                         <div class="d-flex w-100">
-                            <form class="mt-2 search w-25">
-                                <input type="text" class="form-control" name="edition" placeholder="Buscar por Número de edicion o Título">
+                            <form class="d-flex mt-2 search w-25">
+                                <input type="text" class="form-control mr-2" name="edition" placeholder="Buscar por Número de edicion o Título">
+                                <button type="submit" class="btn btn-primary">Buscar</button>
                             </form>
                         </div>
 

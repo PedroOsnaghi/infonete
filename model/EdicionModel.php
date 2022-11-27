@@ -160,25 +160,26 @@ class EdicionModel
         return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.estado, e.id_producto, e.portada, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado");
     }
 
-    public function listCatalogBy($idProduct, $session)
+    public function listCatalogBy($idProduct, $idUser = null)
     {
-        if($session->getAuthUser())
-        {
-            $join = "LEFT JOIN compra_edicion ce 
-                     ON ce.id_edicion = e.id 
-                     AND ce.id_usuario = " . $session->getAuthUser()->getId();
-            $col = ", ce.id_usuario AS 'usuario'";
-        }else
-        {
-            $join = "";
-            $col = "";
-        }
-        return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo " . $col .
-                                        " FROM edicion e JOIN producto p on e.id_producto = p.id 
-                                                                    JOIN tipo_producto t on p.id_tipo_producto = t.id "
-                                        . $join .
-                                        " WHERE p.id= $idProduct AND e.estado =" . self::ESTADO_PUBLICADO .
-                                        " ORDER BY e.fecha DESC");
+
+        $sql = ($idUser) ?
+            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo, ce.id_usuario AS 'usuario'
+             FROM edicion e 
+                            JOIN producto p on e.id_producto = p.id 
+                            JOIN tipo_producto t on p.id_tipo_producto = t.id
+                             LEFT JOIN compra_edicion ce ON ce.id_edicion = e.id AND ce.id_usuario = $idUser
+             WHERE p.id= $idProduct AND e.estado = self::ESTADO_PUBLICADO 
+             ORDER BY e.fecha DESC" :
+            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo 
+             FROM edicion e 
+                                        JOIN producto p on e.id_producto = p.id 
+                                        JOIN tipo_producto t on p.id_tipo_producto = t.id 
+             WHERE p.id= $idProduct AND e.estado = self::ESTADO_PUBLICADO
+             ORDER BY e.fecha DESC";
+
+
+        return $this->database->list($sql);
     }
 
     public function getEdition($id)

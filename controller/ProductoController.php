@@ -74,11 +74,7 @@ class ProductoController
 
     }
 
-    public function nuestrosProductos()
-    {
-        $data = $this->datos(["productos" => $this->productoModel->list()]);
-        echo $this->render->render("public/view/catalog/catalogo.mustache", $data);
-    }
+
 
     private function setearProducto($id = null)
     {
