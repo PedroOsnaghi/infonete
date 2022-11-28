@@ -3,14 +3,14 @@
 class CatalogoController
 {
 
-    private $productoModel;
+    private $productModel;
     private $edicionModel;
     private $session;
     private $render;
 
-    public function __construct($productoModel, $edicionModel, $session, $render)
+    public function __construct($productModel, $edicionModel, $session, $render)
     {
-        $this->productoModel = $productoModel;
+        $this->productModel = $productModel;
         $this->edicionModel = $edicionModel;
         $this->session = $session;
         $this->render = $render;
@@ -19,7 +19,7 @@ class CatalogoController
     public function execute()
     {
 
-        $data = $this->datos(["productos" => $this->productoModel->list()]);
+        $data = $this->datos(["productos" => $this->productModel->list()]);
         echo $this->render->render("public/view/catalog/catalogo.mustache", $data);
 
     }
@@ -28,10 +28,12 @@ class CatalogoController
     public function list()
     {
         $idProducto = $_GET['p'] ?? 0;
-        $searchValue = $_GET['v'] ?? '';
+        $searchValue = $_GET['value'] ?? '';
+        $idUsuario = ($this->session->getAuthUser()) ? $this->session->getAuthUser()->getId() : null;
 
         $data = $this->datos(["producto" => $this->productModel->getProduct($idProducto),
-            "ediciones" => $this->edicionModel->listCatalogBy($idProducto, $this->session)]);
+            "ediciones" => $this->edicionModel->listByProduct($idProducto, $idUsuario, $searchValue),
+            "search" => $searchValue]);
 
         echo $this->render->render("public/view/catalog/catalogo-list.mustache",$data);
     }

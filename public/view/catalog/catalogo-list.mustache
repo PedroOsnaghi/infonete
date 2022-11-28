@@ -37,30 +37,35 @@
                         <!-- seccion novedades -->
 
 
-                            <!-- Tarjeta de ediciones publicadas -->
+                        <!-- Tarjeta de ediciones publicadas -->
+                        {{#producto}}
+                            <div class="d-flex w-100 mx-auto align-items-baseline justify-content-center justify-content-lg-start">
 
-                                <div class="d-flex w-100 mx-auto align-items-baseline justify-content-center justify-content-lg-start">
-                                {{#producto}}
-                                    <div class="card card-max bg-light-gray shadow-max mr-3 overflow-hidden">
+                                <div class="card card-max bg-light-gray shadow-max mr-3 overflow-hidden">
 
-                                            <img class="mx-auto product-catalog mb-2 d-block shadow"
-                                                 src="/infonete/public/uploads/product/{{getImagen}}" alt="">
-                                            <div class="mx-auto text-dark-gray">{{getNombreTipo}} {{getNombre}}</div>
-                                            <div class="w-100 card-tipo-border"></div>
-
-                                    </div>
-                                    <h5 class="text-left text-muted mb-0 mt-auto"  >{{getDescripcion}}</h5>
-                                {{/producto}}
+                                    <img class="mx-auto product-catalog mb-2 d-block shadow"
+                                         src="/infonete/public/uploads/product/{{getImagen}}" alt="">
+                                    <div class="mx-auto text-dark-gray">{{getNombreTipo}} {{getNombre}}</div>
+                                    <div class="w-100 card-tipo-border"></div>
 
                                 </div>
-                            <hr>
+                                <h5 class="text-left text-muted mb-0 mt-auto">{{getDescripcion}}</h5>
 
-                        <div class="d-flex w-100">
-                            <form class="d-flex mt-2 search w-25">
-                                <input type="text" class="form-control mr-2" name="edition" placeholder="Buscar por Número de edicion o Título">
-                                <button type="submit" class="btn btn-primary">Buscar</button>
-                            </form>
-                        </div>
+                            </div>
+                            <hr>
+                        {{/producto}}
+                            <div class="d-flex w-100">
+                                <form class="d-flex mt-2 search w-25">
+                                    {{#producto}}
+                                        <input type="hidden" name="p" value="{{getId}}">
+                                    {{/producto}}
+
+                                    <input type="text" class="form-control mr-2" name="value" value="{{search}}"
+                                           placeholder="Buscar por Número de edicion o Título">
+                                    <button type="submit" class="btn btn-primary">Buscar</button>
+                                </form>
+                            </div>
+
 
                         <div class="d-flex mt-4 flex-wrap w-100 mx-auto justify-content-center justify-content-lg-start">
                             {{#ediciones}}
@@ -87,15 +92,25 @@
                                         <div class="mt-auto">
                                             <h3 class="mb-0 text-dark-gray ">${{precio}}</h3>
                                             {{#usuario}}
-                                                <a href="/infonete/edicion/misEdiciones" class="btn btn-success btn-block">Comprado</a>
+                                                {{#suscripcion}}
+                                                    <a href="/infonete/edicion/misEdiciones" class="btn btn-info btn-block">Con tu suscripción</a>
+                                                {{/suscripcion}}
+                                                {{^suscripcion}}
+                                                    <a href="/infonete/edicion/misEdiciones" class="btn btn-success btn-block">Comprado</a>
+                                                {{/suscripcion}}
                                             {{/usuario}}
                                             {{^usuario}}
-                                                <a href="/infonete/edicion/verDetalle?id={{id}}" class="btn btn-primary btn-block">Comprar este número</a>
+                                                {{#suscripcion}}
+                                                    <a href="/infonete/edicion/misEdiciones" class="btn btn-info btn-block">Con tu suscripción</a>
+                                                {{/suscripcion}}
+                                                {{^suscripcion}}
+                                                    <a href="/infonete/edicion/checkout?id={{id}}" class="btn btn-primary btn-block">Comprar este número</a>
+                                                {{/suscripcion}}
+
                                             {{/usuario}}
                                         </div>
 
                                     </div>
-
 
 
                                     <div class="w-100 card-tipo-border"></div>

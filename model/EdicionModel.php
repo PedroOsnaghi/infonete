@@ -150,9 +150,9 @@ class EdicionModel
         return $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto, estado) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', " . $this->producto . "," . self::ESTADO_EN_EDICION . ")");
     }
 
-    public function listBy($product)
+    public function listarPorProducto($idProduct)
     {
-        return $this->database->list("SELECT * FROM edicion WHERE id_producto = $product");
+        return $this->database->list("SELECT * FROM edicion WHERE id_producto = $idProduct");
     }
 
     public function listByState($estado)
@@ -160,27 +160,7 @@ class EdicionModel
         return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.estado, e.id_producto, e.portada, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado");
     }
 
-    public function listCatalogBy($idProduct, $idUser = null)
-    {
 
-        $sql = ($idUser) ?
-            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo, ce.id_usuario AS 'usuario'
-             FROM edicion e 
-                            JOIN producto p on e.id_producto = p.id 
-                            JOIN tipo_producto t on p.id_tipo_producto = t.id
-                             LEFT JOIN compra_edicion ce ON ce.id_edicion = e.id AND ce.id_usuario = $idUser
-             WHERE p.id= $idProduct AND e.estado = self::ESTADO_PUBLICADO 
-             ORDER BY e.fecha DESC" :
-            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo 
-             FROM edicion e 
-                                        JOIN producto p on e.id_producto = p.id 
-                                        JOIN tipo_producto t on p.id_tipo_producto = t.id 
-             WHERE p.id= $idProduct AND e.estado = self::ESTADO_PUBLICADO
-             ORDER BY e.fecha DESC";
-
-
-        return $this->database->list($sql);
-    }
 
     public function getEdition($id)
     {
@@ -222,15 +202,16 @@ class EdicionModel
     {
         $sql_portada = ($this->verificarCambioPortada()) ? ", portada = '$this->portada'" : "";
 
-        $response = $this->database->execute("UPDATE edicion SET numero = $this->numero, titulo = '$this->titulo', 
-                                        descripcion = '$this->descripcion', precio = $this->precio, 
-                                        id_producto = $this->producto" . $sql_portada . "  WHERE id = $this->id");
+        $response = $this->database->execute("UPDATE edicion SET numero = $this->numero, 
+                                                                 titulo = '$this->titulo', 
+                                                                 descripcion = '$this->descripcion', 
+                                                                 precio = $this->precio, 
+                                                                 id_producto = $this->producto "
+                                                                 .$sql_portada.
+                                            " WHERE id = $this->id");
 
-        if ($response) return array("success" => "La edición se actualizó correctamente",
-            "edicion" => $this);
-
-        return array("error" => "Hubo un error al actualizar la edición",
-            "edicion" => $this);
+        return ($response) ? array("success" => "La edición se actualizó correctamente", "edicion" => $this):
+                            array("error" => "Hubo un error al actualizar la edición", "edicion" => $this);
     }
 
     public function publicar($id)
@@ -257,27 +238,47 @@ class EdicionModel
 
     //devuelve un array con las Ediciones publicadas en los ultimos 3 dias.
     //recibe la session como parametro para verificar si hay compras para el usuario que visita el sitio
-    public function getNovedades($session)
+    public function getNovedades($idUsuario = null)
     {
-        if($session->getAuthUser())
-        {
-            $join = "LEFT JOIN compra_edicion ce 
-                     ON ce.id_edicion = e.id 
-                     AND ce.id_usuario = " . $session->getAuthUser()->getId();
-            $col = ", ce.id_usuario AS 'usuario'";
-        }else
-        {
-            $join = "";
-            $col = "";
-        }
+
+        $sql = ($idUsuario) ?
+            "SELECT m.* ,us.id_usuario as 'suscripcion' FROM (SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo , ce.id_usuario AS 'usuario', e.id_producto, e.fecha as 'f'
+                                                               FROM edicion e 
+                                                                   JOIN producto p on e.id_producto = p.id 
+                                                                   JOIN tipo_producto t on p.id_tipo_producto = t.id 
+                                                                   LEFT JOIN compra_edicion ce ON ce.id_edicion = e.id  AND ce.id_usuario = $idUsuario
+                                                                   WHERE datediff(now(), e.fecha) <= 3 and e.estado =".self::ESTADO_PUBLICADO." ORDER BY e.fecha DESC) as m 
+            LEFT JOIN usuario_suscripcion us ON  us.id_producto = m.id_producto AND us.id_usuario = $idUsuario AND us.activa = 1 AND DATE(us.fecha_inicio) <= DATE(m.f)"
+            :
+            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo 
+            FROM edicion e JOIN producto p on e.id_producto = p.id 
+										JOIN tipo_producto t on p.id_tipo_producto = t.id 
+             WHERE datediff(now(), e.fecha) <= 3 and e.estado =".self::ESTADO_PUBLICADO." ORDER BY e.fecha DESC";
 
         // Retorna las publicaciones de los últimos 3 días
-        return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo " . $col .
-                                      " FROM edicion e JOIN producto p on e.id_producto = p.id 
-										JOIN tipo_producto t on p.id_tipo_producto = t.id "
-										. $join .
-                                        " WHERE datediff(now(), e.fecha) <= 3 and e.estado =" . self::ESTADO_PUBLICADO .
-                                        " ORDER BY e.fecha DESC");
+        return $this->database->list($sql);
+    }
+
+    public function listByProduct($idProduct, $idUser = null, $searchValue)
+    {
+
+        $sql = ($idUser) ?
+            "SELECT m.* ,us.id_usuario as 'suscripcion' FROM (SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo, ce.id_usuario AS 'usuario', e.id_producto, e.fecha as 'f'
+             FROM edicion e 
+                            JOIN producto p on e.id_producto = p.id 
+                            JOIN tipo_producto t on p.id_tipo_producto = t.id
+                             LEFT JOIN compra_edicion ce ON ce.id_edicion = e.id AND ce.id_usuario = $idUser
+             WHERE p.id= $idProduct AND e.estado = ".self::ESTADO_PUBLICADO." AND (e.numero LIKE '%$searchValue%' OR e.titulo LIKE '%$searchValue%') ORDER BY e.fecha DESC) as m 
+            LEFT JOIN usuario_suscripcion us ON  us.id_producto = m.id_producto AND us.id_usuario = $idUser AND us.activa = 1 AND DATE(us.fecha_inicio) <= DATE(m.f)"
+            :
+            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo 
+             FROM edicion e 
+                                        JOIN producto p on e.id_producto = p.id 
+                                        JOIN tipo_producto t on p.id_tipo_producto = t.id 
+             WHERE p.id= $idProduct AND e.estado = ".self::ESTADO_PUBLICADO." AND (e.numero LIKE '%$searchValue%' OR e.titulo LIKE '%$searchValue%') ORDER BY e.fecha DESC";
+
+
+        return $this->database->list($sql);
     }
 
 

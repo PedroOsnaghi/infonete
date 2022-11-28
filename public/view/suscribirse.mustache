@@ -49,54 +49,64 @@
                                     </div>
 
 
-                                    <h4 class="col-12 text-left text-light-gray mt-4">Selecciona el producto al que deseas suscribirte</h4>
+                                    <h4 class="col-12 text-left text-light-gray mt-4">Selecciona el producto al que
+                                        deseas suscribirte</h4>
 
-                                        <form action="/infonete/suscripcion/checkout" class="text-center" method="post" id="form-checkout">
-                                            <input type="hidden" name="s" value="{{getId}}">
-                                            <div class="d-flex flex-wrap w-100 mx-auto justify-content-center mt-3">
-                                                {{#productos}}
-                                                    <div class="card card-max bg-light-gray shadow-max mr-2 mb-4 overflow-hidden">
+                                    <form action="/infonete/suscripcion/checkout" class="text-center" method="post"
+                                          id="form-checkout">
+                                        <input type="hidden" name="s" value="{{getId}}">
+                                        <div class="d-flex flex-wrap w-100 mx-auto justify-content-center mt-3">
+                                            {{#productos}}
+                                                <div class="card card-max bg-light-gray shadow-max mr-2 mb-4 overflow-hidden">
 
-                                                        <img class="mx-auto product-catalog mb-2 d-block shadow"
-                                                             src="/infonete/public/uploads/product/{{imagen}}" alt="">
+                                                    <img class="mx-auto product-catalog mb-2 d-block shadow"
+                                                         src="/infonete/public/uploads/product/{{imagen}}" alt="">
 
-                                                        <div class="mx-auto text-dark-gray"><label><input type="radio" value="{{id}}" name="p" class="form-check-input">{{tipo}} {{nombre}}</label></div>
+                                                    <div class="mx-auto text-dark-gray"><label><input type="radio"
+                                                                                                      value="{{id}}"
+                                                                                                      name="p"
+                                                                                                      class="form-check-input">{{tipo}} {{nombre}}
+                                                    </label></div>
 
-                                                        <div class="w-100 card-tipo-border"></div>
-
-
-                                                    </div>
-                                                {{/productos}}
-                                                {{^productos}}
-                                                    <div class="m-4">
-                                                        <p class="text-muted">Ya tenes una suscripcion {{getDescripcion}} para todos nuestros productos </p>
-                                                    </div>
-                                                {{/productos}}
-                                            </div>
+                                                    <div class="w-100 card-tipo-border"></div>
 
 
-<!--
-                                            <div class="form-check">
+                                                </div>
+                                            {{/productos}}
+                                            {{^productos}}
+                                                <div class="m-4">
+                                                    <p class="text-muted">Ya tenes una suscripcion {{getDescripcion}}
+                                                        para todos nuestros productos </p>
+                                                </div>
+                                            {{/productos}}
+                                        </div>
+
+
+                                        <div class="d-flex justify-content-center align-items-baseline mb-3">
+                                            <div class="form-check form-check-flat form-check-primary">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" >Al suscribirme acepto los <spam class="text-primary">TERMINOS Y CONDICIONES *</spam>
-                                                    <i class="input-helper"></i>
-                                                </label>
-                                            </div>-->
-
-                                                <button  type="submit" class="btn btn-primary "
-                                                    {{^productos}}
-                                                         disabled
-                                                    {{/productos}}>Siguiente</button>
+                                                    <input type="checkbox" id="term" class="form-check-input" onchange="toggle(this);"
+                                                        {{^productos}}
+                                                           disabled
+                                                        {{/productos}}>Al suscribirme acepto los <i class="input-helper"></i></label>
+                                            </div>
+                                            <spam class="text-primary font-italic fs-14" >Terminos y Condiciones *</spam>
+                                        </div>
 
 
+                                        <button type="submit" id="submit" class="btn btn-primary disabled" disabled >Siguiente</button>
 
 
-                                        </form>
+                                    </form>
 
                                 {{/suscripcion}}
                             </div>
                             <hr class="text-light-gray w-100 mt-3">
-                            <p class="text-muted font-italic text-center mx-auto"><spam class="text-primary font-italic font-weight-light ">TERMINOS Y CONDICIONES: </spam>Oferta válida solo para las ediciones que se publiquen a partir de la fecha de suscripcion y hasta el vencimiento de la misma</p>
+                            <p class="text-muted font-italic text-center mx-auto">
+                                <spam class="text-primary font-italic font-weight-light ">TERMINOS Y CONDICIONES:</spam>
+                                Oferta válida solo para las ediciones que se publiquen a partir de la fecha de
+                                suscripcion y hasta el vencimiento de la misma
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -113,7 +123,20 @@
 <script src="/infonete/public/js/vendors/hoverable-collapse.js"></script>
 <script src="/infonete/public/js/vendors/misc.js"></script>
 <script src="/infonete/public/js/vendors/off-canvas.js"></script>
+<script>
+    function toggle(e){
+        if (e.checked){
+            document.getElementById("submit").classList.remove("disabled");
+            document.getElementById("submit").removeAttribute("disabled");
+        }else{
+            document.getElementById("submit").classList.add("disabled");
+            document.getElementById("submit").setAttribute("disabled", "true");
+        }
 
+    }
+
+    document.querySelector("input[name='p']").checked =true;
+</script>
 
 </body>
 </html>

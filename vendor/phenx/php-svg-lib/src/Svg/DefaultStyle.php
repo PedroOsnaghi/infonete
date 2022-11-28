@@ -10,11 +10,11 @@ namespace Svg;
 
 class DefaultStyle extends Style
 {
-    public $color = [0, 0, 0, 1];
+    public $color = '';
     public $opacity = 1.0;
     public $display = 'inline';
 
-    public $fill = [0, 0, 0, 1];
+    public $fill = 'black';
     public $fillOpacity = 1.0;
     public $fillRule = 'nonzero';
 

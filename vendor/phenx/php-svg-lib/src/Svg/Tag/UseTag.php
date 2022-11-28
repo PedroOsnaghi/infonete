@@ -38,7 +38,7 @@ class UseTag extends AbstractTag
 
         $document = $this->getDocument();
 
-        $link = $attributes["href"] ?? $attributes["xlink:href"];
+        $link = $attributes["xlink:href"];
         $this->reference = $document->getDef($link);
 
         if ($this->reference) {
@@ -69,18 +69,12 @@ class UseTag extends AbstractTag
             return;
         }
 
-        $mergedAttributes = $this->reference->attributes;
-        $attributesToNotMerge = ['x', 'y', 'width', 'height'];
-        foreach ($attributes as $attrKey => $attrVal) {
-            if (!in_array($attrKey, $attributesToNotMerge) && !isset($mergedAttributes[$attrKey])) {
-                $mergedAttributes[$attrKey] = $attrVal;
-            }
-        }
+        $attributes = array_merge($this->reference->attributes, $attributes);
 
-        $this->reference->handle($mergedAttributes);
+        $this->reference->handle($attributes);
 
         foreach ($this->reference->children as $_child) {
-            $_attributes = array_merge($_child->attributes, $mergedAttributes);
+            $_attributes = array_merge($_child->attributes, $attributes);
             $_child->handle($_attributes);
         }
     }

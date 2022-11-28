@@ -55,8 +55,8 @@ class SuscripcionController
     public function checkout()
     {
         $this->session->urlRestriction();
-
-        $suscripcion = $this->suscripcionModel->getSuscripcion($_POST['s']);
+        $id = $_POST['s'] ?? Redirect::doIt("/infonete");
+        $suscripcion = $this->suscripcionModel->getSuscripcion($id);
 
         //configuracion del Checkout
         $this->checkout->target = CheckoutModel::TARGET_SUSCRIPTION;

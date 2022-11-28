@@ -18,7 +18,8 @@ class IndexController
 
     public function execute()
     {
-        $data = $this->datos(['novedades'=>$this->edicionModel->getNovedades($this->session),
+        $idUsuario = ($this->session->getAuthUser()) ? $this->session->getAuthUser()->getId() : null;
+        $data = $this->datos(['novedades'=>$this->edicionModel->getNovedades($idUsuario),
                               'wather_key' => $this->config['wather_key'] ]);
         echo $this->render->render("public/view/index.mustache", $data);
     }

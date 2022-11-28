@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <style>
+        img {
+            width: 200px;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+
+        <div>
+            <img src="{{logo}}" alt="">
+            <h3>Resúmen de ventas de Productos</h3>
+            <hr>
+            <div>
+                <span>Desde: {{fecha_inicio}} Hasta: {{fecha_fin}}</span>
+                <hr>
+            </div>
+        </div>
+        <div>
+            <table >
+                <thead>
+                <tr >
+                    <th class="text-pink" style="text-align: left">Titulo</th>
+                    <th class="text-pink" style="text-align: left">Tipo</th>
+                    <th class="text-pink" style="text-align: left">Cantidad de Ediciones</th>
+                    <th class="text-pink" style="text-align: left">Suscriptos</th>
+                    <th class="text-pink" style="text-align: left">Ediciones vendidas</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#productos}}
+                    <tr>
+                        <td>{{nombre}}</td>
+                        <td>{{tipo}}</td>
+                        <td>{{ediciones}}</td>
+                        <td>{{suscriptos}}</td>
+                        <td>{{vendidos}}</td>
+                    </tr>
+                {{/productos}}
+
+                {{^productos}}
+                    <tr>
+                        <td>
+                            No hay productos para mostrar.
+                        </td>
+
+                    </tr>
+
+                {{/productos}}
+
+                </tbody>
+            </table>
+            <hr>
+
+        </div>
+
+</div>
+</body>
+
+</html>

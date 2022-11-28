@@ -39,9 +39,21 @@ class ReporteModel
                                             FROM usuario u
                                             LEFT JOIN (SELECT id_usuario FROM usuario_suscripcion WHERE DATE(fecha_inicio) BETWEEN DATE('$fechaI') AND DATE('$fechaF') ) d ON d.id_usuario = u.id
 											GROUP BY u.id) m  LEFT JOIN compra_edicion ce ON ce.id_usuario = m.id
-                                            WHERE DATE(ce.fecha) BETWEEN DATE('$fechaI') AND DATE('$fechaF') GROUP BY m.id";
+                                            AND DATE(ce.fecha) BETWEEN DATE('$fechaI') AND DATE('$fechaF') GROUP BY m.id";
 
         $this->logger->info($sql);
         return $this->database->list($sql);
+    }
+
+    public function getProductos($fechaI , $fechaF)
+    {
+        return $this->database->list("select sus.*, COUNT(comp.id) as 'vendidos' from (select prod.*, count(us.id_producto) as 'suscriptos' from (SELECT p.*, t.tipo, COUNT(e.id_producto) as 'ediciones' FROM producto p 
+                                        JOIN tipo_producto t ON p.id_tipo_producto = t.id 
+                                        LEFT JOIN edicion e ON e.id_producto = p.id
+                                        GROUP BY e.id_producto               
+                                        ORDER BY t.tipo ASC, p.nombre ASC) as prod
+                                        LEFT JOIN (select * from usuario_suscripcion where DATE(fecha_inicio) BETWEEN date('$fechaI') and date('$fechaF')) us ON us.id_producto = prod.id GROUP BY prod.id,us.id_producto) as sus
+                                        LEFT JOIN (select p.id from producto p join edicion e ON e.id_producto = p.id 
+																				join (select * from compra_edicion where DATE(fecha) BETWEEN date('$fechaI') and date('$fechaF')) ce ON ce.id_Edicion = e.id) as comp ON comp.id = sus.id GROUP BY comp.id,sus.id");
     }
 }

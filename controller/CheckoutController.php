@@ -86,7 +86,8 @@ class CheckoutController
     public function mostrarFactura()
     {
         $paymentId = $_GET['payment_id'];
-        $data = $this->datos(['factura' => $this->checkoutModel->getFactura($paymentId)]);
+        $data = $this->datos(['factura' => $this->checkoutModel->getFactura($paymentId),
+                             'logo' => dirname(__FILE__,2) . "/public/images/logo/logo-text.png"]);
         $this->render->pdf('public/view/pdf/factura.mustache', $data, 'factura-' . $paymentId . '.pdf');
     }
 

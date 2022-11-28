@@ -8,8 +8,6 @@
 
 namespace Svg\Tag;
 
-use Svg\Style;
-
 class Ellipse extends Shape
 {
     protected $cx = 0;
@@ -21,20 +19,17 @@ class Ellipse extends Shape
     {
         parent::start($attributes);
 
-        $width = $this->document->getWidth();
-        $height = $this->document->getHeight();
-
         if (isset($attributes['cx'])) {
-            $this->cx = $this->convertSize($attributes['cx'], $width);
+            $this->cx = $attributes['cx'];
         }
         if (isset($attributes['cy'])) {
-            $this->cy = $this->convertSize($attributes['cy'], $height);
+            $this->cy = $attributes['cy'];
         }
         if (isset($attributes['rx'])) {
-            $this->rx = $this->convertSize($attributes['rx'], $width);
+            $this->rx = $attributes['rx'];
         }
         if (isset($attributes['ry'])) {
-            $this->ry = $this->convertSize($attributes['ry'], $height);
+            $this->ry = $attributes['ry'];
         }
 
         $this->document->getSurface()->ellipse($this->cx, $this->cy, $this->rx, $this->ry, 0, 0, 360, false);

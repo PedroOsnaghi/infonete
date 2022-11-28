@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articulo</title>
+    <style>
+
+
+        body {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .avatar {
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .subtitulo {
+            font-weight: 150;
+            font-size: 18px;
+        }
+
+        .titulo {
+            font-size: 24px;
+        }
+
+
+
+        .autor-details {
+            margin-left: 10px;
+        }
+
+        .seccion {
+            color: dodgerblue;
+            font-size: 14px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div>
+    {{#articulo}}
+        <div>
+            <spam class="seccion">{{getSeccion}}</spam>
+            <h1 class="titulo">{{getTitulo}}</h1>
+            <h2 class="subtitulo">{{getSubtitulo}}</h2>
+            <hr>
+            <div class="autor">
+                <div style="width: 60px; height: 60px;">
+                    <img class="avatar" src="{{avatar}}" alt="">
+                </div>
+
+                <div  class="autor-details" style="font-size: 12px">
+                    <p >Por <spam style="font-weight: bold">{{getAutor}}</spam> El {{getCreateAt}}</p>
+                </div>
+            </div>
+            <hr>
+
+        </div>
+        <p>
+            <img style="width: 100%" src="{{imagen}}" alt="">
+        </p>
+        <div style="font-size: 12px; text-align: center">
+            {{{getContenido}}}
+        </div>
+    {{/articulo}}
+</div>
+</body>
+
+</html>

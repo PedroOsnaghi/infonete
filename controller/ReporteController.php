@@ -47,6 +47,18 @@ class ReporteController
         echo $this->render->render('public/view/dashboard/dashboard-compras-usuarios.mustache', $data);
     }
 
+    public function productos(){
+        //intervalo de fechas
+        $fechaI = $_POST['fechaI'] ??  date("Y-m-01");
+        $fechaF = $_POST['fechaF'] ??  date("Y-m-t");
+
+        $data = $this->datos(['productos' => $this->reporteModel->getProductos($fechaI,$fechaF),
+            'fecha_inicio' => $fechaI,
+            'fecha_fin' => $fechaF]);
+
+        echo $this->render->render('public/view/dashboard/dashboard-productos.mustache', $data);
+    }
+
     public function comprasPdf(){
         //intervalo de fechas
 
@@ -55,9 +67,24 @@ class ReporteController
 
         $data = $this->datos(['compras_usuario' => $this->reporteModel->getComprasUsuario($fechaI,$fechaF),
             'fecha_inicio' => Fecha::longDate($fechaI),
-            'fecha_fin' => Fecha::longDate($fechaF)]);
+            'fecha_fin' => Fecha::longDate($fechaF),
+            'logo' => dirname(__FILE__,2) . "/public/images/logo/logo-text.png"]);
 
         echo $this->render->pdf('public/view/pdf/compras-usuario-pdf.mustache', $data, "compras.pdf");
+    }
+
+    public function productosPdf(){
+        //intervalo de fechas
+
+        $fechaI = $_GET['fi'] ??  date("Y-m-01");
+        $fechaF = $_GET['ff'] ??  date("Y-m-t");
+
+        $data = $this->datos(['productos' => $this->reporteModel->getProductos($fechaI,$fechaF),
+            'fecha_inicio' => Fecha::longDate($fechaI),
+            'fecha_fin' => Fecha::longDate($fechaF),
+            'logo' => dirname(__FILE__,2) . "/public/images/logo/logo-text.png"]);
+
+        echo $this->render->pdf('public/view/pdf/productos-pdf.mustache', $data, "productos.pdf");
     }
 
 

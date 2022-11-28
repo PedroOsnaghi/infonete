@@ -104,7 +104,10 @@ function iniciar_graficos(){
         animation: {
             animateScale: true,
             animateRotate: true
-        }
+        },
+        legend: {
+            display: true
+        },
     };
 
 

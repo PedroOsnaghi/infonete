@@ -1,6 +1,7 @@
 # SVG file parsing / rendering library
 
-[![Build Status](https://github.com/phenx/php-svg-lib/workflows/test/badge.svg)](https://github.com/phenx/php-svg-lib/actions)
+[![Build Status](https://travis-ci.org/PhenX/php-svg-lib.svg?branch=master)](https://travis-ci.org/PhenX/php-svg-lib)
+[![Coverage Status](https://coveralls.io/repos/PhenX/php-svg-lib/badge.svg)](https://coveralls.io/r/PhenX/php-svg-lib)
 
 
 [![Latest Stable Version](https://poser.pugx.org/phenx/php-svg-lib/v/stable)](https://packagist.org/packages/phenx/php-svg-lib) 

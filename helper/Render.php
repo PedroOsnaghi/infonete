@@ -22,8 +22,8 @@ class Render{
     {
         $contentAsString =  file_get_contents($contentFile);
         $this->pdf->loadHtml($this->mustache->render($contentAsString, $data));
-        $this->pdf->setPaper('A4', 'landscape');
+        $this->pdf->setPaper('A4', 'portrait');
         $this->pdf->render();
-        $this->pdf->stream($fileName);
+        $this->pdf->stream($fileName, ['Attachment' => 0]);
     }
 }

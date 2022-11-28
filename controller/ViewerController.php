@@ -60,10 +60,24 @@ class ViewerController
         $data = $this->datos(["articulo" => $article,
                                "edicion" => $this->session->getParameter('viewer_edition'),
                              "secciones" => $this->session->getParameter('viewer_sections'),
-                               "current" => $this->session->getParameter('current_section')]);
+                               "current" => $this->session->getParameter('current_section'),
+                                "id_article" => $_GET['id']]);
 
         echo $this->render->render("public/view/viewer/viewer-content.mustache", $data);
 
+    }
+
+    public function generarPdf(){
+        $article = $this->articuloModel->getArticuloPreview($_GET['id']);
+
+        $imagen = dirname(__FILE__,2) . "/public/uploads/article/".$article->getId()."/". $article->getImagenes()[0]['archivo'];
+
+        $this->logger->info($imagen);
+        $data = $this->datos(["articulo" => $article,
+                               "avatar" => dirname(__FILE__,2) . "/public/uploads/profiles/". $article->getImagenAutor(),
+                                "imagen" => dirname(__FILE__,2) . "/public/uploads/article/".$article->getId()."/". $article->getImagenes()[0]['archivo']]);
+
+        echo $this->render->pdf("public/view/pdf/article-pdf.mustache", $data, "ariculo-" . $_GET['id'] . ".pdf" );
     }
 
     public function close()

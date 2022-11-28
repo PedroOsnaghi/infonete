@@ -37,11 +37,11 @@ interface SurfaceInterface
 
     public function fill();
 
-    public function stroke(bool $close = false);
+    public function stroke();
 
     public function endPath();
 
-    public function fillStroke(bool $close = false);
+    public function fillStroke();
 
     public function clip();
 

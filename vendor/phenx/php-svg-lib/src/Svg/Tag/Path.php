@@ -61,7 +61,7 @@ class Path extends Shape
                 $commandLower = strtolower($c[1]);
 
                 // arcs have special flags that apparently don't require spaces.
-                if ($commandLower === 'a' && preg_match_all(static::ARC_REGEXP, $c[2], $matches, PREG_PATTERN_ORDER)) {
+                if ($commandLower === 'a' && preg_match_all(static::ARC_REGEXP, $c[2], $matches)) {
                     $numberOfMatches = count($matches[0]);
                     for ($k = 0; $k < $numberOfMatches; ++$k) {
                         $path[] = [
@@ -138,6 +138,7 @@ class Path extends Shape
         $tempControlY = null;
         $l = 0; //-((this.width / 2) + $this.pathOffset.x),
         $t = 0; //-((this.height / 2) + $this.pathOffset.y),
+        $methodName = null;
 
         foreach ($path as $current) {
             switch ($current[0]) { // first letter
@@ -332,16 +333,23 @@ class Path extends Shape
                     $tempX = $x + $current[1];
                     $tempY = $y + $current[2];
 
-                    // calculate reflection of previous control points
-                    if (preg_match('/[QqT]/', $previous[0])) {
-                        $controlX = 2 * $x - $controlX;
-                        $controlY = 2 * $y - $controlY;
-                    } elseif ($previous[0] === 't') {
-                        $controlX = 2 * $x - $tempControlX;
-                        $controlY = 2 * $y - $tempControlY;
-                    } else {
+                    if (preg_match("/[QqTt]/", $previous[0])) {
+                        // If there is no previous command or if the previous command was not a Q, q, T or t,
+                        // assume the control point is coincident with the current point
                         $controlX = $x;
                         $controlY = $y;
+                    } else {
+                        if ($previous[0] === 't') {
+                            // calculate reflection of previous control points for t
+                            $controlX = 2 * $x - $tempControlX;
+                            $controlY = 2 * $y - $tempControlY;
+                        } else {
+                            if ($previous[0] === 'q') {
+                                // calculate reflection of previous control points for q
+                                $controlX = 2 * $x - $controlX;
+                                $controlY = 2 * $y - $controlY;
+                            }
+                        }
                     }
 
                     $tempControlX = $controlX;
@@ -355,6 +363,8 @@ class Path extends Shape
                     );
                     $x = $tempX;
                     $y = $tempY;
+                    $controlX = $x + $current[1];
+                    $controlY = $y + $current[2];
                     break;
 
                 case 'T':
@@ -362,14 +372,8 @@ class Path extends Shape
                     $tempY = $current[2];
 
                     // calculate reflection of previous control points
-                    if (preg_match('/[QqTt]/', $previous[0])) {
-                        $controlX = 2 * $x - $controlX;
-                        $controlY = 2 * $y - $controlY;
-                    } else {
-                        $controlX = $x;
-                        $controlY = $y;
-                    }
-
+                    $controlX = 2 * $x - $controlX;
+                    $controlY = 2 * $y - $controlY;
                     $surface->quadraticCurveTo(
                         $controlX + $l,
                         $controlY + $t,
@@ -381,6 +385,7 @@ class Path extends Shape
                     break;
 
                 case 'a':
+                    // TODO: optimize this
                     $this->drawArc(
                         $surface,
                         $x + $l,
@@ -446,14 +451,7 @@ class Path extends Shape
             array(),
         );
 
-        $toX = $tx - $fx;
-        $toY = $ty - $fy;
-
-        if ($toX + $toY === 0) {
-            return;
-        }
-
-        $segsNorm = $this->arcToSegments($toX, $toY, $rx, $ry, $large, $sweep, $rot);
+        $segsNorm = $this->arcToSegments($tx - $fx, $ty - $fy, $rx, $ry, $large, $sweep, $rot);
 
         for ($i = 0, $len = count($segsNorm); $i < $len; $i++) {
             $segs[$i][0] = $segsNorm[$i][0] + $fx;

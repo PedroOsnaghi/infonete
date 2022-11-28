@@ -53,6 +53,7 @@ include_once('vendor/mustache/src/Mustache/Autoloader.php');
 include_once("Router.php");
 include_once("vendor/autoload.php");
 
+
 class Configuration
 {
     public function getReporteController()

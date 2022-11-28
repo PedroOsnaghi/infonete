@@ -50,6 +50,7 @@
                                                 <p class="mb-0 font-weight-normal d-none d-sm-block">Tenémos los mejores
                                                     Planes para vos!</p>
                                             </div>
+
                                             <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">
                                                 <span>
                                                   <a id="btn-banner-planes" href="/infonete/suscripcion/planes"
@@ -67,17 +68,24 @@
                                         <div class="row w-100">
                                             <div class="col-12 align-items-center">
                                                 <div class="d-flex align-items-center align-self-start">
-                                                    <h2 class="mb-0" id="temp">--ºC</h2>
-                                                    <p class="text-success ml-2 mb-0 font-weight-medium" id="tmax">Max: --</p>
-                                                    <p class="text-success ml-2 mb-0 font-weight-medium" id="tmin">Min: --</p>
+                                                    <h2 class="mb-0" id="temp">--.-ºC</h2>
+                                                    <p class="text-success ml-2 mb-0 font-weight-medium" id="tmax">Max: --.-ºC</p>
+                                                    <p class="text-success ml-2 mb-0 font-weight-medium" id="tmin">Min: --.-ºC</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h6 class="text-muted font-weight-normal mb-0 mt-auto" id="tcity">ubicando..</h6>
+                                        <h6 class="text-muted font-weight-normal mb-0 mt-auto" id="tcity">buscando...</h6>
                                     </div>
                                 </div>
                             </div>
 
+                        </div>
+
+                        <div class="col-12 d-flex align-items-center bg-light mt-3">
+                            <img width="500px" src="/infonete/public/images/banner/images.jpg" alt="">
+                            <div class="text-dark-gray w-50">
+                                <h1 class="display-4 ">Lee todos los Diarios y Revistas de la manera más facil y desde cualquier dispositivo</h1>
+                            </div>
                         </div>
 
                         <!-- seccion novedades -->
@@ -112,10 +120,21 @@
                                                 <div class="mt-auto">
                                                     <h3 class="mb-0 text-dark-gray ">${{precio}}</h3>
                                                     {{#usuario}}
-                                                        <a href="/infonete/edicion/misEdiciones" class="btn btn-success btn-block">Comprado</a>
+                                                        {{#suscripcion}}
+                                                            <a href="/infonete/edicion/misEdiciones" class="btn btn-info btn-block">Con tu suscripción</a>
+                                                        {{/suscripcion}}
+                                                        {{^suscripcion}}
+                                                            <a href="/infonete/edicion/misEdiciones" class="btn btn-success btn-block">Comprado</a>
+                                                        {{/suscripcion}}
                                                     {{/usuario}}
                                                     {{^usuario}}
-                                                        <a href="/infonete/edicion/checkout?id={{id}}" class="btn btn-primary btn-block">Comprar este número</a>
+                                                        {{#suscripcion}}
+                                                            <a href="/infonete/edicion/misEdiciones" class="btn btn-info btn-block">Con tu suscripción</a>
+                                                        {{/suscripcion}}
+                                                        {{^suscripcion}}
+                                                            <a href="/infonete/edicion/checkout?id={{id}}" class="btn btn-primary btn-block">Comprar este número</a>
+                                                        {{/suscripcion}}
+
                                                     {{/usuario}}
                                                 </div>
 
@@ -129,6 +148,8 @@
                                 </div>
 
                         </div>
+                        
+                        
                     </div>
                 </div>
             </div>
