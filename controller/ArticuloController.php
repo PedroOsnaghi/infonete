@@ -43,6 +43,7 @@ class ArticuloController
             case UsuarioModel::ROL_EDITOR:
                 $data = $this->dato(["ediciones" => $this->edicionModel->listByState(EdicionModel::ESTADO_ALL)]);
                 echo $this->render->render("public/view/gestion-noticias-editor.mustache", $data);
+                break;
             case UsuarioModel::ROL_ADMIN:
                 $data = $this->dato(["ediciones" => $this->edicionModel->listByState(EdicionModel::ESTADO_ALL)]);
                 echo $this->render->render("public/view/gestion-noticias-admin.mustache", $data);

@@ -178,15 +178,8 @@ values ("Lector"),
        ("Editor"),
        ("Administrador");
 
-insert into usuario (nombre, apellido, email, pass, domicilio, latitud, longitud, avatar, vhash, rol, estado, activo)
-values ('Facundo', 'Herrera', 'admin@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face16.jpg',
-        '', 4, 1, 1),
-       ('Carolina', 'Montenegro', 'editor@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0,
-        'face23.jpg', '', 3, 1, 1),
-       ('Nicolas', 'Arana', 'redactor@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0,
-        'face23.jpg', '', 2, 1, 1),
-       ('Romina', 'Godoy', 'lector@infonete.com', '827ccb0eea8a706c4c34a16891f84e7b', 'domicilio', 0, 0, 'face26.jpg',
-        '', 1, 1, 1);
+INSERT INTO `usuario` VALUES (1,'Facundo','Herrera','admin@infonete.com','827ccb0eea8a706c4c34a16891f84e7b','domicilio',0,0,'face16.jpg','',4,1,1),(2,'Carolina','Montenegro','editor@infonete.com','827ccb0eea8a706c4c34a16891f84e7b','domicilio',0,0,'face23.jpg','',3,1,1),(3,'Nicolas','Arana','redactor@infonete.com','827ccb0eea8a706c4c34a16891f84e7b','domicilio',0,0,'face23.jpg','',2,1,1),(4,'Romina','Godoy','lector@infonete.com','827ccb0eea8a706c4c34a16891f84e7b','domicilio',0,0,'face26.jpg','',1,1,1),(5,'Lautaro','Martinez','lector1@infonete.com','827ccb0eea8a706c4c34a16891f84e7b','domicilio',0,0,'face12.jpg',NULL,1,1,1),(6,'Matias','Gomez','lector2@infonete.com','827ccb0eea8a706c4c34a16891f84e7b','domicilio',0,0,'face13.jpg',NULL,1,1,1),(7,'Sergio','Ramos','lector3@infonete.com','827ccb0eea8a706c4c34a16891f84e7b','domicilio',0,0,'face14.jpg',NULL,1,1,1),(15,'Carlos','Ventura','lector4@infonete.com','827ccb0eea8a706c4c34a16891f84e7b','domicilio',0,0,'face16.jpg',NULL,1,1,1);
+
 
 insert into tipo_archivo(tipo)
 values ('IMAGEN'),
