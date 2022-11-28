@@ -1,4 +1,4 @@
-var btn_nuevanota = document.getElementById("nueva-nota");
+
 var nota_container = document.getElementById("notas-container");
 var select_edition = document.getElementById("select-edition");
 
@@ -50,7 +50,6 @@ select_edition.addEventListener("change", function () {
 });
 
 function establecerSeleccion(id) {
-    btn_nuevanota.classList.remove("disabled");
     request("http://localhost/infonete/articulo/list?ide=" + id);
 }
 
