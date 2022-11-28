@@ -112,7 +112,7 @@ class ViewerController
      */
     public function close()
     {
-        Redirect::doIt("/infonete/edicion/misEdiciones");
+        Redirect::doIt("/infonete/misProductos");
     }
 
     /**
