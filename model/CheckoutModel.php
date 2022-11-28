@@ -21,10 +21,13 @@ class CheckoutModel
                     try {
                         $query = $this->database->execute("INSERT INTO usuario_suscripcion (id_usuario, id_suscripcion, id_producto, fecha_inicio, id_pago, activa) 
                                                         VALUES (" . $data['id_usuario'] . "," . $data['id_suscripcion'] . "," . $data['id_producto'] . ", now()," . $idPago . ", 1)");
-                        if ($query) return array('success' => 'La suscripción se registró con éxito',
-                            'suscripcion' => $data['id_suscripcion'],
-                            'payment_id' => $idPago);
-                        return array('error' => 'No se pudo registrar la suscripción');
+
+                        return ($query) ? array('success' => 'La suscripción se registró con éxito',
+                                            'suscripcion' => $data['id_suscripcion'],
+                                             'payment_id' => $idPago)
+                                        :
+                                          array('error' => 'No se pudo registrar la suscripción');
+
                     } catch (exception) {
                         return array('error' => 'Ya tenés una suscripción activa para el producto seleccionado. Puedes verla en Mis Suscripciones');
                     }
@@ -32,10 +35,13 @@ class CheckoutModel
                     try {
                         $query = $this->database->execute("INSERT INTO compra_edicion (id_usuario, id_edicion, fecha, id_pago) 
                                                        VALUES (" . $data['id_usuario'] . "," . $data['id_edicion'] . ", now()," . $idPago . ")");
-                        if ($query) return array('success' => 'La compra se realizó con éxito',
-                            'edicion' => $data['id_edicion'],
-                            'payment_id' => $idPago);
-                        return array('error' => 'No se pudo registrar la compra');
+
+                        return ($query) ? array('success' => 'La compra se realizó con éxito',
+                                                'edicion' => $data['id_edicion'],
+                                             'payment_id' => $idPago)
+                                        :
+                                          array('error' => 'No se pudo registrar la compra');
+
                     } catch (exception) {
                         return array('error' => 'La compra ya ha sido realizada. Puedes verla en Mis Productos');
                     }

@@ -14,7 +14,7 @@ class SeccionModel
         $this->database = $database;
     }
 
-//GETTER Y SETTER
+    //GETTER Y SETTER
 
     public function getId()
     {
@@ -46,6 +46,9 @@ class SeccionModel
         $this->descripcion = $descripcion;
     }
 
+
+    //METODOS
+
     public function guardar()
     {
         return $this->database->execute("INSERT INTO seccion (nombre, descripcion) 
@@ -58,13 +61,8 @@ class SeccionModel
 
         $this->logger->info($response);
 
-        if ($response) return array("success" => "La sección se actualizó correctamente",
-                                     "seccion" => $this);
-
-                       return array("error" => "No se modificaron datos",
-                                     "seccion" => $this);
-
-
+        return ($response) ? array("success" => "La sección se actualizó correctamente", "seccion" => $this):
+                             array("error" => "No se modificaron datos", "seccion" => $this);
 
     }
 
@@ -94,7 +92,6 @@ class SeccionModel
 
         return $this;
     }
-
 
 
 }

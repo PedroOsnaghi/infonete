@@ -56,19 +56,19 @@
 
 
                                     <div class="d-flex flex-wrap w-100 mx-auto justify-content-center mt-3">
-                                        {{#producto}}
+                                        {{#getProducto}}
                                             <div class="card card-max bg-light-gray shadow-max mr-2 mb-4 overflow-hidden">
 
                                                 <img class="mx-auto product-catalog mb-2 d-block shadow"
-                                                     src="/infonete/public/uploads/product/{{getImagen}}" alt="">
+                                                     src="/infonete/public/uploads/product/{{imagen}}" alt="">
 
-                                                <div class="mx-auto text-dark-gray">{{getNombreTipo}} {{getNombre}}</div>
+                                                <div class="mx-auto text-dark-gray">{{tipo}} {{nombre}}</div>
 
                                                 <div class="w-100 card-tipo-border"></div>
 
 
                                             </div>
-                                        {{/producto}}
+                                        {{/getProducto}}
                                     </div>
                                     <div class="d-flex flex-column align-items-center justify-content-center mt-3">
                                         <p class="">
@@ -82,7 +82,7 @@
                                     </div>
 
                                     <div class="d-flex justify-content-center mt-3">
-                                        <a  class="btn btn-light mr-2 " href="/infonete/suscripcion/planes"
+                                        <a  class="btn btn-light mr-2 " href="/infonete/planes"
                                                 >Cancelar
                                         </a>
                                         <button type="button" class="btn btn-primary ml-2"

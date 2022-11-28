@@ -29,12 +29,15 @@ class UsuarioModel
     private $rol;
     private $rol_name;
 
+    //autenticacion
+    private $error_access;
+
     private $database;
     private $file;
     private $mailer;
+
+
     //Getters & Setters
-
-
     public function getId()
     {
         return $this->id;
@@ -74,7 +77,6 @@ class UsuarioModel
     {
         $this->pass = $pass;
     }
-
 
     public function getEmail()
     {
@@ -176,7 +178,12 @@ class UsuarioModel
         $this->hash = $hash;
     }
 
+    public function getErrorAccess()
+    {
+        return $this->error_access;
+    }
 
+    //CONSTRUCTOR
     public function __construct($file, $mailer, $database)
     {
         $this->file = $file;
@@ -184,6 +191,7 @@ class UsuarioModel
         $this->database = $database;
     }
 
+    //METODOS
     public function registrar()
     {
         //guarda imagen avatar
@@ -205,9 +213,9 @@ class UsuarioModel
                                                 $this->activo)");
 
         if($response){
-            if ($this->mailer->sendEmailVerification($this->email, $this->hash))
-                return array('status' => 'success', 'email' => $this->email);
-            return array('status' => 'error', 'error' => 'No pudimos enviar el email de verificación.');
+            return  ($this->mailer->sendEmailVerification($this->email, $this->hash)) ?
+                                  array('status' => 'success', 'email' => $this->email):
+                                  array('status' => 'error', 'error' => 'No pudimos enviar el email de verificación.');
 
         }
 
@@ -229,14 +237,11 @@ class UsuarioModel
         return $this->database->list("SELECT id as id_rol, rol_name FROM rol ORDER BY id ASC");
     }
 
-    public function listAll()
+    public function listar($value = null)
     {
-        return $this->database->list("SELECT * FROM usuario  ORDER BY rol DESC, apellido ASC");
-    }
-
-    public function searchBy($value)
-    {
-        return $this->database->list("SELECT * FROM usuario WHERE nombre like '%$value%' OR apellido like '%$value%' ORDER BY rol DESC , apellido ASC");
+        return ($value) ?
+            $this->database->list("SELECT * FROM usuario WHERE nombre like '%$value%' OR apellido like '%$value%' ORDER BY rol DESC , apellido ASC"):
+            $this->database->list("SELECT * FROM usuario  ORDER BY rol DESC, apellido ASC");
     }
 
     public function setRolTo($id, $rol)
@@ -258,7 +263,7 @@ class UsuarioModel
     {
         $query = $this->database->query("SELECT u.*,r.rol_name FROM usuario u JOIN rol r ON u.rol = r.id WHERE u.email = '$email' AND u.pass = '$pass'");
 
-        return $this->toUsuario($query);
+        return $this->verificarEstadoCuenta($query);
     }
 
     public function getUsuario($id)
@@ -267,7 +272,26 @@ class UsuarioModel
         return $this->toUsuario($query);
     }
 
+    private function verificarEstadoCuenta($query)
+    {
+        if($query == null){
+            $this->error_access = "Correo y/o contraseña incorrecta";
+            return null;
+        }
 
+        //verificar que esta activo para ingresar
+        if($query['activo'] == 0){
+            $this->error_access = "Su cuenta se ecuentra inhabilitada para acceder al sistema";
+            return null;
+        }
+        //verificar activacion de cuenta
+        if($query['estado'] == UsuarioModel::STATE_UNVERIFIED){
+            $this->error_access = "La cuenta aún no fue verificada. se envio un correo a " . $query['email'] ." con el link de verificación";
+            return null;
+        }
+
+        return $this->toUsuario($query);
+    }
 
     private function toUsuario($array)
     {
@@ -291,7 +315,6 @@ class UsuarioModel
 
         return $this;
     }
-
 
     public function rolTools()
     {

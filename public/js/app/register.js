@@ -82,7 +82,7 @@
 
     function verificarMail(value){
         $.ajax({
-            url: 'http://localhost/infonete/usuario/existeEmail?email=' + value,
+            url: 'http://localhost/infonete/register/existeEmail?email=' + value,
             type: 'GET',
             success: function (response){
                 (response && response.email ) ?

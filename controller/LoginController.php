@@ -3,7 +3,7 @@
 class LoginController
 {
 
-    private $render;//render llama a la vista
+    private $render;
     private $usuarioModel;
     private $session;
     private $logguer;
@@ -16,11 +16,21 @@ class LoginController
         $this->logguer = $logger;
     }
 
+    /**
+     * Metodo inicial que lanza la vista Loguin.
+     *
+     * @return Html
+     */
     public function execute()
     {
         echo $this->render->render("public/view/login.mustache");
     }
 
+    /**
+     * Metodo que recibe correo y pass y solicita autenticacion.
+     *
+     * @return Acceso | error
+     */
     public function validar()
     {
         //validar info
@@ -29,48 +39,50 @@ class LoginController
 
         $usuarioAuth = $this->usuarioModel->autenticar($email, hasher::encrypt($pass));
 
-        // $usuarioAuth es un objeto usuario o null
-        if ($usuarioAuth != null){
-            $this->validateActivation($usuarioAuth);
-        }else{
-            $this->errorAccess();
-        }
-
-
+        ($usuarioAuth) ? $this->getAccess($usuarioAuth) : $this->errorAccess();
 
     }
 
-    private function validateActivation($user)
+    /**
+     * Metodo privado que se ejecuta en caso de validacion exitosa.
+     *
+     * @return void
+     */
+    private function getAccess($user)
     {
-        //verificar que esta activo para ingresar
-        if($user->getActivo() == 0){
-            $data['error'] = "Disculpe, su cuenta se ecuentra inhabilitada para acceder al sistema";
-            echo $this->render->render("public/view/login.mustache", $data);
-            exit();
-        }
-        //verificar activacion de cuenta
-        if($user->getEstado() == UsuarioModel::STATE_UNVERIFIED){
-            $data['error'] = "La cuenta aún no fue verificada. se envio un correo a " . $user->getEmail() ." con el link de verificación";
-            echo $this->render->render("public/view/login.mustache", $data);
-            exit();
-        }
         //si esta todo ok
         $this->iniciarSession($user);
         $this->goToHome();
     }
 
-    private function errorAccess(){
-        $data['error'] = "Correo y/o contraseña incorrecta";
+    /**
+     * Metodo privado que retorna a la vista loguin con el error de la autenticacion.
+     *
+     * @return Html
+     */
+    private function errorAccess()
+    {
+        $data['error'] = $this->usuarioModel->getErrorAccess();
         echo $this->render->render("public/view/login.mustache", $data);
     }
 
-    private function iniciarSession($user){
-        //guardamos los datos del usuario en la session para poder
-        //accederlos a lo largo de la aplicacion
+    /**
+     * Metodo privado que carga al usuario autenticado en la sesion.
+     *
+     * @return void
+     */
+    private function iniciarSession($user)
+    {
         $this->session->setAuthUser($user);
     }
 
-    private function goToHome(){
+    /**
+     * Metodo privado que redirecciona al 'Home'.
+     *
+     * @return void
+     */
+    private function goToHome()
+    {
         Redirect::doIt("/infonete");
     }
 

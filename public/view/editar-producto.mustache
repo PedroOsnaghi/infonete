@@ -58,7 +58,7 @@
                                             <input type="hidden" value="{{getImagen}}" name="imagen">
                                         </div>
                                         <div class="d-flex flex-column w-100">
-                                           <input type="hidden" value="{{getId}}" name="id">
+                                            <input type="hidden" value="{{getId}}" name="id">
                                             <label for="tipo">Tipo</label>
                                             <select class="form-control mb-2" id="tipo" name="tipo" required>
                                                 <option value="{{getTipo}}" selected hidden>{{getNombreTipo}}</option>
@@ -72,8 +72,10 @@
                                             <input class="form-control mb-2" type="text" id="nombre" name="nombre"
                                                    placeholder="Nombre" value="{{getNombre}}" required>
                                             <label for="desc">Descripcíon</label>
-                                            <input class="form-control mb-2" type="text" id="desc" maxlength="255" name="descripcion"
-                                                   placeholder="Describe el producto" value="{{getDescripcion}}" required>
+                                            <input class="form-control mb-2" type="text" id="desc" maxlength="255"
+                                                   name="descripcion"
+                                                   placeholder="Describe el producto" value="{{getDescripcion}}"
+                                                   required>
 
                                             <div class="d-flex justify-content-end">
                                                 <button class="btn btn-primary mb-2 " type="submit">Actualizar</button>
@@ -83,19 +85,21 @@
 
                                     </div>
 
+                                    {{#respuesta}}
+                                        {{#success}}
+                                            <div class="alert alert-success" role="alert">
+                                                {{success}}
+                                            </div>
+                                        {{/success}}
+
+                                        {{#error}}
+                                            <div class="alert alert-danger" role="alert">
+                                                {{error}}
+                                            </div>
+                                        {{/error}}
+                                    {{/respuesta}}
 
 
-                                    {{#success}}
-                                        <div class="alert alert-success" role="alert">
-                                            {{success}}
-                                        </div>
-                                    {{/success}}
-
-                                    {{#error}}
-                                        <div class="alert alert-danger" role="alert">
-                                            {{error}}
-                                        </div>
-                                    {{/error}}
 
                                 {{/producto}}
                             </form>

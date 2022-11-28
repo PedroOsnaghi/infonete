@@ -15,6 +15,7 @@ class ProductoModel
     private $imagen;
     private $database;
     private $file;
+    private $producto;
 
     public function __construct($file, $database)
     {
@@ -83,31 +84,14 @@ class ProductoModel
         $this->nombre_Tipo = $nombre_Tipo;
     }
 
-    public function getDatabase()
-    {
-        return $this->database;
-    }
-
-    public function setDatabase($database)
-    {
-        $this->database = $database;
-    }
+    //METODOS
 
     public function list()
     {
         return $this->database->list("SELECT p.*, t.tipo, COUNT(e.id_producto) as 'ediciones' FROM producto p 
                                         JOIN tipo_producto t ON p.id_tipo_producto = t.id 
                                         LEFT JOIN edicion e ON e.id_producto = p.id
-                                        GROUP BY e.id_producto               
-                                        ORDER BY t.tipo ASC, p.nombre ASC");
-    }
-
-    public function listProductosDisponibles($idUsuario, $idSuscripcion)
-    {
-        return $this->database->list("SELECT p.*, t.tipo FROM producto p 
-                                        JOIN tipo_producto t ON p.id_tipo_producto = t.id 
-                                        WHERE p.id NOT IN(SELECT id_producto FROM usuario_suscripcion WHERE id_suscripcion = $idSuscripcion AND id_usuario = $idUsuario)
-											
+                                        GROUP BY e.id_producto, p.id               
                                         ORDER BY t.tipo ASC, p.nombre ASC");
     }
 
@@ -119,10 +103,11 @@ class ProductoModel
     public function guardar()
     {
         $this->guardarImagen();
+
         $res = $this->database->execute("INSERT INTO producto(id_tipo_producto, nombre, descripcion, imagen) 
                                   VALUES($this->tipo, '$this->nombre', '$this->descripcion', '$this->imagen')");
 
-        return $res ? array("success" => "El producto se guardó con exito.") : array("error" => "No se pudo agregar el producto");
+        return ($res) ? array("success" => "El producto se guardó con exito.") : array("error" => "No se pudo agregar el producto");
     }
 
     public function search($value)
@@ -133,6 +118,7 @@ class ProductoModel
     public function getProduct($id)
     {
         $query = $this->database->query("SELECT p.*, t.tipo FROM producto p JOIN tipo_producto t ON p.id_tipo_producto = t.id WHERE p.id = $id");
+
         return $this->toProduct($query);
     }
 
@@ -150,6 +136,8 @@ class ProductoModel
 
     private function toProduct($array)
     {
+        if ($array == null) return null;
+
         $this->id = $array['id'];
         $this->tipo = $array['id_tipo_producto'];
         $this->nombre_Tipo = $array['tipo'];

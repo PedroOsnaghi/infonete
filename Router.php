@@ -18,7 +18,7 @@ class Router
     private function getControllerFrom($module)
     {
         $controllerName = "get" . ucfirst($module) . "Controller";
-        $validController = method_exists($this->configuration, $controllerName) ? $controllerName : "getIndexController";
+        $validController = method_exists($this->configuration, $controllerName) ? $controllerName : "getHomeController";
         return call_user_func(array($this->configuration, $validController));
     }
 

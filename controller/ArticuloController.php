@@ -2,113 +2,146 @@
 
 class ArticuloController
 {
-    //PROPIEDADES
+    //Modelos
     private $articuloModel;
-    private $render;
     private $edicionModel;
-    private $session;
     private $seccionModel;
 
-    private $logger;
-    private $usuarioModel;
+    private $session;
+    private $render;
 
-    public function __construct($articuloModel, $edicionModel, $seccionModel, $usuarioModel,  $session, $logger, $render)
+
+    public function __construct($articuloModel, $edicionModel, $seccionModel,  $session, $render)
     {
+        //setea modelos
         $this->articuloModel = $articuloModel;
         $this->edicionModel = $edicionModel;
         $this->seccionModel = $seccionModel;
-        $this->usuarioModel = $usuarioModel;
+
+        //setea session y render
         $this->session = $session;
-        $this->logger = $logger;
         $this->render = $render;
 
     }
 
-    public function execute()
+    /**
+     * Metodo que lanza la vista de gestion de Noticias para usuarios con rol.
+     * Restriccion: usuario Redactor, Editor, Admin
+     *
+     * @return Html
+     */
+    public function admin()
     {
-
-    }
-
-    public function admin(){
-
+        //restriccion de metodo
         $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR, UsuarioModel::ROL_EDITOR, UsuarioModel::ROL_ADMIN]);
 
-        $data = $this->dato(["ediciones" => $this->edicionModel->listByState(EdicionModel::ESTADO_EN_EDICION)]);
         switch ($this->session->getAuthUser()->getRol()){
             case UsuarioModel::ROL_REDACTOR:
+                $data = $this->dato(["ediciones" => $this->edicionModel->listByState(EdicionModel::ESTADO_EN_EDICION)]);
                 echo $this->render->render("public/view/gestion-noticias-redactor.mustache", $data);
                 break;
             case UsuarioModel::ROL_EDITOR:
-                echo $this->render->render("public/view/gestion-noticias-editor.mustache", $data);
-                break;
             case UsuarioModel::ROL_ADMIN:
+                $data = $this->dato(["ediciones" => $this->edicionModel->listByState(EdicionModel::ESTADO_ALL)]);
                 echo $this->render->render("public/view/gestion-noticias-admin.mustache", $data);
                 break;
-            default:
-                return false;
         }
-
     }
 
-
-
+    /**
+     * Metodo que genera listados de articulos segun rol.
+     * Restriccion: usuario Redactor, Editor, Admin
+     * Solicitado via Ajax
+     * @return void
+     */
     public function list()
     {
+        //restriccion de metodo
         $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR, UsuarioModel::ROL_EDITOR, UsuarioModel::ROL_ADMIN]);
 
         $idEdicion = $_GET['ide'];
+
         $this->session->setParameter('activeEdition', $this->edicionModel->getEdition($idEdicion));
 
-        $userRol = $this->session->getAuthUser()->getRol();
+        $data = $this->dato(["noticias" => $this->articuloModel->list($idEdicion, $this->session->getAuthUser())]);
 
-        $data = $this->dato(["noticias" => $this->articuloModel->list($idEdicion, $userRol)]);
-
-        switch ($userRol){
-            case UsuarioModel::ROL_REDACTOR:
-                echo $this->render->render("public/view/partial/lista-notas-redactor.mustache", $data);
-                break;
-            case UsuarioModel::ROL_EDITOR:
-                echo $this->render->render("public/view/partial/lista-notas-editor.mustache", $data);
-                break;
-            case UsuarioModel::ROL_ADMIN:
-                echo $this->render->render("public/view/partial/lista-notas-admin.mustache", $data);
-                break;
-            default:
-                return false;
-        }
+        $this->enviarLista($this->session->getAuthUser()->getRol(),$data);
 
     }
 
-
-
+    /**
+     * Metodo que lanza la vista de Crear Articulo.
+     * Restriccion: usuario Redactor
+     *
+     * @return Html
+     */
     public function crear()
     {
+        //restriccion de metodo
         $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
+
         $data = $this->dato(["secciones" => $this->seccionModel->list()]);
+
         echo $this->render->render("public/view/articulo.mustache", $data);
+    }
+
+    /**
+     * Metodo que guarda articulo.
+     * Restriccion: usuario Redactor
+     * Solicitado via Ajax
+     * @return Json $response
+     */
+    public function guardar()
+    {
+        //restriccion de metodo
+        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
+
+        $this->setearArticulo();
+
+        $response = $this->articuloModel->guardar();
+
+        header('Content-Type: application/json');
+        echo json_encode($response,JSON_FORCE_OBJECT);
 
     }
 
-    public function baja()
+    /**
+     * Metodo lanza la vista de edición de un articulo.
+     * Restriccion: usuario Redactor
+     * @return Html
+     */
+    public function editar()
     {
-        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
 
-        $response = $this->articuloModel->cambiarEstado($_GET['id'], ArticuloModel::ART_ST_BAJA);
+        $data = $this->dato(["secciones" => $this->seccionModel->list(),
+                             "noticia" => $this->articuloModel->getArticulo($_GET['id'])]);
+        echo $this->render->render("public/view/editar-articulo.mustache", $data);
+    }
+
+    /**
+     * Metodo que Actualiza los datos de un articulo.
+     * Restriccion: usuario Redactor
+     * Solicitado via Ajax
+     * @return Json $response
+     */
+    public function actualizar()
+    {
+        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
+
+        $this->setearArticulo($_GET['id']);
+
+        $response = $this->articuloModel->update();
 
         header('Content-Type: application/json');
         echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
-    public function restablecer()
-    {
-        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
-
-        $response = $this->articuloModel->cambiarEstado($_GET['id'], ArticuloModel::ART_ST_REVISION);
-
-        header('Content-Type: application/json');
-        echo json_encode($response,JSON_FORCE_OBJECT);
-    }
-
+    /**
+     * Metodo que lanza la vista de Preview para usuarios con roles.
+     *
+     * @return Html
+     */
     public function preview()
     {
         $data = $this->dato(["articulo" => $this->articuloModel->getArticuloPreview($_GET['id'])]);
@@ -128,42 +161,11 @@ class ArticuloController
 
     }
 
-
-
-    public function guardar()
-    {
-        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
-
-        $this->setearArticulo();
-
-        $response = $this->articuloModel->guardar();
-
-        header('Content-Type: application/json');
-        echo json_encode($response,JSON_FORCE_OBJECT);
-
-    }
-
-    public function editar()
-    {
-        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
-
-        $data = $this->dato(["secciones" => $this->seccionModel->list(),
-                             "noticia" => $this->articuloModel->getArticulo($_GET['id'])]);
-        echo $this->render->render("public/view/editar-articulo.mustache", $data);
-    }
-
-    public function actualizar()
-    {
-        $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
-
-        $this->setearArticulo($_GET['id']);
-
-        $response = $this->articuloModel->update();
-
-        header('Content-Type: application/json');
-        echo json_encode($response,JSON_FORCE_OBJECT);
-    }
-
+    /**
+     * Metodo que cambia el estado de un articulo a REVISIÓN.
+     * Solicitado via Ajax
+     * @return Json $response
+     */
     public function revision()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
@@ -174,6 +176,11 @@ class ArticuloController
         echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
+    /**
+     * Metodo que cambia el estado de un articulo a APROBADO.
+     * Solicitado via Ajax
+     * @return Json $response
+     */
     public function aprobar()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
@@ -184,6 +191,11 @@ class ArticuloController
         echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
+    /**
+     * Metodo que cambia el estado de un articulo a DRAFT.
+     * Solicitado via Ajax
+     * @return Json $response
+     */
     public function draft()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_EDITOR]);
@@ -194,6 +206,41 @@ class ArticuloController
         echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
+    /**
+     * Metodo que de de baja un articulo.
+     * Solicitado via Ajax
+     * @return Json $response
+     */
+    public function baja()
+    {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
+        $response = $this->articuloModel->cambiarEstado($_GET['id'], ArticuloModel::ART_ST_BAJA);
+
+        header('Content-Type: application/json');
+        echo json_encode($response,JSON_FORCE_OBJECT);
+    }
+
+    /**
+     * Metodo que de reestablece el estado del Articulo.
+     * Solicitado via Ajax
+     * @return Json $response
+     */
+    public function restablecer()
+    {
+        $this->session->urlRestriction([UsuarioModel::ROL_ADMIN]);
+
+        $response = $this->articuloModel->cambiarEstado($_GET['id'], ArticuloModel::ART_ST_REVISION);
+
+        header('Content-Type: application/json');
+        echo json_encode($response,JSON_FORCE_OBJECT);
+    }
+
+    /**
+     * Metodo que elimina la imagen relacionada a un articulo.
+     * Solicitado via Ajax
+     * @return Json $response
+     */
     public function eliminarImagen()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
@@ -204,6 +251,11 @@ class ArticuloController
         echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
+    /**
+     * Metodo que elimina el archivo de Stream relacionado a un articulo.
+     * Solicitado via Ajax
+     * @return Json $response
+     */
     public function eliminarStream()
     {
         $this->session->urlRestriction([UsuarioModel::ROL_REDACTOR]);
@@ -214,6 +266,33 @@ class ArticuloController
         echo json_encode($response,JSON_FORCE_OBJECT);
     }
 
+    /**
+     * Metodo PRIVADO que envia las listas segun rol.
+     *
+     * @return Html Parcial
+     */
+    private function enviarLista($rol, $data)
+    {
+        switch ($rol){
+            case UsuarioModel::ROL_REDACTOR:
+                echo $this->render->render("public/view/partial/lista-notas-redactor.mustache", $data);
+                break;
+            case UsuarioModel::ROL_EDITOR:
+                echo $this->render->render("public/view/partial/lista-notas-editor.mustache", $data);
+                break;
+            case UsuarioModel::ROL_ADMIN:
+                echo $this->render->render("public/view/partial/lista-notas-admin.mustache", $data);
+                break;
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Metodo PRIVADO que setea las propiedades del objeto con datos POST.
+     *
+     * @return void
+     */
     private function setearArticulo($id = null)
     {
         if($id) $this->articuloModel->setId($id);
@@ -233,14 +312,13 @@ class ArticuloController
             $this->articuloModel->setAutor($this->session->getAuthUser()->getId());
             $this->articuloModel->setEdicion($this->session->getParameter('activeEdition')->getId());
         }
-
-
-
-
-
-
     }
 
+    /**
+     * Metodo que obtiene Fecha y Hora actual.
+     *
+     * @return DateTime
+     */
     private function getFechaHoraActual()
     {
         $datetime = new DateTime();
@@ -248,6 +326,11 @@ class ArticuloController
         return $datetime->format("y-m-d H:i:s");
     }
 
+    /**
+     * Meteodo qur genera el array de Datos que sera enviado a la Vista.
+     *
+     * @return array
+     */
     private function dato($data = [])
     {
         return array_merge($data,  array(
@@ -255,8 +338,6 @@ class ArticuloController
             "edicion" => $this->session->getParameter('activeEdition')
         ));
     }
-
-
 
 
 

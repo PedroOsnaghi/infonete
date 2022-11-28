@@ -4,6 +4,7 @@ class EdicionModel
 {
     const ESTADO_EN_EDICION = 0;
     const ESTADO_PUBLICADO = 1;
+    const ESTADO_ALL = 2;
 
     private $id;
     private $numero;
@@ -16,15 +17,12 @@ class EdicionModel
     private $descripcion;
     private $database;
 
-
-    //GETTERS Y SETTERS
-
     private $nombreProducto;
     private $tipoProducto;
     private $logger;
     private $file;
 
-
+    //GETTERS Y SETTERS
     public function getId()
     {
         return $this->id;
@@ -144,10 +142,38 @@ class EdicionModel
     }
 
 
+    //METODOS
     public function guardar()
     {
         $this->guardarPortada();
-        return $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto, estado) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', " . $this->producto . "," . self::ESTADO_EN_EDICION . ")");
+
+        $res = $this->database->execute("INSERT INTO edicion(numero, titulo, descripcion, precio, portada, id_producto, estado) VALUES (" . $this->numero . ", '" . $this->titulo . "', '" . $this->descripcion . "'," . $this->precio . ", '" . $this->portada . "', " . $this->producto . "," . self::ESTADO_EN_EDICION . ")");
+
+        return ($res) ? array('success' => "La edición se guardó correctamente") :
+                        array('error' => "Hubo un error al guardar la edición");
+
+    }
+
+    public function update()
+    {
+        $sql = ($this->verificarCambioPortada()) ?
+            "UPDATE edicion SET numero = $this->numero,
+                                titulo = '$this->titulo', 
+                           descripcion = '$this->descripcion', 
+                                precio = $this->precio,
+                               portada = '$this->portada',
+                           id_producto = $this->producto WHERE id = $this->id"
+            :
+            "UPDATE edicion SET numero = $this->numero,
+                                titulo = '$this->titulo', 
+                           descripcion = '$this->descripcion', 
+                                precio = $this->precio, 
+                           id_producto = $this->producto WHERE id = $this->id";
+
+        $response = $this->database->execute($sql);
+
+        return ($response) ? array("success" => "La edición se actualizó correctamente", "edicion" => $this):
+            array("error" => "Hubo un error al actualizar la edición", "edicion" => $this);
     }
 
     public function listarPorProducto($idProduct)
@@ -155,12 +181,15 @@ class EdicionModel
         return $this->database->list("SELECT * FROM edicion WHERE id_producto = $idProduct");
     }
 
-    public function listByState($estado)
+    public function listByState($estado = self::ESTADO_ALL)
     {
-        return $this->database->list("SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.estado, e.id_producto, e.portada, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado");
+        $sql = ($estado == self::ESTADO_ALL) ?
+            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.estado, e.id_producto, e.portada, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id "
+            :
+            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.estado, e.id_producto, e.portada, p.nombre FROM edicion e JOIN producto p ON e.id_producto = p.id WHERE e.estado = $estado";
+
+        return $this->database->list($sql);
     }
-
-
 
     public function getEdition($id)
     {
@@ -198,22 +227,6 @@ class EdicionModel
         return $this->toEdition($query);
     }
 
-    public function update()
-    {
-        $sql_portada = ($this->verificarCambioPortada()) ? ", portada = '$this->portada'" : "";
-
-        $response = $this->database->execute("UPDATE edicion SET numero = $this->numero, 
-                                                                 titulo = '$this->titulo', 
-                                                                 descripcion = '$this->descripcion', 
-                                                                 precio = $this->precio, 
-                                                                 id_producto = $this->producto "
-                                                                 .$sql_portada.
-                                            " WHERE id = $this->id");
-
-        return ($response) ? array("success" => "La edición se actualizó correctamente", "edicion" => $this):
-                            array("error" => "Hubo un error al actualizar la edición", "edicion" => $this);
-    }
-
     public function publicar($id)
     {
         $time = date("Y-m-d h:m");
@@ -236,29 +249,6 @@ class EdicionModel
         return array("publicado" => self::ESTADO_EN_EDICION);
     }
 
-    //devuelve un array con las Ediciones publicadas en los ultimos 3 dias.
-    //recibe la session como parametro para verificar si hay compras para el usuario que visita el sitio
-    public function getNovedades($idUsuario = null)
-    {
-
-        $sql = ($idUsuario) ?
-            "SELECT m.* ,us.id_usuario as 'suscripcion' FROM (SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo , ce.id_usuario AS 'usuario', e.id_producto, e.fecha as 'f'
-                                                               FROM edicion e 
-                                                                   JOIN producto p on e.id_producto = p.id 
-                                                                   JOIN tipo_producto t on p.id_tipo_producto = t.id 
-                                                                   LEFT JOIN compra_edicion ce ON ce.id_edicion = e.id  AND ce.id_usuario = $idUsuario
-                                                                   WHERE datediff(now(), e.fecha) <= 3 and e.estado =".self::ESTADO_PUBLICADO." ORDER BY e.fecha DESC) as m 
-            LEFT JOIN usuario_suscripcion us ON  us.id_producto = m.id_producto AND us.id_usuario = $idUsuario AND us.activa = 1 AND DATE(us.fecha_inicio) <= DATE(m.f)"
-            :
-            "SELECT e.id, e.numero, e.titulo, e.descripcion, e.precio, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo 
-            FROM edicion e JOIN producto p on e.id_producto = p.id 
-										JOIN tipo_producto t on p.id_tipo_producto = t.id 
-             WHERE datediff(now(), e.fecha) <= 3 and e.estado =".self::ESTADO_PUBLICADO." ORDER BY e.fecha DESC";
-
-        // Retorna las publicaciones de los últimos 3 días
-        return $this->database->list($sql);
-    }
-
     public function listByProduct($idProduct, $idUser = null, $searchValue)
     {
 
@@ -279,30 +269,6 @@ class EdicionModel
 
 
         return $this->database->list($sql);
-    }
-
-
-
-    public function listarCompras($idUsuario)
-    {
-        return $this->database->list("SELECT e.id, e.numero, e.titulo, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo
-                                        FROM edicion e JOIN producto p on e.id_producto = p.id 
-                                        JOIN tipo_producto t on p.id_tipo_producto = t.id                                  
-                                        JOIN compra_edicion ce on ce.id_edicion = e.id                                        
-                                        WHERE ce.id_usuario = $idUsuario
-                                        ORDER BY e.fecha DESC");
-    }
-
-    public function listarEdicionesSuscriptas($idUsuario)
-    {
-        return $this->database->list("SELECT e.id, e.numero, e.titulo, DATE_FORMAT(e.fecha, '%d de %b del %Y') as 'fecha', e.portada, t.tipo, DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY) as vencimiento, us.fecha_inicio
-                                        FROM edicion e JOIN producto p on e.id_producto = p.id 
-                                        JOIN tipo_producto t on p.id_tipo_producto = t.id                                  
-                                        JOIN usuario_suscripcion us on us.id_producto = p.id                                      							JOIN tipo_suscripcion ts on us.id_suscripcion = ts.id 
-              	                        WHERE us.id_usuario = $idUsuario and us.activa = 1 
-                                        and DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY) >= now() 
-                                        and DATE(e.fecha) BETWEEN DATE(us.fecha_inicio) AND DATE(DATE_ADD(us.fecha_inicio, INTERVAL ts.duracion DAY)) 
-                                        ORDER BY e.fecha DESC");
     }
 
     private function toEdition($array)

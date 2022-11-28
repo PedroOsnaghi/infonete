@@ -10,6 +10,7 @@ class Mailer
         $this->phpMailer = $phpMailer;
         $this->phpMailer->SMTPDebug = \PHPMailer\PHPMailer\SMTP::DEBUG_OFF;
         $this->phpMailer->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
+        $this->phpMailer->SMTPOptions = array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => true));
         $this->phpMailer->Host = $smtp_host;
         $this->phpMailer->Port = $smtp_port;
         $this->phpMailer->Username = $email_user;
@@ -18,9 +19,6 @@ class Mailer
         $this->phpMailer->SMTPAuth = true;
         $this->phpMailer->CharSet = 'UTF-8';
         $this->phpMailer->setFrom($email_user, 'Infonete');
-
-
-
 
 
     }

@@ -214,6 +214,8 @@ class ArticuloModel
     }
 
 
+
+    //METODOS
     public function guardar()
     {
 
@@ -262,36 +264,19 @@ class ArticuloModel
 
     }
 
-
     public function cambiarEstado($idNota, $estado)
     {
         $res = $this->database->execute("UPDATE articulo SET id_estado = " . $estado . " WHERE id = $idNota");
 
-
-        if ($res) {
-            $response = array("state" => $this->getNombreEstado($estado));
-        } else {
-            $response = array("state" => false);
-        }
-
-        return $response;
+        return ($res) ? array("state" => $this->getNombreEstado($estado)) : array("state" => false);
 
     }
 
-    private function getNombreEstado($id)
+    public function list($idEdicion, $user)
     {
-        $query = $this->database->query("SELECT estado FROM ESTADO_ARTICULO  WHERE id = $id");
-        //["estado" => "Aprobado"]
-        return ($query) ? $query["estado"] : false;
-
-    }
-
-
-    public function list($idEdicion, $rol)
-    {
-        switch ($rol) {
+        switch ($user->getRol()) {
             case UsuarioModel::ROL_REDACTOR:
-                $condicion = 'a.id_estado >= 0 AND';
+                $condicion = 'a.id_estado >= 0 AND a.id_autor='. $user->getId().' AND';
                 break;
             case UsuarioModel::ROL_EDITOR:
                 $condicion = 'a.id_estado > 0 AND';
@@ -317,7 +302,6 @@ class ArticuloModel
 
     }
 
-
     public function getArticulo($id)
     {
         $query = $this->database->query("SELECT a.*,  es.estado as 'estado', ae.* FROM articulo a JOIN estado_articulo es  ON a.id_estado = es.id JOIN articulo_edicion ae ON a.id = ae.id_articulo  WHERE a.id = $id");
@@ -326,7 +310,6 @@ class ArticuloModel
 
     public function getArticuloPreview($id)
     {
-
         $query = $this->database->query("SELECT a.id, a.titulo, a.subtitulo, a.contenido, a.link, a.link_video, a.create_at, a.update_at, a.ubicacion, a.latitud, a.longitud,
 	                                               s.nombre as 'nombre_seccion', u.nombre as 'nombre_autor', u.apellido as 'apellido_autor', u.avatar,
 	                                               r.rol_name as 'rol_autor', ea.estado 
@@ -337,7 +320,6 @@ class ArticuloModel
                                                             JOIN estado_articulo ea ON a.id_estado = ea.id
                                                             WHERE a.id = $id");
         return $this->toArticuloPreview($query);
-
     }
 
     public function getImagenes()
@@ -368,7 +350,6 @@ class ArticuloModel
 
         return array("error"=> "No se pudo eliminar el archivo de Stream");
     }
-
 
     private function toArticuloPreview($array)
     {
@@ -444,5 +425,12 @@ class ArticuloModel
         return $this->database->execute("UPDATE articulo_edicion SET id_seccion = $this->seccion WHERE id_articulo = $id");
     }
 
+    private function getNombreEstado($id)
+    {
+        $query = $this->database->query("SELECT estado FROM ESTADO_ARTICULO  WHERE id = $id");
+        //["estado" => "Aprobado"]
+        return ($query) ? $query["estado"] : false;
+
+    }
 
 }
