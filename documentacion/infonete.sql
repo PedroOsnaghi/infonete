@@ -196,7 +196,8 @@ values (0, 'Draft'),
 insert into tipo_suscripcion(duracion, descripcion)
 values (30, 'mensual'),
        (180, 'semestral'),
-       (365, 'anual');
+       (365, 'anual'),
+        (730, 'Dos años');
 
 insert into tipo_producto(tipo)
 values ('DIARIO'),
