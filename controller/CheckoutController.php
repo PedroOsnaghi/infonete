@@ -45,6 +45,15 @@ class CheckoutController
 
     }
 
+    /**
+     * Meteodo inicial que redirecciona a 404.
+     *
+     * @return Html
+     */
+    public function execute()
+    {
+       $this->redirect404();
+    }
 
     /**
      * Metodo que Lanza la vista de Checkaut segun el tipo de compra.
