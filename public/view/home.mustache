@@ -121,15 +121,15 @@
                                                     <h3 class="mb-0 text-dark-gray ">${{precio}}</h3>
                                                     {{#usuario}}
                                                         {{#suscripcion}}
-                                                            <a href="/infonete/edicion/misEdiciones" class="btn btn-info btn-block">Con tu suscripción</a>
+                                                            <a href="/infonete/misProductos" class="btn btn-info btn-block">Con tu suscripción</a>
                                                         {{/suscripcion}}
                                                         {{^suscripcion}}
-                                                            <a href="/infonete/edicion/misEdiciones" class="btn btn-success btn-block">Comprado</a>
+                                                            <a href="/infonete/misProductos" class="btn btn-success btn-block">Comprado</a>
                                                         {{/suscripcion}}
                                                     {{/usuario}}
                                                     {{^usuario}}
                                                         {{#suscripcion}}
-                                                            <a href="/infonete/edicion/misEdiciones" class="btn btn-info btn-block">Con tu suscripción</a>
+                                                            <a href="/infonete/misProductos" class="btn btn-info btn-block">Con tu suscripción</a>
                                                         {{/suscripcion}}
                                                         {{^suscripcion}}
                                                             <a href="/infonete/edicion/checkout?id={{id}}" class="btn btn-primary btn-block">Comprar este número</a>
