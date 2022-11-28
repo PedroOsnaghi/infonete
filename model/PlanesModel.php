@@ -129,7 +129,7 @@ class PlanesModel
     {
         return $this->database->list("SELECT p.*, t.tipo FROM producto p 
                                         JOIN tipo_producto t ON p.id_tipo_producto = t.id 
-                                        WHERE p.id NOT IN(SELECT id_producto FROM usuario_suscripcion WHERE id_suscripcion = $idSuscripcion AND id_usuario = $idUsuario)
+                                        WHERE p.id NOT IN(SELECT id_producto FROM usuario_suscripcion WHERE id_suscripcion = $idSuscripcion AND id_usuario = $idUsuario AND activa=1)
 											
                                         ORDER BY t.tipo ASC, p.nombre ASC");
     }
